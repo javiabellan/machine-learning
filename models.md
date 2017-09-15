@@ -1,8 +1,6 @@
-# Machine learnig
+# Machine learning
 
 ## Chapter 1: Introduction
-
-
 
 ### What is machine learning?
 
