@@ -17,7 +17,7 @@ The difference resides that AI is a very old concept (50s) that allow computers 
 
 > Machine learning is an application of artificial intelligence that automates analytical **model** building by using algorithms that iteratively **learn from data** without being explicitly programmed where to look.
 
-So basically we have **data** and we build a **model** that learns that data by itself.
+So basically we have **data** and we want to build a **model** that learns by itself.
 
 Pretty cool right? But wait, what is data? and, what is a model?
 
