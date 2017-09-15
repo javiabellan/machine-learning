@@ -13,7 +13,7 @@ First is necesary to understand the diffencence between ML and AI:
  * **Artificial Intelligence** is any technique which enables computers to mimic human behabiors.
  * **Machine Learning** is a technique that allows computers to automatically learn by exploring some data.
  
-The difference resides that AI is a very old concept (50s) that allow computers to look intelligent by implementing an 	explicit set of rules. And ML appears in the 80s by implementing algorithms that automatically learn by definig only some parameters (the input data and the desired goal). So ML is a subset of AI. According to wikipedia:
+The difference resides that AI is a very old concept (50s) that allow computers to look intelligent by implementing an 	explicit set of rules. And ML appears in the 80s by implementing algorithms that automatically learn by defining only some parameters (the input data and the desired goal). So ML is a subset of AI. According to wikipedia:
 
 > Machine learning is an application of artificial intelligence that automates analytical **model** building by using algorithms that iteratively **learn from data** without being explicitly programmed where to look.
 
