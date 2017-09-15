@@ -19,7 +19,7 @@ The difference resides that AI is a very old concept (50s) that allow computers 
 
 So basically we have **data** and we want to build a **model** that learns by itself.
 
-Pretty cool right? But wait, what is data? and, what is a model?
+Pretty cool right? But wait, what is data? and how we build model?
 
 ![i have no idea what i'm doing](https://cdn-images-1.medium.com/max/455/1*snTXFElFuQLSFDnvZKJ6IA.png)
 
