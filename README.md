@@ -16,10 +16,10 @@ You must have installed python 3 in you computer.
 
 ## What you will learn
 
- * [Chapter 1: Introduction](https://github.com/javiabellan/machine-learning/blob/master/chapter1.md)
- * [Chapter 2: Models]
- * [Chapter 3:]
- * [Chapter 4:]
+ * [Chapter 1: Introduction](https://github.com/javiabellan/machine-learning/blob/master/chapter-1)
+ * [Chapter 2: Models](https://github.com/javiabellan/machine-learning/blob/master/chapter-2)
+ * [Chapter 3:](https://github.com/javiabellan/machine-learning/blob/master/chapter-3)
+ * [Chapter 4:](https://github.com/javiabellan/machine-learning/blob/master/chapter-4)
  * [Chapter 5:]
  * [Chapter 6:]
  * [Chapter 7:]
