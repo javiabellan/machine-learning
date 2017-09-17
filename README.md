@@ -24,3 +24,15 @@ You must have installed python 3 in you computer.
  * [Chapter 6:]
  * [Chapter 7:]
  * [Chapter 8:]
+
+
+## Good resources
+
+### Courses
+
+ * [Udacity](https://www.udacity.com/courses/machine-learning)
+
+### Youtube
+
+ * [The Math of Intelligence (by Siraj Raval)](https://www.youtube.com/playlist?list=PL2-dafEMk2A7mu0bSksCGMJEmeddU_H4D)
+ * [Machine Learning with Python (by sentdex)](https://www.youtube.com/playlist?list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v)
