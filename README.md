@@ -31,6 +31,7 @@ You must have installed python 3 in you computer.
 ### Courses
 
  * [Udacity](https://www.udacity.com/courses/machine-learning)
+ * [Coursera](https://www.coursera.org/learn/machine-learning)
 
 ### Youtube
 
