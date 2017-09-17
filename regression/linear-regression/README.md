@@ -9,4 +9,6 @@
 
 ## Gradient descent apprach
 
-Take a look at [this Siraj video](https://youtu.be/UIFMLK2nj_w?t=2m) o visit [this webpage](https://spin.atomicobject.com/2014/06/24/gradient-descent-linear-regression/) for a more detailed explanation. 
+Take a look at [this Siraj video](https://youtu.be/UIFMLK2nj_w?t=2m) o visit [this webpage](https://spin.atomicobject.com/2014/06/24/gradient-descent-linear-regression/) for a more detailed explanation.
+
+![image](https://github.com/mattnedrich/GradientDescentExample/blob/master/gradient_descent_example.gif)
