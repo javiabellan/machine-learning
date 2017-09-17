@@ -33,7 +33,9 @@ Data is everything you can imagine: images, music, stock prices, etc. Usually we
 
 That is the intelligence part, following with the human analogy, the model would be the brain. It is the part that process the data and learns from it.
 
-In a digital world 
+There are a lot of machine learning models. We are going to see only the most populars ones.
+
+![mind map](https://jixta.files.wordpress.com/2015/11/machinelearningalgorithms.png)
 
 
 # Predictive models
