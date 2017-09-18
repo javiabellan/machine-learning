@@ -2,7 +2,7 @@
 
 [Linear regresion](https://en.wikipedia.org/wiki/Linear_regression) is the most basic type of regression and is about to trace a line that predics the most probale spot of a new point.
 
-![image](https://github.com/javiabellan/machine-learning/blob/master/regression/linear-regression/linearRegression.png)
+![image](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/linearRegression.png)
 
 
 ## One step apprach
