@@ -7,6 +7,7 @@
 
 ## One step apprach
 
+Look at [this video](https://www.youtube.com/watch?v=SvmueyhSkgQ&index=8&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v)
 
 
 ## Gradient descent apprach
