@@ -22,7 +22,7 @@ It is **function approximation**. So it's about figuring out the common rule (a 
    
 ## Unsupervised learning
 
-Is about looking at raw data and inferring its structure just by lookng at the inputs and the realtion between them. So it's about **description**.
+It is **description**. So it's about looking **unlabeled data** and inferring its structure just by observing the data samples and the realtion between them.
 
 
  * [Clustering](https://github.com/javiabellan/machine-learning/tree/master/reference/models/clustering)
