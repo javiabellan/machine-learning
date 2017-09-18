@@ -6,11 +6,12 @@
 
 ## Supervised learning
 
-Is the task of inferring a function from labeled dataset.
+It is **function approximation**. So it's about figuring out the common rule (a function) that applies to our labeled data, in order to predict new unlabeled data in the future.
 
-> 1) Collect labeled data
-> 2) Inferring a function (function approximation)
-> 3) Be able to label new data!
+> #### Steps:
+> 1. Collect labeled data
+> 2. Inferring a function.
+> 3. Predict new data!
 
  * [Clasification](https://github.com/javiabellan/machine-learning/tree/master/reference/models/classification)
    * [Artificial neural network](https://github.com/javiabellan/machine-learning/tree/master/reference/models/classification/artificial-neural-network)
