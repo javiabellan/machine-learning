@@ -34,24 +34,29 @@ Take this path whether you have some previous experience in machine learning or 
 ## Good resources
 
 > #### Legend
-> * 😃 Easy and fun
-> * 🤓 Harder and mathematical
+> * 😃 Beginner
+> * 🤠 Intermediate
+> * 🤓 Advanced
 > * 🐍 Examples in python
 
 
 ### Youtube 📺
 
+ * [★★★ The Math of Intelligence (by Siraj Raval)](https://www.youtube.com/playlist?list=PL2-dafEMk2A7mu0bSksCGMJEmeddU_H4D) 🤠 🐍
  * [★★★ Learning From Data (by Yaser Abu-Mostafa)](https://www.youtube.com/playlist?list=PLD63A284B7615313A) 🤓
- * [★★★ The Math of Intelligence (by Siraj Raval)](https://www.youtube.com/playlist?list=PL2-dafEMk2A7mu0bSksCGMJEmeddU_H4D) 😃 🐍
  * [★★☆ Machine Learning with Python (by sentdex)](https://www.youtube.com/playlist?list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v) 🐍
 
 ### Courses ✍
 
  * [Udacity](https://www.udacity.com/courses/machine-learning)
+   * [★★★ Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120) 😃
+   * [★★★ Machine Learning](https://www.udacity.com/course/machine-learning--ud262) 🤠
+   * [★★★ Machine Learning: Unsupervised Learning](https://www.udacity.com/course/machine-learning-unsupervised-learning--ud741) 🤠
+   * [★★★ Reinforcement Learning](https://www.udacity.com/course/reinforcement-learning--ud600) 🤓
  * [Coursera](https://www.coursera.org/learn/machine-learning)
 
 ### Articles & blogs 📰
- * [Chris Olah](http://colah.github.io)
- * [Distill](https://distill.pub)
+ * [★★★ Chris Olah](http://colah.github.io) 🤓
+ * [★★★ Distill](https://distill.pub) 🤓
 
 ### Books 📚
