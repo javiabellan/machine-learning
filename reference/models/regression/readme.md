@@ -6,4 +6,4 @@ Use a function to aproximate a buch of data points
 
 
 
- 1. [Linear regression](https://github.com/javiabellan/machine-learning/blob/master/regression/linear-regression)
+ 1. [Linear regression](https://github.com/javiabellan/machine-learning/tree/master/reference/models/regression/linear-regression)
