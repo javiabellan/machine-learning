@@ -36,13 +36,13 @@ You must have installed python 3 in you computer.
 
 ### Youtube 📺
 
- * ★★★ [Learning From Data (by Yaser Abu-Mostafa)](https://www.youtube.com/playlist?list=PLD63A284B7615313A) 🤓
- * ★★★ [The Math of Intelligence (by Siraj Raval)](https://www.youtube.com/playlist?list=PL2-dafEMk2A7mu0bSksCGMJEmeddU_H4D) 😃 🐍
- * ★★☆ [Machine Learning with Python (by sentdex)](https://www.youtube.com/playlist?list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v) 🐍
+ * [★★★ Learning From Data (by Yaser Abu-Mostafa)](https://www.youtube.com/playlist?list=PLD63A284B7615313A) 🤓
+ * [★★★ The Math of Intelligence (by Siraj Raval)](https://www.youtube.com/playlist?list=PL2-dafEMk2A7mu0bSksCGMJEmeddU_H4D) 😃 🐍
+ * [★★☆ Machine Learning with Python (by sentdex)](https://www.youtube.com/playlist?list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v) 🐍
 
 ### Courses ✍🏻
 
  * [Udacity](https://www.udacity.com/courses/machine-learning)
  * [Coursera](https://www.coursera.org/learn/machine-learning)
  
-### Books 
+### Books 📚
