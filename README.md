@@ -1,4 +1,4 @@
-# Machine learning course
+# Machine learning
 
 ![ML](https://www.lumagate.com/hubfs/Machine-Learning-header.png)
 
