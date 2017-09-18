@@ -10,11 +10,26 @@ This course is a series of explanations (with code) about the main concepts of m
 
 To understand this course, you must have some experience with programming (all the code will be in Python). And also be good math and statistics (I dont have a strong mathematical backgroud, so don't worry).
 
-#### System requirements 🖥️
+#### System requirements 🖥
 
 You must have installed python 3 in you computer.
 
-## What you will learn
+## Self taught learning
+
+Take this path whether you have some previous experience in machine learning or you only want to learn specific topics of ML. For a complete mind map of machine learning go here.
+
+### Models
+
+ * [Clasification](https://github.com/javiabellan/machine-learning/tree/master/classification)
+   * [Artificial neural network](https://github.com/javiabellan/machine-learning/tree/master/classification/artificial-neural-network)
+   * Support Vector Machine
+   * [Decision tree](https://github.com/javiabellan/machine-learning/tree/master/classification/decision-tree)
+ * [Regression](https://github.com/javiabellan/machine-learning/tree/master/regression)
+   * [Linear regression](https://github.com/javiabellan/machine-learning/tree/master/regression/linear-regression)
+ * [Clustering](https://github.com/javiabellan/machine-learning/tree/master/clustering)
+ * [Dimensionality reduction](https://github.com/javiabellan/machine-learning/tree/master/dimension-reduction)
+
+## Guided learninig
 
  * [Chapter 1: Introduction](https://github.com/javiabellan/machine-learning/blob/master/chapter-1)
  * [Chapter 2: Models](https://github.com/javiabellan/machine-learning/blob/master/chapter-2)
