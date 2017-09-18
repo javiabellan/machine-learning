@@ -4,7 +4,7 @@
 
 This course is a series of explanations (with code) about the main concepts of machine learning. I wrote this guide to myself in order to validate my own knowledge, and also for helping other people that want to dive into the topic.
 
-## Prerequisites ✔️
+## Prerequisites
 
 #### Previous knowledge 🤔
 
@@ -14,7 +14,7 @@ To understand this course, you must have some experience with programming (all t
 
 You must have installed python 3 in you computer.
 
-## What you will learn 💡
+## What you will learn
 
  * [Chapter 1: Introduction](https://github.com/javiabellan/machine-learning/blob/master/chapter-1)
  * [Chapter 2: Models](https://github.com/javiabellan/machine-learning/blob/master/chapter-2)
@@ -25,7 +25,7 @@ You must have installed python 3 in you computer.
  * [Chapter 7:]
  * [Chapter 8:]
 
-## Good resources 🎒
+## Good resources
 
 > #### Legend
 > * 😃 Easy and fun
