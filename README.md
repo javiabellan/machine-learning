@@ -31,7 +31,7 @@ Take this path whether you have some previous experience in machine learning or 
  * [Chapter 7:]
  * [Chapter 8:]
 
-## Good resources
+## Great resources
 
 > #### Legend
 > * 😃 Beginner
