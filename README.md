@@ -14,25 +14,16 @@ To understand this course, you must have some experience with programming (all t
 
 You must have installed python 3 in you computer.
 
-## [Self taught learning](https://github.com/javiabellan/machine-learning/tree/master/self-taught.md)
+## [Reference (self taught learning)](https://github.com/javiabellan/machine-learning/tree/master/reference)
 
 Take this path whether you have some previous experience in machine learning or you only want to learn specific topics of ML. For a complete mind map of machine learning go here.
 
-### Models
+ * [Models](https://github.com/javiabellan/machine-learning/tree/master/reference/models)
 
- * [Clasification](https://github.com/javiabellan/machine-learning/tree/master/classification)
-   * [Artificial neural network](https://github.com/javiabellan/machine-learning/tree/master/classification/artificial-neural-network)
-   * Support Vector Machine
-   * [Decision tree](https://github.com/javiabellan/machine-learning/tree/master/classification/decision-tree)
- * [Regression](https://github.com/javiabellan/machine-learning/tree/master/regression)
-   * [Linear regression](https://github.com/javiabellan/machine-learning/tree/master/regression/linear-regression)
- * [Clustering](https://github.com/javiabellan/machine-learning/tree/master/clustering)
- * [Dimensionality reduction](https://github.com/javiabellan/machine-learning/tree/master/dimension-reduction)
+## [Course (guided learninig)](https://github.com/javiabellan/machine-learning/tree/master/course)
 
-## [Guided learninig](https://github.com/javiabellan/machine-learning/tree/master/guided.md)
-
- * [Chapter 1: Introduction](https://github.com/javiabellan/machine-learning/blob/master/chapter-1)
- * [Chapter 2: Models](https://github.com/javiabellan/machine-learning/blob/master/chapter-2)
+ * [Chapter 1: Introduction](https://github.com/javiabellan/machine-learning/blob/master/course/chapter-1)
+ * [Chapter 2: Models](https://github.com/javiabellan/machine-learning/blob/master/course/chapter-2)
  * [Chapter 3:]
  * [Chapter 4:]
  * [Chapter 5:]
