@@ -29,3 +29,5 @@ It is **description**. So it's about looking at **unlabeled data** and detect it
  * [Dimensionality reduction](https://github.com/javiabellan/machine-learning/tree/master/reference/models/dimension-reduction)
  
 ## Reinforcement learning
+
+It can be seen as an hybrid of supervised learning and unsupervised learning in terms that in supervised learning you get an inmedate feedback (the labeled data) and in unsupervised learning you never get a feedback (unlabeled data). But in reinforcement learning, the feedback is obtained progressively in time, as long as you commit certains actions.
