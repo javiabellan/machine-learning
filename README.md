@@ -49,7 +49,7 @@ Take this path whether you have some previous experience in machine learning or 
 ### Courses ✍
 
  * [Udacity](https://www.udacity.com/courses/machine-learning)
-   * [★★★ Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120) 😃
+   * [★★☆ Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120) 😃
    * [★★★ Machine Learning](https://www.udacity.com/course/machine-learning--ud262) 🤠
    * [★★★ Machine Learning: Unsupervised Learning](https://www.udacity.com/course/machine-learning-unsupervised-learning--ud741) 🤠
    * [★★★ Reinforcement Learning](https://www.udacity.com/course/reinforcement-learning--ud600) 🤓
