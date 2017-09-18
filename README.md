@@ -45,9 +45,13 @@ Take this path whether you have some previous experience in machine learning or 
  * [★★★ The Math of Intelligence (by Siraj Raval)](https://www.youtube.com/playlist?list=PL2-dafEMk2A7mu0bSksCGMJEmeddU_H4D) 😃 🐍
  * [★★☆ Machine Learning with Python (by sentdex)](https://www.youtube.com/playlist?list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v) 🐍
 
-### Courses ✍🏻
+### Courses ✍
 
  * [Udacity](https://www.udacity.com/courses/machine-learning)
  * [Coursera](https://www.coursera.org/learn/machine-learning)
- 
+
+### Articles & blogs 📰
+ * [Chris Olah](http://colah.github.io)
+ * [Distill](https://distill.pub)
+
 ### Books 📚
