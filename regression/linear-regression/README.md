@@ -16,6 +16,12 @@ Take a look at [this Siraj video](https://youtu.be/UIFMLK2nj_w?t=2m) o visit [th
 ![image](https://github.com/mattnedrich/GradientDescentExample/blob/master/gradient_descent_example.gif)
 
 
+## One step VS Gradient descent
+
+ * [link 1](https://stackoverflow.com/questions/18191890/why-gradient-descent-when-we-can-solve-linear-regression-analytically)
+ * [link 2](https://stats.stackexchange.com/questions/278755/why-use-gradient-descent-for-linear-regression-when-a-closed-form-math-solution)
+
+
 ## TODO
 
 [repasar este repo](https://github.com/alberduris/The_Math_of_Intelligence/tree/master/Week1)
