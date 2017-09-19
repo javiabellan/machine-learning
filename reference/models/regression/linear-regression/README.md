@@ -12,10 +12,20 @@ Look at [this video](https://www.youtube.com/watch?v=SvmueyhSkgQ&index=8&list=PL
 
 ## Gradient descent apprach
 
-Take a look at [this Siraj video](https://youtu.be/UIFMLK2nj_w?t=2m) o visit [this webpage](https://spin.atomicobject.com/2014/06/24/gradient-descent-linear-regression/) for a more detailed explanation.
+Another way to obtain the line is using gradient descent:
+
+ 1. First, we declare iniaal values for the variables we want to optimize: 'm' and 'n'.
+ 2. Then, we define an error function to describe how well our regression performs.
+ 3. The
+
+![image](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/linearReg-gradDesc.png)
 
 ![image](https://github.com/mattnedrich/GradientDescentExample/blob/master/gradient_descent_example.gif)
 
+#### More info
+ * [Siraj inntroductory video](https://youtu.be/UIFMLK2nj_w?t=2m)
+ * [Detailed explanation](https://spin.atomicobject.com/2014/06/24/gradient-descent-linear-regression/)
+ * [A github repo](https://github.com/alberduris/The_Math_of_Intelligence/tree/master/Week1)
 
 ## One step VS Gradient descent
 
