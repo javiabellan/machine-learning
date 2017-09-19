@@ -15,9 +15,45 @@ Look at [this video](https://www.youtube.com/watch?v=SvmueyhSkgQ&index=8&list=PL
 Another way to obtain the line is using gradient descent:
 
  1. First, we declare iniaal values for the variables we want to optimize: 'm' and 'n'.
+```python
+initial_m = 0
+initial_n = 0
+ ```
  2. Then, we define an error function to describe how well our regression performs.
- 3. The
+ ![image](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/square-error.png)
+```python
+def computeError(m, n):
+	totalError = 0
+	for i in range(len(points)):
+		x      = points[i, 0]
+		target = points[i, 1]
+		output = m*x + n
+		totalError += (target - output)**2
+	return totalError / float(len(points))
+```
+ 3. For knowing the direction to descent in each iteration of the gradient descent, we need to compute the partial derivatives of the variables respect to the function. Because the derivative of a function says if the function is incrasing or decreasing. 
+ ![image](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/derivatives.png)
+```python
+def stepGradient(m, n):
+	m_gradient = 0
+	n_gradient = 0
+	N = float(len(points))
 
+	for i in range(len(points)):
+		x = points[i, 0]
+		y = points[i, 1]
+
+		# Partial derivative respect 'm'
+		m_gradient += -(2/N) * x * (y - (m*x + n))
+
+		#Partial derivative respect 'n'
+		n_gradient += -(2/N) * (y - (m*x + n))
+
+	new_m = m - (learningRate * m_gradient)
+	new_n = n - (learningRate * n_gradient)
+
+	return new_m, new_n
+```
 ![image](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/linearReg-gradDesc.png)
 
 ![image](https://github.com/mattnedrich/GradientDescentExample/blob/master/gradient_descent_example.gif)
