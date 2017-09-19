@@ -25,14 +25,13 @@ new_w = w + learningRate*gradient
 
 ## Sigmoid
 
-### Function
+One of the interesting properties of the Sigmoid function is that the derivative can be expresed in terms of the function itself. The reason this is appealing is because it can save computation time, as we can just reuse the same calculated values for the forward pass, and for the gradient
 
-`output = 1 / (1 + e^(-x))`
+**Function:** `output = 1 / (1 + e^(-x))`
 
-![imagen](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/600px-Logistic-curve.svg.png)
+**Derivative:** `gradient = 1 / (1 + e^(-x))`
 
-### Derivative
-
+![imagen](https://github.com/javiabellan/machine-learning/blob/master/reference/math/images/sigmoid-derivative.jpg)
 
 
 
