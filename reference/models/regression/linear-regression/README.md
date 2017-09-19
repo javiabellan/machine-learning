@@ -58,9 +58,27 @@ def stepGradient(m, n):
 
 	return new_m, new_n
 ```
-![image](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/linearReg-gradDesc.png)
 
-![image](https://github.com/mattnedrich/GradientDescentExample/blob/master/gradient_descent_example.gif)
+4. Finally we iterate the gradient descent until we obtan a good solution (a minimun) for tha variables 'm' and 'n'.
+
+```python
+def linearRegr_gradDesc():
+	m = initial_m
+	n = initial_n
+
+	for i in range(iterations):
+		m, n = stepGradient(m, n)
+	return m, n
+```
+
+```
+After  1000  iterations:
+Slope (m)     =  1.47774408519
+Intercept (n) =  0.0889365199374
+Square error  =  112.614810116
+```
+
+![image](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/linearReg-gradDesc.png)
 
 #### More info
  * [Siraj inntroductory video](https://youtu.be/UIFMLK2nj_w?t=2m)
