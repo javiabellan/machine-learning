@@ -14,13 +14,15 @@ To understand this course, you must have some experience with programming (all t
 
 You must have installed python 3 in you computer.
 
-## [Reference (self taught learning)](https://github.com/javiabellan/machine-learning/tree/master/reference)
+## [Reference](https://github.com/javiabellan/machine-learning/tree/master/reference)
 
-Take this path whether you have some previous experience in machine learning or you only want to learn specific topics of ML. For a complete mind map of machine learning go here.
+Self taught learning. Take this path whether you have some previous experience in machine learning or you only want to learn specific topics of ML. For a complete mind map of machine learning go here.
 
  * [Models](https://github.com/javiabellan/machine-learning/tree/master/reference/models)
 
-## [Course (guided learninig)](https://github.com/javiabellan/machine-learning/tree/master/course)
+## [Course](https://github.com/javiabellan/machine-learning/tree/master/course)
+
+Guided learninig.
 
  * [Chapter 1: Introduction](https://github.com/javiabellan/machine-learning/blob/master/course/chapter-1)
  * [Chapter 2: Models](https://github.com/javiabellan/machine-learning/blob/master/course/chapter-2)
