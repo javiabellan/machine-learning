@@ -21,9 +21,20 @@ new_w = w + learningRate*gradient
 	w1 = w1 + learningRate*w1_gradient
 	w2 = w2 + learningRate*w2_gradient
 
-==============================================
+---
 
 ## Sigmoid
+
+### Function
+
+`output = 1 / (1 + e^(-x))`
+
+![imagen](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/600px-Logistic-curve.svg.png)
+
+### Derivative
+
+
+
 
 > #### Function:
 > output = 1 / (1 + e^( -(w0 + w1*x1 + w2*x2) ))
