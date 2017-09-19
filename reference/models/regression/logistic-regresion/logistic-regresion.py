@@ -13,19 +13,3 @@ X1		X2		Y
 6.922596716	1.77106367	1
 8.675418651	-0.2420686549	1
 7.673756466	3.508563011	1
-
-
-
-function:
-y = 1 / (1 + e^( -(b0+b1*x1+b2*x2) ))
-
-varaibles to optimize:
-b0, b1, b2
-
-==============================================
-
-gradiente = (y – prediction) * prediction * (1 – prediction) * x
-
-
-
-new_b = b + learningRate * gradiente
