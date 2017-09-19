@@ -1,10 +1,13 @@
-## Name???
+## Linear model
 
-This function generates a line (k=1), a plane (k=2), or a hyperplane (k>2)
+This function generates a linear function depending of the number of variables (k).
 
-#### Function:
-> #### Function:
-> `output = w0 + w1*x1 + w2*x2`
+ * K=1: a line
+ * K=2: a plane
+ * K>2: a hyperplane
+
+**Function:** `output = w0 + w1*x1 + w2*x2 + ... wk*xk`
+
 
 > #### Varaibles to optimize:
 > `w0`, `w1`, `w2`
