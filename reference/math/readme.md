@@ -29,7 +29,7 @@ One of the interesting properties of the Sigmoid function is that the derivative
 
 **Function:** `output = 1 / (1 + e^(-x))`
 
-**Derivative:** `gradient = 1 / (1 + e^(-x))`
+**Derivative:** `gradient = output * (1-output)`
 
 ![imagen](https://github.com/javiabellan/machine-learning/blob/master/reference/math/images/sigmoid-derivative.jpg)
 
