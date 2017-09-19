@@ -7,7 +7,8 @@
 
 ## One step apprach ([code](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/linearRegression.py))
 
-Look at [this video](https://www.youtube.com/watch?v=SvmueyhSkgQ&index=8&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v)
+#### More info
+ * [Video](https://www.youtube.com/watch?v=SvmueyhSkgQ&index=8&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v)
 
 
 ## Gradient descent apprach ([code](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/linearRegression-GD.py))
@@ -82,12 +83,7 @@ Square error  =  112.614810116
  * [Detailed explanation](https://spin.atomicobject.com/2014/06/24/gradient-descent-linear-regression/)
  * [A github repo](https://github.com/alberduris/The_Math_of_Intelligence/tree/master/Week1)
 
-## One step VS Gradient descent
+## One step vs gradient descent
 
  * [link 1](https://stackoverflow.com/questions/18191890/why-gradient-descent-when-we-can-solve-linear-regression-analytically)
  * [link 2](https://stats.stackexchange.com/questions/278755/why-use-gradient-descent-for-linear-regression-when-a-closed-form-math-solution)
-
-
-## TODO
-
-[repasar este repo](https://github.com/alberduris/The_Math_of_Intelligence/tree/master/Week1)
