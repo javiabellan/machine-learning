@@ -5,7 +5,7 @@
 ![image](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/linearRegression.png)
 
 
-## One step apprach
+## One step apprach ([code](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/linearRegression.py))
 
 Look at [this video](https://www.youtube.com/watch?v=SvmueyhSkgQ&index=8&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v)
 
@@ -21,8 +21,6 @@ initial_n = 0
  ```
  2. Then, we define an error function (square error) to describe how well our regression performs.
  
-![image](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/square-error.png)
- 
 ```python
 def computeError(m, n):
 	totalError = 0
@@ -33,9 +31,8 @@ def computeError(m, n):
 		totalError += (target - output)**2
 	return totalError / float(len(points))
 ```
+
  3. For knowing the direction to descent in each iteration of the gradient descent, we need to compute the partial derivatives of the variables respect to the function. Because the derivative of a function says if the function is incrasing or decreasing.
- 
-![image](https://github.com/javiabellan/machine-learning/blob/master/reference/models/regression/linear-regression/derivatives.png)
 
 ```python
 def stepGradient(m, n):
