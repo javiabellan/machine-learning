@@ -6,7 +6,7 @@ Gradient descent is minimizing the error of a function.
 >
 >Imagine that you are a blind person between the mountains, your position (x,y axis) represents the 2 parameters of some function,
 and your height (z axis) represents the error in that position. So your goal is to get as low as possible in order to minimize the error.
-You cant see the lowest spot, so you decide just go downhill. You can get the lowest valley or get suck in a local minimum.
+You cant see the lowest spot, so you decide just go downhill. You can get the global minimum (lowest valley) or get suck in a local minimum.
 >
 >![image](http://librimind.com/wp-content/uploads/2016/03/rosenbrock-nag-copy.png)
 >
