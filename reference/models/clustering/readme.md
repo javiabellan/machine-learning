@@ -1,3 +1,0 @@
-# Clustering models
-
-...explanation here...
