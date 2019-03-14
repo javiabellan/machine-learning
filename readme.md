@@ -26,6 +26,7 @@
            --><a href="https://www.kaggle.com/kashnitsky/a2-demo-analyzing-cardiovascular-data-solution">Solution</a> (Analyzing cardiovascular disease data)</li>
         </ul>
       </td>
+    </tr>
     <tr>
       <td><img width="300" src="posts/img/topic3-teaser.png" /></td>
       <td>
@@ -37,6 +38,64 @@
           <li><a href="https://www.kaggle.com/kashnitsky/a3-demo-decision-trees">Assignment</a>
           --><a href="https://www.kaggle.com/kashnitsky/a3-demo-decision-trees-solution">Solution</a></li>
         </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><img width="300" src="posts/img/topic4-teaser.png" /></td>
+      <td>
+        <h2>4. Linear Classification and Regression</h2>
+        <ul>
+          <li>Part 1. Ordinary Least Squares</li>
+          <li>Part 2. Logistic Regression</li>
+          <li>Part 3. Regularization</li>
+          <li>Part 4. Pros and Cons</li>
+          <li>Part 5. Validation and learning curves</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><img width="300" src="posts/img/topic5-teaser.png" /></td>
+      <td>
+        <h2>5. Ensembles of algorithms and random forest</h2>
+        <ul>
+          <li>Part 1. Bagging</li>
+          <li>Part 2. Random Forest</li>
+          <li>Part 3. Feature importance</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><img width="300" src="posts/img/topic6-teaser.png" /></td>
+      <td>
+        <h2>6. Feature engineering and feature selection</h2>
+      </td>
+    </tr>
+    <tr>
+      <td><img width="300" src="posts/img/topic7-teaser.jpg" /></td>
+      <td>
+        <h2>7. Unsupervised learning</h2>
+      </td>
+    </tr>
+    <tr>
+      <td><img width="300" src="posts/img/topic8-teaser.png" /></td>
+      <td>
+        <h2>8. Vowpal Wabbit: Learning with Gigabytes of Data</h2>
+      </td>
+    </tr>
+    <tr>
+      <td><img width="300" src="posts/img/topic9-teaser.jpg" /></td>
+      <td>
+        <h2>9. Time series analysis in Python</h2>
+        <ul>
+          <li>Part 1. Basics</li>
+          <li>Part 2. Predicting the future with Facebook Prophet</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><img width="300" src="posts/img/topic10-teaser.jpg" /></td>
+      <td>
+        <h2>10. Gradient Boosting</h2>
       </td>
     </tr>
   </tbody>
