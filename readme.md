@@ -1,8 +1,5 @@
-# Machine learning
+![title](posts/img/ods_title.jpg)
 
-![ML](https://www.lumagate.com/hubfs/Machine-Learning-header.png)
-
-This course is a series of explanations (with code) about the main concepts of machine learning. I wrote this guide to myself in order to validate my own knowledge, and also for helping other people that want to dive into the topic.
 
 ## Prerequisites
 
