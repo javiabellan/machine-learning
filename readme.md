@@ -1,7 +1,8 @@
-![title](posts/img/ods_title.jpg)
+<a href="https://mlcourse.ai"><img src="posts/img/ods_title.jpg"></a>
 
 <table>
   <tbody>
+    <!----------------------------------------------------- 1. EDA WITH PANDAS ----------------------------------------------------->
     <tr>
       <td><img width="300" src="posts/img/topic1-teaser.jpg" /></td>
       <td>
@@ -14,6 +15,7 @@
         </ul>
       </td>
     </tr>
+    <!---------------------------------------------------- 2. EDA VISUALIZATION ---------------------------------------------------->
     <tr>
       <td><img width="300" src="posts/img/topic2-teaser.jpg" /></td>
       <td>
@@ -27,6 +29,7 @@
         </ul>
       </td>
     </tr>
+    <!----------------------------------------------------- 3. DECISION TREES ----------------------------------------------------->
     <tr>
       <td><img width="300" src="posts/img/topic3-teaser.png" /></td>
       <td>
@@ -40,6 +43,7 @@
         </ul>
       </td>
     </tr>
+    <!--------------------------------------------------- 4. LINEAR CLASS & REGR --------------------------------------------------->
     <tr>
       <td><img width="300" src="posts/img/topic4-teaser.png" /></td>
       <td>
@@ -52,9 +56,12 @@
           <li><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic04_linear_models/topic4_linear_models_part3_regul_example.ipynb?flush-cache=true">Notebook 3</a>: Regularization</li>
           <li><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic04_linear_models/topic4_linear_models_part4_good_bad_logit_movie_reviews_XOR.ipynb?flush_cache=true">Notebook 4</a>: Pros and Cons</li>
           <li><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic04_linear_models/topic4_linear_models_part5_valid_learning_curves.ipynb?flush_cache=true">Notebook 5</a>: Validation and learning curves</li>
+          <li><a href="https://www.kaggle.com/kashnitsky/a4-demo-sarcasm-detection-with-logit">Assignment</a>
+          --><a href="https://www.kaggle.com/kashnitsky/a4-demo-sarcasm-detection-with-logit-solution">Solution</a> (Sarcasm detection)</li>
         </ul>
       </td>
     </tr>
+    <!----------------------------------------------------- 5. RANDOM FOREST ----------------------------------------------------->
     <tr>
       <td><img width="300" src="posts/img/topic5-teaser.png" /></td>
       <td>
@@ -63,44 +70,78 @@
           <li><a href="https://youtu.be/neXJL-AqI_c">Video (theo)</a>: Ensembles and Random Forest.</li>
           <li><a href="https://youtu.be/aBOMYqGUlWQ">Video (theo)</a>: Classification metrics.</li>
           <li><a href="https://youtu.be/FmKU-1LZGoE">Video (prac)</a>: Business task: predicting paying users.</li>
-          <li><a href="">Notebook 1</a>: Bagging</li>
-          <li><a href="">Notebook 2</a>: Random Forest</li>
-          <li><a href="">Notebook 3</a>: Feature importance</li>
+          <li><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic05_ensembles_random_forests/topic5_part1_bagging.ipynb?flush_cache=true">Notebook 1</a>: Bagging</li>
+          <li><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic05_ensembles_random_forests/topic5_part2_random_forest.ipynb?flush_cache=true">Notebook 2</a>: Random Forest</li>
+          <li><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic05_ensembles_random_forests/topic5_part3_feature_importance.ipynb?flush_cache=true">Notebook 3</a>: Feature importance</li>
+          <li><a href="https://www.kaggle.com/kashnitsky/a5-demo-logit-and-rf-for-credit-scoring">Assignment</a>: Logistic Regression and Random Forest in the credit scoring problem</li>
         </ul>
       </td>
     </tr>
+    <!--------------------------------------------------- 6. FEATURE ENGINEERING --------------------------------------------------->
     <tr>
       <td><img width="300" src="posts/img/topic6-teaser.png" /></td>
       <td>
         <h2>6. Feature engineering and feature selection</h2>
+        <ul>
+          <li><a href="https://youtu.be/ne-MfRfYs_c">Video (theo)</a>: Linear regression and regularization.</li>
+          <li><a href="https://youtu.be/B8yIaIEMyIc">Video (prac)</a>: LASSO & Ridge, LTV prediction.</li>
+          <li><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic06_features_regression/topic6_feature_engineering_feature_selection.ipynb?flush_cache=true">Notebook</a>: Feature Engineering and Feature Selection.</li>
+          <li><a href="https://www.kaggle.com/kashnitsky/a6-demo-linear-models-and-rf-for-regression">Assignment</a>
+          --><a href="https://www.kaggle.com/kashnitsky/a6-demo-linear-models-and-rf-for-regression-solution">Solution</a> Exploring OLS, Lasso and Random Forest in a regression task.</li>
+        </ul>
       </td>
     </tr>
+    <!-------------------------------------------------- 7. UNSUPERVISED LEARNING -------------------------------------------------->
     <tr>
       <td><img width="300" src="posts/img/topic7-teaser.jpg" /></td>
       <td>
         <h2>7. Unsupervised learning</h2>
+        <ul>
+          <li><a href="https://youtu.be/-AswHf7h0I4">Video (theo & prac)</a>: Principal Component Analysis.</li>
+          <li><a href="https://youtu.be/eVplCo-w4XE">Video (theo & prac)</a>: Clustering.</li>
+          <li><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic07_unsupervised/topic7_pca_clustering.ipynb?flush_cache=true">Notebook</a>: PCA and clustering.</li>
+          <li><a href="https://www.kaggle.com/kashnitsky/a7-demo-unsupervised-learning">Assignment</a></li>
+        </ul>
       </td>
     </tr>
+    <!------------------------------------------------------ 8. VOWPAL WABBIT ------------------------------------------------------>
     <tr>
       <td><img width="300" src="posts/img/topic8-teaser.png" /></td>
       <td>
         <h2>8. Vowpal Wabbit: Learning with Gigabytes of Data</h2>
-      </td>
-    </tr>
-    <tr>
-      <td><img width="300" src="posts/img/topic9-teaser.jpg" /></td>
-      <td>
-        <h2>9. Time series analysis in Python</h2>
         <ul>
-          <li>Part 1. Basics</li>
-          <li>Part 2. Predicting the future with Facebook Prophet</li>
+          <li><a href="https://youtu.be/EUSXbdzaQE8">Video</a>: Stochastic Gradient Descent for classification and regression.</li>
+          <li><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic08_sgd_hashing_vowpal_wabbit/topic8_sgd_hashing_vowpal_wabbit.ipynb?flush_cache=true">Notebook</a>: Vowpal Wabbit: Learning with Gigabytes of Data</li>
+          <li><a href="https://www.kaggle.com/kashnitsky/a8-demo-implementing-online-regressor">Assignment</a>
+          --><a href="https://www.kaggle.com/kashnitsky/a8-demo-implementing-online-regressor-solution">Solution</a>: Implementation of online regressor</li>
         </ul>
       </td>
     </tr>
+    <!--------------------------------------------------- 9. TIME SERIES ANALYSIS --------------------------------------------------->
+    <tr>
+      <td><img width="300" src="posts/img/topic9-teaser.jpg" /></td>
+      <td>
+        <h2>9. Time series analysis</h2>
+        <ul>
+          <li><a href="https://youtu.be/_9lBwXnbOd8">Video</a>: Time series analysis with Python (ARIMA, Prophet).</li>
+          <li><a href="https://mlcourse.ai/notebooks/blob/master/jupyter_english/topic09_time_series/topic9_part1_time_series_python.ipynb?flush_cache=true">Notebook 1</a>: Part 1: Basics</li>
+          <li><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic09_time_series/topic9_part2_facebook_prophet.ipynb?flush_cache=true">Notebook 2</a>: Part 2: Predicting the future with Facebook Prophet</li>
+          <li><a href="https://www.kaggle.com/kashnitsky/a9-demo-time-series-analysis">Assignment</a>
+          --><a href="https://www.kaggle.com/kashnitsky/a9-demo-time-series-analysis-solution">Solution</a></li>
+        </ul>
+      </td>
+    </tr>
+    <!---------------------------------------------------- 10. GRADIENT BOOSTING ---------------------------------------------------->
     <tr>
       <td><img width="300" src="posts/img/topic10-teaser.jpg" /></td>
       <td>
-        <h2>10. Gradient Boosting</h2>
+        <h2>10. Gradient boosting</h2>
+        <ul>
+          <li><a href="https://youtu.be/g0ZOtzZqdqk">Video (theo)</a>: Gradient boosting basics.</li>
+          <li><a href="https://youtu.be/V5158Oug4W8">Video (prac)</a>: Key ideas behind Xgboost, LightGBM, and CatBoost.</li>
+          <li><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic10_boosting/topic10_gradient_boosting.ipynb?flush_cache=true">Notebook</a></li>
+          <li><a href="https://www.kaggle.com/kashnitsky/assignment-10-gradient-boosting-and-flight-delays">Assignment</a>: Beating baseline in a competition</li>
+        </ul>
       </td>
     </tr>
   </tbody>
