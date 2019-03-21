@@ -146,3 +146,33 @@
     </tr>
   </tbody>
 </table>
+
+# 1. Exploratory data analysis with [Pandas](https://pandas.pydata.org)
+- Import pandas library `import pandas as pd`
+- Read a CSV file into a pandas dataframe `df = pd.read_csv("file.csv")`
+- Get dataframe info:
+  - Show firt/last rows `df.head()` `df.tail()`
+  - Get shape: `df.shape`. Get columns: `df.columns.tolist()`.
+  - Print some info (like missings and types): `df.info()`
+  - Has missings? `df.isnull().any().any()`
+  - Describe numerical atributes `df.describe()`
+  - Describe categorical atributes `df.describe(include=['object', 'bool'])`
+- Do some data exploration
+  - Get some column (return a series) `df["column"]`
+  - Get some columns (return a df) `df[["column1", "column1"]]`
+  - Apply function to column `.mean()` `.std()` `.median()` `.max()` `.min()` `.count()`
+  - Count unique values `.value_counts()`
+- Filter dataframe rows
+  - One condition `df[df["column"]==1]`
+  - Multiple conditions `df[(df["column1"]==1) & (df["column2"]=='No')]`
+- Save it in a CSV [`df.to_csv("sub.csv", index=False)`](http://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-store-in-csv)
+
+# 2. Visualization with [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
+
+# 9. Time series analysis
+- Time series: Sequence of values of some feature (obtained in constant time periods).
+- Goal: Get the forecast (predict future values).
+
+# 10. Gradient boosting with Xgboost, LightGBM, and CatBoost
+- Time series: Sequence of values of some feature (obtained in constant time periods).
+- Goal: Get the forecast (predict future values).
