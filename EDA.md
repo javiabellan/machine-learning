@@ -85,13 +85,14 @@
 <tr>
 <td style="font-weight:bold; font-size:16px;">Multivariate Scatter Plot</td>
 <td style="font-weight:bold; font-size:16px;">Grouped Box Plot</td>
-<td style="font-weight:bold; font-size:16px;">Heatmap</td>
+<td style="font-weight:bold; font-size:16px;">Correlation matrix</td>
 <td style="font-weight:bold; font-size:16px;">Parallel Coordinates</td>
 </tr>
 <tr>
 <td>df.plot.scatter()</td>
 <td>df.plot.box()</td>
-<td>sns.heatmap</td>
+<td>cm = df[numerical].corr()
+sns.heatmap(cm)</td>
 <td>pd.plotting.parallel_coordinates</td>
 </tr>
 <!--
@@ -103,3 +104,12 @@
 </tr>
 -->
 </table>
+
+- Facets
+
+## Dimensionality reduction (Multivariate plotting in a 2D or 3D space)
+
+- Principal Component Analysis (PCA)
+- t-SNE
+
+
