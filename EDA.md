@@ -1,5 +1,14 @@
 # Data Visualization
 
+
+## Import packages
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
 ## Common plot parameters
 
     figsize=(12, 6),
@@ -10,35 +19,57 @@
 
 <table>
 <tr>
+<td><img src="https://pandas.pydata.org/pandas-docs/stable/_images/series_pie_plot.png" width="300px"/></td>
 <td><img src="https://i.imgur.com/skaZPhb.png" width="350px"/></td>
 <td><img src="https://i.imgur.com/gaNttYd.png" width="350px"/></td>
 <td><img src="https://i.imgur.com/pampioh.png"/></td>
-<td><img src="https://i.imgur.com/OSbuszd.png"/></td>
-
-<!--<td><img src="https://i.imgur.com/ydaMhT1.png" width="350px"/></td>
-<td><img src="https://i.imgur.com/WLAqDSV.png" width="350px"/></td>
-<td><img src="https://i.imgur.com/Tj2y9gH.png"/></td>
-<td><img src="https://i.imgur.com/X0qXLCu.png"/></td>-->
 </tr>
 <tr>
-<td style="font-weight:bold; font-size:16px;">Bar Chat</td>
-<td style="font-weight:bold; font-size:16px;">Line Chart</td>
-<td style="font-weight:bold; font-size:16px;">Area Chart</td>
-<td style="font-weight:bold; font-size:16px;">Histogram</td>
+<td style="font-weight:bold; font-size:16px;">Pie chart</td>
+<td style="font-weight:bold; font-size:16px;">Bar chart</td>
+<td style="font-weight:bold; font-size:16px;">Line chart</td>
+<td style="font-weight:bold; font-size:16px;">Area chart</td>
 </tr>
 <tr>
+<td>df.plot.pie()</td>
 <td>df.plot.bar()</td>
 <td>df.plot.line()</td>
 <td>df.plot.area()</td>
-<td>df.plot.hist()</td>
 </tr>
 <tr>
-<td>Good for nominal and small ordinal categorical data.</td>
-<td colspan="2">Good for ordinal categorical and interval data.</td>
-<td>Good for interval data.</td>
+<td colspan="2">Good for categorical data.</td>
+<td colspan="2">Good for ordinal categorical data.</td>
 </tr>
 </table>
 
+
+
+<table>
+<tr>
+<td><img src="https://i.imgur.com/OSbuszd.png"/></td>
+<td><img src="https://pandas.pydata.org/pandas-docs/stable/_images/kde_plot.png" width="200px/></td>
+<td><img src="https://s3.amazonaws.com/stackabuse/media/seaborn-library-data-visualization-python-part-1-13.png" width="200px/></td>
+<td><img src="https://i.stack.imgur.com/DhyZK.png" /></td>
+</tr>
+<tr>
+<td style="font-weight:bold; font-size:16px;">Histogram</td>
+<td style="font-weight:bold; font-size:16px;">Density plot</td>
+<td style="font-weight:bold; font-size:16px;">Box plot</td>
+<td style="font-weight:bold; font-size:16px;">Violin plot</td>
+</tr>
+<tr>
+<td>df.plot.hist()</td>
+<td>df.plot.kde()</td>
+<td>df.plot.box()
+sns.boxplot(df)</td>
+<td>sns.violinplot(df)</td>
+</tr>
+<tr>
+<td>Good for numerical data.</td>
+<td>Good for categorical data.</td>
+<td colspan="2">Good for ordinal categorical and interval data.</td>
+</tr>
+</table>
 
 
 ## Bivariate plotting (2 columns) with pandas
