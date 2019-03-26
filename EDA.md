@@ -15,7 +15,7 @@ import seaborn as sns
     color='mediumvioletred',
     fontsize=16
 
-## Univariate plotting (1 column) with pandas
+## Univariate plotting: Categorical data
 
 <table>
 <tr>
@@ -43,12 +43,13 @@ import seaborn as sns
 </table>
 
 
+## Univariate plotting: Numerical data
 
 <table>
 <tr>
-<td><img src="https://i.imgur.com/OSbuszd.png"/></td>
-<td><img src="https://pandas.pydata.org/pandas-docs/stable/_images/kde_plot.png" width="200px/></td>
-<td><img src="https://s3.amazonaws.com/stackabuse/media/seaborn-library-data-visualization-python-part-1-13.png" width="200px/></td>
+<td><img src="https://i.imgur.com/OSbuszd.png" width="450px"/></td>
+<td><img src="https://pandas.pydata.org/pandas-docs/stable/_images/kde_plot.png" /></td>
+<td><img src="https://s3.amazonaws.com/stackabuse/media/seaborn-library-data-visualization-python-part-1-13.png" /></td>
 <td><img src="https://i.stack.imgur.com/DhyZK.png" /></td>
 </tr>
 <tr>
@@ -63,11 +64,6 @@ import seaborn as sns
 <td>df.plot.box()
 sns.boxplot(df)</td>
 <td>sns.violinplot(df)</td>
-</tr>
-<tr>
-<td>Good for numerical data.</td>
-<td>Good for categorical data.</td>
-<td colspan="2">Good for ordinal categorical and interval data.</td>
 </tr>
 </table>
 
@@ -138,9 +134,47 @@ sns.heatmap(cm)</td>
 
 - Facets
 
-## Dimensionality reduction (Multivariate plotting in a 2D or 3D space)
+# PCA
 
-- Principal Component Analysis (PCA)
-- t-SNE
+Principal Component Analysis
+
+```python
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components=2)
+pca.fit(X)
+```
+
+# t-SNE
+
+Its basic idea is simple: find a projection for a high-dimensional feature space onto a 2D (or 3D) space, such that:
+- Those points that were far apart in the initial n-dimensional space will end up far apart on the plane.
+- Those that were originally close would remain close to each other.
+
+Essentially, neighbor embedding is a search for a new and less-dimensional data representation that preserves neighborship of examples. It takes some take to compute the representation.
+
+Data need to be normalized.
+
+```python
+from sklearn.preprocessing import StandardScaler
+X_scaled = StandardScaler().fit_transform(X)
+```
+Now, let's build a t-SNE representation:
+
+```python
+from sklearn.manifold import TSNE
+
+tsne = TSNE(random_state=0)
+tsne_repr = tsne.fit_transform(X_scaled)
+
+# and plot it:
+plt.scatter(tsne_repr[:, 0], tsne_repr[:, 1], alpha=.5);
+```
+
+
+Let’s color this t-SNE representation according to the class.
+```python
+plt.scatter(tsne_repr[:, 0], tsne_repr[:, 1], c=df['Churn'].map({False: 'blue', True: 'orange'}), alpha=.5);
+```
 
 
