@@ -1,9 +1,11 @@
 <h1 align="center">Machine learning</h1>
- 
+
+
+<img align="right" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
+
 > #### Exploratory Data Analysis
-> 1. [**EDA with Pandas**](#1-know-the-basics)
-> 2. [**Visualization with Matplotlib**](#prepare-the-data)
-> 3. [**Visualization with Seaborn**](#prepare-the-data)
+> 1. [**Data manipulation with Pandas**](#1-know-the-basics)
+> 2. [**Visualization with Matplotlib & Seaborn**](#Visualization)
 >
 > #### Preprocessing
 > 4. [**Feature selection**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
