@@ -4,8 +4,8 @@
 <img align="right" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
 
 > #### Exploratory Data Analysis
-> 1. [**Data manipulation with Pandas**](#1-know-the-basics)
-> 2. [**Visualization with Matplotlib & Seaborn**](#Visualization)
+> 1. [**Data manipulation (Pandas)**](#1-know-the-basics)
+> 2. [**Visualization (Matplotlib & Seaborn)**](#Visualization)
 >
 > #### Preprocessing
 > 4. [**Feature selection**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
@@ -20,7 +20,7 @@
 >
 > #### Validation and metrics
 
-# 1. Data manipulation with [Pandas](https://pandas.pydata.org)
+# Data manipulation with [Pandas](https://pandas.pydata.org)
 > - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
 
 - Import pandas library `import pandas as pd`
@@ -42,37 +42,154 @@
   - Multiple conditions `df[(df["column1"]==1) & (df["column2"]=='No')]`
 - Save it in a CSV [`df.to_csv("sub.csv", index=False)`](http://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-store-in-csv)
 
-# 2. Visualization with [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
+# Visualization with [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
 > - [**Kaggle learn visualization**](https://www.kaggle.com/learn/data-visualization)
 > - [**Python graph gallery**](https://python-graph-gallery.com)
 
 ### Numerical data distribution
 <table>
 <tr>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/HistogramBig-150x150.png" width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/DensityBig-150x150.png"   width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/Box1Big-150x150.png"      width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/ViolinBig-150x150.png"    width="100px"/></td>
+    <td><a href="https://python-graph-gallery.com/histogram">
+        <img src="https://python-graph-gallery.com/wp-content/uploads/HistogramBig-150x150.png" width="100px"/></td>
+    <td><a href="https://python-graph-gallery.com/density-plot">
+        <img src="https://python-graph-gallery.com/wp-content/uploads/DensityBig-150x150.png"   width="100px"/></td>
+    <td><a href="https://python-graph-gallery.com/boxplot">
+        <img src="https://python-graph-gallery.com/wp-content/uploads/Box1Big-150x150.png"      width="100px"/></td>
+    <td><a href="https://python-graph-gallery.com/violin-plot">
+        <img src="https://python-graph-gallery.com/wp-content/uploads/ViolinBig-150x150.png"    width="100px"/></td>
 </tr>
 <tr>
-<td style="font-weight:bold; font-size:16px;">Histogram</td>
-<td style="font-weight:bold; font-size:16px;">Density plot</td>
-<td style="font-weight:bold; font-size:16px;">Box plot</td>
-<td style="font-weight:bold; font-size:16px;">Violin plot</td>
+    <td>Histogram</td>
+    <td>Density plot</td>
+    <td>Box plot</td>
+    <td>Violin plot</td>
 </tr>
 <tr>
-<td>df.plot.hist()</td>
-<td>df.plot.kde()</td>
-<td>df.plot.box()<br>sns.boxplot(df)</td>
-<td>sns.violinplot(df)</td>
+    <td>df.plot.hist()<br>sns.distplot()</td>
+    <td>df.plot.kde()<br>sns.kdeplot()</td>
+    <td>df.plot.box()<br>sns.boxplot()</td>
+    <td>sns.violinplot()</td>
 </tr>
 </table>
 
-### Correlation
+### Comparing numerical features
+<table>
+<tr>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/ScatterPlotBig-150x150.png"      width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/ScatterConnectedBig-150x150.png" width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/BubblePlotBig-150x150.png"       width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/HeatmapBig-150x150.png"          width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/2dDensityBig-150x150.png"        width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/CorrelogramBig-150x150.png"      width="100px"/></td>
+</tr>
+<tr>
+<td>Scatter plot</td>
+<td>Line plot</td>
+<td>Bubble plot</td>
+<td>Heatmap</td>
+<td>Density plot</td>
+<td>Correlogram</td>
+</tr>
+<tr>
+<td>plt.scatter()<br>sns.scatterplot()</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
 
-- **PCA**:
-- **T-SNE**:
 
+### Ranking
+<table>
+<tr>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/BarBig-150x150.png"      width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/LollipopBig-150x150.png" width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/Parallel1Big-150x150.png"       width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/SpiderBig-150x150.png"          width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/WordcloudBig-150x150.png"        width="100px"/></td>
+</tr>
+<tr>
+<td>Bar plot</td>
+<td>Lollipop plot</td>
+<td>Parallel coords.</td>
+<td>Radar chart</td>
+<td>Word cloud</td>
+</tr>
+<tr>
+<td>plt.scatter()<br>sns.scatterplot()</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+
+### Part of a whole
+
+<table>
+<tr>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/StackedBig-150x150.png"      width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/PieBig-150x150.png" width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/DoughnutBig-150x150.png"       width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/DendrogramBig-150x150.png"          width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/TreeBig-150x150.png"        width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/VennBig-150x150.png"      width="100px"/></td>
+</tr>
+<tr>
+<td>Stacked bar plot</td>
+<td>Pie chart</td>
+<td>Donut chart</td>
+<td>Dendrogram</td>
+<td>Treemap</td>
+<td>Venn diagram</td>
+</tr>
+</table>
+
+
+### Evolution
+
+<table>
+<tr>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/LineBig-150x150.png"      width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/AreaBig-150x150.png" width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/StackedAreaBig-150x150.png"       width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/StreamBig-150x150.png"          width="100px"/></td>
+</tr>
+<tr>
+<td>Line chart</td>
+<td>Area chart</td>
+<td>Stacked area chart</td>
+<td>Stream graph</td>
+</tr>
+</table>
+
+
+### PCA
+Principal Component Analysis
+
+```python
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components=2)
+pca.fit(X)
+```
+
+
+### T-SNE
+
+Read [How to use t-SNE effectively](https://distill.pub/2016/misread-tsne)
+
+```python
+from sklearn.manifold import TSNE
+
+tsne   = TSNE(random_state=0)
+x_tsne = tsne.fit_transform(x)
+
+# And plot it:
+plt.scatter(x_tsne[:, 0], x_tsne[:, 1]);
+```
 
 # Preprocessing
 - **Feature extraction**
@@ -134,7 +251,7 @@ Stronger models.
 - [**XGBoost**](https://github.com/dmlc/xgboost), [**LightGBM**](https://github.com/Microsoft/LightGBM), [**CatBoost**](https://github.com/catboost/catboost) 💪 **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
 
 
-# 9. Time series analysis
+# Time series analysis
 - Time series: Sequence of values of some feature (obtained in constant time periods).
 - Goal: Get the forecast (predict future values).
 
