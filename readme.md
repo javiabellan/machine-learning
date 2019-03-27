@@ -21,6 +21,8 @@
 > #### Validation and metrics
 
 # 1. Data manipulation with [Pandas](https://pandas.pydata.org)
+> - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
+
 - Import pandas library `import pandas as pd`
 - Read a CSV file into a pandas dataframe `df = pd.read_csv("file.csv")`
 - Get dataframe info:
@@ -41,7 +43,33 @@
 - Save it in a CSV [`df.to_csv("sub.csv", index=False)`](http://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-store-in-csv)
 
 # 2. Visualization with [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
-Check [python graph gallery](https://python-graph-gallery.com)
+> - [**Kaggle learn visualization**](https://www.kaggle.com/learn/data-visualization)
+> - [**Python graph gallery**](https://python-graph-gallery.com)
+
+### Numerical data distribution
+<table>
+<tr>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/HistogramBig-150x150.png" width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/DensityBig-150x150.png"   width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/Box1Big-150x150.png"      width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/ViolinBig-150x150.png"    width="100px"/></td>
+</tr>
+<tr>
+<td style="font-weight:bold; font-size:16px;">Histogram</td>
+<td style="font-weight:bold; font-size:16px;">Density plot</td>
+<td style="font-weight:bold; font-size:16px;">Box plot</td>
+<td style="font-weight:bold; font-size:16px;">Violin plot</td>
+</tr>
+<tr>
+<td>df.plot.hist()</td>
+<td>df.plot.kde()</td>
+<td>df.plot.box()<br>sns.boxplot(df)</td>
+<td>sns.violinplot(df)</td>
+</tr>
+</table>
+
+### Correlation
+
 - **PCA**:
 - **T-SNE**:
 
