@@ -168,6 +168,7 @@
 - Save it in a CSV [`df.to_csv("sub.csv", index=False)`](http://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-store-in-csv)
 
 # 2. Visualization with [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
+Check [python graph gallery](https://python-graph-gallery.com)
 
 # 9. Time series analysis
 - Time series: Sequence of values of some feature (obtained in constant time periods).
