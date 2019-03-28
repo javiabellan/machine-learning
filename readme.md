@@ -87,16 +87,17 @@
 <td>Line plot</td>
 <td>Bubble plot</td>
 <td>Heatmap</td>
-<td>Density plot</td>
+<td>Density plot 2D</td>
 <td>Correlogram</td>
 </tr>
 <tr>
-<td>plt.scatter()<br>sns.scatterplot()</td>
+<td>df.plot.scatter()<br>plt.scatter()<br>sns.scatterplot()</td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>plt.imshow(np)<br>sns.heatmap(df)
+</td>
+<td>df.plot.hexbin()</td>
+<td>scatter_matrix(df)<br>sns.pairplot()</td>
 </tr>
 </table>
 
@@ -120,7 +121,7 @@
 <tr>
 <td>plt.scatter()<br>sns.scatterplot()</td>
 <td></td>
-<td></td>
+<td>parallel_coordinates(df, 'cls')</td>
 <td></td>
 <td></td>
 </tr>
