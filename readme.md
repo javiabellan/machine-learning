@@ -4,10 +4,12 @@
 <img align="right" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
 
 > #### Exploratory Data Analysis
-> 1. [**Data manipulation (Pandas)**](#1-know-the-basics)
-> 2. [**Visualization (Matplotlib & Seaborn)**](#Visualization)
+> 1. [**Data manipulation (Pandas)**](#data-manipulation-with-pandas)
+> 2. [**Visualization (Matplotlib & Seaborn)**](#visualization-with-matplotlib-and-seaborn)
+> 3. [**Dimensionality reduction**](#dimensionality-reduction)
 >
 > #### Preprocessing
+> 4. [**Feature engineering**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
 > 4. [**Feature selection**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
 > 5. [**Clustering**](#clustering)
 >
@@ -19,6 +21,8 @@
 > 3. [**Time series**](#2-choose-training-hyperparams)
 >
 > #### Validation and metrics
+>
+> #### Resources
 
 # Data manipulation with [Pandas](https://pandas.pydata.org)
 > - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
@@ -167,8 +171,18 @@
 </table>
 
 
+# Dimensionality reduction
+
+Method    | Name                             | Code
+:--------:|----------------------------------|-----
+**PCA**   | Principal Component Analysis     |
+**t-SNE** | t Stochastic Neighbor Embedding  |
+**LSA**   | Latent Semantic Analysis         |
+**SVD**   | Singular Value decomposition     |
+**LDA**   | Linear Discriminant Analysis     |
+
+
 ### PCA
-Principal Component Analysis
 
 ```python
 from sklearn.decomposition import PCA
@@ -262,3 +276,8 @@ Stronger models.
 - Restricted boltzmann machine: Como el autoencoder pero va y vuelve
 - competitive learning
 - Hebbian learning
+
+---
+
+# Resources
+- [ML overview](https://vas3k.com/blog/machine_learning/)
