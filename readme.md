@@ -274,8 +274,10 @@ Stronger models.
 - Self Organizing Map
 - [Autoencoder](/teoría/modelos/autoencoder.md): Para comprimir información
 - Restricted boltzmann machine: Como el autoencoder pero va y vuelve
-- competitive learning
+- Competitive learning
 - Hebbian learning
+- Evolutionary algorithms
+  - Check [Platypus](https://platypus.readthedocs.io/en/latest/index.html)
 
 ---
 
