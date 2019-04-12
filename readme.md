@@ -24,6 +24,9 @@
 >
 > #### Resources
 
+TODO: [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
+
+
 # Data manipulation with [Pandas](https://pandas.pydata.org)
 > - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
 
@@ -173,14 +176,24 @@
 
 # Dimensionality reduction
 
-Method    | Name                             | Code
-:--------:|----------------------------------|-----
-**PCA**   | Principal Component Analysis     |
-**t-SNE** | t Stochastic Neighbor Embedding  |
-**LSA**   | Latent Semantic Analysis         |
-**SVD**   | Singular Value decomposition     |
-**LDA**   | Linear Discriminant Analysis     |
+> - Read [Curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality)
+> - [Manifold learning](https://scikit-learn.org/stable/modules/manifold.html)
+> - [Matrix factorization](https://scikit-learn.org/stable/modules/decomposition.html)
 
+Method    | Name                                 | Based in  | Code
+:--------:|--------------------------------------|-----------|-----
+**PCA**   | Principal Component Analysis         | Linear    |
+**t-SNE** | t Stochastic Neighbor Embedding      | Neighbors |
+**AE**    | Autoencoder (2 or 3 at hidden layer) | Neural    |
+**VAE**   | Variational Autoencoder              | Neural    |
+**LSA**   | Latent Semantic Analysis             |           |
+**SVD**   | Singular Value decomposition         | Linear?   |
+**LDA**   | Linear Discriminant Analysis         | Linear    |
+
+- Projection based
+  - ISOMAP
+  - UMAP
+- Sparse coding
 
 ### PCA
 
