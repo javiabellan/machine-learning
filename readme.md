@@ -24,8 +24,11 @@
 >
 > #### Resources
 
-TODO: [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
-
+TODO:
+- [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
+- Prueba U de Mann-Whitney
+- Prueba t de Student
+- Metrica Kappa
 
 # Data manipulation with [Pandas](https://pandas.pydata.org)
 > - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
