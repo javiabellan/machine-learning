@@ -21,7 +21,7 @@
 > 3. [**Time series**](#2-choose-training-hyperparams)
 >
 > #### Validation and metrics
->
+> - []
 > #### Resources
 
 TODO:
@@ -285,6 +285,17 @@ Stronger models.
 # Time series analysis
 - Time series: Sequence of values of some feature (obtained in constant time periods).
 - Goal: Get the forecast (predict future values).
+
+
+#  Hyperparameters optimization
+
+Method             | Description                                                                            | Parallel
+:------------------|----------------------------------------------------------------------------------------|----------
+**Grid Search**    | Search over a discrete set of predefined hyperparameters values.                       | Yes
+**Random Search**  | Provide a statistical distribution for each hyperparameter, for taking a random value. | Yes 
+**Bayesian**       | Use past evaluation results to choose the next values to evaluate. **`THE BEST`**      | No
+**Gradient-Based** | Optimize hyperparameters using gradient descent.                                       | No
+**Evolutionary**   | Uses evolutionary algorithms to search the space of possible hyperparameters.          | No
 
 # Others
 - Self Organizing Map
