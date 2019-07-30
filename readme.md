@@ -24,11 +24,11 @@
 > - [**Time series models**](#)
 > - [**Hyperparameters optimization**](#)
 >
-> ### 📏 Metrics
+> ### 📏 Metrics [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html), [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
 > - Classification metrics
 > - Regression metrics
 > 
-> ### ❓ Explainability
+> ### ❓ Explainability [link](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
 > - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
 >
 > ### 🌍 Real world applications [link](https://www.knime.com/solutions)
