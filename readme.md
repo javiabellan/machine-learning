@@ -1,28 +1,45 @@
 <h1 align="center">Machine learning</h1>
 
-
 <img align="right" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
 
-> #### Exploratory Data Analysis
-> 1. [**Data manipulation (Pandas)**](#data-manipulation-with-pandas)
-> 2. [**Visualization (Matplotlib & Seaborn)**](#visualization-with-matplotlib-and-seaborn)
-> 3. [**Dimensionality reduction**](#dimensionality-reduction)
+> ### 📄 Data extraction sources
+> - [**Data manipulation (Pandas)**](#data-manipulation-with-pandas)
 >
-> #### Preprocessing
-> 4. [**Feature engineering**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
-> 4. [**Feature selection**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
-> 5. [**Clustering**](#clustering)
+> ### 📊  Exploratory Data Analysis
+> - [**Visualization with Matplotlib and Seaborn**](#visualization-with-matplotlib-and-seaborn)
+> - [**Dimensionality reduction**](#dimensionality-reduction)
 >
-> #### Models
-> 3. [**Decision trees**](#2-choose-training-hyperparams)
-> 3. [**Random forest**](#2-choose-training-hyperparams)
-> 3. [**Gradient boosting**](#2-choose-training-hyperparams)
-> 3. [**Support vector machine**](#2-choose-training-hyperparams)
-> 3. [**Time series**](#2-choose-training-hyperparams)
+> ### 🛠 Preprocessing
+> - [**Feature engineering**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
+> - [**Feature selection**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
 >
-> #### Validation and metrics
-> - []
-> #### Resources
+> ### 🔮 Models
+> - [**Predictive models (classification and regresion)**](#)
+>    - [**Linear**](#)
+>    - [**Decision tree**](#)
+>    - [**Random forest**](#)
+>    - [**Gradient boosting**](#)
+>    - [**Support vector machine**](#)
+> - [**Clustering models**](#clustering)
+> - [**Time series models**](#)
+> - [**Hyperparameters optimization**](#)
+>
+> ### 📏 Metrics
+> - Classification metrics
+> - Regression metrics
+> 
+> ### ❓ Explainability
+> - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
+>
+> ### 🌍 Real world applications [link](https://www.knime.com/solutions)
+> - loss-given-default
+> - probability of default
+> - customer churn
+> - campaign response
+> - fraud detection
+> - anti-money-laundering
+> - predictive asset maintenance
+
 
 TODO:
 - [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
@@ -30,7 +47,35 @@ TODO:
 - Prueba t de Student
 - Metrica Kappa
 
-# Data manipulation with [Pandas](https://pandas.pydata.org)
+----------------------------------------------------------------
+
+# 📄 Data extraction sources
+
+- Files
+  - CSV
+  - Excel
+  - Parquet (columnar storage file format of Hadoop)
+  - Feather
+  - Python datatable (.nff, .jay)
+- No relational databases
+  - MongoDB
+  - Redis
+- Relational Databases (SQL)
+  - MySQL
+- Big data
+  - Hadoop (HDFS)
+  - S3 (Amazon)
+  - Azure Blob storage
+  - Blue Data Tap
+  - Google big query
+  - Google cloud storage
+  - kdb+
+  - Minio
+  - Snowflake
+
+----------------------------------------------------------------
+
+# 🐼 Data manipulation with [Pandas](https://pandas.pydata.org)
 > - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
 
 - Import pandas library `import pandas as pd`
@@ -55,6 +100,34 @@ TODO:
 # Visualization with [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
 > - [**Kaggle learn visualization**](https://www.kaggle.com/learn/data-visualization)
 > - [**Python graph gallery**](https://python-graph-gallery.com)
+
+
+#### [H2O available graphs](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/datasets.html#the-visualization-page):
+- Correlated Scatterplot
+- Spikey Histograms
+- Skewed Histograms
+- Varying Boxplots
+- Heteroscedastic Boxplots
+- Biplot (PCA points and arrows)
+- Outliers
+- Correlation Graph
+- Parallel Coordinates Plot
+- Radar Plot
+- Data Heatmap
+- Missing Values Heatmap
+- Gaps Histogram
+
+#### Types
+- Univariate visualization
+  - Histogram
+  - Density plot
+  - Box plot
+  - Violin plot
+- Bivariate visualization
+- Multivariate visualization
+  - Parallel coords
+  - Radar chart
+
 
 ### Numerical data distribution
 <table>
@@ -287,7 +360,7 @@ Stronger models.
 - Goal: Get the forecast (predict future values).
 
 
-#  Hyperparameters optimization
+# Hyperparameters optimization
 
 Method             | Description                                                                            | Parallel
 :------------------|----------------------------------------------------------------------------------------|----------
