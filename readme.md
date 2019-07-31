@@ -5,13 +5,16 @@
 > ### 📄 Data extraction sources
 > - [**Data manipulation (Pandas)**](#data-manipulation-with-pandas)
 >
-> ### 📊  Exploratory Data Analysis
+> ### 📊 Exploratory Data Analysis
 > - [**Visualization with Matplotlib and Seaborn**](#visualization-with-matplotlib-and-seaborn)
 > - [**Dimensionality reduction**](#dimensionality-reduction)
 >
 > ### 🛠 Preprocessing
-> - [**Feature engineering**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
-> - [**Feature selection**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
+> - [**Missings**](#)
+> - [**Outliers**](#)
+> - [**Transformations** (normalize, standarize, logs, ...)](#)
+> - [**Unbalanced**](#)
+> - [**Remove variables (feature selection)**](#)
 >
 > ### 🔮 Models
 > - [**Predictive models (classification and regresion)**](#)
@@ -97,7 +100,26 @@ TODO:
   - Multiple conditions `df[(df["column1"]==1) & (df["column2"]=='No')]`
 - Save it in a CSV [`df.to_csv("sub.csv", index=False)`](http://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-store-in-csv)
 
-# Visualization with [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
+
+# 🛠 Preprocessing
+- Deal with **missings values**
+- Deal with **outliers**
+- Deal with **imbalanced datasets**: Check [imbalanced-learn package](http://imbalanced-learn.org)
+  - **Subsample majority class**. But you can lose important data.
+  - **Oversample minority class**. But you can overfit.
+  - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
+- [**Feature selection**](https://scikit-learn.org/stable/modules/feature_selection.html): Reduce number of attributes.
+  - Wrapper: Su usa un classificador
+    - MultiObjectiveEvolutionarySearch: Mejor para muchas generaciones. 10000 Evals
+    - PSO: Particule Search optimization: Mejor para pocas generaciones.
+    - RFE: Recursive feature elimination
+  - Filters:
+    - InfoGAIN: Cantidad de informacion
+    - Correlation Featue Selection
+
+
+# 📊 Visualization
+Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
 > - [**Kaggle learn visualization**](https://www.kaggle.com/learn/data-visualization)
 > - [**Python graph gallery**](https://python-graph-gallery.com)
 
@@ -251,25 +273,23 @@ TODO:
 
 
 # Dimensionality reduction
-
+> - https://www.analyticsvidhya.com/blog/2018/08/dimensionality-reduction-techniques-python/
 > - Read [Curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality)
 > - [Manifold learning](https://scikit-learn.org/stable/modules/manifold.html)
 > - [Matrix factorization](https://scikit-learn.org/stable/modules/decomposition.html)
 
-Method    | Name                                 | Based in  | Code
-:--------:|--------------------------------------|-----------|-----
-**PCA**   | Principal Component Analysis         | Linear    |
-**t-SNE** | t Stochastic Neighbor Embedding      | Neighbors |
-**AE**    | Autoencoder (2 or 3 at hidden layer) | Neural    |
-**VAE**   | Variational Autoencoder              | Neural    |
-**LSA**   | Latent Semantic Analysis             |           |
-**SVD**   | Singular Value decomposition         | Linear?   |
-**LDA**   | Linear Discriminant Analysis         | Linear    |
-
-- Projection based
-  - ISOMAP
-  - UMAP
-- Sparse coding
+Method       | Name                                          | Based in                   | Duration
+:-----------:|-----------------------------------------------|----------------------------|-----
+**PCA**      | Principal Component Analysis                  | Linear (maximize variance) | Fast
+**t-SNE**    | t Stochastic Neighbor Embedding               | Neighbors |
+**LargeVis** | LargeVis                                      | Neighbors |
+**ISOMAP**   | t Stochastic Neighbor Embedding               | Neighbors |
+**UMAP**     | Uniform Manifold Approximation and Projection | Neighbors |
+**AE**       | Autoencoder (2 or 3 at hidden layer)          | Neural    |
+**VAE**      | Variational Autoencoder                       | Neural    |
+**LSA**      | Latent Semantic Analysis                      |           |
+**SVD**      | Singular Value decomposition                  | Linear?   |
+**LDA**      | Linear Discriminant Analysis                  | Linear    |
 
 ### PCA
 
@@ -294,20 +314,6 @@ x_tsne = tsne.fit_transform(x)
 # And plot it:
 plt.scatter(x_tsne[:, 0], x_tsne[:, 1]);
 ```
-
-# Preprocessing
-- **Feature extraction**
-  - Color features
-  - Texture features
-- [**Feature selection**](https://scikit-learn.org/stable/modules/feature_selection.html): Reduce number of attributes.
-  - Wrapper: Su usa un classificador
-    - MultiObjectiveEvolutionarySearch: Mejor para muchas generaciones. 10000 Evals
-    - PSO: Particule Search optimization: Mejor para pocas generaciones.
-    - RFE: Recursive feature elimination
-  - Filters:
-    - InfoGAIN: Cantidad de informacion
-    - Correlation Featue Selection
-
 
 # Clustering
 Separate data in groups, useful for labeling a dataset.
