@@ -22,7 +22,7 @@
 >    - [**Support vector machine**](#)
 > - [**Clustering models**](#clustering)
 > - [**Time series models**](#)
-> - [**Hyperparameters optimization**](#)
+> - [**Hyperparameters optimization**](#hyperparameters-optimization)
 >
 > ### 📏 Metrics [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html), [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
 > - Classification metrics
@@ -362,13 +362,15 @@ Stronger models.
 
 # Hyperparameters optimization
 
-Method             | Description                                                                            | Parallel
-:------------------|----------------------------------------------------------------------------------------|----------
-**Grid Search**    | Search over a discrete set of predefined hyperparameters values.                       | Yes
-**Random Search**  | Provide a statistical distribution for each hyperparameter, for taking a random value. | Yes 
-**Bayesian**       | Use past evaluation results to choose the next values to evaluate. **`THE BEST`**      | No
-**Gradient-Based** | Optimize hyperparameters using gradient descent.                                       | No
-**Evolutionary**   | Uses evolutionary algorithms to search the space of possible hyperparameters.          | No
+Method             | Description                                                                            | Library 
+:------------------|----------------------------------------------------------------------------------------|--------
+**Grid Search**    | Search over a discrete set of predefined hyperparameters values.                       | [Sklearn](https://scikit-learn.org/stable/modules/grid_search.html#exhaustive-grid-search)
+**Random Search**  | Provide a statistical distribution for each hyperparameter, for taking a random value. |  [Sklearn](https://scikit-learn.org/stable/modules/grid_search.html#randomized-parameter-optimization)
+**Bayesian**       | Use past evaluation results to choose the next values to evaluate. **`THE BEST`**      | [link](https://github.com/fmfn/BayesianOptimization)
+**Gradient-Based** | Optimize hyperparameters using gradient descent.                                       | ?
+**Evolutionary**   | Uses evolutionary algorithms to search the space of possible hyperparameters.          | ?
+
+Note that **grid** and **random** search can be **paralelized**, others methods can not.
 
 # Others
 - Self Organizing Map
