@@ -25,7 +25,6 @@
 >    - [**Support vector machine**](#)
 > - [**Clustering models**](#clustering)
 > - [**Time series models**](#)
-> - [**Hyperparameters optimization**](#hyperparameters-optimization)
 >
 > ### 📏 Metrics [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html), [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
 > - Classification metrics
@@ -34,7 +33,28 @@
 > ### ❓ Explainability [link](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
 > - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
 >
-> ### 🌍 Real world applications [link](https://www.knime.com/solutions)
+> <h2 align="center">🍹 Auto Machine learning</h2>
+>
+> - Steps
+>   - 🛁 Data cleaning
+>   - 🛠 Feature engeniring
+>   - 🔮 Model selection
+>   - 🎯 [**Hyperparameters optimization**](#hyperparameters-optimization)
+> - 📚 Libraries
+>   - [**MLBox**](https://github.com/AxeldeRomblay/MLBox)
+>   - [**Auto Sklean**](https://github.com/automl/auto-sklearn)
+>   - [**TPOT**](https://github.com/EpistasisLab/tpot)
+>   - [**H20**](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html)
+>   - [**Autokeras**](https://autokeras.com/)
+>   - [**Ludwig**](https://uber.github.io/ludwig/)
+> - Neural Architecture Search (NAS)
+>   - **DARTS**: Differentiable Architecture Search
+> - References
+>   - [Automl webpage](https://www.automl.org/automl)
+>   - [Siraj video](https://youtu.be/jn-22XyKsgo)
+>
+> <h2 align="center">🌍 Real world ML applications</h2>
+>
 > - loss-given-default
 > - probability of default
 > - customer churn
@@ -42,6 +62,8 @@
 > - fraud detection
 > - anti-money-laundering
 > - predictive asset maintenance
+> - References
+>   - [link](https://www.knime.com/solutions)
 
 
 TODO:
