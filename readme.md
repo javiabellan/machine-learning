@@ -6,7 +6,7 @@
 |---|--------------------------------------------------------------------|--------------------------------------------|
 | 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
 | 2 | 🛠 [**Feature engineering**](#-feature-engineering-)               | Select and construct appropriate features. |
-| 3 | 🔮 [**Model selection**](#-model-selection-)                       | Select an appropriate model family.        |
+| 3 | 🔮 [**Models**](#-models-)                                         | Select an appropriate model.               |
 | 4 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
 | 5 | 📏 [**Metrics**](#-metrics-)                                       | Measure the model performance.             |
 | 6 | ❓ [**Explainability**](#-explainability-)                         | Interpret the model.                       |
@@ -28,207 +28,31 @@
 > - [Missings imputation](#)
 > - [Outliers removal](#)
 
-- Files
-  - CSV
-  - Excel
-  - Parquet (columnar storage file format of Hadoop)
-  - Feather
-  - Python datatable (.nff, .jay)
-- No relational databases
-  - MongoDB
-  - Redis
-- Relational Databases (SQL)
-  - MySQL
-- Big data
-  - Hadoop (HDFS)
-  - S3 (Amazon)
-  - Azure Blob storage
-  - Blue Data Tap
-  - Google big query
-  - Google cloud storage
-  - kdb+
-  - Minio
-  - Snowflake
-
 
 # 🛠 Feature engineering [🔝](#machine-learning)
 > - [Scaling (normalize, standarize, logs, ...)](#)
-> - [Feature selection](#)
+> - [Feature selection](#feature-selection)
 > - [Dimensionality reduction](#dimensionality-reduction)
 > - [Unbalanced](#)
 
-- Deal with **missings values**
-- Deal with **outliers**
 - Deal with **imbalanced datasets**: Check [imbalanced-learn package](http://imbalanced-learn.org)
   - **Subsample majority class**. But you can lose important data.
   - **Oversample minority class**. But you can overfit.
   - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
-- [**Feature selection**](https://scikit-learn.org/stable/modules/feature_selection.html): Reduce number of attributes.
-  - Wrapper: Su usa un classificador
-    - MultiObjectiveEvolutionarySearch: Mejor para muchas generaciones. 10000 Evals
-    - PSO: Particule Search optimization: Mejor para pocas generaciones.
-    - RFE: Recursive feature elimination
-  - Filters:
-    - InfoGAIN: Cantidad de informacion
-    - Correlation Featue Selection
 
 
+### Feature selection
+Reduce number of attributes.
+- [**Feature selection**](https://scikit-learn.org/stable/modules/feature_selection.html)
+- Wrapper: Su usa un classificador
+  - MultiObjectiveEvolutionarySearch: Mejor para muchas generaciones. 10000 Evals
+  - PSO: Particule Search optimization: Mejor para pocas generaciones.
+  - RFE: Recursive feature elimination
+- Filters:
+  - InfoGAIN: Cantidad de informacion
+  - Correlation Featue Selection
 
-# 📊 Visualization [🔝](#machine-learning)
-Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
-> - [**Kaggle learn visualization**](https://www.kaggle.com/learn/data-visualization)
-> - [**Python graph gallery**](https://python-graph-gallery.com)
-
-
-#### [H2O available graphs](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/datasets.html#the-visualization-page):
-- Correlated Scatterplot
-- Spikey Histograms
-- Skewed Histograms
-- Varying Boxplots
-- Heteroscedastic Boxplots
-- Biplot (PCA points and arrows)
-- Outliers
-- Correlation Graph
-- Parallel Coordinates Plot
-- Radar Plot
-- Data Heatmap
-- Missing Values Heatmap
-- Gaps Histogram
-
-#### Types
-- Univariate visualization
-  - Histogram
-  - Density plot
-  - Box plot
-  - Violin plot
-- Bivariate visualization
-- Multivariate visualization
-  - Parallel coords
-  - Radar chart
-
-
-### Numerical data distribution
-<table>
-<tr>
-    <td><a href="https://python-graph-gallery.com/histogram">
-        <img src="https://python-graph-gallery.com/wp-content/uploads/HistogramBig-150x150.png" width="100px"/></td>
-    <td><a href="https://python-graph-gallery.com/density-plot">
-        <img src="https://python-graph-gallery.com/wp-content/uploads/DensityBig-150x150.png"   width="100px"/></td>
-    <td><a href="https://python-graph-gallery.com/boxplot">
-        <img src="https://python-graph-gallery.com/wp-content/uploads/Box1Big-150x150.png"      width="100px"/></td>
-    <td><a href="https://python-graph-gallery.com/violin-plot">
-        <img src="https://python-graph-gallery.com/wp-content/uploads/ViolinBig-150x150.png"    width="100px"/></td>
-</tr>
-<tr>
-    <td>Histogram</td>
-    <td>Density plot</td>
-    <td>Box plot</td>
-    <td>Violin plot</td>
-</tr>
-<tr>
-    <td>df.plot.hist()<br>sns.distplot()</td>
-    <td>df.plot.kde()<br>sns.kdeplot()</td>
-    <td>df.plot.box()<br>sns.boxplot()</td>
-    <td>sns.violinplot()</td>
-</tr>
-</table>
-
-### Comparing numerical features
-<table>
-<tr>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/ScatterPlotBig-150x150.png"      width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/ScatterConnectedBig-150x150.png" width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/BubblePlotBig-150x150.png"       width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/HeatmapBig-150x150.png"          width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/2dDensityBig-150x150.png"        width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/CorrelogramBig-150x150.png"      width="100px"/></td>
-</tr>
-<tr>
-<td>Scatter plot</td>
-<td>Line plot</td>
-<td>Bubble plot</td>
-<td>Heatmap</td>
-<td>Density plot 2D</td>
-<td>Correlogram</td>
-</tr>
-<tr>
-<td>df.plot.scatter()<br>plt.scatter()<br>sns.scatterplot()</td>
-<td></td>
-<td></td>
-<td>plt.imshow(np)<br>sns.heatmap(df)
-</td>
-<td>df.plot.hexbin()</td>
-<td>scatter_matrix(df)<br>sns.pairplot()</td>
-</tr>
-</table>
-
-
-### Ranking
-<table>
-<tr>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/BarBig-150x150.png"      width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/LollipopBig-150x150.png" width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/Parallel1Big-150x150.png"       width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/SpiderBig-150x150.png"          width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/WordcloudBig-150x150.png"        width="100px"/></td>
-</tr>
-<tr>
-<td>Bar plot</td>
-<td>Lollipop plot</td>
-<td>Parallel coords.</td>
-<td>Radar chart</td>
-<td>Word cloud</td>
-</tr>
-<tr>
-<td>plt.scatter()<br>sns.scatterplot()</td>
-<td></td>
-<td>parallel_coordinates(df, 'cls')</td>
-<td></td>
-<td></td>
-</tr>
-</table>
-
-### Part of a whole
-
-<table>
-<tr>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/StackedBig-150x150.png"      width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/PieBig-150x150.png" width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/DoughnutBig-150x150.png"       width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/DendrogramBig-150x150.png"          width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/TreeBig-150x150.png"        width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/VennBig-150x150.png"      width="100px"/></td>
-</tr>
-<tr>
-<td>Stacked bar plot</td>
-<td>Pie chart</td>
-<td>Donut chart</td>
-<td>Dendrogram</td>
-<td>Treemap</td>
-<td>Venn diagram</td>
-</tr>
-</table>
-
-
-### Evolution
-
-<table>
-<tr>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/LineBig-150x150.png"      width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/AreaBig-150x150.png" width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/StackedAreaBig-150x150.png"       width="100px"/></td>
-<td><img src="https://python-graph-gallery.com/wp-content/uploads/StreamBig-150x150.png"          width="100px"/></td>
-</tr>
-<tr>
-<td>Line chart</td>
-<td>Area chart</td>
-<td>Stacked area chart</td>
-<td>Stream graph</td>
-</tr>
-</table>
-
-
-# Dimensionality reduction
+### Dimensionality reduction
 > - https://www.analyticsvidhya.com/blog/2018/08/dimensionality-reduction-techniques-python/
 > - Read [Curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality)
 > - [Manifold learning](https://scikit-learn.org/stable/modules/manifold.html)
@@ -275,7 +99,7 @@ plt.scatter(x_tsne[:, 0], x_tsne[:, 1]);
 
 
 
-# 🔮 Model selection [🔝](#machine-learning)
+# 🔮 Models [🔝](#machine-learning)
 > - [Predictive models (classification and regresion)](#)
 >   - [Linear](#)
 >   - [Decision tree](#)
@@ -440,13 +264,31 @@ Note that **grid** and **random** search can be **paralelized**, others methods 
 > - References
 >   - [link](https://www.knime.com/solutions)
 
-TODO:
-- [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
-- Prueba U de Mann-Whitney
-- Prueba t de Student
-- Metrica Kappa
 
-
+# 🗞️ Data sources [🔝](#machine-learning)
+- Files
+  - CSV
+  - Excel
+  - Parquet (columnar storage file format of Hadoop)
+  - Feather
+  - Python datatable (.nff, .jay)
+- No relational databases
+  - MongoDB
+  - Redis
+- Relational Databases (SQL)
+  - MySQL
+- Big data
+  - Hadoop (HDFS)
+  - S3 (Amazon)
+  - Azure Blob storage
+  - Blue Data Tap
+  - Google big query
+  - Google cloud storage
+  - kdb+
+  - Minio
+  - Snowflake
+  
+  
 # 🐼 Data manipulation with [Pandas](https://pandas.pydata.org) [🔝](#machine-learning)
 > - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
 
@@ -469,7 +311,169 @@ TODO:
   - Multiple conditions `df[(df["column1"]==1) & (df["column2"]=='No')]`
 - Save it in a CSV [`df.to_csv("sub.csv", index=False)`](http://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-store-in-csv)
 
+
+
+# 📊 Visualization [🔝](#machine-learning)
+Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
+> - [**Kaggle learn visualization**](https://www.kaggle.com/learn/data-visualization)
+> - [**Python graph gallery**](https://python-graph-gallery.com)
+
+
+#### [H2O available graphs](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/datasets.html#the-visualization-page):
+- Correlated Scatterplot
+- Spikey Histograms
+- Skewed Histograms
+- Varying Boxplots
+- Heteroscedastic Boxplots
+- Biplot (PCA points and arrows)
+- Outliers
+- Correlation Graph
+- Parallel Coordinates Plot
+- Radar Plot
+- Data Heatmap
+- Missing Values Heatmap
+- Gaps Histogram
+
+#### Types
+- Univariate visualization
+  - Histogram
+  - Density plot
+  - Box plot
+  - Violin plot
+- Bivariate visualization
+- Multivariate visualization
+  - Parallel coords
+  - Radar chart
+
+
+### Numerical data distribution
+<table>
+<tr>
+    <td><a href="https://python-graph-gallery.com/histogram">
+        <img src="https://python-graph-gallery.com/wp-content/uploads/HistogramBig-150x150.png" width="100px"/></td>
+    <td><a href="https://python-graph-gallery.com/density-plot">
+        <img src="https://python-graph-gallery.com/wp-content/uploads/DensityBig-150x150.png"   width="100px"/></td>
+    <td><a href="https://python-graph-gallery.com/boxplot">
+        <img src="https://python-graph-gallery.com/wp-content/uploads/Box1Big-150x150.png"      width="100px"/></td>
+    <td><a href="https://python-graph-gallery.com/violin-plot">
+        <img src="https://python-graph-gallery.com/wp-content/uploads/ViolinBig-150x150.png"    width="100px"/></td>
+</tr>
+<tr>
+    <td>Histogram</td>
+    <td>Density plot</td>
+    <td>Box plot</td>
+    <td>Violin plot</td>
+</tr>
+<tr>
+    <td>df.plot.hist()<br>sns.distplot()</td>
+    <td>df.plot.kde()<br>sns.kdeplot()</td>
+    <td>df.plot.box()<br>sns.boxplot()</td>
+    <td>sns.violinplot()</td>
+</tr>
+</table>
+
+### Comparing numerical features
+<table>
+<tr>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/ScatterPlotBig-150x150.png"      width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/ScatterConnectedBig-150x150.png" width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/BubblePlotBig-150x150.png"       width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/HeatmapBig-150x150.png"          width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/2dDensityBig-150x150.png"        width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/CorrelogramBig-150x150.png"      width="100px"/></td>
+</tr>
+<tr>
+<td>Scatter plot</td>
+<td>Line plot</td>
+<td>Bubble plot</td>
+<td>Heatmap</td>
+<td>Density plot 2D</td>
+<td>Correlogram</td>
+</tr>
+<tr>
+<td>df.plot.scatter()<br>plt.scatter()<br>sns.scatterplot()</td>
+<td></td>
+<td></td>
+<td>plt.imshow(np)<br>sns.heatmap(df)
+</td>
+<td>df.plot.hexbin()</td>
+<td>scatter_matrix(df)<br>sns.pairplot()</td>
+</tr>
+</table>
+
+
+### Ranking
+<table>
+<tr>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/BarBig-150x150.png"      width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/LollipopBig-150x150.png" width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/Parallel1Big-150x150.png"       width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/SpiderBig-150x150.png"          width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/WordcloudBig-150x150.png"        width="100px"/></td>
+</tr>
+<tr>
+<td>Bar plot</td>
+<td>Lollipop plot</td>
+<td>Parallel coords.</td>
+<td>Radar chart</td>
+<td>Word cloud</td>
+</tr>
+<tr>
+<td>plt.scatter()<br>sns.scatterplot()</td>
+<td></td>
+<td>parallel_coordinates(df, 'cls')</td>
+<td></td>
+<td></td>
+</tr>
+</table>
+
+### Part of a whole
+
+<table>
+<tr>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/StackedBig-150x150.png"      width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/PieBig-150x150.png" width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/DoughnutBig-150x150.png"       width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/DendrogramBig-150x150.png"          width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/TreeBig-150x150.png"        width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/VennBig-150x150.png"      width="100px"/></td>
+</tr>
+<tr>
+<td>Stacked bar plot</td>
+<td>Pie chart</td>
+<td>Donut chart</td>
+<td>Dendrogram</td>
+<td>Treemap</td>
+<td>Venn diagram</td>
+</tr>
+</table>
+
+
+### Evolution
+
+<table>
+<tr>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/LineBig-150x150.png"      width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/AreaBig-150x150.png" width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/StackedAreaBig-150x150.png"       width="100px"/></td>
+<td><img src="https://python-graph-gallery.com/wp-content/uploads/StreamBig-150x150.png"          width="100px"/></td>
+</tr>
+<tr>
+<td>Line chart</td>
+<td>Area chart</td>
+<td>Stacked area chart</td>
+<td>Stream graph</td>
+</tr>
+</table>
+
 ---
+
+TODO:
+- [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
+- Prueba U de Mann-Whitney
+- Prueba t de Student
+- Metrica Kappa
+
 
 # Resources
 - [ML overview](https://vas3k.com/blog/machine_learning/)
