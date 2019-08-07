@@ -3,14 +3,6 @@
 <img align="right" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
 
 
-> ### ⛏ Data extraction
-> - [**Data manipulation (Pandas)**](#data-manipulation-with-pandas)
->
-> ### 📊 Data visualization
-> Also known as Exploratory Data Analysis (EDA)
-> - [**Visualization with Matplotlib and Seaborn**](#visualization-with-matplotlib-and-seaborn)
-> - [**Dimensionality reduction**](#dimensionality-reduction)
->
 > ### 🛁 Data cleaning
 > Preprocess and clean the data.
 > - [**Missings imputation**](#)
@@ -20,6 +12,7 @@
 > Select and construct appropriate features.
 > - [**Scaling** (normalize, standarize, logs, ...)](#)
 > - [**Feature selection**](#)
+> - [**Dimensionality reduction**](#dimensionality-reduction)
 > - [**Unbalanced**](#)
 >
 > ### 🔮 Model selection
@@ -77,6 +70,11 @@
 > - References
 >   - [link](https://www.knime.com/solutions)
 
+### 📚 Libraries
+
+- 🐼 [**Pandas**](#data-manipulation-with-pandas): Data manipulation
+- 📊 [**Matplotlib**](#visualization-with-matplotlib-and-seaborn): Visualization
+- 📊 [**Seaborn**](#visualization-with-matplotlib-and-seaborn): Visualization
 
 TODO:
 - [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
