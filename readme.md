@@ -18,95 +18,13 @@
 | 🍹 [**Auto Machine learning**](#-auto-machine-learning)           | Automatic machine learning pipeline        |
 | 📊 [**Visualization**](#-visualization)                           | Graphs and plots                           |
 | 🐍 [**Python libraries**](#-libraries)                            | Cheasheets of common libraries             |
+| 🌍 [**Real world applications**](#-real-world-applications)       | Common ML applications                     |
 
-
-### Index
-
-> - 🔮 **Model selection**
->   - [Predictive models (classification and regresion)](#)
->     - [Linear](#)
->     - [Decision tree](#)
->     - [Random forest](#)
->     - [Gradient boosting](#)
->     - [Support vector machine](#)
->   - [Clustering models](#clustering)
->   - [Time series models](#)
-> - 🎯 [**Hyperparameters optimization**](#hyperparameters-optimization)
->   - Grid search
->   - Random search
->   - Bayesian optimization ⭐
->   - Particle swarm optimization (PSO)
->   - Simulated Annealing
->   - Gradient descent
->   - Evolutionary algorithm
->  - 📏 **Metrics**
->    - Classification metrics
->    - Regression metrics
-> - ❓ **Explainability**
->   - Blablabla
-
-
-> <h2 align="center">🍹 Auto Machine learning</h2>
->
-> - [**MLBox**](https://github.com/AxeldeRomblay/MLBox)
-> - [**Auto Sklean**](https://github.com/automl/auto-sklearn)
-> - [**TPOT**](https://github.com/EpistasisLab/tpot) ⭐
-> - [**H20**](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) ⭐
-> - Neural Architecture Search (NAS) for deep learning
->   - **DARTS**: Differentiable Architecture Search
->   - [**Uber Ludwig**](https://uber.github.io/ludwig/) ⭐
->   - [**Autokeras**](https://autokeras.com/)
-> - References
->   - [Automl webpage](https://www.automl.org/automl)
->   - [Siraj video](https://youtu.be/jn-22XyKsgo)
->
-
-
-<h1 align="center">📚 Libraries</h1>
-
-- **Data**
-  - 🔢 [**Numpy**](https://numpy.org): Vectors and matrices
-  - 🐼 [**Pandas**](#data-manipulation-with-pandas): Data manipulation
-- **Visualization**
-  - 📊 [**Matplotlib**](#visualization-with-matplotlib-and-seaborn)
-  - 📊 [**Seaborn**](#visualization-with-matplotlib-and-seaborn)
-- **Machine learning**
-  - 💡 [**Scikit learn**](https://scikit-learn.org): Machine learning
-  - 🔦 [**Pytorch**](https://pytorch.org): Deep learning
-  - 💧 [**H2O**](https://www.h2o.ai/products/h2o/): Machine learning, AutoML
-  - 🌳 [**XGBoost**](https://github.com/dmlc/xgboost): Gradient Boosting
-  - 🌳 [**LightGBM**](https://github.com/Microsoft/LightGBM): Gradient Boosting
-  - 🌳 [**CatBoost**](https://github.com/catboost/catboost): Gradient Boosting
-- **Auto Machine learning**
-  - 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)
-  - 💡 [**Auto Sklean**](https://github.com/automl/auto-sklearn)
-  - 🧬 [**TPOT**](https://github.com/EpistasisLab/tpot) ⭐
-  - 💧 [**H20**](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) ⭐
-
-> <h2 align="center">🌍 Real world ML applications</h2>
->
-> - loss-given-default
-> - probability of default
-> - customer churn
-> - campaign response
-> - fraud detection
-> - anti-money-laundering
-> - predictive asset maintenance
-> - References
->   - [link](https://www.knime.com/solutions)
-
-TODO:
-- [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
-- Prueba U de Mann-Whitney
-- Prueba t de Student
-- Metrica Kappa
 
 ----------------------------------------------------------------
 
-<h3 align="right"><a href="#machine-learning">🔝</a></h3>
 
-# 🛁 Data cleaning
-
+# 🛁 Data cleaning [🔝](#machine-learning)
 > - [Missings imputation](#)
 > - [Outliers removal](#)
 
@@ -132,11 +50,8 @@ TODO:
   - Minio
   - Snowflake
 
-<h3 align="right"><a href="#machine-learning">🔝</a></h3>
 
-
-# 🛠 Feature engineering
-
+# 🛠 Feature engineering [🔝](#machine-learning)
 > - [Scaling (normalize, standarize, logs, ...)](#)
 > - [Feature selection](#)
 > - [Dimensionality reduction](#dimensionality-reduction)
@@ -158,7 +73,8 @@ TODO:
     - Correlation Featue Selection
 
 
-# 📊 Visualization
+
+# 📊 Visualization [🔝](#machine-learning)
 Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
 > - [**Kaggle learn visualization**](https://www.kaggle.com/learn/data-visualization)
 > - [**Python graph gallery**](https://python-graph-gallery.com)
@@ -355,19 +271,19 @@ x_tsne = tsne.fit_transform(x)
 plt.scatter(x_tsne[:, 0], x_tsne[:, 1]);
 ```
 
-# Clustering
-Separate data in groups, useful for labeling a dataset.
-- Knowing K
-  - **K-Means**
-  - **Mean-Shift**
-- Without knowing K
-  - **DBSCAN**: Density-Based Spatial Clustering of Applications with Noise. 
 
 
 
-<h3 align="right"><a href="#machine-learning">🔝</a></h3>
 
-# 🔮 Model selection
+# 🔮 Model selection [🔝](#machine-learning)
+> - [Predictive models (classification and regresion)](#)
+>   - [Linear](#)
+>   - [Decision tree](#)
+>   - [Random forest](#)
+>   - [Gradient boosting](#)
+>   - [Support vector machine](#)
+> - [Clustering models](#clustering)
+> - [Time series models](#)
 
 ### Simple models
 Good for starting point (baseline), meta-features (input to other models), stacking (final output).
@@ -404,14 +320,32 @@ Stronger models.
 - [**XGBoost**](https://github.com/dmlc/xgboost), [**LightGBM**](https://github.com/Microsoft/LightGBM), [**CatBoost**](https://github.com/catboost/catboost) 💪 **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
 
 
+
+### Clustering
+Separate data in groups, useful for labeling a dataset.
+- Knowing K
+  - **K-Means**
+  - **Mean-Shift**
+- Without knowing K
+  - **DBSCAN**: Density-Based Spatial Clustering of Applications with Noise. 
+  
+  
 ### Time series analysis
 - Time series: Sequence of values of some feature (obtained in constant time periods).
 - Goal: Get the forecast (predict future values).
 
 
-<h3 align="right"><a href="#machine-learning">🔝</a></h3>
 
-# 🎯 Hyperparameters optimization
+
+
+# 🎯 Hyperparameters optimization [🔝](#machine-learning)
+> - Grid search
+> - Random search
+> - Bayesian optimization ⭐
+> - Particle swarm optimization (PSO)
+> - Simulated Annealing
+> - Gradient descent
+> - Evolutionary algorithm
 
 Method             | Description                                                                            | Library 
 :------------------|----------------------------------------------------------------------------------------|--------
@@ -424,22 +358,23 @@ Method             | Description                                                
 Note that **grid** and **random** search can be **paralelized**, others methods can not.
 
 
-<h3 align="right"><a href="#machine-learning">🔝</a></h3>
 
-# 📏 Metrics
+# 📏 Metrics [🔝](#machine-learning)
+>  - Classification metrics
+>  - Regression metrics
+
 - [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html)
 - [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
 
-<h3 align="right"><a href="#machine-learning">🔝</a></h3>
 
-# ❓ Explainability
+
+# ❓ Explainability [🔝](#machine-learning)
 - [link](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
 - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
 
 <h3 align="right"><a href="#machine-learning">🔝</a></h3>
 
-# 🍹 Auto Machine learning
-
+# 🍹 Auto Machine learning [🔝](#machine-learning)
 ### Neural Architecture Search (NAS)
 - **DARTS**: Differentiable Architecture Search [*paper*](https://arxiv.org/abs/1806.09055), [DARTS in PyTorch](https://github.com/quark0/darts)
 
@@ -455,7 +390,64 @@ Note that **grid** and **random** search can be **paralelized**, others methods 
 
 ---
 
-# 🐼 Data manipulation with [Pandas](https://pandas.pydata.org)
+
+# 🍹 Auto Machine learning [🔝](#machine-learning)
+> - [**MLBox**](https://github.com/AxeldeRomblay/MLBox)
+> - [**Auto Sklean**](https://github.com/automl/auto-sklearn)
+> - [**TPOT**](https://github.com/EpistasisLab/tpot) ⭐
+> - [**H20**](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) ⭐
+> - Neural Architecture Search (NAS) for deep learning
+>   - **DARTS**: Differentiable Architecture Search
+>   - [**Uber Ludwig**](https://uber.github.io/ludwig/) ⭐
+>   - [**Autokeras**](https://autokeras.com/)
+> - References
+>   - [Automl webpage](https://www.automl.org/automl)
+>   - [Siraj video](https://youtu.be/jn-22XyKsgo)
+>
+
+
+----------------------------------------------------------------
+
+# 📚 Libraries [🔝](#machine-learning)
+- **Data**
+  - 🔢 [**Numpy**](https://numpy.org): Vectors and matrices
+  - 🐼 [**Pandas**](#data-manipulation-with-pandas): Data manipulation
+- **Visualization**
+  - 📊 [**Matplotlib**](#visualization-with-matplotlib-and-seaborn)
+  - 📊 [**Seaborn**](#visualization-with-matplotlib-and-seaborn)
+- **Machine learning**
+  - 💡 [**Scikit learn**](https://scikit-learn.org): Machine learning
+  - 🔦 [**Pytorch**](https://pytorch.org): Deep learning
+  - 💧 [**H2O**](https://www.h2o.ai/products/h2o/): Machine learning, AutoML
+  - 🌳 [**XGBoost**](https://github.com/dmlc/xgboost): Gradient Boosting
+  - 🌳 [**LightGBM**](https://github.com/Microsoft/LightGBM): Gradient Boosting
+  - 🌳 [**CatBoost**](https://github.com/catboost/catboost): Gradient Boosting
+- **Auto Machine learning**
+  - 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)
+  - 💡 [**Auto Sklean**](https://github.com/automl/auto-sklearn)
+  - 🧬 [**TPOT**](https://github.com/EpistasisLab/tpot) ⭐
+  - 💧 [**H20**](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) ⭐
+
+
+# 🌍 Real world applications [🔝](#machine-learning)
+> - loss-given-default
+> - probability of default
+> - customer churn
+> - campaign response
+> - fraud detection
+> - anti-money-laundering
+> - predictive asset maintenance
+> - References
+>   - [link](https://www.knime.com/solutions)
+
+TODO:
+- [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
+- Prueba U de Mann-Whitney
+- Prueba t de Student
+- Metrica Kappa
+
+
+# 🐼 Data manipulation with [Pandas](https://pandas.pydata.org) [🔝](#machine-learning)
 > - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
 
 - Import pandas library `import pandas as pd`
