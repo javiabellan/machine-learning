@@ -2,6 +2,54 @@
 
 ### ML Pipeline
 
+
+<table>
+  <tbody>
+    <!-------------------------------- 1. Data cleaning -------------------------------->
+    <tr>
+      <td><h1>🛁</h1></td>
+      <td>
+        <h2><a href="#-data-cleaning-">1. Data cleaning</a></h2>
+        <p>Preprocess and clean the data.</p>
+      </td>
+      <td><ul>
+          <li><a href="#">Missings imputation</a></li>
+          <li><a href="#">Outliers removal</a></li>
+        </ul></td>
+    </tr>
+   <!-------------------------------- 2. Feature engineering -------------------------------->
+    <tr>
+      <td><h1>🛠</h1></td>
+      <td>
+        <h3><a href="#-feature-engineering-">2. Feature engineering</a></h3>
+        <ul>
+          <li><a href="#feature-selection">Feature selection</a></li>
+          <li><a href="#dimensionality-reduction">Dimensionality reduction</a></li>
+        </ul>
+      </td>
+      <td>Select and construct appropriate features.</td>
+    </tr>
+    <!-------------------------------- 3. Models -------------------------------->
+    <tr>
+      <td><h1>🔮</h1></td>
+      <td>
+        <h3><a href="#-models-">3. Models</a></h3>
+        <ul>
+          <li><a href="#feature-selection">Prediction</a></li>
+          <li><a href="#dimensionality-reduction">Clustering</a></li>
+        </ul>
+      </td>
+      <td>Select an appropriate model.</td>
+    </tr>
+     <!-------------------------------- 4. Hyperparams optimization -------------------------------->
+    <tr>
+      <td><h1>🎯</h1></td>
+      <td>
+        <h3><a href="#-hyperparameters-optimization-">4. Hyperparams optimization</a></h3>
+      </td>
+      <td>Optimize model hyperparameters.</td>
+    </tr>
+    
 |   |                                                                    |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
 | 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
