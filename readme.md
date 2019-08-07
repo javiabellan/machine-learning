@@ -17,20 +17,11 @@
 |-------------------------------------------------------------------|--------------------------------------------|
 | 🍹 [**Auto Machine learning**](#-auto-machine-learning)           | Automatic machine learning pipeline        |
 | 📊 [**Visualization**](#-visualization)                           | Graphs and plots                           |
-| 🐍 [**Python libraries**](#-libraries)                                   | Cheasheets of common libraries             |
+| 🐍 [**Python libraries**](#-libraries)                            | Cheasheets of common libraries             |
 
-<img align="right" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
 
 ### Index
 
-> - 🛁 **Data cleaning**
->   - [Missings imputation](#)
->   - [Outliers removal](#)
-> - 🛠 **Feature engineering**
->   - [Scaling (normalize, standarize, logs, ...)](#)
->   - [Feature selection](#)
->   - [Dimensionality reduction](#dimensionality-reduction)
->   - [Unbalanced](#)
 > - 🔮 **Model selection**
 >   - [Predictive models (classification and regresion)](#)
 >     - [Linear](#)
@@ -112,11 +103,13 @@ TODO:
 
 ----------------------------------------------------------------
 
-
-
-----------------------------------------------------------------
+<h3 align="right"><a href="#machine-learning">🔝</a></h3>
 
 # 🛁 Data cleaning
+
+> - [Missings imputation](#)
+> - [Outliers removal](#)
+
 - Files
   - CSV
   - Excel
@@ -139,7 +132,16 @@ TODO:
   - Minio
   - Snowflake
 
-# 🛠 Preprocessing
+<h3 align="right"><a href="#machine-learning">🔝</a></h3>
+
+
+# 🛠 Feature engineering
+
+> - [Scaling (normalize, standarize, logs, ...)](#)
+> - [Feature selection](#)
+> - [Dimensionality reduction](#dimensionality-reduction)
+> - [Unbalanced](#)
+
 - Deal with **missings values**
 - Deal with **outliers**
 - Deal with **imbalanced datasets**: Check [imbalanced-learn package](http://imbalanced-learn.org)
@@ -363,6 +365,7 @@ Separate data in groups, useful for labeling a dataset.
 
 
 
+<h3 align="right"><a href="#machine-learning">🔝</a></h3>
 
 # 🔮 Model selection
 
@@ -406,6 +409,8 @@ Stronger models.
 - Goal: Get the forecast (predict future values).
 
 
+<h3 align="right"><a href="#machine-learning">🔝</a></h3>
+
 # 🎯 Hyperparameters optimization
 
 Method             | Description                                                                            | Library 
@@ -419,13 +424,19 @@ Method             | Description                                                
 Note that **grid** and **random** search can be **paralelized**, others methods can not.
 
 
+<h3 align="right"><a href="#machine-learning">🔝</a></h3>
+
 # 📏 Metrics
 - [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html)
 - [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
 
+<h3 align="right"><a href="#machine-learning">🔝</a></h3>
+
 # ❓ Explainability
 - [link](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
 - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
+
+<h3 align="right"><a href="#machine-learning">🔝</a></h3>
 
 # 🍹 Auto Machine learning
 
@@ -470,3 +481,5 @@ Note that **grid** and **random** search can be **paralelized**, others methods 
 
 # Resources
 - [ML overview](https://vas3k.com/blog/machine_learning/)
+
+<img align="right" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
