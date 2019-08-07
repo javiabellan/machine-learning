@@ -2,23 +2,23 @@
 
 ### ML Pipeline
 
-|   |                                                                   |                                            |
-|---|-------------------------------------------------------------------|--------------------------------------------|
-| 1 | 🛁 [**Data cleaning**](#-data-cleaning)                           | Preprocess and clean the data.             |
-| 2 | 🛠 [**Feature engineering**](#-feature-engineering)               | Select and construct appropriate features. |
-| 3 | 🔮 [**Model selection**](#-model-selection)                       | Select an appropriate model family.        |
-| 4 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization) | Optimize model hyperparameters.            |
-| 5 | 📏 [**Metrics**](#-metrics)                                       | Measure the model performance.             |
-| 6 | ❓ [**Explainability**](#-explainability)                         | Interpret the model.                       |
+|   |                                                                    |                                            |
+|---|--------------------------------------------------------------------|--------------------------------------------|
+| 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
+| 2 | 🛠 [**Feature engineering**](#-feature-engineering-)               | Select and construct appropriate features. |
+| 3 | 🔮 [**Model selection**](#-model-selection-)                       | Select an appropriate model family.        |
+| 4 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
+| 5 | 📏 [**Metrics**](#-metrics-)                                       | Measure the model performance.             |
+| 6 | ❓ [**Explainability**](#-explainability-)                         | Interpret the model.                       |
 
 ### Other ML topics
 
-|                                                                   |                                            |
-|-------------------------------------------------------------------|--------------------------------------------|
-| 🍹 [**Auto Machine learning**](#-auto-machine-learning)           | Automatic machine learning pipeline        |
-| 📊 [**Visualization**](#-visualization)                           | Graphs and plots                           |
-| 🐍 [**Python libraries**](#-libraries)                            | Cheasheets of common libraries             |
-| 🌍 [**Real world applications**](#-real-world-applications)       | Common ML applications                     |
+|                                                                    |                                            |
+|--------------------------------------------------------------------|--------------------------------------------|
+| 🍹 [**Auto Machine learning**](#-auto-machine-learning-)           | Automatic machine learning pipeline        |
+| 📊 [**Visualization**](#-visualization-)                           | Graphs and plots                           |
+| 🐍 [**Python libraries**](#-libraries-)                            | Cheasheets of common libraries             |
+| 🌍 [**Real world applications**](#-real-world-applications-)       | Common ML applications                     |
 
 
 ----------------------------------------------------------------
