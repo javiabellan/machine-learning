@@ -11,19 +11,19 @@
 > - [**Visualization with Matplotlib and Seaborn**](#visualization-with-matplotlib-and-seaborn)
 > - [**Dimensionality reduction**](#dimensionality-reduction)
 >
-> <h3 align="center">Macine learning pipeline</h3>
->
 > ### 🛁 Data cleaning
 > Preprocess and clean the data.
-> - [**Missings**](#)
-> - [**Outliers**](#)
+> - [**Missings imputation**](#)
+> - [**Outliers removal**](#)
 >
 > ### 🛠 Feature engineering
-> - [**Transformations** (normalize, standarize, logs, ...)](#)
+> Select and construct appropriate features.
+> - [**Scaling** (normalize, standarize, logs, ...)](#)
+> - [**Feature selection**](#)
 > - [**Unbalanced**](#)
-> - [**Remove variables (feature selection)**](#)
 >
 > ### 🔮 Model selection
+> Select an appropriate model family.
 > - [**Predictive models (classification and regresion)**](#)
 >    - [**Linear**](#)
 >    - [**Decision tree**](#)
@@ -33,7 +33,18 @@
 > - [**Clustering models**](#clustering)
 > - [**Time series models**](#)
 >
+> ### 🎯 [**Hyperparameters optimization**](#hyperparameters-optimization)
+> Optimize model hyperparameters.
+> - Grid search
+> - Random search
+> - Bayesian optimization ⭐
+> - Particle swarm optimization (PSO)
+> - Simulated Annealing
+> - Gradient descent
+> - Evolutionary algorithm
+>
 > ### 📏 Metrics [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html), [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
+> Critically analyze the results obtained.
 > - Classification metrics
 > - Regression metrics
 > 
@@ -42,20 +53,14 @@
 >
 > <h2 align="center">🍹 Auto Machine learning</h2>
 >
-> - Steps
->   - 🛁 Data cleaning
->   - 🛠 Feature engeniring
->   - 🔮 Model selection
->   - 🎯 [**Hyperparameters optimization**](#hyperparameters-optimization)
-> - 📚 Libraries
->   - [**MLBox**](https://github.com/AxeldeRomblay/MLBox)
->   - [**Auto Sklean**](https://github.com/automl/auto-sklearn)
->   - [**TPOT**](https://github.com/EpistasisLab/tpot)
->   - [**H20**](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html)
->   - [**Autokeras**](https://autokeras.com/)
->   - [**Ludwig**](https://uber.github.io/ludwig/)
-> - Neural Architecture Search (NAS)
+> - [**MLBox**](https://github.com/AxeldeRomblay/MLBox)
+> - [**Auto Sklean**](https://github.com/automl/auto-sklearn)
+> - [**TPOT**](https://github.com/EpistasisLab/tpot) ⭐
+> - [**H20**](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) ⭐
+> - Neural Architecture Search (NAS) for deep learning
 >   - **DARTS**: Differentiable Architecture Search
+>   - [**Uber Ludwig**](https://uber.github.io/ludwig/) ⭐
+>   - [**Autokeras**](https://autokeras.com/)
 > - References
 >   - [Automl webpage](https://www.automl.org/automl)
 >   - [Siraj video](https://youtu.be/jn-22XyKsgo)
@@ -355,7 +360,9 @@ Separate data in groups, useful for labeling a dataset.
 
 
 
-# Simple models
+# 🔮 Model selection
+
+### Simple models
 Good for starting point (baseline), meta-features (input to other models), stacking (final output).
 - **Logistic regression**: For classification
 - **Linear regression**: For regrssion
@@ -374,7 +381,7 @@ Good for starting point (baseline), meta-features (input to other models), stack
 - **Rule based**: PART, JRip, FURIA (fuzzy)
 
 
-# Ensamble models
+### Ensamble models
 Stronger models.
 - **Random forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
   - Deeper trees
@@ -384,18 +391,18 @@ Stronger models.
   - Tree depth from 3 to 6
   - [**XGBoost**](https://github.com/dmlc/xgboost), [**LightGBM**](https://github.com/Microsoft/LightGBM), [**CatBoost**](https://github.com/catboost/catboost) 💪 **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
 
-# Gradient boosting
+### Gradient boosting
 - Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
 - Tree depth from 3 to 6
 - [**XGBoost**](https://github.com/dmlc/xgboost), [**LightGBM**](https://github.com/Microsoft/LightGBM), [**CatBoost**](https://github.com/catboost/catboost) 💪 **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
 
 
-# Time series analysis
+### Time series analysis
 - Time series: Sequence of values of some feature (obtained in constant time periods).
 - Goal: Get the forecast (predict future values).
 
 
-# Hyperparameters optimization
+# 🎯 Hyperparameters optimization
 
 Method             | Description                                                                            | Library 
 :------------------|----------------------------------------------------------------------------------------|--------
@@ -406,6 +413,17 @@ Method             | Description                                                
 **Evolutionary**   | Uses evolutionary algorithms to search the space of possible hyperparameters.          | ?
 
 Note that **grid** and **random** search can be **paralelized**, others methods can not.
+
+
+
+
+
+
+# 🍹 Auto Machine learning
+
+### Neural Architecture Search (NAS)
+- **DARTS**: Differentiable Architecture Search [*paper*](https://arxiv.org/abs/1806.09055), [DARTS in PyTorch](https://github.com/quark0/darts)
+
 
 # Others
 - Self Organizing Map
