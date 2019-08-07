@@ -2,21 +2,28 @@
 
 <img align="right" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
 
-> ### 📄 Data extraction sources
+
+> ### ⛏ Data extraction
 > - [**Data manipulation (Pandas)**](#data-manipulation-with-pandas)
 >
-> ### 📊 Exploratory Data Analysis
+> ### 📊 Data visualization
+> Also known as Exploratory Data Analysis (EDA)
 > - [**Visualization with Matplotlib and Seaborn**](#visualization-with-matplotlib-and-seaborn)
 > - [**Dimensionality reduction**](#dimensionality-reduction)
 >
-> ### 🛠 Preprocessing
+> <h3 align="center">Macine learning pipeline</h3>
+>
+> ### 🛁 Data cleaning
+> Preprocess and clean the data.
 > - [**Missings**](#)
 > - [**Outliers**](#)
+>
+> ### 🛠 Feature engineering
 > - [**Transformations** (normalize, standarize, logs, ...)](#)
 > - [**Unbalanced**](#)
 > - [**Remove variables (feature selection)**](#)
 >
-> ### 🔮 Models
+> ### 🔮 Model selection
 > - [**Predictive models (classification and regresion)**](#)
 >    - [**Linear**](#)
 >    - [**Decision tree**](#)
