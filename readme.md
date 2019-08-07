@@ -1,49 +1,51 @@
 <h1 align="center">Machine learning</h1>
 
+### ML Pipeline
+| Topic | Description |
+|-------|-------------|
+| 1. 🛁 **Data cleaning**       | Preprocess and clean the data. |
+| 2. 🛠 **Feature engineering** | Select and construct appropriate features. |
+| 3. 🔮 **Model selection**     | Select an appropriate model family. |
+| 4. 🎯 [**Hyperparameters optimization**](#hyperparameters-optimization) | Optimize model hyperparameters. |
+| 5. 📏 **Metrics**             | Measure the model performance. |
+| 6. ❓ **Explainability**      | Interpret the model. |
+
 <img align="right" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
 
+### Index
 
-> ### 🛁 Data cleaning
-> Preprocess and clean the data.
-> - [**Missings imputation**](#)
-> - [**Outliers removal**](#)
->
-> ### 🛠 Feature engineering
-> Select and construct appropriate features.
-> - [**Scaling** (normalize, standarize, logs, ...)](#)
-> - [**Feature selection**](#)
-> - [**Dimensionality reduction**](#dimensionality-reduction)
-> - [**Unbalanced**](#)
->
-> ### 🔮 Model selection
-> Select an appropriate model family.
-> - [**Predictive models (classification and regresion)**](#)
->    - [**Linear**](#)
->    - [**Decision tree**](#)
->    - [**Random forest**](#)
->    - [**Gradient boosting**](#)
->    - [**Support vector machine**](#)
-> - [**Clustering models**](#clustering)
-> - [**Time series models**](#)
->
-> ### 🎯 [**Hyperparameters optimization**](#hyperparameters-optimization)
-> Optimize model hyperparameters.
-> - Grid search
-> - Random search
-> - Bayesian optimization ⭐
-> - Particle swarm optimization (PSO)
-> - Simulated Annealing
-> - Gradient descent
-> - Evolutionary algorithm
->
-> ### 📏 Metrics [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html), [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
-> Critically analyze the results obtained.
-> - Classification metrics
-> - Regression metrics
-> 
-> ### ❓ Explainability [link](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
-> - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
->
+> - 🛁 **Data cleaning**
+>   - [Missings imputation](#)
+>   - [Outliers removal](#)
+> - 🛠 **Feature engineering**
+>   - [Scaling (normalize, standarize, logs, ...)](#)
+>   - [Feature selection](#)
+>   - [Dimensionality reduction](#dimensionality-reduction)
+>   - [Unbalanced](#)
+> - 🔮 **Model selection**
+>   - [Predictive models (classification and regresion)](#)
+>     - [Linear](#)
+>     - [Decision tree](#)
+>     - [Random forest](#)
+>     - [Gradient boosting](#)
+>     - [Support vector machine](#)
+>   - [Clustering models](#clustering)
+>   - [Time series models](#)
+> - 🎯 [**Hyperparameters optimization**](#hyperparameters-optimization)
+>   - Grid search
+>   - Random search
+>   - Bayesian optimization ⭐
+>   - Particle swarm optimization (PSO)
+>   - Simulated Annealing
+>   - Gradient descent
+>   - Evolutionary algorithm
+>  - 📏 **Metrics** [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html), [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
+>    - Classification metrics
+>    - Regression metrics
+> - ❓ **Explainability** [link](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
+>    - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
+
+
 > <h2 align="center">🍹 Auto Machine learning</h2>
 >
 > - [**MLBox**](https://github.com/AxeldeRomblay/MLBox)
@@ -58,6 +60,29 @@
 >   - [Automl webpage](https://www.automl.org/automl)
 >   - [Siraj video](https://youtu.be/jn-22XyKsgo)
 >
+
+
+<h1 align="center">📚 Libraries</h1>
+
+- **Data**
+  - 🔢 [**Numpy**](https://numpy.org): Vectors and matrices
+  - 🐼 [**Pandas**](#data-manipulation-with-pandas): Data manipulation
+- **Visualization**
+  - 📊 [**Matplotlib**](#visualization-with-matplotlib-and-seaborn)
+  - 📊 [**Seaborn**](#visualization-with-matplotlib-and-seaborn)
+- **Machine learning**
+  - 💡 [**Scikit learn**](https://scikit-learn.org): Machine learning
+  - 🔦 [**Pytorch**](https://pytorch.org): Deep learning
+  - 💧 [**H2O**](https://www.h2o.ai/products/h2o/): Machine learning, AutoML
+  - 🌳 [**XGBoost**](https://github.com/dmlc/xgboost): Gradient Boosting
+  - 🌳 [**LightGBM**](https://github.com/Microsoft/LightGBM): Gradient Boosting
+  - 🌳 [**CatBoost**](https://github.com/catboost/catboost): Gradient Boosting
+- **Auto Machine learning**
+  - 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)
+  - 💡 [**Auto Sklean**](https://github.com/automl/auto-sklearn)
+  - 🧬 [**TPOT**](https://github.com/EpistasisLab/tpot) ⭐
+  - 💧 [**H20**](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) ⭐
+
 > <h2 align="center">🌍 Real world ML applications</h2>
 >
 > - loss-given-default
@@ -69,12 +94,6 @@
 > - predictive asset maintenance
 > - References
 >   - [link](https://www.knime.com/solutions)
-
-### 📚 Libraries
-
-- 🐼 [**Pandas**](#data-manipulation-with-pandas): Data manipulation
-- 📊 [**Matplotlib**](#visualization-with-matplotlib-and-seaborn): Visualization
-- 📊 [**Seaborn**](#visualization-with-matplotlib-and-seaborn): Visualization
 
 TODO:
 - [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
