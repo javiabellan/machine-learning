@@ -1,14 +1,15 @@
 <h1 align="center">Machine learning</h1>
 
 ### ML Pipeline
-| Topic | Description |
-|-------|-------------|
-| 1. 🛁 **Data cleaning**       | Preprocess and clean the data. |
-| 2. 🛠 **Feature engineering** | Select and construct appropriate features. |
-| 3. 🔮 **Model selection**     | Select an appropriate model family. |
-| 4. 🎯 [**Hyperparameters optimization**](#hyperparameters-optimization) | Optimize model hyperparameters. |
-| 5. 📏 **Metrics**             | Measure the model performance. |
-| 6. ❓ **Explainability**      | Interpret the model. |
+
+|   | Topic                                                             | Description                                |
+|---|-------------------------------------------------------------------|--------------------------------------------|
+| 1 | [🛁 **Data cleaning**](#-data-cleaning)                           | Preprocess and clean the data.             |
+| 2 | [🛠 **Feature engineering**](#-feature-engineering)               | Select and construct appropriate features. |
+| 3 | [🔮 **Model selection**](#-model-selection)                       | Select an appropriate model family.        |
+| 4 | [🎯 **Hyperparams optimization**](#-hyperparameters-optimization) | Optimize model hyperparameters.            |
+| 5 | [📏 **Metrics**](#-metrics)                                       | Measure the model performance.             |
+| 6 | [❓ **Explainability**](#-explainability)                         | Interpret the model.                       |
 
 <img align="right" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
 
@@ -39,11 +40,11 @@
 >   - Simulated Annealing
 >   - Gradient descent
 >   - Evolutionary algorithm
->  - 📏 **Metrics** [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html), [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
+>  - 📏 **Metrics**
 >    - Classification metrics
 >    - Regression metrics
-> - ❓ **Explainability** [link](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
->    - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
+> - ❓ **Explainability**
+>   - Blablabla
 
 
 > <h2 align="center">🍹 Auto Machine learning</h2>
@@ -103,8 +104,11 @@ TODO:
 
 ----------------------------------------------------------------
 
-# 📄 Data extraction sources
 
+
+----------------------------------------------------------------
+
+# 🛁 Data cleaning
 - Files
   - CSV
   - Excel
@@ -126,31 +130,6 @@ TODO:
   - kdb+
   - Minio
   - Snowflake
-
-----------------------------------------------------------------
-
-# 🐼 Data manipulation with [Pandas](https://pandas.pydata.org)
-> - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
-
-- Import pandas library `import pandas as pd`
-- Read a CSV file into a pandas dataframe `df = pd.read_csv("file.csv")`
-- Get dataframe info:
-  - Show firt/last rows `df.head()` `df.tail()`
-  - Get shape: `df.shape`. Get columns: `df.columns.tolist()`.
-  - Print some info (like missings and types): `df.info()`
-  - Has missings? `df.isnull().any().any()`
-  - Describe numerical atributes `df.describe()`
-  - Describe categorical atributes `df.describe(include=['object', 'bool'])`
-- Do some data exploration
-  - Get some column (return a series) `df["column"]`
-  - Get some columns (return a df) `df[["column1", "column1"]]`
-  - Apply function to column `.mean()` `.std()` `.median()` `.max()` `.min()` `.count()`
-  - Count unique values `.value_counts()`
-- Filter dataframe rows
-  - One condition `df[df["column"]==1]`
-  - Multiple conditions `df[(df["column1"]==1) & (df["column2"]=='No')]`
-- Save it in a CSV [`df.to_csv("sub.csv", index=False)`](http://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-store-in-csv)
-
 
 # 🛠 Preprocessing
 - Deal with **missings values**
@@ -432,9 +411,13 @@ Method             | Description                                                
 Note that **grid** and **random** search can be **paralelized**, others methods can not.
 
 
+# 📏 Metrics
+- [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html)
+- [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
 
-
-
+# ❓ Explainability
+- [link](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
+- [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
 
 # 🍹 Auto Machine learning
 
@@ -450,6 +433,30 @@ Note that **grid** and **random** search can be **paralelized**, others methods 
 - Hebbian learning
 - Evolutionary algorithms
   - Check [Platypus](https://platypus.readthedocs.io/en/latest/index.html)
+
+---
+
+# 🐼 Data manipulation with [Pandas](https://pandas.pydata.org)
+> - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
+
+- Import pandas library `import pandas as pd`
+- Read a CSV file into a pandas dataframe `df = pd.read_csv("file.csv")`
+- Get dataframe info:
+  - Show firt/last rows `df.head()` `df.tail()`
+  - Get shape: `df.shape`. Get columns: `df.columns.tolist()`.
+  - Print some info (like missings and types): `df.info()`
+  - Has missings? `df.isnull().any().any()`
+  - Describe numerical atributes `df.describe()`
+  - Describe categorical atributes `df.describe(include=['object', 'bool'])`
+- Do some data exploration
+  - Get some column (return a series) `df["column"]`
+  - Get some columns (return a df) `df[["column1", "column1"]]`
+  - Apply function to column `.mean()` `.std()` `.median()` `.max()` `.min()` `.count()`
+  - Count unique values `.value_counts()`
+- Filter dataframe rows
+  - One condition `df[df["column"]==1]`
+  - Multiple conditions `df[(df["column1"]==1) & (df["column2"]=='No')]`
+- Save it in a CSV [`df.to_csv("sub.csv", index=False)`](http://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-store-in-csv)
 
 ---
 
