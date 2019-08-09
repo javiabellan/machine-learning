@@ -235,6 +235,23 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
 
 # 📏 Regression Metrics [🔝](#machine-learning)
 
+| Scores    | Full name                         | Tip
+|-----------|-----------------------------------|--------------------------------------------
+| **ME**    | Mean Error  (or Mean Bias Error)  | It could determine if the model has positive bias or negative bias.
+| **MAE**   | Mean Absolute Error               | The most simple.
+| **MSE**   | Mean Squared Error                | Penalice large errors more than MAE.
+| **MSLE**  | Mean Squared Log Error            |
+| **MPE**   | Mean Percent Error                | Use when target values are across different scales
+| **MAPE**  | Mean Absolute Percent Error       | Use when target values are across different scales
+| **SMAPE** | Symmetric Mean Abs Percent Error  | Use when target values close to 0
+| **MSPE**  | Mean Squared Percent Error        |
+| **RMSE**  | Root Mean Squared Error ⭐        | Proportional to MSE.
+| **RMSLE** | Root Mean Squared Log Error       | Not penalize large differences when both values are large numbers.
+| **RMSPE** | Root Mean Squared Percent Error   | Use when target values are across different scales
+| **R2**    | R² (coefficient of determination) |
+
+⚠️ Note that **Squared** errors are sensitive to **outliers** (bad) because penalizes large errors by a lot more.
+
 
 # ❓ Explainability [🔝](#machine-learning)
 - [link](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
