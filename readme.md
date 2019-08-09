@@ -1,60 +1,11 @@
 <h1 align="center">Machine learning</h1>
 
 ### ML Pipeline
-
-
-<table>
-  <tbody>
-    <!-------------------------------- 1. Data cleaning -------------------------------->
-    <tr>
-      <td><h1>🛁</h1></td>
-      <td>
-        <h2><a href="#-data-cleaning-">1. Data cleaning</a></h2>
-        <p>Preprocess and clean the data.</p>
-      </td>
-      <td><ul>
-          <li><a href="#">Missings imputation</a></li>
-          <li><a href="#">Outliers removal</a></li>
-        </ul></td>
-    </tr>
-   <!-------------------------------- 2. Feature engineering -------------------------------->
-    <tr>
-      <td><h1>🛠</h1></td>
-      <td>
-        <h3><a href="#-feature-engineering-">2. Feature engineering</a></h3>
-        <ul>
-          <li><a href="#feature-selection">Feature selection</a></li>
-          <li><a href="#dimensionality-reduction">Dimensionality reduction</a></li>
-        </ul>
-      </td>
-      <td>Select and construct appropriate features.</td>
-    </tr>
-    <!-------------------------------- 3. Models -------------------------------->
-    <tr>
-      <td><h1>🔮</h1></td>
-      <td>
-        <h3><a href="#-models-">3. Models</a></h3>
-        <ul>
-          <li><a href="#feature-selection">Prediction</a></li>
-          <li><a href="#dimensionality-reduction">Clustering</a></li>
-        </ul>
-      </td>
-      <td>Select an appropriate model.</td>
-    </tr>
-     <!-------------------------------- 4. Hyperparams optimization -------------------------------->
-    <tr>
-      <td><h1>🎯</h1></td>
-      <td>
-        <h3><a href="#-hyperparameters-optimization-">4. Hyperparams optimization</a></h3>
-      </td>
-      <td>Optimize model hyperparameters.</td>
-    </tr>
-    
 |   |                                                                    |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
 | 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
 | 2 | 🛠 [**Feature engineering**](#-feature-engineering-)                | Select and construct appropriate features. |
-| 3 | 🔮 **Models**: [**Prediction**](#-prediction models-), [**Clustering**](#-clustering models-) | Select an appropriate model. |
+| 3 | 🔮 **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
 | 4 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
 | 5 | 📏 [**Metrics**](#-metrics-)                                       | Measure the model performance.             |
 | 6 | ❓ [**Explainability**](#-explainability-)                         | Interpret the model.                       |
@@ -170,7 +121,7 @@ plt.scatter(x_tsne[:, 0], x_tsne[:, 1]);
 
 
 
-# 🔮 Models [🔝](#machine-learning)
+# 🔮 Prediction Models [🔝](#machine-learning)
 > - [Predictive models (classification and regresion)](#)
 >   - [Linear](#)
 >   - [Decision tree](#)
@@ -216,7 +167,7 @@ Stronger models.
 
 
 
-### Clustering
+# 🔮 Clustering Models
 Separate data in groups, useful for labeling a dataset.
 - Knowing K
   - **K-Means**
