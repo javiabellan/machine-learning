@@ -199,24 +199,39 @@ Note that **grid** and **random** search can be **paralelized**, others methods 
 
 # 📏 Classification Metrics [🔝](#machine-learning)
 
-> - [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html)
-> - [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
+> - [Scikit-learn classification metrics](https://scikit-learn.org/stable/modules/classes.html#classification-metrics)
+> - [H2O classification metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html#classification)
+> - [H2O classification metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html#classification-metric-plots)
 
+| Score                         | Description                                  | Tip                          |
+|-------------------------------|----------------------------------------------|------------------------------|
+| [**Accuracy**](#accuracy)     | `# correctly predicted / # observations`     | Highly interpretable         |
+| [**Precision**](#precision)   | `TP / TP + FP` = `TP / predicted possitives` |                              |
+| [**Recall**](#recall)         | `TP / TP + FN` = `TP / actual possitives`    |                              |
+| [**Fβ Score**](#fβ-Score)     | `(1+β²) * (Prec*Rec)/(β²*Prec+Rec)`          |                              |
+| [**F05**](#f05-Score)         | `1.25 * (Prec*Rec)/(0.25*Prec+Rec)`          | Good when you want to give more weight to precision |
+| [**F1**](#f1-Score)           | `2 * (Prec*Rec)/(Prec+Rec)`                  |                              |
+| [**F2**](#f2-Score)           | `5 * (Prec*Rec)/(4*Prec+Rec)`                | Good when you want to give more weight to recall    |
+| [**Dice**](#dice-Score)       |`2 * (Pred ∩ GT)/(Pred + GT)`                 |                              |
+| [**Log loss**](#log-loss)     |                                              |                              |
+| [**MCC**](#mcc)               | Matthews Correlation Coefficient             | Represents the confusion matrix. Good for imbalanced |
+| [**AUC**](#auc)               | Area Under the roc Curve                     | Represent the ROC curve.      |
+| [**AUCPR**](#aucpr)           | Area Under the precision-recall Curve        |                               |
+| [**MACROAUC**](#macroauc)     | Macro average of Areas Under the roc Curves  | Good for imbalanced data      |
+
+
+| Classification Metric Plots     |   |
+|---------------------------------|---|
+| **Confusion Matrix**            | ⭐ |
+| **ROC Curve**                   | ⭐ |
+| **Precision-Recall Curve**      |   |
+| **Cumulative Gains**            |   |
+| **Lift Chart**                  |   |
+| **Kolmogorov-Smirnov Chart**    |   |
+
+### Example
 Dataset with 5 disease images and 20 normal images. If the model predicts all images to be normal, its accuracy is 80%, and F1-score of such a model is 0.88
 
-- **Accuracy**: `# correctly predicted / # observations` or `TP + TN / TP + TN + FP + FN`
-- **Precision**: `TP / TP + FP` = `TP / predicted possitives`
-- **Recall**: `TP / TP + FN` = `TP / actual possitives`
-- **Fβ Score**: `(1+β²) * (Prec*Rec)/(β²*Prec+Rec)`
-  - **F05**: `1.25 * (Prec*Rec)/(0.25*Prec+Rec)`
-  - **F1**: `2 * (Prec*Rec)/(Prec+Rec)`
-  - **F2**:  `5 * (Prec*Rec)/(4*Prec+Rec)`
-- **Dice Score**: `2 * (Pred ∩ GT)/(Pred + GT)`
-- **Log loss**:
-- **MCC**: Matthews Correlation Coefficient. Represent the confusion matrix of a model as a single number. 
-- **AUC**: Area Under the roc Curve. Represent the ROC curve of a model as a single number. 
-- **AUCPR**: Area Under the precision-recall Curve
-- **MACROAUC**: Macro average of Areas Under the roc Curves
 
 # 📏 Regression Metrics [🔝](#machine-learning)
 
