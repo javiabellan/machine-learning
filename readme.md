@@ -53,11 +53,12 @@
 |   |                                                                    |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
 | 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
-| 2 | 🛠 [**Feature engineering**](#-feature-engineering-)               | Select and construct appropriate features. |
-| 3 | 🔮 [**Models**](#-models-)                                         | Select an appropriate model.               |
+| 2 | 🛠 [**Feature engineering**](#-feature-engineering-)                | Select and construct appropriate features. |
+| 3 | 🔮 **Models**: [**Prediction**](#-prediction models-), [**Clustering**](#-clustering models-) | Select an appropriate model. |
 | 4 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
 | 5 | 📏 [**Metrics**](#-metrics-)                                       | Measure the model performance.             |
 | 6 | ❓ [**Explainability**](#-explainability-)                         | Interpret the model.                       |
+
 
 ### Other ML topics
 
@@ -69,6 +70,28 @@
 | 🌍 [**Real world applications**](#-real-world-applications-)       | Common ML applications                     |
 
 
+### 📚 Python libraries
+
+| Library                                                            | Description                                |    |
+|--------------------------------------------------------------------|--------------------------------------------|----|
+| 🔢 [**Numpy**](https://numpy.org)                                  | Vectors and matrices                       | ⭐ |
+| 🐼 [**Pandas**](#data-manipulation-with-pandas)                    | Data manipulation                          | ⭐ |
+| 📊 [**Matplotlib**](#visualization-with-matplotlib-and-seaborn)    | Data visualization                         | ⭐ |
+| 📊 [**Seaborn**](#visualization-with-matplotlib-and-seaborn)       | Data visualization                         |    |
+| 💡 [**Scikit learn**](https://scikit-learn.org)                     | Machine learning                           | ⭐ |
+| 🔦 [**Pytorch**](https://pytorch.org)                              | Deep learning                              | ⭐ |
+| 🌳 [**XGBoost**](https://github.com/dmlc/xgboost)                  | Gradient Boosting                          | ⭐ |
+| 🌳 [**LightGBM**](https://github.com/Microsoft/LightGBM)           | Gradient Boosting                         |
+| 🌳 [**CatBoost**](https://github.com/catboost/catboost)            | Gradient Boosting                         |
+| 💧 [**H2O**](https://www.h2o.ai/products/h2o/)                      | Auto Machine learning                      | ⭐ |
+| 🍵 [**TPOT**](https://github.com/EpistasisLab/tpot)              | Auto Machine learning                     |
+| 💡 [**Auto Sklearn**](https://github.com/automl/auto-sklearn)       | Auto Machine learning                     |
+| 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)             | Auto Machine learning                     |
+
+
+
+
+  
 ----------------------------------------------------------------
 
 
@@ -279,26 +302,6 @@ Note that **grid** and **random** search can be **paralelized**, others methods 
 
 
 ----------------------------------------------------------------
-
-# 📚 Libraries [🔝](#machine-learning)
-- **Data**
-  - 🔢 [**Numpy**](https://numpy.org): Vectors and matrices
-  - 🐼 [**Pandas**](#data-manipulation-with-pandas): Data manipulation
-- **Visualization**
-  - 📊 [**Matplotlib**](#visualization-with-matplotlib-and-seaborn)
-  - 📊 [**Seaborn**](#visualization-with-matplotlib-and-seaborn)
-- **Machine learning**
-  - 💡 [**Scikit learn**](https://scikit-learn.org): Machine learning
-  - 🔦 [**Pytorch**](https://pytorch.org): Deep learning
-  - 💧 [**H2O**](https://www.h2o.ai/products/h2o/): Machine learning, AutoML
-  - 🌳 [**XGBoost**](https://github.com/dmlc/xgboost): Gradient Boosting
-  - 🌳 [**LightGBM**](https://github.com/Microsoft/LightGBM): Gradient Boosting
-  - 🌳 [**CatBoost**](https://github.com/catboost/catboost): Gradient Boosting
-- **Auto Machine learning**
-  - 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)
-  - 💡 [**Auto Sklean**](https://github.com/automl/auto-sklearn)
-  - 🧬 [**TPOT**](https://github.com/EpistasisLab/tpot) ⭐
-  - 💧 [**H20**](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) ⭐
 
 
 # 🌍 Real world applications [🔝](#machine-learning)
