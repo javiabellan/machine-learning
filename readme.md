@@ -8,7 +8,7 @@
 | 2 | 🛠 [**Feature engineering**](#-feature-engineering-)                | Select and construct appropriate features. |
 | 3 | 🔮 **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
 | 4 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
-| 5 | 📏 [**Metrics**](#-metrics-)                                       | Measure the model performance.             |
+| 5 | 📏 **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
 | 6 | ❓ [**Explainability**](#-explainability-)                         | Interpret the model.                       |
 | all | 🍹 [**Auto Machine learning**](#-auto-machine-learning-)           | Automatic machine learning pipeline        |
 
@@ -197,13 +197,28 @@ Note that **grid** and **random** search can be **paralelized**, others methods 
 
 
 
-# 📏 Metrics [🔝](#machine-learning)
->  - Classification metrics
->  - Regression metrics
+# 📏 Classification Metrics [🔝](#machine-learning)
 
-- [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html)
-- [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
+> - [metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html)
+> - [metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html)
 
+Dataset with 5 disease images and 20 normal images. If the model predicts all images to be normal, its accuracy is 80%, and F1-score of such a model is 0.88
+
+- **Accuracy**: `# correctly predicted / # observations` or `TP + TN / TP + TN + FP + FN`
+- **Precision**: `TP / TP + FP` = `TP / predicted possitives`
+- **Recall**: `TP / TP + FN` = `TP / actual possitives`
+- **Fβ Score**: `(1+β²) * (Prec*Rec)/(β²*Prec+Rec)`
+  - **F05**: `1.25 * (Prec*Rec)/(0.25*Prec+Rec)`
+  - **F1**: `2 * (Prec*Rec)/(Prec+Rec)`
+  - **F2**:  `5 * (Prec*Rec)/(4*Prec+Rec)`
+- **Dice Score**: `2 * (Pred ∩ GT)/(Pred + GT)`
+- **Log loss**:
+- **MCC**: Matthews Correlation Coefficient. Represent the confusion matrix of a model as a single number. 
+- **AUC**: Area Under the roc Curve. Represent the ROC curve of a model as a single number. 
+- **AUCPR**: Area Under the precision-recall Curve
+- **MACROAUC**: Macro average of Areas Under the roc Curves
+
+# 📏 Regression Metrics [🔝](#machine-learning)
 
 
 # ❓ Explainability [🔝](#machine-learning)
