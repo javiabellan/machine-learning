@@ -3,22 +3,14 @@
 ### ML Pipeline
 |   |                                                                    |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
+| 0 | 📊 [**Data visualization**](#-visualization-)                      | Plots for exploratory data analysis (EDA)  |
 | 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
 | 2 | 🛠 [**Feature engineering**](#-feature-engineering-)                | Select and construct appropriate features. |
 | 3 | 🔮 **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
 | 4 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
 | 5 | 📏 [**Metrics**](#-metrics-)                                       | Measure the model performance.             |
 | 6 | ❓ [**Explainability**](#-explainability-)                         | Interpret the model.                       |
-
-
-### Other ML topics
-
-|                                                                    |                                            |
-|--------------------------------------------------------------------|--------------------------------------------|
-| 🍹 [**Auto Machine learning**](#-auto-machine-learning-)           | Automatic machine learning pipeline        |
-| 📊 [**Visualization**](#-visualization-)                           | Graphs and plots                           |
-| 🐍 [**Python libraries**](#-libraries-)                            | Cheasheets of common libraries             |
-| 🌍 [**Real world applications**](#-real-world-applications-)       | Common ML applications                     |
+| all | 🍹 [**Auto Machine learning**](#-auto-machine-learning-)           | Automatic machine learning pipeline        |
 
 
 ### 📚 Python libraries
@@ -121,7 +113,7 @@ plt.scatter(x_tsne[:, 0], x_tsne[:, 1]);
 
 
 
-# 🔮 Prediction Models [🔝](#machine-learning)
+# 🔮 Prediction models [🔝](#machine-learning)
 > - [Predictive models (classification and regresion)](#)
 >   - [Linear](#)
 >   - [Decision tree](#)
@@ -167,7 +159,7 @@ Stronger models.
 
 
 
-# 🔮 Clustering Models
+# 🔮 Clustering models [🔝](#machine-learning)
 Separate data in groups, useful for labeling a dataset.
 - Knowing K
   - **K-Means**
@@ -218,21 +210,7 @@ Note that **grid** and **random** search can be **paralelized**, others methods 
 - [link](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
 - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
 
-<h3 align="right"><a href="#machine-learning">🔝</a></h3>
 
-# 🍹 Auto Machine learning [🔝](#machine-learning)
-### Neural Architecture Search (NAS)
-- **DARTS**: Differentiable Architecture Search [*paper*](https://arxiv.org/abs/1806.09055), [DARTS in PyTorch](https://github.com/quark0/darts)
-
-
-# Others
-- Self Organizing Map
-- [Autoencoder](/teoría/modelos/autoencoder.md): Para comprimir información
-- Restricted boltzmann machine: Como el autoencoder pero va y vuelve
-- Competitive learning
-- Hebbian learning
-- Evolutionary algorithms
-  - Check [Platypus](https://platypus.readthedocs.io/en/latest/index.html)
 
 ---
 
@@ -251,7 +229,8 @@ Note that **grid** and **random** search can be **paralelized**, others methods 
 >   - [Siraj video](https://youtu.be/jn-22XyKsgo)
 >
 
-
+### Neural Architecture Search (NAS)
+- **DARTS**: Differentiable Architecture Search [*paper*](https://arxiv.org/abs/1806.09055), [DARTS in PyTorch](https://github.com/quark0/darts)
 ----------------------------------------------------------------
 
 
@@ -470,14 +449,20 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
 
 ---
 
-TODO:
+# Others TODO:
 - [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
 - Prueba U de Mann-Whitney
 - Prueba t de Student
 - Metrica Kappa
+- Self Organizing Map
+- Restricted boltzmann machine: Como el autoencoder pero va y vuelve
+- Competitive learning
+- Hebbian learning
+- Evolutionary algorithms
+  - Check [Platypus](https://platypus.readthedocs.io/en/latest/index.html)
 
 
 # Resources
 - [ML overview](https://vas3k.com/blog/machine_learning/)
 
-<img align="right" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
+<img align="right" width="400" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
