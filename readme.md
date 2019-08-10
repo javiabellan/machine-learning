@@ -219,6 +219,7 @@ Note that **grid** and **random** search can be **paralelized**, others methods 
 | [**AUCPR**](#aucpr)           | Area Under the precision-recall Curve        |                               |
 | [**MACROAUC**](#macroauc)     | Macro average of Areas Under the roc Curves  | Good for imbalanced data      |
 
+![img](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/_images/diagnosing.png)
 
 | Classification Metric Plots     |   |
 |---------------------------------|---|
@@ -252,13 +253,42 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
 
 ⚠️ Note that **Squared** errors are sensitive to **outliers** (bad) because penalizes large errors by a lot more.
 
+### Regression Metric Plots
+- Actual vs Predicted
+- Residual Plot with LOESS curve
+- Residual Histogram
+
+![img](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/_images/diagnosing_regression.png)
+
 
 # ❓ Explainability [🔝](#machine-learning)
-- [link](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
+- [h2o blog](https://www.h2o.ai/blog/how-to-explain-a-model-with-h2o-driverless-ai)
+- [h2o doc](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
 - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
 
+| Technique                                                |
+|----------------------------------------------------------|
+| 1. Global Shapley Feature Importance                     |
+| 2. Global Original Feature Importance                    |
+| 3. Partial Dependence                                    |
+| 4. Global Surrogate Decision Tree                        |
+| 5. Global Interpretable Model                            |
+| 6. Local Shapley Feature Importance                      |
+| 7. Local Linear Explanations                             |
+| 8. Local Surrogate Tree Decision Path                    |
+| 9. Original Feature Individual Conditional Exception ICE |
+| 10. Local Original Feature Importance                    |
 
-
+![img](https://www.h2o.ai/wp-content/uploads/2019/02/1.-Global-Shapley-Feature-Importance.png)
+![img](https://www.h2o.ai/wp-content/uploads/2019/02/2.-Global-Original-Feature-Importance.png)
+![img](https://www.h2o.ai/wp-content/uploads/2019/02/3.-Partial-Dependence.png)
+![img](https://www.h2o.ai/wp-content/uploads/2019/02/4.-Global-Surrogate-Decision-Tree.png)
+![img](https://www.h2o.ai/wp-content/uploads/2019/02/5.-Global-Interpretable-Model.png)
+![img](https://www.h2o.ai/wp-content/uploads/2019/02/6.-Local-Shapley-Feature-Importance.png)
+![img](https://www.h2o.ai/wp-content/uploads/2019/02/7.-Local-Linear-Explanations.png)
+![img](https://www.h2o.ai/wp-content/uploads/2019/02/8.-Local-Surrogate-Tree-Decision-Path.png)
+![img](https://www.h2o.ai/wp-content/uploads/2019/02/9.-Original-Feature-Individual-Conditional-Exception-ICE.png)
+![img](https://www.h2o.ai/wp-content/uploads/2019/02/10.-Local-Original-Feature-Importance.png)
 ---
 
 
