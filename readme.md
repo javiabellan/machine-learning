@@ -84,6 +84,7 @@ Method       | Name                                          | Based in         
 **LSA**      | Latent Semantic Analysis                      |           |
 **SVD**      | Singular Value decomposition                  | Linear?   |
 **LDA**      | Linear Discriminant Analysis                  | Linear    |
+**MDS**      | Multidimensional Scaling                      |           |
 
 ### PCA
 
@@ -114,32 +115,96 @@ plt.scatter(x_tsne[:, 0], x_tsne[:, 1]);
 
 
 # 🔮 Prediction models [🔝](#machine-learning)
-> - [Predictive models (classification and regresion)](#)
->   - [Linear](#)
->   - [Decision tree](#)
->   - [Random forest](#)
->   - [Gradient boosting](#)
->   - [Support vector machine](#)
-> - [Clustering models](#clustering)
-> - [Time series models](#)
 
-### Simple models
-Good for starting point (baseline), meta-features (input to other models), stacking (final output).
-- **Logistic regression**: For classification
-- **Linear regression**: For regrssion
+### 🔮❓ Interpretable Models
+Simple models. Good for starting point (baseline), understand the data, and create surrogate models of blackbox models.
+
+| Interpretable Model | Linear | Monotone | Interaction | Task       |    |
+|---------------------|--------|----------|-------------|------------|----|
+| Linear Regression   | Yes    | Yes      | No          | regr       | ⭐ |
+| Logistic Regression | No     | Yes      | No          | class      |    |
+| Decision Tree       | No     | Some     | Yes         | class,regr | ⭐ |
+| Decision Rules      |        |          |             |            |    |
+| RuleFit             | Yes    | No       | Yes         | class,regr |    |
+| Naive Bayes         | No     | Yes      | No          | class      |    |
+| K-Nearest Neighbors | No     | No       | No          | class,regr |    |
+
+### 🔮📦 Black Box Models
+Better models
+
+| Model                   |   |
+|-------------------------|---|
+| Support Vector Machine  |   |
+| Random forest           | ⭐ |
+| Extra trees             |   |
+| Adaboost                |   |
+| Gradient boosting (GBM) | ⭐⭐⭐ |
+| Neural Network          | ⭐⭐   |
+
+
+---
+
+### Linear Regression
+
+Penalized regression. Regularization (penalty parameter):
+- L1 o LASSO: good for feat selection
+- L2 o RIDGE: for robustness (elastic net)
+
+Target does not follow a Gaussian distribution:
+USE Generalized Linear Models (GLMs)
+(Wrap the lineal reg. with a function)
+- Binary category: Logistic regr. (add sigmoid)
+- Many categories:
+- Discrete count:
+- Time to the occurrence of an event:
+- Very skewed outcome with a few very high values (household income).
+
+The features interact:
+- Adding interactions manually
+
+Not linear:
+- Feature tranformations (log, root, exp, ...)
+- Feature categorization (new subfeatures)
+- Generalized Additive Models (GAMs):
+  Fit standard regression coefficients to dome variables and nonlinear spline functions to other variables.
+
+Otros:
+- quantile regression
+- 
+
+
+### Decision Tree
+- No need to normalize data.
+- Algorithms:
+  - CART: Classification And Regression Trees.
+  - J48
+  - C4.5
+
+
+### Decision Rules
+- **OneR**: Learns rules from a single feature. OneR is characterized by its simplicity, interpretability and its use as a benchmark.
+- **Sequential covering**: General procedure that iteratively learns rules and removes the data points that are covered by the new rule.
+- **Bayesian Rule Lists**: Combine pre-mined frequent patterns into a decision list using Bayesian statistics.
+- RIPPER
+- M5Rules
+- PART
+- JRip
+- FURIA (fuzzy)
+
+
+### K-Nearest Neighbors
 - Instance and distances based:
-  - **K nearest neighbors (KNN)**: Used in recommendation systems. k = 5, 10 or sqrt(Num samples).
-  - **Weighted KNN**: Closer samples are more imortant. Better than KNN.
-  - **Fuzzy KNN**: Sample pionts class labels are multiclass vetor (distance to class centroids).
-  - **Parzen**: Define a window size (with gaussian shape for ex.) and select those samples. (k would be variable).
-  - Utilidad: Conjunto multieditado y condensado: Para reducir el dataset y limparlo.
-  - Utilidad 2 : Para pedecir atributos missing
-- **Decision tree**: J48, C4.5 No need to normalize data.
-- **Support Vector Machines (SVM)**
-  - with liear kernel
-  - with RBF kernel: Very good one
-- **Naive bayes**
-- **Rule based**: PART, JRip, FURIA (fuzzy)
+- **K nearest neighbors (KNN)**: Used in recommendation systems. k = 5, 10 or sqrt(Num samples).
+- **Weighted KNN**: Closer samples are more imortant. Better than KNN.
+- **Fuzzy KNN**: Sample pionts class labels are multiclass vetor (distance to class centroids).
+- **Parzen**: Define a window size (with gaussian shape for ex.) and select those samples. (k would be variable).
+- Utilidad: Conjunto multieditado y condensado: Para reducir el dataset y limparlo.
+- Utilidad 2: Para pedecir atributos missing
+
+
+### Support Vector Machines (SVM)
+- with liear kernel
+- with RBF kernel: Very good one
 
 
 ### Ensamble models
@@ -151,6 +216,7 @@ Stronger models.
 - **Gradient boosting**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
   - Tree depth from 3 to 6
   - [**XGBoost**](https://github.com/dmlc/xgboost), [**LightGBM**](https://github.com/Microsoft/LightGBM), [**CatBoost**](https://github.com/catboost/catboost) 💪 **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
+
 
 ### Gradient boosting
 - Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
@@ -177,24 +243,33 @@ Separate data in groups, useful for labeling a dataset.
 
 
 # 🎯 Hyperparameters optimization [🔝](#machine-learning)
-> - Grid search
-> - Random search
-> - Bayesian optimization ⭐
-> - Particle swarm optimization (PSO)
-> - Simulated Annealing
-> - Gradient descent
-> - Evolutionary algorithm
 
-Method             | Description                                                                            | Library 
-:------------------|----------------------------------------------------------------------------------------|--------
-**Grid Search**    | Search over a discrete set of predefined hyperparameters values.                       | [Sklearn](https://scikit-learn.org/stable/modules/grid_search.html#exhaustive-grid-search)
-**Random Search**  | Provide a statistical distribution for each hyperparameter, for taking a random value. |  [Sklearn](https://scikit-learn.org/stable/modules/grid_search.html#randomized-parameter-optimization)
-**Bayesian**       | Use past evaluation results to choose the next values to evaluate. **`THE BEST`**      | [link](https://github.com/fmfn/BayesianOptimization)
-**Gradient-Based** | Optimize hyperparameters using gradient descent.                                       | ?
-**Evolutionary**   | Uses evolutionary algorithms to search the space of possible hyperparameters.          | ?
+> TO-DO: Read A Comparative Study of Black-box Optimization Algorithms for Tuning of Hyper-parameters in Deep Neural Networks.
 
-Note that **grid** and **random** search can be **paralelized**, others methods can not.
+| Method    | Name                                              | Type       | Stars    |
+|-----------|---------------------------------------------------|------------|----------|
+| **GS**    | **Grid Search**                                   | Parallel   |          |
+| **RS**    | **Random Search**                                 | Parallel   |          |
+| **BO-GP** | **Bayesian Optimization with Gaussian Processes** | Sequential | ⭐      |
+| **PSO**   | **Particle Swarm optimization**                   | Sequential | ⭐      |
+| **NM**    | **Nelder-Mead Algorithm**                         | Sequential | ⭐⭐   |
+| **TPE**   | **Tree of Parzen Estimators**                     | Sequential | ⭐⭐⭐ |
+|           | **Simulated Annealing**                           | ?          |         |
+|           | **Gradient Descent**                              | Sequential |         |
+|           | **Evolutionary**                                  | Mix        |         |
 
+### Packages
+- [Sklearn](https://scikit-learn.org):            GS, RS
+- [Optunity](https://optunity.readthedocs.io):    GS, RS, NM, PSO and TPE
+- GPyOpt:                                         BO-GP
+- [BayesianOptimization](https://github.com/fmfn/BayesianOptimization): BO-GP
+- [Hyperopt](https://hyperopt.github.io/hyperopt): RS, TPE
+
+### Explanations
+- Grid Search: Search over a discrete set of predefined hyperparameters values.
+- Random Search: Provide a statistical distribution for each hyperparameter, for taking a random value.
+- Gradient Descent: Optimize hyperparameters using gradient descent.
+- Evolutionary: Uses evolutionary algorithms to search the space of possible hyperparameters.
 
 
 # 📏 Classification Metrics [🔝](#machine-learning)
