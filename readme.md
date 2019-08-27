@@ -251,9 +251,9 @@ Separate data in groups, useful for labeling a dataset.
 | **GS**    | **Grid Search**                                   | Parallel   |          |
 | **RS**    | **Random Search**                                 | Parallel   |          |
 | **BO-GP** | **Bayesian Optimization with Gaussian Processes** | Sequential | ⭐      |
-| **PSO**   | **Particle Swarm optimization**                   | Sequential | ⭐      |
-| **NM**    | **Nelder-Mead Algorithm**                         | Sequential | ⭐⭐   |
-| **TPE**   | **Tree of Parzen Estimators**                     | Sequential | ⭐⭐⭐ |
+| **PSO**   | **Particle Swarm optimization**                   | Mix        | ⭐      |
+| **NM**    | **Nelder-Mead Algorithm**                         | ?          | ⭐⭐   |
+| **TPE**   | **Tree of Parzen Estimators**                     | ?          | ⭐⭐⭐ |
 |           | **Simulated Annealing**                           | ?          |         |
 |           | **Gradient Descent**                              | Sequential |         |
 |           | **Evolutionary**                                  | Mix        |         |
