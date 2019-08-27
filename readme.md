@@ -246,17 +246,17 @@ Separate data in groups, useful for labeling a dataset.
 
 > TO-DO: Read A Comparative Study of Black-box Optimization Algorithms for Tuning of Hyper-parameters in Deep Neural Networks.
 
-| Method    | Name                                              | Type       | Stars    |
-|-----------|---------------------------------------------------|------------|----------|
-| **GS**    | **Grid Search**                                   | Parallel   |          |
-| **RS**    | **Random Search**                                 | Parallel   |          |
-| **BO-GP** | **Bayesian Optimization with Gaussian Processes** | Sequential | ⭐      |
-| **PSO**   | **Particle Swarm optimization**                   | Mix        | ⭐      |
-| **NM**    | **Nelder-Mead Algorithm**                         | ?          | ⭐⭐   |
-| **TPE**   | **Tree of Parzen Estimators**                     | ?          | ⭐⭐⭐ |
-|           | **Simulated Annealing**                           | ?          |         |
-|           | **Gradient Descent**                              | Sequential |         |
-|           | **Evolutionary**                                  | Mix        |         |
+| Method    | Name                                                    | Type         | Stars   |
+|------------|--------------------------------------------------------|--------------|---------|
+| **GS**     | **Grid Search**                                        | Parallel     |         |
+| **RS**     | **Random Search**                                      | Parallel     |         |
+| **BO-GP**  | **Bayesian Optimization with Gaussian Processes**      | Sequential   | ⭐      |
+| **PSO**    | **Particle Swarm optimization**                        | Evolutionary | ⭐      |
+| **NM**     | **Nelder-Mead Algorithm**                              | ?            | ⭐⭐   |
+| **TPE**    | **Tree of Parzen Estimators**                          | ?            | ⭐⭐⭐ |
+|            | **Simulated Annealing**                                | ?            |         |
+|            | **Gradient Descent**                                   | Sequential   |         |
+| **CMA-ES** | **Covariance Matrix Adaptation Evolutionary Etrategy** | Evolutionary |         |
 
 ### Packages
 - [Sklearn](https://scikit-learn.org):            GS, RS
