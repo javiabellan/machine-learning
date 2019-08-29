@@ -119,6 +119,7 @@ plt.scatter(x_tsne[:, 0], x_tsne[:, 1]);
 
 
 # 🔮 Prediction models [🔝](#machine-learning)
+> [TODO read](https://towardsdatascience.com/ml-algorithms-one-sd-%CF%83-74bcb28fafb6)
 
 ### 🔮❓ Interpretable Models
 Simple models. Good for starting point (baseline), understand the data, and create surrogate models of blackbox models.
@@ -152,7 +153,9 @@ Better models
 
 Penalized regression. Regularization (penalty parameter):
 - L1 o LASSO: good for feat selection
-- L2 o RIDGE: for robustness (elastic net)
+- L2 o RIDGE: for robustness
+
+Elastic Net: combines some characteristics from both lasso and ridge. Lasso will eliminate many features, while ridge will reduce the impact of features that are not important in predicting your y values. This algorithm reduces the impact of different features (like ridge) while not eliminating all of the features (like lasso).
 
 Target does not follow a Gaussian distribution:
 USE Generalized Linear Models (GLMs)
@@ -180,10 +183,13 @@ Otros:
 ### Decision Tree
 - No need to normalize data.
 - Algorithms:
-  - CART: Classification And Regression Trees.
-  - J48
-  - C4.5
-
+  - **ID3**: Iterative Dichotomiser 3
+  - **C4.5**: a newer version of ID3 (in weka is called J48)
+  - **C5.0**
+  - **CART**: Classification And Regression Trees.
+  - **CHAID**: Chi-squared Automatic Interaction Detection
+  - **Decision Stump**
+  - **M5**
 
 ### Decision Rules
 - **OneR**: Learns rules from a single feature. OneR is characterized by its simplicity, interpretability and its use as a benchmark.
