@@ -297,7 +297,8 @@ a classification model based on a mixture of linear regression models, which use
 
 
 # ✂️ Split data [🔝](#machine-learning)
-https://scikit-learn.org/stable/modules/cross_validation.html
+
+Check: https://scikit-learn.org/stable/modules/cross_validation.html
 
 ## Cross validation
 
