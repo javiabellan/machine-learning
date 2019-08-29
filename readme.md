@@ -6,10 +6,11 @@
 | 0 | 📊 [**Data visualization**](#-visualization-)                      | Plots for exploratory data analysis (EDA)  |
 | 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
 | 2 | 🛠 [**Feature engineering**](#-feature-engineering-)                | Select and construct appropriate features. |
-| 3 | 🔮 **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
-| 4 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
-| 5 | 📏 **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
-| 6 | ❓ [**Explainability**](#-explainability-)                         | Interpret the model.                       |
+| 3 | ✂️ [**Split data**](#-split-data-)                                 | Define train, validation ant test sets.    |
+| 4 | 🔮 **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
+| 5 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
+| 6 | 📏 **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
+| 7 | ❓ [**Explainability**](#-explainability-)                         | Interpret the model.                       |
 | all | 🍹 [**Auto Machine learning**](#-auto-machine-learning-)           | Automatic machine learning pipeline        |
 
 
@@ -175,11 +176,6 @@ def strfeat_to_intfeat(strfeat):
 
  TO DO: What is Latent feature discovery ??? 
 
-- [Unbalanced](#): Deal with **imbalanced datasets**: Check [imbalanced-learn package](http://imbalanced-learn.org)
-  - **Subsample majority class**. But you can lose important data.
-  - **Oversample minority class**. But you can overfit.
-  - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
-
 
 ## Feature selection
 Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
@@ -300,7 +296,19 @@ a classification model based on a mixture of linear regression models, which use
 
 
 
+# ✂️ Split data [🔝](#machine-learning)
+https://scikit-learn.org/stable/modules/cross_validation.html
 
+## Cross validation
+
+
+## Unbalanced dataset
+Deal with **imbalanced datasets**: Check [scikit-learn approach](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-with-stratification-based-on-class-labels) and [imbalanced-learn package](http://imbalanced-learn.org) 
+  - **Subsample majority class**. But you can lose important data.
+  - **Oversample minority class**. But you can overfit.
+  - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
+  
+  
 # 🔮 Prediction models [🔝](#machine-learning)
 > [TODO read](https://towardsdatascience.com/ml-algorithms-one-sd-%CF%83-74bcb28fafb6)
 
@@ -616,6 +624,7 @@ Its goal is to find a mixture of multi-dimensional Gaussian probability distribu
 # 🎯 Hyperparameters optimization [🔝](#machine-learning)
 
 > TO-DO: Read A Comparative Study of Black-box Optimization Algorithms for Tuning of Hyper-parameters in Deep Neural Networks.
+> https://scikit-learn.org/stable/modules/grid_search.html
 
 | Method    | Name                                                    | Type         | Stars   |
 |------------|--------------------------------------------------------|--------------|---------|
