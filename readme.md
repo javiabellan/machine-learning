@@ -39,8 +39,12 @@
 
 
 # 🛁 Data cleaning [🔝](#machine-learning)
-> - [Missings imputation](#)
-> - [Outliers removal](#)
+
+| Name           | Description                  | Options                          |
+|:--------------:|------------------------------|----------------------------------|
+| **Duplicates** | Repeated rows in the dataset | Remove                           |
+| **Missings**   | No data on some features     | Remove row, remove feature, fill |
+| **Ouliers**    | Rare or unexpected features  | Remove                           |
 
 
 # 🛠 Feature engineering [🔝](#machine-learning)
