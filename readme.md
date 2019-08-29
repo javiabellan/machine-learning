@@ -46,31 +46,178 @@
 | **Missings**   | No data on some features     | Remove row, remove feature, fill |
 | **Ouliers**    | Rare or unexpected features  | Remove                           |
 
+Check: https://github.com/tysonjens/Notes/edit/master/README.md
+
+Split data into x, y for training and testing
+```python
+from sklearn.model_selection import train_test_split
+## make a train test split
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+```
+
+Scaling - normalizes values of each feature, mean = 0, sd = 1
+```python
+## scale using pandas
+df['var'] = ((df['var']-(df['var'].mean())))/(df['var'].std())
+```
+
+```Python
+## Dummies in pandas
+df = pd.DataFrame({'country': ['usa', 'canada', 'australia','japan','germany']})
+pd.get_dummies(df,prefix=['country'])
+```
+
+```python
+## Get Dummies, drop one
+df = pd.get_dummies(df, drop_first=True)
+```
+
+```Python
+# Binarizing
+lb = preprocessing.LabelBinarizer()
+lb.fit([1, 2, 6, 4, 2])
+print(lb.transform((1,4)))
+print(lb.classes_)
+```
+
+```python
+# Ordinal Encoder transforms categorical features into int features
+from sklearn.preprocessing import OrdinalEncoder
+my_cat_feature = np.array(['Alpha', 'Boone', 'Kelli', 'Kelli', 'Boone', 'Tyson', 'Boone']).reshape(-1, 1)
+encoder = OrdinalEncoder()
+my_cat_feat_encoded = encoder.fit_transform(my_cat_feature)
+my_cat_feat_encoded
+
+## Outputs
+
+array([[0.],
+       [1.],
+       [2.],
+       [2.],
+       [1.],
+       [3.],
+       [1.]])
+
+```
+
+```python
+## One Hot Encoding takes a single categorical feature and converts it
+## into several dummy columns
+from sklearn.preprocessing import OneHotEncoder
+cat_encoder = OneHotEncoder()
+my_hot_encoded_dummy_cols = OneHotEncoder.fit_transform(my_cat_feature)
+```
+
+```python
+## Imputation
+## See number of nulls
+test_scores.isnull().sum(0)
+
+## Strategy could be 'mean', 'most_frequent'
+from sklearn.preprocessing import Imputer
+imp = Imputer(missing_values='NaN', strategy='mean', axis=0)
+imp.fit([[1, 2], [np.nan, 3], [7, 6]])
+X = [[np.nan, 1], [6, np.nan], [3, 6]]
+imp.transform(X)
+
+## outputs:
+array([[ 4.        ,  1.        ],
+       [ 6.        ,  3.66666667],
+       [ 3.        ,  6.        ]])
+```
+
+```Python
+def strfeat_to_intfeat(strfeat):
+    ## input: list of features as strings
+    ## output = list of same features now as integers as unique IDs
+    valdict = {}
+    intfeat = []
+    for idx, i in enumerate(strfeat):
+        if i in valdict:
+            intfeat.append(valdict[i])
+        else:
+            valdict[i] = idx
+            intfeat.append(idx)
+    return intfeat
+```
+
+```Python
+## Standard Scaler - you should always fit your scaler on training data,
+## then apply it to the test data
+scaler = StandardScaler().fit(X_train)
+X_train_1 = scaler.transform(X_train)
+X_test_1 = scaler.transform(X_test)
+```
+
+```python
+## change string feature with multiple levels into numerical
+def strfeat_to_intfeat(strfeat):
+    ## input: list of features as strings
+    ## output = list of same features now as integers as unique IDs
+    valdict = {}
+    intfeat = []
+    for idx, i in enumerate(strfeat):
+        if i in valdict:
+            intfeat.append(valdict[i])
+        else:
+            valdict[i] = idx
+            intfeat.append(idx)
+    return intfeat
+```
 
 # 🛠 Feature engineering [🔝](#machine-learning)
-> - [Scaling (normalize, standarize, logs, ...)](#)
-> - [Feature selection](#feature-selection)
-> - [Dimensionality reduction](#dimensionality-reduction)
-> - [Unbalanced](#)
 
-- Deal with **imbalanced datasets**: Check [imbalanced-learn package](http://imbalanced-learn.org)
+| Name                       | Description              | Options                                                          |
+|----------------------------|--------------------------|------------------------------------------------------------------|
+| **Feature transformation** | Modidy existing features | Scaling, normalize, standarize, logarithim, ...                  |
+| **Feature generation**     | Add useful features      | Modify to new, Combine features, Cluster some feature, ...       |
+| **Feature selection**      | Remove useless features  | See feat importance, correlations, Dimensionality reduction, ... |
+
+ TO DO: What is Latent feature discovery ??? 
+
+- [Unbalanced](#): Deal with **imbalanced datasets**: Check [imbalanced-learn package](http://imbalanced-learn.org)
   - **Subsample majority class**. But you can lose important data.
   - **Oversample minority class**. But you can overfit.
   - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
 
 
-### Feature selection
+## Feature selection
+Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
+
 Reduce number of attributes.
 - [**Feature selection**](https://scikit-learn.org/stable/modules/feature_selection.html)
 - Wrapper: Su usa un classificador
   - MultiObjectiveEvolutionarySearch: Mejor para muchas generaciones. 10000 Evals
   - PSO: Particule Search optimization: Mejor para pocas generaciones.
   - RFE: Recursive feature elimination
+  - SelectKBest
+  - Variance Threshold
 - Filters:
   - InfoGAIN: Cantidad de informacion
   - Correlation Featue Selection
+  
+#### Recursive Feature Elimination (RFE)   
+At each iteration, select one feature to remove until there are n feature left*
 
-### Dimensionality reduction
+```python
+from sklearn.feature_selection import RFE
+```
+
+#### SelectKBest
+The SelectKBest class just scores the features using a function and then removes all but the k highest scoring features.
+
+```python
+from sklearn.feature_selection import SelectKBest
+```
+
+#### Variance Threshold
+Drop all features that dont meet a variance threshold
+
+```python
+from sklearn.feature_selection import VarianceThreshold
+```
+
+## Dimensionality reduction
 > - https://www.analyticsvidhya.com/blog/2018/08/dimensionality-reduction-techniques-python/
 > - Read [Curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality)
 > - [Manifold learning](https://scikit-learn.org/stable/modules/manifold.html)
@@ -90,7 +237,17 @@ Method       | Name                                          | Based in         
 **LDA**      | Linear Discriminant Analysis                  | Linear    |
 **MDS**      | Multidimensional Scaling                      |           |
 
-### PCA
+Why reduce dimensions?
+- Remove multicollinearity
+- Deal with the curse of dimensionality
+- Remove redundant features
+- Interpretation & Visualization
+- Make computations easier
+- Identify Outliers
+
+
+#### Principal Component Analysis (PCA)
+a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called principal components. The first component is the most important one, followed by the second, then the third, and so on.
 
 ```python
 from sklearn.decomposition import PCA
@@ -99,9 +256,7 @@ pca = PCA(n_components=2)
 pca.fit(X)
 ```
 
-
-### T-SNE
-
+#### T-SNE
 Read [How to use t-SNE effectively](https://distill.pub/2016/misread-tsne)
 
 ```python
@@ -114,12 +269,45 @@ x_tsne = tsne.fit_transform(x)
 plt.scatter(x_tsne[:, 0], x_tsne[:, 1]);
 ```
 
+#### Independent Component Analysis (ICA)
+a statistical technique for revealing hidden factors that underlie sets of random variables, measurements, or signals.
+
+#### Principal Component Regression (PCR)
+a technique for analyzing multiple regression data that suffer from multicollinearity. The basic idea behind PCR is to calculate the principal components and then use some of these components as predictors in a linear regression model fitted using the typical least squares procedure.
+
+#### Partial Least Squares Regression (PLSR)
+PCR creates components to explain the observed variability in the predictor variables, without considering the response variable at all. On the other hand, PLSR does take the response variable into account, and therefore often leads to models that are able to fit the response variable with fewer components.
+
+#### Sammon Mapping
+an algorithm that maps a high-dimensional space to a space of lower dimensionality by trying to preserve the structure of inter-point distances in high-dimensional space in the lower-dimension projection. sometimes we have to ask the question “what non-linear transformation is optimal for some given dataset”. While PCA simply maximizes variance, sometimes we need to maximize some other measure that represents the degree to which complex structure is preserved by the transformation. Various such measures exist, and one of these defines the so-called Sammon Mapping. It is particularly suited for use in exploratory data analysis.
+
+#### Multidimensional Scaling (MDS)
+a means of visualizing the level of similarity of individual cases of a dataset.
+
+#### Projection Pursuit
+a type of statistical technique that involves finding the most “interesting” possible projections in multidimensional data. Often, projections which deviate more from a normal distribution are considered to be more interesting.
+
+#### Linear Discriminant Analysis (LDA)
+if you need a classification algorithm you should start with logistic regression. However, LR is traditionally limited to only two class classification problems. Now, if your problem involves more than two classes you should use LDA. LDA also works as a dimensionality reduction algorithm; it reduces the number of dimension from original to C — 1 number of features where C is the number of classes.
+
+#### Mixture Discriminant Analysis (MDA) — It is an extension of linear discriminant analysis. Its a supervised method for classification that is based on mixture models.
+
+#### Quadratic Discriminant Analysis (QDA)
+Linear Discriminant Analysis can only learn linear boundaries, while Quadratic Discriminant Analysis is capable of learning quadratic boundaries (hence it is more flexible). Unlike LDA however, in QDA there is no assumption that the covariance of each of the classes is identical.
+
+#### Flexible Discriminant Analysis (FDA)
+a classification model based on a mixture of linear regression models, which uses optimal scoring to transform the response variable so that the data are in a better form for linear separation, and multiple adaptive regression splines to generate the discriminant surface.
 
 
 
 
 # 🔮 Prediction models [🔝](#machine-learning)
 > [TODO read](https://towardsdatascience.com/ml-algorithms-one-sd-%CF%83-74bcb28fafb6)
+
+- Linear Models:         [scikit-learn chapeter](https://scikit-learn.org/stable/modules/linear_model.html)
+- Decision Tree:         [scikit-learn chapeter]( https://scikit-learn.org/stable/modules/tree.html)
+- Support Vector Machine: [scikit-learn chapeter]( https://scikit-learn.org/stable/modules/svm.html)
+- Ensemble methods:       [scikit-learn chapeter](https://scikit-learn.org/stable/modules/ensemble.html)
 
 ### 🔮❓ Interpretable Models
 Simple models. Good for starting point (baseline), understand the data, and create surrogate models of blackbox models.
@@ -149,20 +337,14 @@ Better models
 
 ---
 
-### Linear Regression
+## Linear Models
 
-Penalized regression. Regularization (penalty parameter):
-- L1 o LASSO: good for feat selection
-- L2 o RIDGE: for robustness
-
-Elastic Net: combines some characteristics from both lasso and ridge. Lasso will eliminate many features, while ridge will reduce the impact of features that are not important in predicting your y values. This algorithm reduces the impact of different features (like ridge) while not eliminating all of the features (like lasso).
-
-Target does not follow a Gaussian distribution:
-USE Generalized Linear Models (GLMs)
-(Wrap the lineal reg. with a function)
-- Binary category: Logistic regr. (add sigmoid)
-- Many categories:
-- Discrete count:
+#### Generalized Linear Models (GLMs)
+Target does not follow a Gaussian distribution. Wrap the lineal reg. with a function.
+- Binary category: **Logistic regression** (add sigmoid) and **Probit regression**
+- Many categories: **Multinomial logistic regression** and **Multinomial probit regression**
+- ordinal data: **Ordered probit regression**
+- Discrete count: **Poisson regression**
 - Time to the occurrence of an event:
 - Very skewed outcome with a few very high values (household income).
 
@@ -175,12 +357,52 @@ Not linear:
 - Generalized Additive Models (GAMs):
   Fit standard regression coefficients to dome variables and nonlinear spline functions to other variables.
 
-Otros:
-- quantile regression
-- 
 
+#### Ordinary Least Squares Regression (OLSR)
+A method in Linear Regression for estimating the unknown parameters by creating a model which will minimize the sum of the squared errors between the observed data and the predicted one (observed values and estimated values).
 
-### Decision Tree
+#### Linear Regression
+used to estimate real values (cost of houses, number of calls, total sales etc.) based on continuous variable.
+
+#### Logistic Regression
+used to estimate discrete values ( Binary values like 0/1, yes/no, true/false) based on given set of independent variable
+
+#### Stepwise Regression
+adds features into your model one by one until it finds an optimal score for your feature set. Stepwise selection alternates between forward and backward, bringing in and removing variables that meet the criteria for entry or removal, until a stable set of variables is attained. Though, I haven’t seen too many articles about it and I heard couple of arguments that it doesn’t work.
+
+#### Multivariate Adaptive Regression Splines (MARS)
+a flexible regression method that searches for interactions and non-linear relationships that help maximize predictive accuracy. This algorithms is inherently nonlinear (meaning that you don’t need to adapt your model to nonlinear patterns in the data by manually adding model terms (squared terms, interaction effects)).
+
+#### Locally Estimated Scatterplot Smoothing (LOESS)
+a method for fitting a smooth curve between two variables, or fitting a smooth surface between an outcome and up to four predictor variables. The idea is that what if your data is not linearly distributed you can still apply the idea of regression. You can apply regression and it is called as locally weighted regression. You can apply LOESS when the relationship between independent and dependent variables is non-linear.
+
+#### Quantile regression
+???
+
+## Regulated linear models (Penalized regression):
+An extension made to linear models (typically regression methods) that penalizes models (penalty parameter) based on their complexity, favoring simpler models that are also better at generalizing.
+- **L1** o **LASSO**: Least Absolute Shrinkage and Selection Operator. Good for feat selection
+- **L2** o **RIDGE**: For robustness
+- **Elastic Net**:
+- **LARS**: Least-Angle Regression
+
+#### Ridge Regression (L2 Regularization)
+Its goal is to solve problems of data overfitting. A standard linear or polynomial regression model will fail in the case where there is high collinearity (the existence of near-linear relationships among the independent variables) among the feature variables. Ridge Regression adds a small squared bias factor to the variables. Such a squared bias factor pulls the feature variable coefficients away from this rigidness, introducing a small amount of bias into the model but greatly reducing the variance. The Ridge regression has one main disadvantage, it includes all n features in the final model.
+
+#### LASSO Regression (L1 Regularization)
+Least Absolute Shrinkage and Selection Operator (LASSO). In opposite to Ridge Regression, it only penalizes high coefficients. Lasso has the effect of forcing some coefficient estimates to be exactly zero when hyper parameter θ is sufficiently large. Therefore, one can say that Lasso performs variable selection producing models much easier to interpret than those produced by Ridge Regression.
+
+```python
+LogisticRegression(penalty='l1')
+```
+
+#### Elastic Net
+Ccombines some characteristics from both lasso and ridge. Lasso will eliminate many features, while ridge will reduce the impact of features that are not important in predicting your y values. This algorithm reduces the impact of different features (like ridge) while not eliminating all of the features (like lasso).
+
+#### Least-Angle Regression (LARS)
+Similar to forward stepwise regression. At each step, it finds the predictor most correlated with the response. When multiple predictors having equal correlation exist, instead of continuing along the same predictor, it proceeds in a direction equiangular between the predictors.
+
+## Decision Tree
 - No need to normalize data.
 - Algorithms:
   - **ID3**: Iterative Dichotomiser 3
@@ -191,7 +413,26 @@ Otros:
   - **Decision Stump**
   - **M5**
 
-### Decision Rules
+#### Iterative Dichotomiser 3 (ID3)
+builds a tree top-down. It starts at the root and choose an attribute that will be tested at each node. Each attribute is evaluated through some statistical means in order to detect which attribute splits the dataset the best. The best attribute becomes the root, with its attribute values branching out. Then the process continues with the rest of the attributes. Once an attribute is selected, it is not possible to backtrack.
+
+#### C4.5 and C5.0 (different versions of a powerful approach)
+C4.5, Quinlan’s next iteration is a newer version of ID3. The new features (versus ID3) are: (i) accepts both continuous and discrete features; (ii) handles incomplete data points; (iii) solves over-fitting problem by bottom-up technique usually known as “pruning”; and (iv) different weights can be applied the features that comprise the training data. C5.0, the most recent Quinlan iteration. This implementation is covered by patent and probably as a result, is rarely implemented (outside of commercial software packages).
+
+#### Classification and Regression Tree (CART)
+CART is used as an acronym for the term decision tree. In general, implementing CART is very similar to implementing the above C4.5. The one difference though is that CART constructs trees based on a numerical splitting criterion recursively applied to the data, while the C4.5 includes the intermediate step of constructing rule sets.
+
+### Chi-squared Automatic Interaction Detection (CHAID)
+an algorithm used for discovering relationships between a categorical response variable and other categorical predictor variables. It creates all possible cross tabulations for each categorical predictor until the best outcome is achieved and no further splitting can be performed. CHAID builds a predictive model, or tree, to help determine how variables best merge to explain the outcome in the given dependent variable. In CHAID analysis, nominal, ordinal, and continuous data can be used, where continuous predictors are split into categories with approximately equal number of observations. It is useful when looking for patterns in datasets with lots of categorical variables and is a convenient way of summarizing the data as the relationships can be easily visualized.
+
+#### Decision Stump
+a ML model that is consisted of a one-level decision tree; a tree with one internal node (the root) which is connected to the terminal nodes (its leaves). This model makes a prediction based on the value of just a single input feature.
+
+#### M5
+M5 combines a conventional decision tree with the possibility of linear regression functions at the nodes. Besides accuracy, it can take tasks with very high dimension — up to hundreds of attributes. M5 model tree is a decision tree learner for regression task, meaning that it is used to predict values of numerical response variable Y. While M5 tree employs the same approach with CART tree in choosing mean squared error as impurity function, it does not assign a constant to the leaf node but instead it fit a multivariate linear regression model.
+
+
+## Decision Rules
 - **OneR**: Learns rules from a single feature. OneR is characterized by its simplicity, interpretability and its use as a benchmark.
 - **Sequential covering**: General procedure that iteratively learns rules and removes the data points that are covered by the new rule.
 - **Bayesian Rule Lists**: Combine pre-mined frequent patterns into a decision list using Bayesian statistics.
@@ -201,34 +442,112 @@ Otros:
 - JRip
 - FURIA (fuzzy)
 
+## Association rule learning
+Given a set of transactions, the goal is to find rules that will predict the occurrences of an item based on the occurrences of other items in the transactions.
+- Apriori algorithm
+- Eclat algorithm
+- FP (Frequent Pattern) Growth
 
-### K-Nearest Neighbors
-- Instance and distances based:
-- **K nearest neighbors (KNN)**: Used in recommendation systems. k = 5, 10 or sqrt(Num samples).
+#### Apriori
+has great significance in data mining. It is useful in mining frequent itemsets (a collection of one or more items) and relevant association rules. You usually use this algorithm on a database that has a large number of transactions. For example, the items customers buy at a supermarket. The Apriori algorithm reduces the number of candidates with the following principle: If an itemset is frequent, ALL of its subsets are frequent.
+
+#### Eclat (Equivalence Class Transformation)
+the biggest difference from the Apriori algorithm is that it uses Depth First Search instead of Breadth First Search. In the Apriori algorithm, the element based on the product (shopping cart items 1, 2, 3, 3, etc.) is used, but in Eclat algorithm, the transaction is passed on by the elements (Shopping Cart 100,200 etc.).
+
+#### FP (Frequent Pattern) Growth
+helps perform a market basket analysis on transaction data. Basically, it’s trying to identify sets of products that are frequently bought together. FP-Growth is preferred to Apriori because Apriori takes more execution time for repeated scanning of the transaction dataset to mine the frequent items.
+
+
+## Instance based models:
+Instance and distances based. Utilidad: Conjunto multieditado y condensado: Para reducir el dataset y limparlo. Utilidad 2: Para pedecir atributos missing.
+
+- **K Nearest Neighbors (KNN)**: Used in recommendation systems. k = 5, 10 or sqrt(Num samples).
 - **Weighted KNN**: Closer samples are more imortant. Better than KNN.
 - **Fuzzy KNN**: Sample pionts class labels are multiclass vetor (distance to class centroids).
 - **Parzen**: Define a window size (with gaussian shape for ex.) and select those samples. (k would be variable).
-- Utilidad: Conjunto multieditado y condensado: Para reducir el dataset y limparlo.
-- Utilidad 2: Para pedecir atributos missing
+- **Learning Vector Quantization (LVQ)**
+- **Self-Organizing Map (SOM)**
+- **Locally Weighted Learning (LWL)**
 
 
-### Support Vector Machines (SVM)
+#### K-Nearest Neighbor (KNN)
+can be used for both classiﬁcation and regression problems. KNN stores all available cases and classiﬁes new cases by a majority vote of its K neighbors. Predictions are made for a new data point by searching through the entire training set for the K most similar instances (the neighbors) and summarizing the output variable for those K instances. For regression problems, this might be the mean output variable, for classification problems this might be the mode (or most common) class value.
+
+#### Learning Vector Quantization (LVQ)
+A downside of K-Nearest Neighbors is that it hangs on to the entire training dataset. LVQ is an artificial neural network algorithm that allows you to choose how many training instances to hang onto and learns exactly what those instances should look like. If you discover that KNN gives good results on your dataset try using LVQ to reduce the memory requirements of storing the entire training dataset.
+
+#### Self-Organizing Map (SOM)
+an unsupervised deep learning model, mostly used for feature detection or dimensionality reduction. It outputs a 2D map for any number of indicators. SOM differ from other artificial neural networks as it apply competitive learning as opposed to error-correction learning (like backpropagation with gradient descent), and in the sense that they use a neighborhood function to preserve the topological properties of the input space.
+
+#### Locally Weighted Learning (LWL)
+The idea behind this algorithm is that instead of building a global model for the entire function space, for each point of interest we build a local model based on neighboring data of the query point. For this purpose, each data point becomes a weighting factor which expresses the influence of the data point for the prediction. Mainly, data points that are in the close neighborhood to the current query point are receiving a higher weight than data points which are far away.
+
+## Bayesian models
+- Naive Bayes
+- Gaussian Naive Bayes
+- Multinomial Naive Bayes
+- Averaged One-Dependence Estimators (AODE)
+- Bayesian Belief Network (BBN)
+- Bayesian Network (BN)
+
+#### Naive Bayes
+assumes that the presence of a particular feature in a class is unrelated to the presence of any other feature (independence). Provides a way of calculating posterior probability P(c|x) from P(c), P(x) and P(x|c). Useful for very large data sets.
+
+#### Gaussian Naive Bayes
+assumes that the distribution of probability is Gaussian (normal). For continuous distributions, the Gaussian naive Bayes is the algorithm of choice.
+
+#### Multinomial Naive Bayes
+a specific instance of Naive Bayes where the P(Featurei|Class) follows multinomial distribution (word counts, probabilities, etc.). This is mostly used for document classification problem (whether a document belongs to the category of sports, politics, technology etc.). The features/predictors used by the classifier are the frequency of the words present in the document.
+
+#### Averaged One-Dependence Estimators (AODE)
+developed to address the attribute-independence problem of the naive Bayes classifier. AODE frequently develops considerably more accurate classifiers than naive Bayes with a small cost of a modest increase in the amount of computation.
+
+#### Bayesian Belief Network (BBN)
+a probabilistic graphical model (a type of statistical model) that represents a set of variables and their conditional dependencies via a directed acyclic graph (DAG). For example, a Bayesian network could represent the probabilistic relationships between diseases and symptoms. Given symptoms, the network can be used to compute the probabilities of the presence of various diseases. A BBN is a special type of diagram (called a directed graph) together with an associated set of probability tables.
+
+#### Bayesian Network (BN)
+the goal of Bayesian networks is to model conditional dependence, and therefore causation, by representing conditional dependence by edges in a directed graph. Using them, you can efficiently conduct inference on the random variables in the graph through the use of factors.
+
+#### Hidden Markov models (HMM)
+a class of probabilistic graphical model that give us the ability to predict a sequence of unknown (hidden) variables from a set of observed variables. For example, we can use it to predict the weather (hidden variable) based on the type of clothes that someone wears (observed). HMM can be viewed as a Bayes Net unrolled through time with observations made at a sequence of time steps being used to predict the best sequence of hidden states.
+
+#### Conditional random fields (CRFs)
+a classical machine learning model to train sequential models. It is a type of Discriminative classifier that model the decision boundary between the different classes. The difference between discriminative and generative models is that while discriminative models try to model conditional probability distribution, i.e., P(y|x), generative models try to model a joint probability distribution, i.e., P(x,y). Their underlying principle is that they apply Logistic Regression on sequential inputs. Hidden Markov Models share some similarities with CRFs, one in that they are also used for sequential inputs. CRFs are most used for NLP tasks.
+
+
+## Support Vector Machines (SVM)
 - with liear kernel
 - with RBF kernel: Very good one
 
 
-### Ensamble models
+## Ensamble models
 Stronger models.
-- **Random forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
+
+- **Boosting**
+- **Bootstrapped Aggregation (Bagging)**
+- **Random Forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
   - Deeper trees
-- **Extra trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
+- **Extra Trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
 - **Adaboost**
-- **Gradient boosting**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
+- **Stacked Generalization (blending)**
+- **Gradient Boosting**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
+  - Gradient Boosting Machines (GBM)
+  - Gradient Boosted Regression Trees (GBRT)
   - Tree depth from 3 to 6
   - [**XGBoost**](https://github.com/dmlc/xgboost), [**LightGBM**](https://github.com/Microsoft/LightGBM), [**CatBoost**](https://github.com/catboost/catboost) 💪 **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
 
 
-### Gradient boosting
+#### Random Forest
+Random forests provide an improvement over bagged trees by way of a random small tweak that decorrelates the trees. As in bagging, we build a number forest of decision trees on bootstrapped training samples. But when building these decision trees, each time a split in a tree is considered, a random sample of m predictors is chosen as split candidates from the full set of p predictors. The split is allowed to use only one of those m predictors.
+
+Ways to interpret feature impact:
+- Partial Dependency Plot
+- Permute a single feature
+- Keep track of information gains due to each features
+- Keep track of traffic that passes by each value.
+
+
+#### Gradient boosting
 - Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
 - Tree depth from 3 to 6
 - [**XGBoost**](https://github.com/dmlc/xgboost), [**LightGBM**](https://github.com/Microsoft/LightGBM), [**CatBoost**](https://github.com/catboost/catboost) 💪 **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
@@ -239,10 +558,52 @@ Stronger models.
 Separate data in groups, useful for labeling a dataset.
 - Knowing K
   - **K-Means**
+  - **k-Medians**
   - **Mean-Shift**
 - Without knowing K
   - **DBSCAN**: Density-Based Spatial Clustering of Applications with Noise. 
-  
+
+Methods to determine best k:
+- Elbow Method
+- Gap Method - like elbow method, but comparing with uniform
+- Silhouette Score - (b-a) / max(a,b) where:
+  - a is inter cluster distance,
+  - b is next-nearest cluster centroid
+
+#### K-Means
+K means goal is to partition X data points into K clusters where each data point is assigned to its closest cluster. The idea is to minimize the sum of all squared distances within a cluster, for all clusters. A completely differerent algorithm than KNN (don’t confuse the two!).
+
+#### single-linkage clustering
+one of several methods of hierarchical clustering. It is based on grouping clusters in bottom-up fashion. In single-linkage clustering, the similarity of two clusters is the similarity of their most similar members.
+
+#### K-Medians
+a variation of K means algorithm. The idea is that instead of calculating the mean for each cluster (in order to determine its centroid), we calculate the median.
+
+#### Expectation Maximization (EM)
+it works similarly to K means except for the fact that the data is assigned to each cluster with the weights being soft probabilities instead of distances. It has the advantage that the model becomes generative as we define the probability distribution for each model.
+
+#### Hierarchical Clustering
+does not partition the dataset into clusters in a single step. Instead it involves multiple steps which run from a single cluster containing all the data points to N clusters containing single data point.
+
+#### Fuzzy clustering
+a form of clustering in which each data point can belong to more than one cluster.
+
+#### DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+used to separate clusters of high density from clusters of low density. DBSCAN requires just two parameters: the minimum distance between two points and the minimum number of points to form a dense region. Meaning, it groups together points that are close to each other (usually Euclidean distance) and a minimum number of points.
+
+#### OPTICS (Ordering Points to Identify Cluster Structure)
+the idea behind it is similar to DBSCAN, but it addresses one of DBSCAN’s major weaknesses: the problem of detecting meaningful clusters in data of varying density.
+
+#### Non negative matrix factorization (NMF)
+a Linear-algebraic model that factors high-dimensional vectors into a low-dimensionality representation. Similar to Principal component analysis (PCA), NMF takes advantage of the fact that the vectors are non-negative. By factoring them into the lower-dimensional form, NMF forces the coefficients to also be non-negative.
+
+#### Latent Dirichlet allocation (LDA)
+a type of probabilistic model and an algorithm used to discover the topics that are present in a corpus. For example, if observations are words collected into documents, to obtain the cluster assignments, it needs two probability values: P( word | topics), the probability of a word given topics. And P( topics | documents), the probability of topics given documents. These values are calculated based on an initial random assignment. Then, you iterate them for each word in each document, to decide their topic assignment.
+
+####Gaussian Mixture Model (GMM)
+Its goal is to find a mixture of multi-dimensional Gaussian probability distributions that best model any input dataset. It can be used for finding clusters in the same way that k-means does. The idea is quite simple, find the parameters of the Gaussians that best explain our data. We assume that the data is normal and we want to find parameters that maximize the likelihood of observing these data.
+
+
   
 ### Time series analysis
 - Time series: Sequence of values of some feature (obtained in constant time periods).
@@ -287,6 +648,12 @@ Separate data in groups, useful for labeling a dataset.
 > - [Scikit-learn classification metrics](https://scikit-learn.org/stable/modules/classes.html#classification-metrics)
 > - [H2O classification metric scores](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/scorers.html#classification)
 > - [H2O classification metric plots](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/diagnosing.html#classification-metric-plots)
+
+Check:
+- Hinge loss (like in SVM)
+- Square loss (like in ridge regression)
+- Logistic loss or cross-entropy (like in logistic regression)
+- Exponential loss (like in boosting)
 
 | Score                         | Description                                  | Tip                          |
 |-------------------------------|----------------------------------------------|------------------------------|
