@@ -44,6 +44,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import sklearn as ml
+import scipy.stats as spstats
 
 %matplotlib inline
 ```
@@ -53,6 +54,8 @@ import sklearn as ml
 
 # 📊 EDA [🔝](#machine-learning)
 
+#### The Tidy philosophy
+In most machine learning algorithms, every instance is represented by a row in the training dataset, where every column show a different feature of the instance. This kind of data called “Tidy”.
 
 #### Obtain the data
 
@@ -73,7 +76,6 @@ df.tail()
 df.describe()
 ```
 
-
 # 🛁 Data cleaning [🔝](#machine-learning)
 
 | Name           | Description                  | Options                              |
@@ -82,6 +84,19 @@ df.describe()
 | **Missings**   | No data on some features     | Remove example, Remove feature, Fill |
 | **Ouliers**    | Rare or unexpected features  | Remove, Modify                       |
 
+
+- Handling Duplicates
+  - Remove duplicated rows
+- Handling Missings
+  - Remove examples with missing values
+  - Remove columns with missings values
+  - Fill missings (imputation)
+  - Fill missings + missing indicator
+- Handling Outliers
+  - Outlier Detection with Standard Deviation
+  - Outlier Detection with Percentiles
+  - Outlier modification
+  
 
 ## Remove duplicated instances
 
@@ -244,28 +259,56 @@ def strfeat_to_intfeat(strfeat):
 
 # 🛠 Feature engineering [🔝](#machine-learning)
 
+> TO-DO: Read about [featuretools](https://www.featuretools.com/), a python framework for automated feature engineering.
+
 The problem of transforming raw data into a dataset is called feature engineering. For most practical problems, feature engineering is a labor-intensive process that demands from the data analyst a lot of creativity and, preferably, domain knowledge.
 
 | Name                       | Description              | Options                                                       |
 |----------------------------|--------------------------|---------------------------------------------------------------|
 | **Feature transformation** | Modidy existing features | Scaling, normalize, standarize, logarithim, ...               |
-| **Feature generation**     | Add useful features      | Modify to new, Combine features, Cluster some feature, ...    |
+| **Feature creation**       | Add useful features      | Modify to new, Combine features, Cluster some feature, ...    |
 | **Feature selection**      | Remove useless features  | See feat importance, correlations, Dimensionality reduction,  |
 
  TO DO: What is Latent feature discovery ??? 
 
-## Feature transformation
+## Feature transformation and creation
 
-| Data                          | Example             | Use                          |
-|-------------------------------|---------------------|------------------------------|
-| Numerical to range=[0, 1]     |                     |  Normalization               |
-| Numerical to (mean= 0, std=1) |                     |  Standardization             |
-| Numerical to categorical bins |                     |  Binning                     |
-| Ordinal (ordered categories)  | [good, medium, bad] |  Label Encoding              |
-| Categorical                   | [spain, france]     |  One-Hot Encoding (dummies)  |
+read https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
 
-### Label Encoding
- from sklearn.preprocessing import LabelEncoder
+#### Handling Numerical Features
+- Numerical (continuous) Features
+  - Scaling:        Normalization: Numerical to range=[0, 1]
+  - Scaling:        Standardization: Numerical to (mean= 0, std=1)
+  - Math Transform: Log:           Good for skewed (not normal distribution) data
+  - Math Transform: Square 
+  - Binning:        Fixed-Width   (ej. age intervals) Good for uniform distributions
+  - Binning:        Adaptive (quantile based):     Good for skewed (not normal distribution) data
+  - binarize: convert any number differnt form 0 to 1: good for sparse data
+  - Round
+- Numerical (discrete) Features
+
+#### Handling Categorical Features
+- Ordinal Categorical Features [generat1, generat2, generat3]
+  - LabelEncoder: from sklearn.preprocessing import LabelEncoder
+- Nominal Categorical Features [Spain, France, Italy]
+  - One-Hot Encoding (dummy encoding)
+  - Cluster (spain->europe)
+- Multi-Categorical Features
+  - N-Hot Encoding
+  
+#### Handling Date Features
+- Transform string to date: data['date']          = pd.to_datetime(data.date, format="%d-%m-%Y")
+- Extract year:             data['year']          = data['date'].dt.year
+- Extract month:            data['month']         = data['date'].dt.month
+- Extract weekday name:     data['day_name']      = data['date'].dt.day_name()
+- Extract passed years:     data['passed_years']  = date.today().year - data['date'].dt.year
+
+
+#### Handling Text Features (NLP)
+  - Split (name & surname)
+
+---
+ 
  
 ### One-Hot Encoding (Dummies)
 Some learning algorithms only work with numerical feature vectors. When some feature in your dataset is categorical, like “colors” or “days of the week,” you can transform such a categorical feature into several binary ones.
@@ -442,7 +485,6 @@ Linear Discriminant Analysis can only learn linear boundaries, while Quadratic D
 
 #### Flexible Discriminant Analysis (FDA)
 a classification model based on a mixture of linear regression models, which uses optimal scoring to transform the response variable so that the data are in a better form for linear separation, and multiple adaptive regression splines to generate the discriminant surface.
-
 
 
 # ✂️ Split data [🔝](#machine-learning)
