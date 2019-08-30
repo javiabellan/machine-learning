@@ -9,7 +9,7 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 |---|--------------------------------------------------------------------|--------------------------------------------|
 | 0 | 📊 [**Data visualization**](#-visualization-)                      | Plots for exploratory data analysis (EDA)  |
 | 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
-| 2 | 🛠 [**Feature engineering**](#-feature-engineering-)                | Select and construct appropriate features. |
+| 2 | 🛠 [**Feature engineering**](#-feature-engineering-)               | Select and construct appropriate features. |
 | 3 | ✂️ [**Split data**](#-split-data-)                                 | Define train, validation ant test sets.    |
 | 4 | 🔮 **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
 | 5 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
@@ -48,10 +48,20 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 | Name           | Description                  | Options                          |
 |:--------------:|------------------------------|----------------------------------|
 | **Duplicates** | Repeated rows in the dataset | Remove                           |
-| **Missings**   | No data on some features     | Remove row, remove feature, fill |
+| **Missings**   | No data on some features     | Remove example, remove feature, fill |
 | **Ouliers**    | Rare or unexpected features  | Remove                           |
 
-Check: https://github.com/tysonjens/Notes/edit/master/README.md
+
+### Dealing with Missing Features
+In some cases, the data comes to the analyst in the form of a dataset with features already defined. In some examples, values of some features can be missing. That often happens when the dataset was handcrafted, and the person working on it forgot to fill some values or didn’t get them measured at all. The typical approaches of dealing with missing values for a feature include:
+- **Removing the examples with missing features**: If your dataset is big enough so you can sacrifice some training examples.
+- **Removing the whole feature with missings**: If the feature has many misings values.
+- **Using a data imputation technique**
+  - **New category value**: If the feature is a category, you can add a new category that means missing.
+  - **The average value**: If the feature is numerical, you can compute the average value.
+  - **A learning algorithm** that can guess missing feature values (the missing feature will be the target). **BEST METHOD**
+
+
 
 Split data into x, y for training and testing
 ```python
@@ -172,6 +182,8 @@ def strfeat_to_intfeat(strfeat):
 
 # 🛠 Feature engineering [🔝](#machine-learning)
 
+The problem of transforming raw data into a dataset is called feature engineering. For most practical problems, feature engineering is a labor-intensive process that demands from the data analyst a lot of creativity and, preferably, domain knowledge.
+
 | Name                       | Description              | Options                                                          |
 |----------------------------|--------------------------|------------------------------------------------------------------|
 | **Feature transformation** | Modidy existing features | Scaling, normalize, standarize, logarithim, ...                  |
@@ -180,6 +192,25 @@ def strfeat_to_intfeat(strfeat):
 
  TO DO: What is Latent feature discovery ??? 
 
+### One-Hot Encoding
+Some learning algorithms only work with numerical feature vectors. When some feature in your dataset is categorical, like “colors” or “days of the week,” you can transform such a categorical feature into several binary ones.
+
+### Binning
+An opposite situation, occurring less frequently in practice, is when you have a numerical feature but you want to convert it into a categorical one. Binning (also called bucketing) is the process of converting a continuous feature into multiple binary features called bins or buckets, typically based on value range. For example, instead of representing age as a single real-valued feature, the analyst could chop ranges of age into discrete bins: all ages between 0 and 5 years-old could be put into one bin, 6 to 10 years-old could be in the second bin, 11 to 15 years-old could be in the third bin, and so on.
+
+### Normalization
+Normalization is the process of converting an actual range of values which a numerical
+feature can take, into a standard range of values, typically in the interval [−1, 1] or [0, 1].
+For example, suppose the natural range of a particular feature is 350 to 1450. By subtracting 350 from every value of the feature, and dividing the result by 1100, one can normalize those values into the range [0, 1].
+More generally, the normalization formula looks like this:
+
+new_x = (x − min(x)) / max(x) − min(x)
+
+### Standardization
+Standardization is the procedure during which the feature values are rescaled so that they have the properties of a standard normal distribution with μ = 0 and σ = 1, where μ is the mean (the average value of the feature, averaged over all examples in the dataset) and σ is the standard deviation from the mean.
+Standard scores (or z-scores) of features are calculated as follows:
+
+new_x = x − mean / standard deviation
 
 ## Feature selection
 Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
@@ -472,8 +503,16 @@ helps perform a market basket analysis on transaction data. Basically, it’s tr
 
 
 ## Instance based models:
-Instance and distances based. Utilidad: Conjunto multieditado y condensado: Para reducir el dataset y limparlo. Utilidad 2: Para pedecir atributos missing.
+Instance and distances based. Utility To guess missing feature data. Utility 2: For reduce or clean the dataset.
 
+The closeness of two examples is given by a distance function.
+- **Euclidean distance** is frequently used in practice.
+- **Negative cosine similarity** is another popular choice.
+- **Chebychev distance**
+- **Mahalanobis distance**
+- **Hamming distance**
+
+Algorithms:
 - **K Nearest Neighbors (KNN)**: Used in recommendation systems. k = 5, 10 or sqrt(Num samples).
 - **Weighted KNN**: Closer samples are more imortant. Better than KNN.
 - **Fuzzy KNN**: Sample pionts class labels are multiclass vetor (distance to class centroids).
@@ -532,6 +571,12 @@ a classical machine learning model to train sequential models. It is a type of D
 - with liear kernel
 - with RBF kernel: Very good one
 
+#### Dealing with Noise?: Hinge loss
+To extend SVM to cases in which the data is not linearly separable, we introduce the hinge
+loss function: max (0, 1 − yi (wxi − b)).
+
+#### Dealing with non-linearity?: Kernel functions
+Multiple kernel functions exist, the most widely used of which is the RBF kernel.
 
 ## Ensamble models
 Stronger models.
