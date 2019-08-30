@@ -1012,14 +1012,15 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
   - [**Kaggle kernels**](https://www.kaggle.com/kernels): For each competition you have kernels (code notebooks) to code and learn.
   - [**Kaggle discussion**](https://www.kaggle.com/discussion): For each competition you have discussions (forums) to read and learn.
 - Courses
-  - [**Kaggle course**](https://www.kaggle.com/learn): Practical courses provided by Kaggle. (Level: easy)
-  - [**ODS ML course**](https://mlcourse.ai): Course by OpenDataScience, a russian Kaggle comunity (Level: medium)
-  - [**Fast.ai ML course**](http://course18.fast.ai/ml): Course by Jeremy Howard, a DL teacher (Level: easy)
+  - [**Kaggle course**](https://www.kaggle.com/learn): Practical micro-courses provided by Kaggle. (Level: easy)
+  - [**ODS ML course**](https://mlcourse.ai): Course by OpenDataScience, a russian Kaggle comunity. (Level: medium)
+  - [**Fast.ai ML course**](http://course18.fast.ai/ml): Course by Jeremy Howard, a DL teacher. (Level: easy)
 - Blogs
   - [**ML overview**](https://vas3k.com/blog/machine_learning/): (Level: easy)
   - [**Maël Fabien blog**](https://maelfabien.github.io/blog/): (Level: medium)
 - Libraries documentation
-  - [**Scikit-learn documentation**](https://scikit-learn.org/stable/user_guide.html): (hard)
+  - [**Scikit-learn documentation**](https://scikit-learn.org/stable/user_guide.html): (Level: hard)
+  - [**H2o driverless documentation**](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/index.html): (Level: medium)
 - Books
   - [**The hundred-page machine learning book**](http://themlbook.com/): (Level: medium) (This resource is not free)
   - [**Interpretable Machine Learning**](https://christophm.github.io/interpretable-ml-book): (Level: medium)
