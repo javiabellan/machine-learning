@@ -1009,8 +1009,8 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
 
 - Competitions
   - [**Kaggle competitions**](https://www.kaggle.com/competitions): Participating in competitions is a great way to test your knowledge.
-  - [**Kaggle kernels**](https://www.kaggle.com/kernels): For each competition you have kernels (code notebooks) to learn.
-  - [**Kaggle discussion**](https://www.kaggle.com/discussion): For each competition you have discussion (forum) to learn.
+  - [**Kaggle kernels**](https://www.kaggle.com/kernels): For each competition you have kernels (code notebooks) to code and learn.
+  - [**Kaggle discussion**](https://www.kaggle.com/discussion): For each competition you have discussions (forums) to read and learn.
 - Courses
   - [**Kaggle course**](https://www.kaggle.com/learn): Practical courses provided by Kaggle. (Level: easy)
   - [**ODS ML course**](https://mlcourse.ai): Course by OpenDataScience, a russian Kaggle comunity (Level: medium)
