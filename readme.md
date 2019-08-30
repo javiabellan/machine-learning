@@ -1,6 +1,6 @@
 <h1 align="center">Machine learning</h1>
 
-Here are my personal Machine Learning notes. I've written this cheatsheet for keep track my knowledge, but you can use it as a guide for learning ML aswell! [**This are the resources**](#resources) I've learned from and I reccomend.
+Here are my personal Machine Learning notes. I've written this cheatsheet for keep track my knowledge, but you can use it as a guide for learning ML aswell! [**This are the resources**](#free-resources) I've learned from and I reccomend.
 
 ### ML Pipeline
 Typical ML workflow is a pipeline that can be summarized as follows:
@@ -1005,7 +1005,7 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
   - Check [Platypus](https://platypus.readthedocs.io/en/latest/index.html)
 
 
-# Resources
+# Free resources
 
 - Competitions
   - [**Kaggle competitions**](https://www.kaggle.com/competitions): Participating in competitions is a great way to test your knowledge.
