@@ -1,6 +1,10 @@
 <h1 align="center">Machine learning</h1>
 
+Here are my personal Machine Learning notes. I've written this cheatsheet for keep track my knowledge, but you can use it as a guide for learning ML aswell! [**This are the resources**](#-resources) I've learned from and I reccomend.
+
 ### ML Pipeline
+Typical ML workflow is a pipeline that can be summarized as follows:
+
 |   |                                                                    |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
 | 0 | 📊 [**Data visualization**](#-visualization-)                      | Plots for exploratory data analysis (EDA)  |
@@ -1002,6 +1006,23 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
 
 
 # Resources
-- [ML overview](https://vas3k.com/blog/machine_learning/)
+
+- Competitions
+  - [**Kaggle competitions**](https://www.kaggle.com/competitions): Participating in competitions is a great way to test your knowledge.
+  - [**Kaggle kernels**](https://www.kaggle.com/kernels): For each competition you have kernels (code notebooks) to learn.
+  - [**Kaggle discussion**](https://www.kaggle.com/discussion): For each competition you have discussion (forum) to learn.
+- Courses
+  - [**Kaggle course**](https://www.kaggle.com/learn): Practical courses provided by Kaggle. (Level: easy)
+  - [**ODS ML course**](https://mlcourse.ai): Course by OpenDataScience, a russian Kaggle comunity (Level: medium)
+  - [**Fast.ai ML course**](http://course18.fast.ai/ml): Course by Jeremy Howard, a DL teacher (Level: easy)
+- Blogs
+  - [**ML overview**](https://vas3k.com/blog/machine_learning/): (Level: easy)
+  - [**Maël Fabien blog**](https://maelfabien.github.io/blog/): (Level: medium)
+- Libraries documentation
+  - [**Scikit-learn documentation**](https://scikit-learn.org/stable/user_guide.html): (hard)
+- Books
+  - [**The hundred-page machine learning book**](http://themlbook.com/): (Level: medium) (This resource is not free)
+  - [**Interpretable Machine Learning**](https://christophm.github.io/interpretable-ml-book): (Level: medium)
+  - [**The elements of statistical learning**](https://web.stanford.edu/~hastie/ElemStatLearn/): (Level: hard)
 
 <img align="right" width="400" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
