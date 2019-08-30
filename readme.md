@@ -1,6 +1,6 @@
 <h1 align="center">Machine learning</h1>
 
-Here are my personal Machine Learning notes. I've written this cheatsheet for keep track my knowledge, but you can use it as a guide for learning ML aswell! [**This are the resources**](#-resources) I've learned from and I reccomend.
+Here are my personal Machine Learning notes. I've written this cheatsheet for keep track my knowledge, but you can use it as a guide for learning ML aswell! [**This are the resources**](#resources) I've learned from and I reccomend.
 
 ### ML Pipeline
 Typical ML workflow is a pipeline that can be summarized as follows:
@@ -1025,4 +1025,4 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
   - [**Interpretable Machine Learning**](https://christophm.github.io/interpretable-ml-book): (Level: medium)
   - [**The elements of statistical learning**](https://web.stanford.edu/~hastie/ElemStatLearn/): (Level: hard)
 
-<img align="right" width="400" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
+<img align="center" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
