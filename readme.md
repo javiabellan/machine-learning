@@ -18,25 +18,24 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 | all | 🍹 [**Auto Machine learning**](#-auto-machine-learning-)           | Automatic machine learning pipeline        |
 
 
-### 📚 Python libraries
+### 📚 Python libraries used
+Along the ML Pipeline I use some Python libraries. Here are notes for each library. 
 
-| Library                                                            | Description                                |    |
-|--------------------------------------------------------------------|--------------------------------------------|----|
-| 🔢 [**Numpy**](https://numpy.org)                                  | Vectors and matrices                       | ⭐ |
-| 🐼 [**Pandas**](#data-manipulation-with-pandas)                    | Data manipulation                          | ⭐ |
-| 📊 [**Matplotlib**](#visualization-with-matplotlib-and-seaborn)    | Data visualization                         | ⭐ |
-| 📊 [**Seaborn**](#visualization-with-matplotlib-and-seaborn)       | Data visualization                         |    |
-| 💡 [**Scikit learn**](https://scikit-learn.org)                     | Machine learning                           | ⭐ |
-| 🔦 [**Pytorch**](https://pytorch.org)                              | Deep learning                              | ⭐ |
-| 🌳 [**XGBoost**](https://github.com/dmlc/xgboost)                  | Gradient Boosting                          | ⭐ |
-| 🌳 [**LightGBM**](https://github.com/Microsoft/LightGBM)           | Gradient Boosting                         |
-| 🌳 [**CatBoost**](https://github.com/catboost/catboost)            | Gradient Boosting                         |
-| 💧 [**H2O**](https://www.h2o.ai/products/h2o/)                      | Auto Machine learning                      | ⭐ |
-| 🍵 [**TPOT**](https://github.com/EpistasisLab/tpot)              | Auto Machine learning                     |
-| 💡 [**Auto Sklearn**](https://github.com/automl/auto-sklearn)       | Auto Machine learning                     |
-| 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)             | Auto Machine learning                     |
-
-
+| Library                                                       | Description          |    |
+|---------------------------------------------------------------|----------------------|----|
+| 🔢 [**Numpy**](https://numpy.org)                             | Vectors and matrice  | ⭐ |
+| 🐼 [**Pandas**](https://pandas.pydata.org/)                   | Data manipulation    | ⭐ |
+| 📊 [**Matplotlib**](https://matplotlib.org/)                  | Data visualization   | ⭐ |
+| 📊 [**Seaborn**](https://seaborn.pydata.org)                  | Data visualization   |    |
+| 💡 [**Scikit learn**](https://scikit-learn.org)               | Machine learning                 | ⭐ |
+| 🔦 [**Pytorch**](https://pytorch.org)                         | Deep learning                   | ⭐ |
+| 🌳 [**XGBoost**](https://github.com/dmlc/xgboost)             | Gradient Boosting                 | ⭐ |
+| 🌳 [**LightGBM**](https://github.com/Microsoft/LightGBM)      | Gradient Boosting               |
+| 🌳 [**CatBoost**](https://github.com/catboost/catboost)       | Gradient Boosting              |
+| 💧 [**H2O**](https://www.h2o.ai/products/h2o/)                | Auto Machine learning     | ⭐ |
+| 🍵 [**TPOT**](https://github.com/EpistasisLab/tpot)           | Auto Machine learning       |
+| 💡 [**Auto Sklearn**](https://github.com/automl/auto-sklearn) | Auto Machine learning        |
+| 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)        | Auto Machine learning          |
 
 
   
