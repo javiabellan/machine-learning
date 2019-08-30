@@ -76,11 +76,11 @@ df.describe()
 
 # 🛁 Data cleaning [🔝](#machine-learning)
 
-| Name           | Description                  | Options                          |
-|:--------------:|------------------------------|----------------------------------|
-| **Duplicates** | Repeated rows in the dataset | Remove                           |
-| **Missings**   | No data on some features     | Remove example, remove feature, fill |
-| **Ouliers**    | Rare or unexpected features  | Remove                           |
+| Name           | Description                  | Options                              |
+|:--------------:|------------------------------|--------------------------------------|
+| **Duplicates** | Repeated rows in the dataset | Remove                               |
+| **Missings**   | No data on some features     | Remove example, Remove feature, Fill |
+| **Ouliers**    | Rare or unexpected features  | Remove, Modify                       |
 
 
 ## Remove duplicated instances
@@ -103,6 +103,17 @@ In some cases, the data comes to the analyst in the form of a dataset with featu
 
 Tip: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
 
+#### Remove
+```python
+threshold = 0.7
+
+# Dropping columns with missing value rate higher than threshold
+data = data[data.columns[data.isnull().mean() < threshold]]
+
+# Dropping rows with missing value rate higher than threshold
+data = data.loc[data.isnull().mean(axis=1) < threshold]
+```
+
 #### Remove columns with missing values
 
 ```python
@@ -115,6 +126,12 @@ reduced_X_valid = X_valid.drop(cols_with_missing, axis=1)
 ```
 
 #### Fill missings (imputation)
+
+```python
+data = data.fillna(0)             # Filling all missing values with 0
+data = data.fillna(data.median()) # Filling missing values with medians of the columns
+```
+
 
 ```python
 from sklearn.impute import SimpleImputer
@@ -149,8 +166,26 @@ array([[ 4.        ,  1.        ],
 
 
 
+## Outliers
 
+#### Outlier Detection
+- standard deviation
+- percentiles.
 
+## Handling Outliers
+- Remove
+- Change to max limit
+
+#### Outlier Detection with Standard Deviation
+
+```python
+#Dropping the outlier rows with standard deviation
+factor = 3
+upper_lim = data['column'].mean () + data['column'].std () * factor
+lower_lim = data['column'].mean () - data['column'].std () * factor
+
+data = data[(data['column'] < upper_lim) & (data['column'] > lower_lim)]
+```
 
 ```python
 # Ordinal Encoder transforms categorical features into int features
@@ -211,14 +246,27 @@ def strfeat_to_intfeat(strfeat):
 
 The problem of transforming raw data into a dataset is called feature engineering. For most practical problems, feature engineering is a labor-intensive process that demands from the data analyst a lot of creativity and, preferably, domain knowledge.
 
-| Name                       | Description              | Options                                                          |
-|----------------------------|--------------------------|------------------------------------------------------------------|
-| **Feature transformation** | Modidy existing features | Scaling, normalize, standarize, logarithim, ...                  |
-| **Feature generation**     | Add useful features      | Modify to new, Combine features, Cluster some feature, ...       |
-| **Feature selection**      | Remove useless features  | See feat importance, correlations, Dimensionality reduction, ... |
+| Name                       | Description              | Options                                                       |
+|----------------------------|--------------------------|---------------------------------------------------------------|
+| **Feature transformation** | Modidy existing features | Scaling, normalize, standarize, logarithim, ...               |
+| **Feature generation**     | Add useful features      | Modify to new, Combine features, Cluster some feature, ...    |
+| **Feature selection**      | Remove useless features  | See feat importance, correlations, Dimensionality reduction,  |
 
  TO DO: What is Latent feature discovery ??? 
 
+## Feature transformation
+
+| Data                          | Example             | Use                          |
+|-------------------------------|---------------------|------------------------------|
+| Numerical to range=[0, 1]     |                     |  Normalization               |
+| Numerical to (mean= 0, std=1) |                     |  Standardization             |
+| Numerical to categorical bins |                     |  Binning                     |
+| Ordinal (ordered categories)  | [good, medium, bad] |  Label Encoding              |
+| Categorical                   | [spain, france]     |  One-Hot Encoding (dummies)  |
+
+### Label Encoding
+ from sklearn.preprocessing import LabelEncoder
+ 
 ### One-Hot Encoding (Dummies)
 Some learning algorithms only work with numerical feature vectors. When some feature in your dataset is categorical, like “colors” or “days of the week,” you can transform such a categorical feature into several binary ones.
 
