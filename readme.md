@@ -10,35 +10,35 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 | 0 | 📊 [**Data visualization**](#-visualization-)                      | Plots for exploratory data analysis (EDA)  |
 | 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
 | 2 | 🛠 [**Feature engineering**](#-feature-engineering-)               | Select and construct appropriate features. |
-| 3 | ✂️ [**Split data**](#-split-data-)                                 | Define train, validation ant test sets.    |
+| 3 | ✂️ [**Split data**](#-split-data-)                                  | Define train, validation ant test sets.    |
 | 4 | 🔮 **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
 | 5 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
 | 6 | 📏 **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
 | 7 | ❓ [**Explainability**](#-explainability-)                         | Interpret the model.                       |
-| all | 🍹 [**Auto Machine learning**](#-auto-machine-learning-)           | Automatic machine learning pipeline        |
+| all | 🍹 [**Auto Machine learning**](#-auto-machine-learning-)          | Automatic machine learning pipeline        |
 
 
 ### 📚 Python libraries used
 Along the ML Pipeline I use some Python libraries. Here are notes for each library. 
 
-| Library                                                       | Description          |    |
-|---------------------------------------------------------------|----------------------|----|
-| 🔢 [**Numpy**](https://numpy.org)                             | Vectors and matrice  | ⭐ |
-| 🐼 [**Pandas**](https://pandas.pydata.org/)                   | Data manipulation    | ⭐ |
-| 📊 [**Matplotlib**](https://matplotlib.org/)                  | Data visualization   | ⭐ |
-| 📊 [**Seaborn**](https://seaborn.pydata.org)                  | Data visualization   |    |
-| 💡 [**Scikit learn**](https://scikit-learn.org)               | Machine learning                 | ⭐ |
-| 🔦 [**Pytorch**](https://pytorch.org)                         | Deep learning                   | ⭐ |
-| 🌳 [**XGBoost**](https://github.com/dmlc/xgboost)             | Gradient Boosting                 | ⭐ |
-| 🌳 [**LightGBM**](https://github.com/Microsoft/LightGBM)      | Gradient Boosting               |
-| 🌳 [**CatBoost**](https://github.com/catboost/catboost)       | Gradient Boosting              |
-| 💧 [**H2O**](https://www.h2o.ai/products/h2o/)                | Auto Machine learning     | ⭐ |
-| 🍵 [**TPOT**](https://github.com/EpistasisLab/tpot)           | Auto Machine learning       |
-| 💡 [**Auto Sklearn**](https://github.com/automl/auto-sklearn) | Auto Machine learning        |
-| 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)        | Auto Machine learning          |
+| Library                                                       | Description           |    |
+|---------------------------------------------------------------|-----------------------|----|
+| 🔢 [**Numpy**](https://numpy.org)                             | Vectors and matrice   | ⭐ |
+| 🐼 [**Pandas**](https://pandas.pydata.org/)                   | Data manipulation     | ⭐ |
+| 📊 [**Matplotlib**](https://matplotlib.org/)                  | Data visualization    | ⭐ |
+| 📊 [**Seaborn**](https://seaborn.pydata.org)                  | Data visualization    |    |
+| 💡 [**Scikit learn**](https://scikit-learn.org)               | Machine learning      | ⭐ |
+| 🔦 [**Pytorch**](https://pytorch.org)                         | Deep learning         | ⭐ |
+| 🌳 [**XGBoost**](https://github.com/dmlc/xgboost)             | Gradient Boosting     | ⭐ |
+| 🌳 [**LightGBM**](https://github.com/Microsoft/LightGBM)      | Gradient Boosting     |    |
+| 🌳 [**CatBoost**](https://github.com/catboost/catboost)       | Gradient Boosting     |    |
+| 💧 [**H2O**](https://www.h2o.ai/products/h2o/)                | Auto Machine learning | ⭐ |
+| 🍵 [**TPOT**](https://github.com/EpistasisLab/tpot)           | Auto Machine learning |    |
+| 💡 [**Auto Sklearn**](https://github.com/automl/auto-sklearn) | Auto Machine learning |    |
+| 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)        | Auto Machine learning |    |
 
 
-  
+
 ----------------------------------------------------------------
 
 
@@ -51,18 +51,46 @@ Along the ML Pipeline I use some Python libraries. Here are notes for each libra
 | **Ouliers**    | Rare or unexpected features  | Remove                           |
 
 
-### Dealing with Missing Features
+### Duplicated instances
+
+## Missing Features
 In some cases, the data comes to the analyst in the form of a dataset with features already defined. In some examples, values of some features can be missing. That often happens when the dataset was handcrafted, and the person working on it forgot to fill some values or didn’t get them measured at all. The typical approaches of dealing with missing values for a feature include:
-- **Removing the examples with missing features**: If your dataset is big enough so you can sacrifice some training examples.
-- **Removing the whole feature with missings**: If the feature has many misings values.
-- **Using a data imputation technique**
+
+- **Remove examples with missing values**: If your dataset is big enough so you can sacrifice some training examples.
+- **Remove columns with missings values**: If the feature has many misings values.
+- **Fill missings (imputation)**
   - **New category value**: If the feature is a category, you can add a new category that means missing.
   - **The average value**: If the feature is numerical, you can compute the average value.
   - **A learning algorithm** that can guess missing feature values (the missing feature will be the target). **BEST METHOD**
-  - Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
+- **Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
 
 Tip: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
 
+#### Remove columns with missing values
+
+```python
+# Get names of columns with missing values
+cols_with_missing = [col for col in X_train.columns if X_train[col].isnull().any()]
+
+# Drop columns in training and validation data
+reduced_X_train = X_train.drop(cols_with_missing, axis=1)
+reduced_X_valid = X_valid.drop(cols_with_missing, axis=1)
+```
+
+#### Fill missings (imputation)
+
+```python
+from sklearn.impute import SimpleImputer
+
+# Imputation
+my_imputer = SimpleImputer()
+imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train))
+imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid))
+
+# Imputation removed column names; put them back
+imputed_X_train.columns = X_train.columns
+imputed_X_valid.columns = X_valid.columns
+```
 
 ```python
 ## Imputation
