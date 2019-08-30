@@ -7,7 +7,7 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 
 |   |                                                                    |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
-| 0 | 📊 [**Data visualization**](#-visualization-)                      | Plots for exploratory data analysis (EDA)  |
+| 0 | 📊 [**Exploratory Data Analysis (EDA)**](#-EDA-)                   | Understand and visualize the data.         |
 | 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
 | 2 | 🛠 [**Feature engineering**](#-feature-engineering-)               | Select and construct appropriate features. |
 | 3 | ✂️ [**Split data**](#-split-data-)                                  | Define train, validation ant test sets.    |
@@ -37,9 +37,41 @@ Along the ML Pipeline I use some Python libraries. Here are notes for each libra
 | 💡 [**Auto Sklearn**](https://github.com/automl/auto-sklearn) | Auto Machine learning |    |
 | 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)        | Auto Machine learning |    |
 
+Put this on top of your notebook
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import sklearn as ml
 
+%matplotlib inline
+```
 
 ----------------------------------------------------------------
+
+
+# 📊 EDA [🔝](#machine-learning)
+
+
+#### Obtain the data
+
+```python
+df = pd.read_csv("data.csv")
+```
+
+#### Show the data
+
+```python
+df.head()
+df.tail()
+```
+
+#### Describe the data
+
+```python
+df.describe()
+```
 
 
 # 🛁 Data cleaning [🔝](#machine-learning)
@@ -51,7 +83,12 @@ Along the ML Pipeline I use some Python libraries. Here are notes for each libra
 | **Ouliers**    | Rare or unexpected features  | Remove                           |
 
 
-### Duplicated instances
+## Remove duplicated instances
+
+```python
+df.drop_duplicates(inplace=True)                            # consider all of the columns
+df.drop_duplicates(subset=["col_a", "col_b"], inplace=True) # consider only certain columns
+```
 
 ## Missing Features
 In some cases, the data comes to the analyst in the form of a dataset with features already defined. In some examples, values of some features can be missing. That often happens when the dataset was handcrafted, and the person working on it forgot to fill some values or didn’t get them measured at all. The typical approaches of dealing with missing values for a feature include:
