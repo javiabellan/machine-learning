@@ -60,40 +60,33 @@ In some cases, the data comes to the analyst in the form of a dataset with featu
   - **New category value**: If the feature is a category, you can add a new category that means missing.
   - **The average value**: If the feature is numerical, you can compute the average value.
   - **A learning algorithm** that can guess missing feature values (the missing feature will be the target). **BEST METHOD**
+  - Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
 
+Tip: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
 
-
-Split data into x, y for training and testing
-```python
-from sklearn.model_selection import train_test_split
-## make a train test split
-X_train, X_test, y_train, y_test = train_test_split(X, y)
-```
-
-Scaling - normalizes values of each feature, mean = 0, sd = 1
-```python
-## scale using pandas
-df['var'] = ((df['var']-(df['var'].mean())))/(df['var'].std())
-```
-
-```Python
-## Dummies in pandas
-df = pd.DataFrame({'country': ['usa', 'canada', 'australia','japan','germany']})
-pd.get_dummies(df,prefix=['country'])
-```
 
 ```python
-## Get Dummies, drop one
-df = pd.get_dummies(df, drop_first=True)
+## Imputation
+## See number of nulls
+test_scores.isnull().sum(0)
+
+## Strategy could be 'mean', 'most_frequent'
+from sklearn.preprocessing import Imputer
+imp = Imputer(missing_values='NaN', strategy='mean', axis=0)
+imp.fit([[1, 2], [np.nan, 3], [7, 6]])
+X = [[np.nan, 1], [6, np.nan], [3, 6]]
+imp.transform(X)
+
+## outputs:
+array([[ 4.        ,  1.        ],
+       [ 6.        ,  3.66666667],
+       [ 3.        ,  6.        ]])
 ```
 
-```Python
-# Binarizing
-lb = preprocessing.LabelBinarizer()
-lb.fit([1, 2, 6, 4, 2])
-print(lb.transform((1,4)))
-print(lb.classes_)
-```
+
+
+
+
 
 ```python
 # Ordinal Encoder transforms categorical features into int features
@@ -115,31 +108,7 @@ array([[0.],
 
 ```
 
-```python
-## One Hot Encoding takes a single categorical feature and converts it
-## into several dummy columns
-from sklearn.preprocessing import OneHotEncoder
-cat_encoder = OneHotEncoder()
-my_hot_encoded_dummy_cols = OneHotEncoder.fit_transform(my_cat_feature)
-```
 
-```python
-## Imputation
-## See number of nulls
-test_scores.isnull().sum(0)
-
-## Strategy could be 'mean', 'most_frequent'
-from sklearn.preprocessing import Imputer
-imp = Imputer(missing_values='NaN', strategy='mean', axis=0)
-imp.fit([[1, 2], [np.nan, 3], [7, 6]])
-X = [[np.nan, 1], [6, np.nan], [3, 6]]
-imp.transform(X)
-
-## outputs:
-array([[ 4.        ,  1.        ],
-       [ 6.        ,  3.66666667],
-       [ 3.        ,  6.        ]])
-```
 
 ```Python
 def strfeat_to_intfeat(strfeat):
@@ -156,13 +125,7 @@ def strfeat_to_intfeat(strfeat):
     return intfeat
 ```
 
-```Python
-## Standard Scaler - you should always fit your scaler on training data,
-## then apply it to the test data
-scaler = StandardScaler().fit(X_train)
-X_train_1 = scaler.transform(X_train)
-X_test_1 = scaler.transform(X_test)
-```
+
 
 ```python
 ## change string feature with multiple levels into numerical
@@ -192,8 +155,33 @@ The problem of transforming raw data into a dataset is called feature engineerin
 
  TO DO: What is Latent feature discovery ??? 
 
-### One-Hot Encoding
+### One-Hot Encoding (Dummies)
 Some learning algorithms only work with numerical feature vectors. When some feature in your dataset is categorical, like “colors” or “days of the week,” you can transform such a categorical feature into several binary ones.
+
+```Python
+## Dummies in pandas
+df = pd.DataFrame({'country': ['usa', 'canada', 'australia','japan','germany']})
+pd.get_dummies(df,prefix=['country'])
+
+## Get Dummies, drop one
+df = pd.get_dummies(df, drop_first=True)
+```
+
+```python
+## One Hot Encoding takes a single categorical feature and converts it
+## into several dummy columns
+from sklearn.preprocessing import OneHotEncoder
+cat_encoder = OneHotEncoder()
+my_hot_encoded_dummy_cols = OneHotEncoder.fit_transform(my_cat_feature)
+```
+
+```Python
+# Binarizing
+lb = preprocessing.LabelBinarizer()
+lb.fit([1, 2, 6, 4, 2])
+print(lb.transform((1,4)))
+print(lb.classes_)
+```
 
 ### Binning
 An opposite situation, occurring less frequently in practice, is when you have a numerical feature but you want to convert it into a categorical one. Binning (also called bucketing) is the process of converting a continuous feature into multiple binary features called bins or buckets, typically based on value range. For example, instead of representing age as a single real-valued feature, the analyst could chop ranges of age into discrete bins: all ages between 0 and 5 years-old could be put into one bin, 6 to 10 years-old could be in the second bin, 11 to 15 years-old could be in the third bin, and so on.
@@ -211,6 +199,20 @@ Standardization is the procedure during which the feature values are rescaled so
 Standard scores (or z-scores) of features are calculated as follows:
 
 new_x = x − mean / standard deviation
+
+
+```python
+## Standardization using pandas
+df['var'] = ((df['var']-(df['var'].mean())))/(df['var'].std())
+```
+
+```Python
+## Standard Scaler - you should always fit your scaler on training data,
+## then apply it to the test data
+scaler = StandardScaler().fit(X_train)
+X_train_1 = scaler.transform(X_train)
+X_test_1 = scaler.transform(X_test)
+```
 
 ## Feature selection
 Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
@@ -334,6 +336,13 @@ a classification model based on a mixture of linear regression models, which use
 # ✂️ Split data [🔝](#machine-learning)
 
 Check: https://scikit-learn.org/stable/modules/cross_validation.html
+
+Split data into x, y for training and testing
+```python
+from sklearn.model_selection import train_test_split
+## make a train test split
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+```
 
 ## Cross validation
 
