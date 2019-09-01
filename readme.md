@@ -92,36 +92,33 @@ df.profile_report() # Complete description with histograms, missings, correlatio
 | **Mislabeled**       | If you have domain knoledge, correct them             |
   
 
-### Remove duplicated rows
+
 
 ```python
-df.drop_duplicates(inplace=True)  # consider all of the columns
-```
+####################################################################### REMOVE IRRELEVANT INFORMATION
 
-### Remove constant columns
+## Remove duplicated rows
+df.drop_duplicates(inplace=True)
 
-```python
+## Remove constant columns
 for col in df.columns:
     if df[col].unique().size==1:
         print("Dropping column: {0}".format(col))
         df = df.drop(col, axis=1)
-```
 
 
-### Remove rows with missing values
-If your dataset is big enough so you can sacrifice some training examples.
+####################################################################### HANDLING MISSING VALUES
 
-```python
+### Remove rows with at least 1 missing
+# If your dataset is big enough so you can sacrifice some training examples.
+
 threshold = 0.7
 
 # Dropping rows with missing value rate higher than threshold
 data = data.loc[data.isnull().mean(axis=1) < threshold]
-```
 
 ### Remove columns with missing values
-If the feature has many misings values.
-
-```python
+#If the feature has many misings values.
 # Dropping columns with missing values
 data = data[data.columns[data.isnull().any()]
 
