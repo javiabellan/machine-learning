@@ -5,17 +5,17 @@ Here are my personal Machine Learning notes. I've written this cheatsheet for ke
 ### ML Pipeline
 Typical ML workflow is a pipeline that can be summarized as follows:
 
-|    | Part 1: The data                                                        |
-|----|-------------------------------------------------------------------------|
-| 📈 | [**Exploratory Data Analysis (EDA)**](#-EDA-)                           |
-| 🗑 | [**Drop irrelevant information**](#-Drop-edition-)                       |
-| 🤷 | [**Handling Missing Values**](#-manual-edition-)                         |
-| 🔎 | [**Outlier Detection**](#-manual-edition-)                               |
-| ➕ | [**Creating new features (feature engeniring)**](#-feature-engineering-) |
-| ➖ | [**Remove some features (feature selection)**](#-manual-edition-)         |
-| 🌀 | [**Compress the features (dimensionality reduction)**](#-manual-edition-) |
-| 📊 | [**Resampling Imbalanced Data**](#-manual-edition-)                       |
-| ✂ | [**Split data in train and validation**](#-split-data-)                   |
+|    | Part 1: The data                                              |                  |
+|----|---------------------------------------------------------------|------------------|
+| 📈 | [**Exploratory Data Analysis (EDA)**](#-EDA-)                |                  |
+| 🗑  | [**Drop irrelevant information**](#-Drop-info-)              |                  |
+| 🤷 | [**Missing Values**](#-missing-values-)                      |                  |
+| 🔎 | [**Outlier detection**](#-outlier-detection-)                |                  |
+| ➕ | [**Feature engineering**](#-feature-engineering-)            | Create and transform new features |
+| ➖ | [**Feature selection**](#-feature-selection-)                | Drop usless features and ranking important ones |
+| 🌀 | [**Dimensionality reduction**](#-dimensionality-reduction-)  | Compress the features into 2 or 3 dimensions |
+| 📊 | [**Resampling Imbalanced Data**](#-imbalanced-data-)         | Deal with ...  |
+| ✂ | [**Split data**](#-split-data-)                               | Define train and validation sets |
 
 
 |   | Part 2: The model                                                  |                                            |
@@ -140,7 +140,7 @@ for col in df.columns:
         df = df.drop(col, axis=1)
 ```
 
-# 🤷 Handling Missing Values [🔝](#machine-learning)
+# 🤷 Missing values [🔝](#machine-learning)
 
 - Remove rows (instences) with missing values
 - Remove columns (features) with missing values
@@ -260,7 +260,7 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 ```
 
 
-# ➕ Feature engeniring [🔝](#machine-learning)
+# ➕ Feature engineering [🔝](#machine-learning)
 
 The problem of transforming raw data into a dataset is called feature engineering. For most practical problems, feature engineering is a labor-intensive process that demands from the data analyst a lot of creativity and, preferably, domain knowledge.
 
