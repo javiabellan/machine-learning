@@ -314,7 +314,12 @@ The problem of transforming raw data into a dataset is called feature engineerin
 
 
 #### Handling Text Features (NLP)
-  - Split (name & surname)
+- Split (name & surname)
+- Bag of words
+- tfidf
+- n-grams
+- word2vec
+- topic extraction
 
 ---
  
