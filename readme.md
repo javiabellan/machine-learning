@@ -144,6 +144,8 @@ for col in df.columns:
 
 # 🤷 Missing values [🔝](#machine-learning)
 
+Options:
+
 - **Missings removal**
   - **entire rows containing missing values**
   - **entire columns containing missing values**
@@ -155,10 +157,10 @@ for col in df.columns:
     - **`strategy='constant'`**: Good for categoric
   - **By looking other columns and train a predictor (the missing feature will be the target) (Bivariate feature imputation)**  (`IterativeImputer`) ⭐
 
+Tips:
 
-- **Tip 1: Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
-
-Tip: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
+> - **Tip 1: Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
+> - **Tip 2**: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
 
 
 ## Missings removal
