@@ -5,17 +5,26 @@ Here are my personal Machine Learning notes. I've written this cheatsheet for ke
 ### ML Pipeline
 Typical ML workflow is a pipeline that can be summarized as follows:
 
-|   |                                                                    |                                            |
+|    | Part 1: The data                                                        |
+|----|-------------------------------------------------------------------------|
+| 📈 | [**Exploratory Data Analysis (EDA)**](#-EDA-)                           |
+| 🗑 | [**Drop irrelevant information**](#-Drop-edition-)                       |
+| 🤷 | [**Handling Missing Values**](#-manual-edition-)                         |
+| 🔎 | [**Outlier Detection**](#-manual-edition-)                               |
+| ➕ | [**Creating new features (feature engeniring)**](#-feature-engineering-) |
+| ➖ | [**Remove some features (feature selection)**](#-manual-edition-)         |
+| 🌀 | [**Compress the features (dimensionality reduction)**](#-manual-edition-) |
+| 📊 | [**Resampling Imbalanced Data**](#-manual-edition-)                       |
+| ✂ | [**Split data in train and validation**](#-split-data-)                   |
+
+
+|   | Part 2: The model                                                  |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
-| 0 | 📊 [**Exploratory Data Analysis (EDA)**](#-EDA-)                   | Understand and visualize the data.         |
-| 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
-| 2 | 🛠 [**Feature engineering**](#-feature-engineering-)               | Select and construct appropriate features. |
-| 3 | ✂ [**Split data**](#-split-data-)                                  | Define train, validation ant test sets.    |
-| 4 | 🔮 **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
-| 5 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
-| 6 | 📏 **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
-| 7 | ❓ [**Explainability**](#-explainability-)                         | Interpret the model.                       |
-| all | 🍹 [**Auto Machine learning**](#-auto-machine-learning-)          | Automatic machine learning pipeline        |
+| 🔮 | **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
+| 🎯 |  [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
+| 📏 |  **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
+| ❓ | [**Explainability**](#-explainability-)                         | Interpret the model.                       |
+| 🍹 | [**Auto Machine learning**](#-auto-machine-learning-)          | Automatic machine learning pipeline        |
 
 
 ### 📚 Python libraries used
@@ -53,7 +62,47 @@ import pandas_profiling  # Generate a detailed report of your pandas dataset
 
 ----------------------------------------------------------------
 
+<h1 align="center">Part 1: The data</h1>
 
+> - Read https://www.kdnuggets.com/2019/08/4-tips-advanced-feature-engineering-preprocessing.html
+> - read https://blog.featurelabs.com/encode-smarter
+> - read https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
+
+#### Index
+- 🗑 Drop irrelevant information
+  - Remove duplicated rows
+  - Remove constant columns
+- 🤷 Handling Missing Values
+  - Remove rows with missing values
+  - Remove columns with missing values
+  - Fill missing (imputation)
+    - Iterative Imputer
+  - Fill missing + missing indicator
+- 🔎 Outlier Detection
+  - Standard Deviation
+  - Percentiles
+  - Isolation Forest: sklearn.ensemble.IsolationForest
+- ➕ Creating new features (feature engeniring)
+  - scaling normalization: standarize minmax
+  - logarithim, exponentials
+  - polynomial
+  - Combine features
+  - Cluster some feature
+  - Fix Mislabeled rows?
+  - Deep Feature Synthesis (DFS)
+- ➖ Remove some features (feature selection)
+- 🌀 Compress the features (dimensionality reduction)
+- 📊 Resampling Imbalanced Data
+  - **Subsample majority class**. But you can lose important data.
+  - **Oversample minority class**. But you can overfit.
+    - SMOTE
+    - ADASYN
+    - SMOTENC
+  - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
+- ✂️ Split data for training
+  - Simple split
+  - Cross validation
+  
 # 📊 EDA [🔝](#machine-learning)
 
 #### The Tidy philosophy
@@ -78,25 +127,9 @@ df.profile_report() # Complete description with histograms, missings, correlatio
 ```
 
 
-# 🛁 Data cleaning [🔝](#machine-learning)
-
-| Issue                | solution                                              |
-|----------------------|-------------------------------------------------------|
-| **Duplicated rows**  | Remove them                                           |
-| **Constant columns** | Remove them                                           |
-| **Missing values**   | Remove rows (instences) with missing values           |
-| **Missing values**   | Remove columns (features) with missing values         |
-| **Missing values**   | Fill missing (imputation)                             |
-| **Ouliers**          | Detection with Standard Deviation and Remove/Modify   |
-| **Ouliers**          | Detection withPercentiles and Remove/Modify           |
-| **Mislabeled**       | If you have domain knoledge, correct them             |
-  
-
-
+# 🗑 Drop irrelevant information [🔝](#machine-learning)
 
 ```python
-####################################################################### REMOVE IRRELEVANT INFORMATION
-
 ## Remove duplicated rows
 df.drop_duplicates(inplace=True)
 
@@ -105,10 +138,24 @@ for col in df.columns:
     if df[col].unique().size==1:
         print("Dropping column: {0}".format(col))
         df = df.drop(col, axis=1)
+```
+
+# 🤷 Handling Missing Values [🔝](#machine-learning)
+
+- Remove rows (instences) with missing values
+- Remove columns (features) with missing values
+- **Fill missings (imputation)**
+  - **New category value**: If the feature is a category, you can add a new category that means missing.
+  - **The average value**: If the feature is numerical, you can compute the average value.
+  - **A learning algorithm** that can guess missing feature values (the missing feature will be the target). **BEST METHOD**
+- **Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
+
+Tip: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
 
 
-####################################################################### HANDLING MISSING VALUES
+## Missings removal
 
+```python
 ### Remove rows with at least 1 missing
 # If your dataset is big enough so you can sacrifice some training examples.
 
@@ -127,21 +174,16 @@ data = data[data.columns[data.isnull().mean() < 0.7]]
 ```
 
 
-### Fill missing values (imputation)
+## Missings imputation
 
-- **Fill missings (imputation)**
-  - **New category value**: If the feature is a category, you can add a new category that means missing.
-  - **The average value**: If the feature is numerical, you can compute the average value.
-  - **A learning algorithm** that can guess missing feature values (the missing feature will be the target). **BEST METHOD**
-- **Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
-
-Tip: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
+#### with pandas
 
 ```python
 data = data.fillna(0)             # Filling all missing values with 0
 data = data.fillna(data.median()) # Filling missing values with medians of the columns
 ```
 
+#### SimpleImputer
 
 ```python
 from sklearn.impute import SimpleImputer
@@ -156,37 +198,47 @@ imputed_X_train.columns = X_train.columns
 imputed_X_valid.columns = X_valid.columns
 ```
 
+#### Iterative Imputer
+
+The Iterative Imputer is developed by Scikit-Learn and models each feature with missing values as a function of other features. It uses that as an estimate for imputation. At each step, a feature is selected as output y and all other features are treated as inputs X. A regressor is then fitted on X and y and used to predict the missing values of y. This is done for each feature and repeated for several imputation rounds.
+
+Let us take a look at an example. The data that I use is the well known Titanic dataset. In this dataset, the column Age has missing values that we would like to fill. The code, as always, is straightforward:
+
 ```python
-## Imputation
-## See number of nulls
-test_scores.isnull().sum(0)
+# explicitly require this experimental feature
+# now you can import normally from sklearn.impute
+from sklearn.experimental import enable_iterative_imputer  
+from sklearn.impute import IterativeImputer
 
-## Strategy could be 'mean', 'most_frequent'
-from sklearn.preprocessing import Imputer
-imp = Imputer(missing_values='NaN', strategy='mean', axis=0)
-imp.fit([[1, 2], [np.nan, 3], [7, 6]])
-X = [[np.nan, 1], [6, np.nan], [3, 6]]
-imp.transform(X)
+from sklearn.ensemble import RandomForestRegressor
+import pandas as pd
 
-## outputs:
-array([[ 4.        ,  1.        ],
-       [ 6.        ,  3.66666667],
-       [ 3.        ,  6.        ]])
+# Load data
+titanic = pd.read_csv("titanic.csv")
+titanic = titanic.loc[:, ['Pclass', 'Age', 'SibSp', 'Parch', 'Fare']]
+
+# Run imputer with a Random Forest estimator
+imp = IterativeImputer(RandomForestRegressor(), max_iter=10, random_state=0)
+titanic = pd.DataFrame(imp.fit_transform(titanic), columns=titanic.columns)
 ```
 
+The great thing about this method is that it allows you to use an estimator of your choosing. I used a RandomForestRegressor to mimic the behavior of the frequently used missForest in R.
+
+- **Additional tip 1**: If you have sufficient data, then it might be an attractive option to simply delete samples with missing data. However, keep in mind that it could create bias in your data. Perhaps the missing data follows a pattern that you miss out on.
+- **Additional tip 2**: The Iterative Imputer allows for different estimators to be used. After some testing, I found out that you can even use Catboost as an estimator! Unfortunately, LightGBM and XGBoost do not work since their random state names differ.
 
 
-## Outliers
+# 🔎 Outlier Detection [🔝](#machine-learning)
 
-#### Outlier Detection
-- standard deviation
-- percentiles.
+- Standard Deviation
+- Percentiles
+- Isolation Forest: sklearn.ensemble.IsolationForest
 
-## Handling Outliers
-- Remove
-- Change to max limit
+> ## Handling Outliers
+> - Remove
+> - Change to max limit
 
-#### Outlier Detection with Standard Deviation
+#### Standard Deviation
 
 ```python
 #Dropping the outlier rows with standard deviation
@@ -197,65 +249,18 @@ lower_lim = data['column'].mean () - data['column'].std () * factor
 data = data[(data['column'] < upper_lim) & (data['column'] > lower_lim)]
 ```
 
-```python
-# Ordinal Encoder transforms categorical features into int features
-from sklearn.preprocessing import OrdinalEncoder
-my_cat_feature = np.array(['Alpha', 'Boone', 'Kelli', 'Kelli', 'Boone', 'Tyson', 'Boone']).reshape(-1, 1)
-encoder = OrdinalEncoder()
-my_cat_feat_encoded = encoder.fit_transform(my_cat_feature)
-my_cat_feat_encoded
-
-## Outputs
-
-array([[0.],
-       [1.],
-       [2.],
-       [2.],
-       [1.],
-       [3.],
-       [1.]])
-
-```
-
-
-
-```Python
-def strfeat_to_intfeat(strfeat):
-    ## input: list of features as strings
-    ## output = list of same features now as integers as unique IDs
-    valdict = {}
-    intfeat = []
-    for idx, i in enumerate(strfeat):
-        if i in valdict:
-            intfeat.append(valdict[i])
-        else:
-            valdict[i] = idx
-            intfeat.append(idx)
-    return intfeat
-```
-
-
+#### Isolation Forest
 
 ```python
-## change string feature with multiple levels into numerical
-def strfeat_to_intfeat(strfeat):
-    ## input: list of features as strings
-    ## output = list of same features now as integers as unique IDs
-    valdict = {}
-    intfeat = []
-    for idx, i in enumerate(strfeat):
-        if i in valdict:
-            intfeat.append(valdict[i])
-        else:
-            valdict[i] = idx
-            intfeat.append(idx)
-    return intfeat
+from sklearn.ensemble import IsolationForest
+
+clf = IsolationForest(contamination=0.01, behaviour='new')
+outliers = clf.fit_predict(df_x)
+sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 ```
 
-# 🛠 Feature engineering [🔝](#machine-learning)
 
-> - read https://blog.featurelabs.com/encode-smarter
-> - read https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
+# ➕ Feature engeniring [🔝](#machine-learning)
 
 The problem of transforming raw data into a dataset is called feature engineering. For most practical problems, feature engineering is a labor-intensive process that demands from the data analyst a lot of creativity and, preferably, domain knowledge.
 
@@ -384,7 +389,7 @@ X_train_1 = scaler.transform(X_train)
 X_test_1 = scaler.transform(X_test)
 ```
 
-## Feature selection
+# ➖ Feature selection [🔝](#machine-learning)
 Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
 
 Reduce number of attributes.
@@ -422,7 +427,7 @@ Drop all features that dont meet a variance threshold
 from sklearn.feature_selection import VarianceThreshold
 ```
 
-## Dimensionality reduction
+# 🌀 Dimensionality reduction [🔝](#machine-learning)
 > - https://www.analyticsvidhya.com/blog/2018/08/dimensionality-reduction-techniques-python/
 > - Read [Curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality)
 > - [Manifold learning](https://scikit-learn.org/stable/modules/manifold.html)
@@ -504,6 +509,48 @@ Linear Discriminant Analysis can only learn linear boundaries, while Quadratic D
 a classification model based on a mixture of linear regression models, which uses optimal scoring to transform the response variable so that the data are in a better form for linear separation, and multiple adaptive regression splines to generate the discriminant surface.
 
 
+# 📊 Resampling Imbalanced Data [🔝](#machine-learning)
+Deal with **imbalanced datasets**: Check [scikit-learn approach](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-with-stratification-based-on-class-labels) and [imbalanced-learn package](http://imbalanced-learn.org) 
+  - **Subsample majority class**. But you can lose important data.
+  - **Oversample minority class**. But you can overfit.
+    - SMOTE
+    - ADASYN
+    - SMOTENC
+  - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
+  
+### SMOTE
+ 
+Synthetic Minority Oversampling Technique (SMOTE) is an oversampling technique used to increase the samples in a minority class. It generates new samples by looking at the feature space of the target and detecting nearest neighbors. Then, it simply selects similar samples and changes a column at a time randomly within the feature space of the neighboring samples.
+
+The module to implement SMOTE can be found within the imbalanced-learn package. You can simply import the package and apply a fit_transform:
+
+```python
+from imblearn.over_sampling import SMOTE, ADASYN, SMOTENC
+
+X_resampled, y_resampled = SMOTE(sampling_strategy='minority').fit_resample(X, y)
+X_resampled, y_resampled = SMOTE(sampling_strategy={"Fraud":1000}).fit_resample(X, y)
+X_resampled = pd.DataFrame(X_resampled, columns=X.columns)
+```
+
+
+As you can see the model successfully oversampled the target variable. There are several strategies that you can take when oversampling using SMOTE:
+
+- 'minority': resample only the minority class;
+- 'not minority': resample all classes but the minority class;
+- 'not majority': resample all classes but the majority class;
+- 'all': resample all classes;
+- When dict, the keys correspond to the targeted classes. The values correspond to the desired number of samples for each targeted class.
+
+I chose to use a dictionary to specify the extent to which I wanted to oversample my data.
+
+**Additional tip 1**: If you have categorical variables in your dataset SMOTE is likely to create values for those variables that cannot happen. For example, if you have a variable called isMale, which could only take 0 or 1, then SMOTE might create 0.365 as a value.
+
+Instead, you can use SMOTENC which takes into account the nature of categorical variables. This version is also available in the imbalanced-learnpackage.
+
+**Additional tip 2**: Make sure to oversample after creating the train/test split so that you only oversample the train data. You typically do not want to test your model on synthetic data.
+
+
+
 # ✂ Split data [🔝](#machine-learning)
 
 Check: https://scikit-learn.org/stable/modules/cross_validation.html
@@ -518,13 +565,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y)
 ## Cross validation
 
 
-## Unbalanced dataset
-Deal with **imbalanced datasets**: Check [scikit-learn approach](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-with-stratification-based-on-class-labels) and [imbalanced-learn package](http://imbalanced-learn.org) 
-  - **Subsample majority class**. But you can lose important data.
-  - **Oversample minority class**. But you can overfit.
-  - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
-  
-  
+
+
+
 # 🔮 Prediction models [🔝](#machine-learning)
 > [TODO read](https://towardsdatascience.com/ml-algorithms-one-sd-%CF%83-74bcb28fafb6)
 
@@ -1241,6 +1284,7 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
   - [**Kaggle course**](https://www.kaggle.com/learn): Practical micro-courses provided by Kaggle. (Level: easy)
   - [**ODS ML course**](https://mlcourse.ai): Course by OpenDataScience, a russian Kaggle comunity. (Level: medium)
   - [**Fast.ai ML course**](http://course18.fast.ai/ml): Course by Jeremy Howard, a DL teacher. (Level: easy)
+  - [**SaturdaysAI ML**](https://github.com/SaturdaysAI/Itinerario_MachineLearning)
 - Blogs
   - [**ML overview**](https://vas3k.com/blog/machine_learning/): (Level: easy)
   - [**Maël Fabien blog**](https://maelfabien.github.io/blog/): (Level: medium)
