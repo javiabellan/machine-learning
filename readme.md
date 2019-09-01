@@ -258,7 +258,7 @@ def strfeat_to_intfeat(strfeat):
 
 # 🛠 Feature engineering [🔝](#machine-learning)
 
-> TO-DO: Read about [featuretools](https://www.featuretools.com/), a python framework for automated feature engineering.
+> read https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
 
 The problem of transforming raw data into a dataset is called feature engineering. For most practical problems, feature engineering is a labor-intensive process that demands from the data analyst a lot of creativity and, preferably, domain knowledge.
 
@@ -268,11 +268,18 @@ The problem of transforming raw data into a dataset is called feature engineerin
 | **Feature creation**       | Add useful features      | Modify to new, Combine features, Cluster some feature, ...    |
 | **Feature selection**      | Remove useless features  | See feat importance, correlations, Dimensionality reduction,  |
 
+
+#### Feature engineering packages
+- [Featuretools](https://www.featuretools.com/): Automatic feature engineering.
+- [Boruta-py](https://github.com/scikit-learn-contrib/boruta_py): all-relevant feature selection method (scikit-learn contribution)
+- [Categorical-encoding](https://github.com/scikit-learn-contrib/categorical-encoding): Categorical variables encoding (scikit-learn contribution)
+- [Tsfresh](https://tsfresh.readthedocs.io): Automatic calculates time series features
+- [Trane](https://github.com/HDI-Project/Trane): For temporal datasets
+- [FeatureHub](https://github.com/HDI-Project/FeatureHub): 
+
  TO DO: What is Latent feature discovery ??? 
 
 ## Feature transformation and creation
-
-read https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
 
 #### Handling Numerical Features
 - Numerical (continuous) Features
@@ -288,7 +295,6 @@ read https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5
 
 #### Handling Categorical Features
 
-Check scikit-learn contribution [categorical encoding](http://contrib.scikit-learn.org/categorical-encoding/) package.
 
 - Ordinal Categorical Features [generat1, generat2, generat3]
   - LabelEncoder: from sklearn.preprocessing import LabelEncoder
@@ -850,15 +856,16 @@ Its goal is to find a mixture of multi-dimensional Gaussian probability distribu
 | **NM**     | **Nelder-Mead Algorithm**                              | ?            | ⭐⭐   |
 | **TPE**    | **Tree of Parzen Estimators**                          | ?            | ⭐⭐⭐ |
 |            | **Simulated Annealing**                                | ?            |         |
-|            | **Gradient Descent**                                   | Sequential   |         |
+| **GD**     | **Gradient Descent**                                   | Sequential   |         |
 | **CMA-ES** | **Covariance Matrix Adaptation Evolutionary Etrategy** | Evolutionary |         |
 
 ### Packages
-- [Sklearn](https://scikit-learn.org):            GS, RS
-- [Optunity](https://optunity.readthedocs.io):    GS, RS, NM, PSO and TPE
-- GPyOpt:                                         BO-GP
-- [BayesianOptimization](https://github.com/fmfn/BayesianOptimization): BO-GP
+- [Sklearn](https://scikit-learn.org):             GS, RS
+- [Optunity](https://optunity.readthedocs.io):     GS, RS, NM, PSO and TPE
 - [Hyperopt](https://hyperopt.github.io/hyperopt): RS, TPE
+- GPyOpt:                                          BO-GP
+- [BayesianOptimization](https://github.com/fmfn/BayesianOptimization): BO-GP
+- [skopt](https://scikit-optimize.github.io): (Scikit-Optimize)
 
 ### Explanations
 - Grid Search: Search over a discrete set of predefined hyperparameters values.
