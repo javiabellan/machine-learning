@@ -144,13 +144,19 @@ for col in df.columns:
 
 # 🤷 Missing values [🔝](#machine-learning)
 
-- Remove rows (instences) with missing values
-- Remove columns (features) with missing values
+- **Missings removal**
+  - **entire rows containing missing values**
+  - **entire columns containing missing values**
 - **Fill missings (imputation)**
-  - **New category value**: If the feature is a category, you can add a new category that means missing.
-  - **The average value**: If the feature is numerical, you can compute the average value.
-  - **A learning algorithm** that can guess missing feature values (the missing feature will be the target). **BEST METHOD**
-- **Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
+  - **By looking that column (Univariate feature imputation)** (`SimpleImputer`)
+    - **`strategy='mean'`**: Good for numeric
+    - **`strategy='median'`**: Good for numeric
+    - **`strategy='most_frequent'`**: Good for categoric
+    - **`strategy='constant'`**: Good for categoric
+  - **By looking other columns and train a predictor (the missing feature will be the target) (Bivariate feature imputation)**  (`IterativeImputer`) ⭐
+
+
+- **Tip 1: Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
 
 Tip: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
 
@@ -176,44 +182,42 @@ data = data[data.columns[data.isnull().mean() < 0.7]]
 ```
 
 
-## Missings imputation
-
-#### with pandas
+## Univariate feature imputation
 
 ```python
+######################################################################## Pandas
 data = data.fillna(0)             # Filling all missing values with 0
 data = data.fillna(data.median()) # Filling missing values with medians of the columns
-```
 
-#### SimpleImputer
-
-```python
+######################################################################## Sklearn SimpleImputer
 from sklearn.impute import SimpleImputer
 
 # Imputation
-my_imputer = SimpleImputer()
-imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train))
-imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid))
+from sklearn.impute import SimpleImputer
+
+imputer = SimpleImputer(strategy='mean', missing_values=np.nan,  add_indicator=False)
+imputer = SimpleImputer(strategy='median')
+imputer = SimpleImputer(strategy='most_frequent')
+imputer = SimpleImputer(strategy='constant')
+
+imputed_X_train = pd.DataFrame(imputer.fit_transform(X_train))
+imputed_X_valid = pd.DataFrame(imputer.transform(X_valid))
 
 # Imputation removed column names; put them back
 imputed_X_train.columns = X_train.columns
 imputed_X_valid.columns = X_valid.columns
 ```
 
-#### Iterative Imputer
+## Bivariate feature imputation
 
 The Iterative Imputer is developed by Scikit-Learn and models each feature with missing values as a function of other features. It uses that as an estimate for imputation. At each step, a feature is selected as output y and all other features are treated as inputs X. A regressor is then fitted on X and y and used to predict the missing values of y. This is done for each feature and repeated for several imputation rounds.
 
 Let us take a look at an example. The data that I use is the well known Titanic dataset. In this dataset, the column Age has missing values that we would like to fill. The code, as always, is straightforward:
 
 ```python
-# explicitly require this experimental feature
-# now you can import normally from sklearn.impute
-from sklearn.experimental import enable_iterative_imputer  
+from sklearn.experimental import enable_iterative_imputer  # explicitly require this experimental feature
 from sklearn.impute import IterativeImputer
-
 from sklearn.ensemble import RandomForestRegressor
-import pandas as pd
 
 # Load data
 titanic = pd.read_csv("titanic.csv")
