@@ -70,45 +70,68 @@ df = pd.read_csv("data.csv")
 ```python
 df.head()           # Show the first 5 rows
 df.tail()           # Show the last 5 rows
-df.describe()       # Basic description
+df.dtypes           # Show features types
+df.info()           # Show features types and missings
+df.describe()       # Describe numeric features: count, mean, std, min, 25%, 50%, 75%, max
+df.describe(include=['object', 'bool']) # Describe categoric features: count, unique, top, freq
 df.profile_report() # Complete description with histograms, missings, correlations, etc (Pandas Profiling package)
 ```
 
 
 # 🛁 Data cleaning [🔝](#machine-learning)
 
-| Name                        | Description                                                               |
-|-----------------------------|---------------------------------------------------------------------------|
-| **Remove duplicates**       | Remove repeated rows in the dataset                                       |
-| **Handling missing values** | Remove missing examples, Remove missing feature, Fill missing (imputation)|
-| **Ouliers**                 | Remove or modify rare or unexpected features                              |
-| **Fixing mislabeled**       | If you have domain knoledge                                               |
-
-- Handling Duplicates
-  - Remove duplicated rows
-- Handling Missings
-  - Remove examples with missing values
-  - Remove columns with missings values
-  - Fill missings (imputation)
-  - Fill missings + missing indicator
-- Handling Outliers
-  - Outlier Detection with Standard Deviation
-  - Outlier Detection with Percentiles
-  - Outlier modification
+| Issue                | solution                                              |
+|----------------------|-------------------------------------------------------|
+| **Duplicated rows**  | Remove them                                           |
+| **Constant columns** | Remove them                                           |
+| **Missing values**   | Remove rows (instences) with missing values           |
+| **Missing values**   | Remove columns (features) with missing values         |
+| **Missing values**   | Fill missing (imputation)                             |
+| **Ouliers**          | Detection with Standard Deviation and Remove/Modify   |
+| **Ouliers**          | Detection withPercentiles and Remove/Modify           |
+| **Mislabeled**       | If you have domain knoledge, correct them             |
   
 
-## Remove duplicated instances
+### Remove duplicated rows
 
 ```python
-df.drop_duplicates(inplace=True)                            # consider all of the columns
-df.drop_duplicates(subset=["col_a", "col_b"], inplace=True) # consider only certain columns
+df.drop_duplicates(inplace=True)  # consider all of the columns
 ```
 
-## Missing Features
-In some cases, the data comes to the analyst in the form of a dataset with features already defined. In some examples, values of some features can be missing. That often happens when the dataset was handcrafted, and the person working on it forgot to fill some values or didn’t get them measured at all. The typical approaches of dealing with missing values for a feature include:
+### Remove constant columns
 
-- **Remove examples with missing values**: If your dataset is big enough so you can sacrifice some training examples.
-- **Remove columns with missings values**: If the feature has many misings values.
+```python
+for col in df.columns:
+    if df[col].unique().size==1:
+        print("Dropping column: {0}".format(col))
+        df = df.drop(col, axis=1)
+```
+
+
+### Remove rows with missing values
+If your dataset is big enough so you can sacrifice some training examples.
+
+```python
+threshold = 0.7
+
+# Dropping rows with missing value rate higher than threshold
+data = data.loc[data.isnull().mean(axis=1) < threshold]
+```
+
+### Remove columns with missing values
+If the feature has many misings values.
+
+```python
+# Dropping columns with missing values
+data = data[data.columns[data.isnull().any()]
+
+# Dropping columns with missing value rate higher than threshold (70%)
+data = data[data.columns[data.isnull().mean() < 0.7]]
+```
+
+
+### Fill missing values (imputation)
+
 - **Fill missings (imputation)**
   - **New category value**: If the feature is a category, you can add a new category that means missing.
   - **The average value**: If the feature is numerical, you can compute the average value.
@@ -116,30 +139,6 @@ In some cases, the data comes to the analyst in the form of a dataset with featu
 - **Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
 
 Tip: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
-
-#### Remove
-```python
-threshold = 0.7
-
-# Dropping columns with missing value rate higher than threshold
-data = data[data.columns[data.isnull().mean() < threshold]]
-
-# Dropping rows with missing value rate higher than threshold
-data = data.loc[data.isnull().mean(axis=1) < threshold]
-```
-
-#### Remove columns with missing values
-
-```python
-# Get names of columns with missing values
-cols_with_missing = [col for col in X_train.columns if X_train[col].isnull().any()]
-
-# Drop columns in training and validation data
-reduced_X_train = X_train.drop(cols_with_missing, axis=1)
-reduced_X_valid = X_valid.drop(cols_with_missing, axis=1)
-```
-
-#### Fill missings (imputation)
 
 ```python
 data = data.fillna(0)             # Filling all missing values with 0
@@ -269,6 +268,11 @@ The problem of transforming raw data into a dataset is called feature engineerin
 | **Feature creation**       | Add useful features      | Modify to new, Combine features, Cluster some feature, ...    |
 | **Feature selection**      | Remove useless features  | See feat importance, correlations, Dimensionality reduction,  |
 
+```Python
+numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns
+categoric_feats = df.select_dtypes(include=[object]).columns
+time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns
+```
 
 #### Feature engineering packages
 - [Featuretools](https://www.featuretools.com/): Automatic feature engineering. (by featurelabs)
