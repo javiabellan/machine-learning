@@ -43,10 +43,12 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import sklearn as ml
+import sklearn as skl
 import scipy.stats as spstats
+import pandas_profiling  # Generate a detailed report of your pandas dataset
 
-%matplotlib inline
+%matplotlib inline   # For static plots
+%matplotlib notebook # For interactive plots
 ```
 
 ----------------------------------------------------------------
@@ -63,18 +65,15 @@ In most machine learning algorithms, every instance is represented by a row in t
 df = pd.read_csv("data.csv")
 ```
 
-#### Show the data
+#### Show and describe the data
 
 ```python
-df.head()
-df.tail()
+df.head()           # Show the first 5 rows
+df.tail()           # Show the last 5 rows
+df.describe()       # Basic description
+df.profile_report() # Complete description with histograms, missings, correlations, etc (Pandas Profiling package)
 ```
 
-#### Describe the data
-
-```python
-df.describe()
-```
 
 # 🛁 Data cleaning [🔝](#machine-learning)
 
@@ -288,6 +287,9 @@ read https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5
 - Numerical (discrete) Features
 
 #### Handling Categorical Features
+
+Check scikit-learn contribution [categorical encoding](http://contrib.scikit-learn.org/categorical-encoding/) package.
+
 - Ordinal Categorical Features [generat1, generat2, generat3]
   - LabelEncoder: from sklearn.preprocessing import LabelEncoder
 - Nominal Categorical Features [Spain, France, Italy]
