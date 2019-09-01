@@ -2,14 +2,15 @@
 
 Here are my personal Machine Learning notes. I've written this cheatsheet for keep track my knowledge, but you can use it as a guide for learning ML aswell! [**This are the resources**](#free-resources) I've learned from and I reccomend.
 
-### ML Pipeline
 Typical ML workflow is a pipeline that can be summarized as follows:
 
-|    | Part 1: The data                                              |                  |
+#### Part 1: The data
+
+|    |                                                               |                  |
 |----|---------------------------------------------------------------|------------------|
 | 📈 | [**Exploratory Data Analysis (EDA)**](#-EDA-)                |                  |
-| 🗑  | [**Drop irrelevant information**](#-Drop-info-)              |                  |
-| 🤷 | [**Missing Values**](#-missing-values-)                      |                  |
+| 🗑  | [**Drop irrelevant information**](#-Drop-info-)              |  |
+| 🤷 | [**Missing values**](#-missing-values-)                      | Deal with no data on some features   |
 | 🔎 | [**Outlier detection**](#-outlier-detection-)                |                  |
 | ➕ | [**Feature engineering**](#-feature-engineering-)            | Create and transform new features |
 | ➖ | [**Feature selection**](#-feature-selection-)                | Drop usless features and ranking important ones |
@@ -17,8 +18,9 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 | 📊 | [**Resampling Imbalanced Data**](#-imbalanced-data-)         | Deal with ...  |
 | ✂ | [**Split data**](#-split-data-)                               | Define train and validation sets |
 
+#### Part 2: The model
 
-|   | Part 2: The model                                                  |                                            |
+|   |                                                                   |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
 | 🔮 | **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
 | 🎯 |  [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
