@@ -77,12 +77,12 @@ df.profile_report() # Complete description with histograms, missings, correlatio
 
 # 🛁 Data cleaning [🔝](#machine-learning)
 
-| Name           | Description                  | Options                              |
-|:--------------:|------------------------------|--------------------------------------|
-| **Duplicates** | Repeated rows in the dataset | Remove                               |
-| **Missings**   | No data on some features     | Remove example, Remove feature, Fill |
-| **Ouliers**    | Rare or unexpected features  | Remove, Modify                       |
-
+| Name                        | Description                                                               |
+|-----------------------------|---------------------------------------------------------------------------|
+| **Remove duplicates**       | Remove repeated rows in the dataset                                       |
+| **Handling missing values** | Remove missing examples, Remove missing feature, Fill missing (imputation)|
+| **Ouliers**                 | Remove or modify rare or unexpected features                              |
+| **Fixing mislabeled**       | If you have domain knoledge                                               |
 
 - Handling Duplicates
   - Remove duplicated rows
@@ -258,7 +258,8 @@ def strfeat_to_intfeat(strfeat):
 
 # 🛠 Feature engineering [🔝](#machine-learning)
 
-> read https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
+> - read https://blog.featurelabs.com/encode-smarter
+> - read https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
 
 The problem of transforming raw data into a dataset is called feature engineering. For most practical problems, feature engineering is a labor-intensive process that demands from the data analyst a lot of creativity and, preferably, domain knowledge.
 
@@ -270,9 +271,9 @@ The problem of transforming raw data into a dataset is called feature engineerin
 
 
 #### Feature engineering packages
-- [Featuretools](https://www.featuretools.com/): Automatic feature engineering.
-- [Boruta-py](https://github.com/scikit-learn-contrib/boruta_py): all-relevant feature selection method (scikit-learn contribution)
-- [Categorical-encoding](https://github.com/scikit-learn-contrib/categorical-encoding): Categorical variables encoding (scikit-learn contribution)
+- [Featuretools](https://www.featuretools.com/): Automatic feature engineering. (by featurelabs)
+- [Boruta-py](https://github.com/scikit-learn-contrib/boruta_py): all-relevant feature selection method (by scikit-learn contribution)
+- [Categorical-encoding](https://github.com/scikit-learn-contrib/categorical-encoding): Categorical variables encoding (by scikit-learn contribution)
 - [Tsfresh](https://tsfresh.readthedocs.io): Automatic calculates time series features
 - [Trane](https://github.com/HDI-Project/Trane): For temporal datasets
 - [FeatureHub](https://github.com/HDI-Project/FeatureHub): 
@@ -381,6 +382,8 @@ X_test_1 = scaler.transform(X_test)
 Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
 
 Reduce number of attributes.
+- Mutual information
+- LASSO
 - [**Feature selection**](https://scikit-learn.org/stable/modules/feature_selection.html)
 - Wrapper: Su usa un classificador
   - MultiObjectiveEvolutionarySearch: Mejor para muchas generaciones. 10000 Evals
