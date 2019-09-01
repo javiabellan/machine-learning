@@ -10,7 +10,7 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 | 0 | 📊 [**Exploratory Data Analysis (EDA)**](#-EDA-)                   | Understand and visualize the data.         |
 | 1 | 🛁 [**Data cleaning**](#-data-cleaning-)                           | Preprocess and clean the data.             |
 | 2 | 🛠 [**Feature engineering**](#-feature-engineering-)               | Select and construct appropriate features. |
-| 3 | ✂️ [**Split data**](#-split-data-)                                  | Define train, validation ant test sets.    |
+| 3 | ✂ [**Split data**](#-split-data-)                                  | Define train, validation ant test sets.    |
 | 4 | 🔮 **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
 | 5 | 🎯 [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
 | 6 | 📏 **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
@@ -495,7 +495,7 @@ Linear Discriminant Analysis can only learn linear boundaries, while Quadratic D
 a classification model based on a mixture of linear regression models, which uses optimal scoring to transform the response variable so that the data are in a better form for linear separation, and multiple adaptive regression splines to generate the discriminant surface.
 
 
-# ✂️ Split data [🔝](#machine-learning)
+# ✂ Split data [🔝](#machine-learning)
 
 Check: https://scikit-learn.org/stable/modules/cross_validation.html
 
