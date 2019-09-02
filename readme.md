@@ -1275,6 +1275,27 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
 > - Read https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/
 > - Read https://medium.com/huggingface/distilbert-8cf3380435b5
 
+🤗 means availability (pretrained PyTorch implementation) on [pytorch-transformers](https://github.com/huggingface/pytorch-transformers) package developed by huggingface.
+
+| Model              | Creator         | Date      | Parameters   | Breif description         | 🤗 |
+|--------------------|-----------------|-----------|--------------|---------------------------|----|
+| **Transformer**    | Google          | Jun. 2017 |              | Attention Is All You Need |    |
+| **ULMFiT**         | Fast.ai         | Jan. 2018 |              | Regular LSTM              |    |
+| **ELMo**           | AllenNLP        | Feb. 2018 | 94M          | Bidirectional LSTM        |    |
+| **GPT**            | OpenAI          | Jun. 2018 | 110M         | Transformer on normal LM  | ✔ |
+| **BERT**           | Google          | Oct. 2018 | 110M or 340M | Transformer on masked LM  | ✔ |
+| **Transformer-XL** | Google/CMU      | Jan. 2019 | 128M or 151M |                           | ✔ |
+| **XLM/mBERT**      | Facebook        | Jan. 2019 | 665M         | Multilingual LM           | ✔ |
+| **Transf. ELMo**   | AllenNLP        | Jan. 2019 | 465M         |                           |    |
+| **GPT-2**          | OpenAI          | Feb. 2019 | 1500M        | Good text generation      | ✔ |
+| **ERNIE**          | Baidu research  | Apr. 2019 |              |                           |    |
+| **XLNet**:         | Google/CMU      | Jun. 2019 | 340M         | BERT + Transformer-XL     | ✔ |
+| **RoBERTa**        | Facebook        | Jul. 2019 | 125M or 355M | Optimized BERT            | ✔ |
+| **MegatronLM**     | Nvidia          | Aug. 2019 | 8300M        | Too big                   |    |
+| **DistilBERT**     | Hugging Face    | Aug. 2019 | 66M          | Compressed BERT           | ✔ |
+
+
+  
 - **Attention**: (Aug 2015)
   - Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector.
   - Paper: [Effective Approaches to Attention-based Neural Machine Translation](https://arxiv.org/abs/1508.04025)
