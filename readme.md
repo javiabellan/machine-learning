@@ -1269,6 +1269,95 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
 
 ---
 
+## Natural Language Processing
+
+> - Read https://medium.com/huggingface/distilbert-8cf3380435b5
+> - Read https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/
+
+- **Attention**: (Aug 2015)
+  - Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector.
+  - [Paper: Effective Approaches to Attention-based Neural Machine Translation](https://arxiv.org/abs/1508.04025)
+  - [blog](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
+  - [attention and memory](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
+- **Transformer**: (Google AI, jun. 2017)
+  - Transformer architecture: Encoder with self-attention, and decoder with attention.
+  - Surpassed RNN's State of the Art
+  - [Paper: Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+  - [blog](https://jalammar.github.io/illustrated-transformer).
+- **ULMFiT**: (Fast.ai, Jan. 2018)
+  - Regular LSTM Encoder-Decoder architecture with no attention.
+  - Introduces the idea of transfer-learning in NLP:
+    1. Take a trained tanguge model: Predict wich word comes next. Trained with Wikipedia corpus for example (Wikitext 103).
+    2. Retrain it with your corpus data
+    3. Train your task (classification, etc.)
+  - [paper](https://arxiv.org/abs/1801.06146)
+- **ELMo**: (AllenNLP, Feb. 2018)
+  - Context-aware embedding = better representation.
+  - Useful for synonyms. Made with bidirectional LSTMs
+  - 94 millions of parameters
+  - [*paper*](https://arxiv.org/abs/1802.05365)
+  - [*site*](https://allennlp.org/elmo).
+- **GPT**: (OpenAI, Jun. 2018)
+  - Same as transformer, but with transfer-learning for ther NLP tasks.
+  - First train the decoder for language modelling with unsupervised text, and then train other NLP task.
+  - 110 millions of parameters
+  - [*paper*](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf)
+  - [*site*](https://blog.openai.com/language-unsupervised/), [*code*](https://github.com/openai/finetune-transformer-lm).
+- **BERT**: (Google AI, oct. 2018)
+  - Bi-directioanl training of Transformer
+  - State of the Art on 11 NLP tasks
+  - BERT BASE: 110 millions of parameters
+  - BERT LARGE: 340 millions of parameters
+  - [*paper*](https://arxiv.org/abs/1810.04805)
+  - [*official code*](https://github.com/google-research/bert)
+  - [*blog*](http://jalammar.github.io/illustrated-bert)
+  - [*fastai alumn blog*](https://medium.com/huggingface/multi-label-text-classification-using-bert-the-mighty-transformer-69714fa3fb3d)
+  - [*blog3*](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
+  - [slides](https://nlp.stanford.edu/seminar/details/jdevlin.pdf)
+- **Transformer-XL**: (Google/CMU, Jan. 2019)
+  - Learning long-term dependencies
+  - Resolved Transformer's Context-Fragmentation
+  - Outperforms BERT in LM
+  - [*paper*](https://arxiv.org/abs/1901.02860)
+  - [*blog*](https://medium.com/dair-ai/a-light-introduction-to-transformer-xl-be5737feb13)
+  - [*google blog*](https://ai.googleblog.com/2019/01/transformer-xl-unleashing-potential-of.html)
+  - [*code*](https://github.com/kimiyoung/transformer-xl).
+- **XLM**: (Facebook, Jan. 2019)
+  - Cross-lingual Language Model Pretraining
+  - [*paper*](https://arxiv.org/abs/1901.07291)
+  - [*code*](https://github.com/facebookresearch/XLM/)
+- **StandfordNLP**: (Standford, Jan. 2019)
+  - Neural models for text precessing
+  - 53 human languages
+- **Transformer ELMo**: (AllenNLP, Jan. 2019)
+  - 465 millions of parameters
+- **GPT-2**: (OpenAI, Feb. 2019)
+  - Zero-Shot task learning
+  - Coherent paragraphs of generated text
+  - 1500 millions of parameters
+  - [*site*](https://blog.openai.com/better-language-models/)
+- **XLNet**: (Google/CMU, Jun. 2019)
+  - Auto-Regressive methods for LM
+  - Best both BERT + Transformer-XL
+  - [​*paper*](https://arxiv.org/abs/1906.08237)
+  - [*code*](https://github.com/zihangdai/xlnet/)
+- **ERNIE** (Baidu research, Jul. 2019)
+  - Full name: Enhanced Representation through kNowledge IntEgration
+  - World-aware, Structure-aware, and Semantic-aware tasks
+  - Continual pre-training
+- **RoBERTa** (Facebook, Jul. 2019)
+  - Paper [RoBERTa: A Robustly Optimized BERT Pretraining Approach](https://arxiv.org/abs/1907.11692)
+  - Facebook's improvement over BERT
+  - Optimized BERT's training process and hyperparameters
+- **XLM/mBERT** (Facebook, Jul. 2019)
+  - Multilingual Language Model (100 languages)
+  - SOTA on cross-lingual classification and machine translation
+- **MegatronLM** (Nvidia, Aug. 2019)
+- **DistilBERT** (Hugging Face, Aug. 2019)
+  - comparable results to BERT using only 66M parameters
+ 
+---
+
 # Others TODO:
 - [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html)
 - Prueba U de Mann-Whitney
