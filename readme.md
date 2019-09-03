@@ -20,3 +20,12 @@ Here are my personal chaetsheets. I've written this cheatsheet for keep track my
     <td><h3><a href="/CV.md">Computer Vision (CV)</a></h3></td> 
   </tr>
 </table>
+
+<table align="center">
+  <tr>
+    <td><h1>🐣 <a href="/ML.md">ML</a></h1><h4>Machine Learning</h4></td> 
+    <td><h1>🦅 <a href="/DL.md">DL</a></h1><h4>Deep Learning</h4></td> 
+    <td><h1>👀 <a href="/CV.md">CV</a></h1><h4>Computer Vision</h4></td>
+    <td><h1>📜 <a href="/NLP.md">NLP</a></h1><h4>Natural Language Processing</h4></td> 
+  </tr>
+</table>
