@@ -72,16 +72,16 @@ coche[0].vector      # Show vector
 7. [Revisiting Naive Bayes, and Regex](https://youtu.be/Q1zLqfnEXdw)
 8. [Intro to Language Modeling](https://youtu.be/PNNHaQUQqW8)
 9. [Transfer learning](https://youtu.be/5gCQvuznKn0)
-10. ULMFit for non-English Languages
-11. Understanding RNNs
-12. Seq2Seq Translation
-13. Word embeddings quantify 100 years of gender & ethnic stereotypes
-14. Text generation algorithms
-15. Implementing a GRU
-16. Algorithmic Bias
-17. Introduction to the Transformer
-18. The Transformer for language translation
-19. What you need to know about Disinformation
+10. [ULMFit for non-English Languages](https://youtu.be/MDX_x6rKXAs)
+11. [Understanding RNNs](https://youtu.be/l1rlFh0PmZw)
+12. [Seq2Seq Translation](https://youtu.be/IfsjMg4fLWQ)
+13. [Word embeddings quantify 100 years of gender & ethnic stereotypes](https://youtu.be/boxV8Od4jqQ)
+14. [Text generation algorithms](https://youtu.be/3oEb_fFmPnY)
+15. [Implementing a GRU](https://youtu.be/Bl6WVj6wQaE)
+16. [Algorithmic Bias](https://youtu.be/pThqge9QDn8)
+17. [Introduction to the Transformer](https://youtu.be/AFkGPmU16QA)
+18. [The Transformer for language translation](https://youtu.be/KzfyftiH7R8)
+19. [What you need to know about Disinformation](https://youtu.be/vbva2RN-rbQ)
 
 # Deep learning models
 
