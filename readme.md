@@ -5,8 +5,10 @@
     <td><h1>🐣 <a href="/ML.md">ML</a></h1></td> 
     <td><h1>🦅 <a href="/DL.md">DL</a></h1></td> 
     <td><h1>👀 <a href="/CV.md">Vision</a></h1></td>
-    <td><h1>📜 <a href="/NLP.md">NLP</a></h1></td> 
+    <td><h1>📜 <a href="/NLP.md">NLP</a></h1></td>
+    <td><h1>🔊 <a href=">https://www.youtube.com/watch?v=-AzGZ_CHzJk"</a>Audio and speech</h1></td>
   </tr>
 </table>
 
 Here are my personal AI chaetsheets. I wrote them for keep track my knowledge, but you can use it as a guide for learning aswell!
+
