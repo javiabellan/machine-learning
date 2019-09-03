@@ -12,11 +12,12 @@
 
 | Library                                                                           | Description                        |
 |-----------------------------------------------------------------------------------|------------------------------------|
-| [**SpaCy**](https://spacy.io)                                                     | Industrial-Strength NLP            |
+| [**spacy**](https://spacy.io)                                                     | SpaCy: Industrial-Strength NLP     |
 | [**pytorch-transformers**](https://github.com/huggingface/pytorch-transformers)   | 8 pretrained transformers          |
 | [**spacy-pytorch-transformers**](https://explosion.ai/blog/spacy-pytorch-transformers) | SpaCy + pytorch-transformers  |
 | [**stanfordnlp**](https://stanfordnlp.github.io/stanfordnlp/)                     | Pretrained models for 53 languages | 
 | [**nltk**](https://www.nltk.org/)                                                 | Natural Language Toolkit           |
+| [**gensim**](https://radimrehurek.com/gensim)                  | Semantic analysis, topic modeling and vector modeling |
 
 # SpaCy
 
