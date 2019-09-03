@@ -9,4 +9,4 @@
   </tr>
 </table>
 
-Here are my personal chaetsheets. I've written these cheatsheets for keep track my knowledge, but you can use it as a guide for learning aswell!
+Here are my personal AI chaetsheets. I wrote them for keep track my knowledge, but you can use it as a guide for learning aswell!
