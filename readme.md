@@ -1279,7 +1279,7 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
 
 | Model              | Creator         | Date      | Parameters   | Breif description         | 🤗 |
 |--------------------|-----------------|-----------|--------------|---------------------------|----|
-| **Transformer**    | Google          | Jun. 2017 |              | Attention Is All You Need |    |
+| **1st Transformer**| Google          | Jun. 2017 |              | Attention Is All You Need |    |
 | **ULMFiT**         | Fast.ai         | Jan. 2018 |              | Regular LSTM              |    |
 | **ELMo**           | AllenNLP        | Feb. 2018 | 94M          | Bidirectional LSTM        |    |
 | **GPT**            | OpenAI          | Jun. 2018 | 110M         | Transformer on normal LM  | ✔ |
@@ -1301,7 +1301,7 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
   - Paper: [Effective Approaches to Attention-based Neural Machine Translation](https://arxiv.org/abs/1508.04025)
   - [blog](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
   - [attention and memory](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
-- **Transformer**: (Google AI, jun. 2017)
+- **1st Transformer**: (Google AI, jun. 2017)
   - Introduces the transformer architecture: Encoder with self-attention, and decoder with attention.
   - Surpassed RNN's State of the Art
   - Paper: [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
