@@ -14,7 +14,46 @@
 | 🔤 [**spaCy**](https://numpy.org)                                                 | Industrial-Strength NLP   | ⭐ |
 | 🤗 [**pytorch-transformers**](https://github.com/huggingface/pytorch-transformers)| 8 pretrained transformers | ⭐ |
 
-# Embedings (Word2Vect)
+# SpaCy
+
+### Installation
+
+```bash
+pip install spacy
+python -m spacy download en_core_web_sm
+python -m spacy download es_core_news_sm
+python -m spacy download es_core_news_md
+```
+
+### Usage
+
+```python
+import spacy
+
+nlp = spacy.load("en_core_web_sm")  # Load English small model
+nlp = spacy.load("es_core_news_sm") # Load Spanish small model without Word2Vec
+nlp = spacy.load('es_core_news_md') # Load Spanish medium model with Word2Vec
+
+
+text = nlp("Hola, me llamo Javi")   # Text from string
+text = nlp(open("file.txt").read()) # Text from file
+
+
+spacy.displacy.render(text, style='ent', jupyter=True)  # Display text entities
+spacy.displacy.render(text, style='dep', jupyter=True)  # Display word dependencies
+```
+
+### Word2Vect
+
+`es_core_news_md` has 534k keys, 20k unique vectors (50 dimensions)
+
+```python
+coche = nlp("coche")
+moto  = nlp("moto")
+print(coche.similarity(moto)) # Similarity based on cosine distance
+
+coche[0].vector      # Show vector
+```
 
 # Deep learning models
 
