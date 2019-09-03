@@ -1,6 +1,7 @@
 <h1 align="center">Natural Language Processing</h1>
 
 #### Good reads
+- Fast.ai NLP course: [playlist](https://www.youtube.com/playlist?list=PLtmWHNX-gukKocXQOkQjuVxglSDYWsSh9)
 - [spaCy course](https://course.spacy.io)
 - [spaCy blog](https://explosion.ai/blog)
 - [Transformers explanation](http://www.peterbloem.nl/blog/transformers)
@@ -57,6 +58,30 @@ print(coche.similarity(moto)) # Similarity based on cosine distance
 
 coche[0].vector      # Show vector
 ```
+
+
+# Fast.ai NLP
+
+### Videos
+1. [What is NLP?](https://youtu.be/cce8ntxP_XI)
+2. [Topic Modeling with SVD & NMF](https://youtu.be/tG3pUwmGjsc)
+3. [Topic Modeling & SVD revisited](https://youtu.be/lRZ4aMaXPBI)
+4. [Sentiment Classification with Naive Bayes](https://youtu.be/hp2ipC5pW4I)
+5. [Sentiment Classification with Naive Bayes & Logistic Regression, contd.](https://youtu.be/dt7sArnLo1g)
+6. [Derivation of Naive Bayes & Numerical Stability](https://youtu.be/z8-Tbrg1-rE)
+7. [Revisiting Naive Bayes, and Regex](https://youtu.be/Q1zLqfnEXdw)
+8. [Intro to Language Modeling](https://youtu.be/PNNHaQUQqW8)
+9. [Transfer learning](https://youtu.be/5gCQvuznKn0)
+10. ULMFit for non-English Languages
+11. Understanding RNNs
+12. Seq2Seq Translation
+13. Word embeddings quantify 100 years of gender & ethnic stereotypes
+14. Text generation algorithms
+15. Implementing a GRU
+16. Algorithmic Bias
+17. Introduction to the Transformer
+18. The Transformer for language translation
+19. What you need to know about Disinformation
 
 # Deep learning models
 
