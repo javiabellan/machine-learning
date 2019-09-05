@@ -119,6 +119,10 @@ In most machine learning algorithms, every instance is represented by a row in t
 
 #### Obtain the data
 
+> TODO:
+> - Deal commas and points
+> - Detect cats and nums (proportion rows and categories)
+
 ```python
 df = pd.read_csv("data.csv")
 ```
