@@ -1101,7 +1101,8 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
   - Snowflake
   
   
-# 🐼 Data manipulation with [Pandas](https://pandas.pydata.org) [🔝](#machine-learning)
+# 🐼 Pandas [🔝](#machine-learning)
+> - [**59 tricks in Pandas**](https://www.dataschool.io/python-pandas-tips-and-tricks/)
 > - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
 
 - Import pandas library `import pandas as pd`
