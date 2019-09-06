@@ -8,18 +8,101 @@
 - [DistilBERT model by huggingface](https://medium.com/huggingface/distilbert-8cf3380435b5)
 - [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
 
+# Packages
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://www.fast.ai/2019/07/08/fastai-nlp">
+        <img height="40" src="img/logo/fastai.png">
+      </a>
+    </td> 
+    <td>Fast.ai NLP: ULMFiT fine-tuning</td> 
+  </tr>
+  
+  <tr>
+    <td align="center">
+      <a href="https://torchtext.readthedocs.io">
+        <img height="40" src="img/logo/pytorch.png">
+      </a>
+    </td> 
+    <td>TorchText </td> 
+  </tr>
+
+  <tr>
+     <td align="center">
+      <a href="https://fasttext.cc">
+        <img height="50" src="img/logo/fasttext.png">
+      </a>
+    </td> 
+    <td>Word vector representations and sentence classification (157 languages)</td> 
+  </tr>
+  
+  <tr>
+    <td align="center">
+      <a href="https://spacy.io">
+        <img height="50" src="img/logo/spacy.png">
+      </a>
+    </td> 
+    <td>Industrial-Strength NLP (8 languages)</td> 
+  </tr>
+  
+  <tr>
+    <td align="center">
+      <a href="https://github.com/huggingface/pytorch-transformers">
+        <img height="50" src="img/logo/huggingface.png">
+      </a>
+    </td> 
+    <td>8 pretrained Pytorch transformers</td> 
+  </tr>
+  
+  <tr>
+    <td align="center">
+      <a href="https://explosion.ai/blog/spacy-pytorch-transformers">
+        <img height="30" src="img/logo/spacy.png">+
+        <img height="50" src="img/logo/huggingface.png">
+      </a>
+    </td> 
+    <td>SpaCy + pytorch-transformers</td> 
+  </tr>
+  
+  <tr>
+    <td align="center">
+      <a href="https://stanfordnlp.github.io/stanfordnlp">
+        <img height="50" src="img/logo/stanfordnlp.jpg">
+      </a>
+    </td> 
+    <td>Pretrained models for 53 languages</td> 
+  </tr>
+  
+  <tr>
+    <td align="center">
+      <a href="https://www.nltk.org">
+        <img height="50" src="img/logo/nltk.png">
+      </a>
+    </td> 
+    <td>NLTK</td> 
+  </tr>
+  
+  <tr>
+    <td align="center">
+      <a href="https://radimrehurek.com/gensim">
+        <img height="50" src="img/logo/gensim.jpg">
+      </a>
+    </td> 
+    <td>Semantic analysis, topic modeling and vector modeling</td> 
+  </tr>
+  
+</table>
+
 #### Libraries
 
 | Library                                                                           | Description                        |
 |-----------------------------------------------------------------------------------|------------------------------------|
 | [**spacy**](https://spacy.io)                                                     | SpaCy: Industrial-Strength NLP     |
-| [**pytorch-transformers**](https://github.com/huggingface/pytorch-transformers)   | 8 pretrained transformers          |
-| [**spacy-pytorch-transformers**](https://explosion.ai/blog/spacy-pytorch-transformers) | SpaCy + pytorch-transformers  |
-| [**stanfordnlp**](https://stanfordnlp.github.io/stanfordnlp/)                     | Pretrained models for 53 languages | 
-| [**nltk**](https://www.nltk.org/)                                                 | Natural Language Toolkit           |
-| [**gensim**](https://radimrehurek.com/gensim)                  | Semantic analysis, topic modeling and vector modeling |
 
-# SpaCy
+
+<h1><img height="50" src="img/logo/spacy.png"></h1>
 
 ### Installation
 
@@ -61,7 +144,8 @@ coche[0].vector      # Show vector
 ```
 
 
-# Fast.ai NLP
+<h1><img height="50" src="img/logo/fastai.png"></h1>
+
 
 ### Videos
 1. [What is NLP?](https://youtu.be/cce8ntxP_XI)
