@@ -1,10 +1,10 @@
-<a href="https://mlcourse.ai"><img src="posts/img/ods_title.jpg"></a>
+<a href="https://mlcourse.ai"><img src="img/ods/title.jpg"></a>
 
 <table>
   <tbody>
     <!----------------------------------------------------- 1. EDA WITH PANDAS ----------------------------------------------------->
     <tr>
-      <td><img width="300" src="posts/img/topic1-teaser.jpg" /></td>
+      <td><img width="300" src="img/ods/topic1-teaser.jpg" /></td>
       <td>
         <h2>1. Exploratory data analysis with Pandas</h2>
         <ul>
@@ -17,7 +17,7 @@
     </tr>
     <!---------------------------------------------------- 2. EDA VISUALIZATION ---------------------------------------------------->
     <tr>
-      <td><img width="300" src="posts/img/topic2-teaser.jpg" /></td>
+      <td><img width="300" src="img/ods/topic2-teaser.jpg" /></td>
       <td>
         <h2>2. Visualization, main plots for EDA</h2>
         <ul>
@@ -31,7 +31,7 @@
     </tr>
     <!----------------------------------------------------- 3. DECISION TREES ----------------------------------------------------->
     <tr>
-      <td><img width="300" src="posts/img/topic3-teaser.png" /></td>
+      <td><img width="300" src="img/ods/topic3-teaser.png" /></td>
       <td>
         <h2>3. Decision trees and KNN</h2>
         <ul>
@@ -45,7 +45,7 @@
     </tr>
     <!--------------------------------------------------- 4. LINEAR CLASS & REGR --------------------------------------------------->
     <tr>
-      <td><img width="300" src="posts/img/topic4-teaser.png" /></td>
+      <td><img width="300" src="img/ods/topic4-teaser.png" /></td>
       <td>
         <h2>4. Linear Classification and Regression</h2>
         <ul>
@@ -63,7 +63,7 @@
     </tr>
     <!----------------------------------------------------- 5. RANDOM FOREST ----------------------------------------------------->
     <tr>
-      <td><img width="300" src="posts/img/topic5-teaser.png" /></td>
+      <td><img width="300" src="img/ods/topic5-teaser.png" /></td>
       <td>
         <h2>5. Ensembles of algorithms and random forest</h2>
         <ul>
@@ -79,7 +79,7 @@
     </tr>
     <!--------------------------------------------------- 6. FEATURE ENGINEERING --------------------------------------------------->
     <tr>
-      <td><img width="300" src="posts/img/topic6-teaser.png" /></td>
+      <td><img width="300" src="img/ods/topic6-teaser.png" /></td>
       <td>
         <h2>6. Feature engineering and feature selection</h2>
         <ul>
@@ -93,7 +93,7 @@
     </tr>
     <!-------------------------------------------------- 7. UNSUPERVISED LEARNING -------------------------------------------------->
     <tr>
-      <td><img width="300" src="posts/img/topic7-teaser.jpg" /></td>
+      <td><img width="300" src="img/ods/topic7-teaser.jpg" /></td>
       <td>
         <h2>7. Unsupervised learning</h2>
         <ul>
@@ -106,7 +106,7 @@
     </tr>
     <!------------------------------------------------------ 8. VOWPAL WABBIT ------------------------------------------------------>
     <tr>
-      <td><img width="300" src="posts/img/topic8-teaser.png" /></td>
+      <td><img width="300" src="img/ods/topic8-teaser.png" /></td>
       <td>
         <h2>8. Vowpal Wabbit: Learning with Gigabytes of Data</h2>
         <ul>
@@ -119,7 +119,7 @@
     </tr>
     <!--------------------------------------------------- 9. TIME SERIES ANALYSIS --------------------------------------------------->
     <tr>
-      <td><img width="300" src="posts/img/topic9-teaser.jpg" /></td>
+      <td><img width="300" src="img/ods/topic9-teaser.jpg" /></td>
       <td>
         <h2>9. Time series analysis</h2>
         <ul>
@@ -133,7 +133,7 @@
     </tr>
     <!---------------------------------------------------- 10. GRADIENT BOOSTING ---------------------------------------------------->
     <tr>
-      <td><img width="300" src="posts/img/topic10-teaser.jpg" /></td>
+      <td><img width="300" src="img/ods/topic10-teaser.jpg" /></td>
       <td>
         <h2>10. Gradient boosting</h2>
         <ul>
