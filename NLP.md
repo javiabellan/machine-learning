@@ -13,8 +13,17 @@
 <table align="center">
   <tr>
     <td align="center">
+      <a href="https://spacy.io">
+        <img height="40" src="img/logo/spacy.png">
+      </a>
+    </td> 
+    <td>Industrial-Strength NLP (8 languages)</td> 
+  </tr>
+  
+  <tr>
+    <td align="center">
       <a href="https://www.fast.ai/2019/07/08/fastai-nlp">
-        <img height="40" src="img/logo/fastai.png">
+        <img height="50" src="img/logo/fastai.png">
       </a>
     </td> 
     <td>Fast.ai NLP: ULMFiT fine-tuning</td> 
@@ -23,10 +32,10 @@
   <tr>
     <td align="center">
       <a href="https://torchtext.readthedocs.io">
-        <img height="40" src="img/logo/pytorch.png">
+        <img height="30" src="img/logo/pytorch.png">
       </a>
     </td> 
-    <td>TorchText </td> 
+    <td>TorchText (Pytorch subpackage)</td> 
   </tr>
 
   <tr>
@@ -40,27 +49,18 @@
   
   <tr>
     <td align="center">
-      <a href="https://spacy.io">
-        <img height="50" src="img/logo/spacy.png">
-      </a>
-    </td> 
-    <td>Industrial-Strength NLP (8 languages)</td> 
-  </tr>
-  
-  <tr>
-    <td align="center">
       <a href="https://github.com/huggingface/pytorch-transformers">
         <img height="50" src="img/logo/huggingface.png">
       </a>
     </td> 
-    <td>8 pretrained Pytorch transformers</td> 
+    <td>pytorch-transformers: 8 pretrained Pytorch transformers</td> 
   </tr>
   
   <tr>
     <td align="center">
       <a href="https://explosion.ai/blog/spacy-pytorch-transformers">
         <img height="30" src="img/logo/spacy.png">+
-        <img height="50" src="img/logo/huggingface.png">
+        <img height="40" src="img/logo/huggingface.png">
       </a>
     </td> 
     <td>SpaCy + pytorch-transformers</td> 
@@ -87,7 +87,7 @@
   <tr>
     <td align="center">
       <a href="https://radimrehurek.com/gensim">
-        <img height="50" src="img/logo/gensim.jpg">
+        <img height="30" src="img/logo/gensim.jpg">
       </a>
     </td> 
     <td>Semantic analysis, topic modeling and vector modeling</td> 
@@ -95,11 +95,8 @@
   
 </table>
 
-#### Libraries
 
-| Library                                                                           | Description                        |
-|-----------------------------------------------------------------------------------|------------------------------------|
-| [**spacy**](https://spacy.io)                                                     | SpaCy: Industrial-Strength NLP     |
+
 
 
 <h1><img height="50" src="img/logo/spacy.png"></h1>
