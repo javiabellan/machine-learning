@@ -8,7 +8,29 @@
 - [DistilBERT model by huggingface](https://medium.com/huggingface/distilbert-8cf3380435b5)
 - [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
 
-# Packages
+
+## NLP Applications
+
+| Application                         | Description                                                                     |
+|-------------------------------------|---------------------------------------------------------------------------------|
+| 🏷️ **Part-of-speech tagging**       | Identify if each word is a noun, verb, adjective, etc.                          |
+| 📍 **Named entity recognition NER** | Identify person names, organizations, locations, medical codes, time, etc.      |
+| ❓ **Question answering**           | Answer questions of a given text (SQuAD dataset). |
+| 💬 **Speech recognition**           | Speech to text. |
+| 💁🏻 **Speech generation**            | Text to speech. |
+| 🔍 **Topic modeling**               | Identify topics present in a text (sports, politics, etc). |
+| 👍🏼 👎🏼 **Sentiment Analysis**        | Possitive or negative comment/review classification. |
+| 🔮 **Language modeling**            | Predict the next word (or character) in a document. |
+| 🈯 **Translation**                  | Translate into a different language.  |
+
+## Common NLP preprocessing
+- **Tokenization**: Split the text into sentences and the sentences into words. Lowercase the words and remove punctuation.
+- Words that have fewer than 3 characters are removed.
+- All **stopwords** are removed.
+- **Lemmatization**: words in third person are changed to first person and verbs in past and future tenses are changed into present.
+- **Stemming**: Words are reduced to their root form.
+
+## NLP Python Packages
 
 <table align="center">
   <tr>
@@ -95,8 +117,12 @@
   
 </table>
 
+## Topic modeling
+[Topic modeling with gensim](https://towardsdatascience.com/nlp-extracting-the-main-topics-from-your-dataset-using-lda-in-minutes-21486f5aa925)
 
-
+1. Preprocess text
+2. Convert to Bag of Words (BoW)
+3. Running LDA
 
 
 <h1><img height="50" src="img/logo/spacy.png"></h1>
