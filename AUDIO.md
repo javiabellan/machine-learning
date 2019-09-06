@@ -1,12 +1,7 @@
-<h1 align="center">Audio</h1>
+<h1 align="center">Audio recognition 🎤</h1>
 
-
-ver https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89
-
-
-
-
-<h1 align="center">Speech recognition</h1>
+## Audio classification
+https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89
 
 
 ## CTC speech recognition
@@ -19,7 +14,7 @@ CTC lo que hace es que la salida de la red (típicamente LTSM) sea "si hay cambi
 LAS (listen, attend, spell) es otro mecanismo para hacer lo mismo, combinando un lstm, un modelo de atención y un diccionario del idioma en cuestión en una sola entidad que se entrena end to end. De hecho creo que hay más evoluciones de la misma idea.
 
 
-<h1 align="center">Audio generation</h1>
+<h1 align="center">Audio generation 🔊</h1>
 
 ## WaveNet
 A Generative Model for Raw Audio.
