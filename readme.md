@@ -6,7 +6,7 @@
     <td><h1>🦅 <a href="https://github.com/javiabellan/deep-learning">DL</a></h1></td> 
     <td><h1>👀 <a href="/CV.md">Vision</a></h1></td>
     <td><h1>📜 <a href="/NLP.md">NLP</a></h1></td>
-    <td><h1>🔊 <a href="https://www.youtube.com/watch?v=-AzGZ_CHzJk">Audio and speech (not yet)</a></h1></td>
+    <td><h1>🔊 <a href="/AUDIO.MD">Audio</a></h1></td>
   </tr>
 </table>
 
