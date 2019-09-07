@@ -11,17 +11,17 @@
 
 ## NLP Applications
 
-| Application                         | Description                                                                     |
-|-------------------------------------|---------------------------------------------------------------------------------|
-| 🏷️ **Part-of-speech tagging**       | Identify if each word is a noun, verb, adjective, etc.                          |
-| 📍 **Named entity recognition NER** | Identify person names, organizations, locations, medical codes, time, etc.      |
-| ❓ **Question answering**           | Answer questions of a given text (SQuAD dataset). |
-| 💬 **Speech recognition**           | Speech to text. |
-| 💁🏻 **Speech generation**            | Text to speech. |
-| 🔍 **Topic modeling**               | Identify topics present in a text (sports, politics, etc). |
-| 👍🏼 👎🏼 **Sentiment analysis**        | Possitive or negative comment/review classification. |
-| 🔮 **Language modeling**            | Predict the next word (or character) in a document. |
-| 🈯 **Translation**                  | Translate into a different language.  |
+| Application                           | Description                                                                     |
+|---------------------------------------|---------------------------------------------------------------------------------|
+| 🏷️ **Part-of-speech tagging (POS)**  | Identify if each word is a noun, verb, adjective, etc.                          |
+| 📍 **Named entity recognition (NER)** | Identify person names, organizations, locations, medical codes, time, etc.      |
+| ❓ **Question answering**             | Answer questions of a given text (SQuAD dataset). |
+| 💬 **Speech recognition**            | Speech to text. |
+| 💁🏻 **Speech generation**             | Text to speech. |
+| 🔍 **Topic modeling**                | Identify topics present in a text (sports, politics, etc). |
+| 👍🏼 👎🏼 **Sentiment analysis**         | Possitive or negative comment/review classification. |
+| 🔮 **Language modeling**             | Predict the next word (or character) in a document. |
+| 🈯 **Translation**                   | Translate into a different language.  |
 
 ## Common NLP preprocessing
 - **Tokenization**: Split the text into sentences and the sentences into words. Lowercase the words and remove punctuation.
@@ -78,6 +78,11 @@
     <td>pytorch-transformers: 8 pretrained Pytorch transformers</td> 
   </tr>
   
+  <tr>
+    <td align="center"><a href="https://github.com/kaushaltrivedi/fast-bert">fast-bert</a> </td> 
+    <td>Super easy library for BERT based models</td> 
+  </tr>
+    
   <tr>
     <td align="center">
       <a href="https://explosion.ai/blog/spacy-pytorch-transformers">
@@ -196,7 +201,7 @@ coche[0].vector      # Show vector
 🤗 Means availability (pretrained PyTorch implementation) on [pytorch-transformers](https://github.com/huggingface/pytorch-transformers) package developed by huggingface.
 
 | Model              | Creator         | Date      | Parameters   | Breif description         | 🤗 |
-|--------------------|-----------------|-----------|--------------|---------------------------|----|
+|--------------------|:---------------:|-----------|:------------:|---------------------------|----|
 | **1st Transformer**| Google          | Jun. 2017 |              | Attention Is All You Need |    |
 | **ULMFiT**         | Fast.ai         | Jan. 2018 |              | Regular LSTM              |    |
 | **ELMo**           | AllenNLP        | Feb. 2018 | 94M          | Bidirectional LSTM        |    |
@@ -211,7 +216,7 @@ coche[0].vector      # Show vector
 | **RoBERTa**        | Facebook        | Jul. 2019 | 125M or 355M | Optimized BERT            | ✔ |
 | **MegatronLM**     | Nvidia          | Aug. 2019 | 8300M        | Too big                   |    |
 | **DistilBERT**     | Hugging Face    | Aug. 2019 | 66M          | Compressed BERT           | ✔ |
-
+| **[MiniBERT](https://arxiv.org/abs/1909.00100)**  | Google   | Aug. 2019 |  | Compressed BERT  |  |
 
   
 - **Attention**: (Aug 2015)
