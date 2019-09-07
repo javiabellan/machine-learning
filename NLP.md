@@ -7,7 +7,7 @@
 - [Transformers explanation](http://www.peterbloem.nl/blog/transformers)
 - [DistilBERT model by huggingface](https://medium.com/huggingface/distilbert-8cf3380435b5)
 - [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
-
+- [BERT, RoBERTa, DistilBERT, XLNet. Which one to use?](https://towardsdatascience.com/bert-roberta-distilbert-xlnet-which-one-to-use-3d5ab82ba5f8)
 
 ## NLP Applications
 
@@ -19,7 +19,7 @@
 | 💬 **Speech recognition**           | Speech to text. |
 | 💁🏻 **Speech generation**            | Text to speech. |
 | 🔍 **Topic modeling**               | Identify topics present in a text (sports, politics, etc). |
-| 👍🏼 👎🏼 **Sentiment Analysis**        | Possitive or negative comment/review classification. |
+| 👍🏼 👎🏼 **Sentiment analysis**        | Possitive or negative comment/review classification. |
 | 🔮 **Language modeling**            | Predict the next word (or character) in a document. |
 | 🈯 **Translation**                  | Translate into a different language.  |
 
@@ -207,7 +207,7 @@ coche[0].vector      # Show vector
 | **Transf. ELMo**   | AllenNLP        | Jan. 2019 | 465M         |                           |    |
 | **GPT-2**          | OpenAI          | Feb. 2019 | 1500M        | Good text generation      | ✔ |
 | **ERNIE**          | Baidu research  | Apr. 2019 |              |                           |    |
-| **XLNet**:         | Google/CMU      | Jun. 2019 | 340M         | BERT + Transformer-XL     | ✔ |
+| **XLNet**:         | Google/CMU      | Jun. 2019 | 110M or 340M | BERT + Transformer-XL     | ✔ |
 | **RoBERTa**        | Facebook        | Jul. 2019 | 125M or 355M | Optimized BERT            | ✔ |
 | **MegatronLM**     | Nvidia          | Aug. 2019 | 8300M        | Too big                   |    |
 | **DistilBERT**     | Hugging Face    | Aug. 2019 | 66M          | Compressed BERT           | ✔ |
