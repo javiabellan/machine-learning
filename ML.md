@@ -57,16 +57,18 @@ Along the ML Pipeline I use some Python libraries. Here are notes for each libra
 
 Put this on top of your notebook
 ```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import sklearn as skl
-import scipy.stats as spstats
-import pandas_profiling  # Generate a detailed report of your pandas dataset
 
-%matplotlib inline   # For static plots
-%matplotlib notebook # For interactive plots
+# Data libraries
+import numpy             as np
+import pandas            as pd
+import pandas_profiling  as pd_eda
+import missingno         as msno
+import matplotlib.pyplot as plt
+import seaborn           as sns
+
+# ML libraries
+import sklearn as skl
+import xgboost as xgb
 ```
 
 ----------------------------------------------------------------
@@ -173,6 +175,12 @@ Tips:
 > - **Tip 1: Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
 > - **Tip 2**: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
 
+## Plot missings
+
+```python
+sns.heatmap(df.isnull(), cbar=False);  # Option 1: With Seaborn
+msno.matrix(df);                       # Option 2: With missingno
+```
 
 ## Missings removal
 
