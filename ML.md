@@ -823,18 +823,21 @@ Multiple kernel functions exist, the most widely used of which is the RBF kernel
 ## Ensamble models
 Stronger models.
 
+- **Voting**
+- **Weighted Average**
+- **Stacking**
+- **Blending** Stacked Generalization
+- **Bagging** (Bootstrapped Aggregation): Models by subsampling the data.
+  - **Bagging meta-estimator**
+  - **Random Forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
+  - **Extra Trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
 - **Boosting**
-- **Bootstrapped Aggregation (Bagging)**
-- **Random Forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
-  - Deeper trees
-- **Extra Trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
-- **Adaboost**
-- **Stacked Generalization (blending)**
-- **Gradient Boosting**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
-  - Gradient Boosting Machines (GBM)
-  - Gradient Boosted Regression Trees (GBRT)
-  - Tree depth from 3 to 6
-  - [**XGBoost**](https://github.com/dmlc/xgboost), [**LightGBM**](https://github.com/Microsoft/LightGBM), [**CatBoost**](https://github.com/catboost/catboost) 💪 **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
+  - **Adaboost**
+  - **Gradient Boosting (GBM)**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
+    - [**XGBoost**](https://github.com/dmlc/xgboost)
+    - [**LightGBM**](https://github.com/Microsoft/LightGBM)
+    - [**CatBoost**](https://github.com/catboost/catboost)
+    - **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
 
 
 #### Random Forest
