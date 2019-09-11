@@ -1,11 +1,26 @@
-<h1 align="center">Audio recognition 🎤</h1>
+<h1 align="center">Audio</h1>
+
+## Audio recognition 🎤
+- [Audio classification with fast.ai](https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89)
+- Speech recognition
+  - CTC speech recognition
+  - LAS speech recognition
+
+## Audio generation 🔊
+- [Speech generation guide](https://www.kdnuggets.com/2019/09/2019-guide-speech-synthesis-deep-learning.html)
+- Music generation
+- WaveNet: A Generative Model for Raw Audio.
+
+---
 
 
-Todo: https://www.kdnuggets.com/2019/09/2019-guide-speech-synthesis-deep-learning.html
+## Packages
+- PyAudio
+- [gTTS](https://github.com/pndurette/gTTS): Ptyoen interface of Google text to speech
+- [SpeechRecognition](https://github.com/Uberi/speech_recognition)
+- playsound
 
-## Audio classification
-https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89
-
+---
 
 ## CTC speech recognition
 
@@ -17,15 +32,3 @@ CTC lo que hace es que la salida de la red (típicamente LTSM) sea "si hay cambi
 LAS (listen, attend, spell) es otro mecanismo para hacer lo mismo, combinando un lstm, un modelo de atención y un diccionario del idioma en cuestión en una sola entidad que se entrena end to end. De hecho creo que hay más evoluciones de la misma idea.
 
 
-<h1 align="center">Audio generation 🔊</h1>
-
-## WaveNet
-A Generative Model for Raw Audio.
-- Generate speech
-- Generate music
-
-## Packages
-- PyAudio
-- [gTTS](https://github.com/pndurette/gTTS): Ptyoen interface of Google text to speech
-- [SpeechRecognition](https://github.com/Uberi/speech_recognition)
-- playsound
