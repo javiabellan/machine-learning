@@ -11,17 +11,24 @@
 
 ## NLP Applications
 
-| Application                           | Description                                                                     |
-|---------------------------------------|---------------------------------------------------------------------------------|
-| 🏷️ **Part-of-speech tagging (POS)**  | Identify if each word is a noun, verb, adjective, etc.                          |
-| 📍 **Named entity recognition (NER)** | Identify person names, organizations, locations, medical codes, time, etc.      |
-| ❓ **Question answering**             | Answer questions of a given text (SQuAD dataset). |
-| 💬 **Speech recognition**            | Speech to text. |
-| 💁🏻 **Speech generation**             | Text to speech. |
-| 🔍 **Topic modeling**                | Identify topics present in a text (sports, politics, etc). |
-| 👍🏼 👎🏼 **Sentiment analysis**         | Possitive or negative comment/review classification. |
-| 🔮 **Language modeling**             | Predict the next word (or character) in a document. |
-| 🈯 **Translation**                   | Translate into a different language.  |
+
+| Application                           | Description                                                               | Type |
+|---------------------------------------|---------------------------------------------------------------------------|------|
+| 🏷️ **Part-of-speech tagging (POS)**   | Identify if each word is a noun, verb, adjective, etc.                      | 🔤 |
+| 📍 **Named entity recognition (NER)** | Identify names, organizations, locations, medical codes, time, etc.         | 🔤 |
+| 🔍 **Text categorization**            | Identify topics present in a text (sports, politics, etc).                  | 🔤 |
+| ❓ **Question answering**             | Answer questions of a given text (SQuAD dataset).                           | 💭 |
+| 👍🏼 👎🏼 **Sentiment analysis**          | Possitive or negative comment/review classification.                       | 💭 |
+| 🔮 **Language modeling**              | Predict the next word (or character) in a document.                        | 💭 |
+| 📗→📄 **Summarization**               | Crate a short version of a text.                                           | 💭 |
+| 🈯→🆗 **Translation**                 | Translate into a different language.                                       | 💭 |
+| 🆓→🆒 **Dialogue bot**                | Interact in a conversation.                                                | 💭 |
+| 💁🏻→🔠 **Speech recognition**          | Speech to text.                                                            | 🗣️ |
+| 🔠→💁🏻 **Speech generation**           | Text to speech.                                                            | 🗣️ |
+
+- 🔤: Natural Language Processing (NLP)
+- 💭: Natural Language Understanding (NLU)
+- 🗣️: Speech and sound (speak and listen)
 
 ## Common NLP preprocessing
 - **Tokenization**: Split the text into sentences and the sentences into words. Lowercase the words and remove punctuation.
