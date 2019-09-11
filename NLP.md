@@ -23,8 +23,8 @@
 | 📗→📄 **Summarization**               | Crate a short version of a text.                                           | 💭 |
 | 🈯→🆗 **Translation**                 | Translate into a different language.                                       | 💭 |
 | 🆓→🆒 **Dialogue bot**                | Interact in a conversation.                                                | 💭 |
-| 💁🏻→🔠 **Speech recognition**          | Speech to text.                                                            | 🗣️ |
-| 🔠→💁🏻 **Speech generation**           | Text to speech.                                                            | 🗣️ |
+| 💁🏻→🔠 **Speech recognition**          | Speech to text. See [AUDIO](/AUDIO.md) cheatsheet                          | 🗣️ |
+| 🔠→💁🏻 **Speech generation**           | Text to speech. See [AUDIO](/AUDIO.md) cheatsheet                          | 🗣️ |
 
 - 🔤: Natural Language Processing (NLP)
 - 💭: Natural Language Understanding (NLU)
