@@ -1,5 +1,8 @@
 <h1 align="center">Audio recognition 🎤</h1>
 
+
+Todo: https://www.kdnuggets.com/2019/09/2019-guide-speech-synthesis-deep-learning.html
+
 ## Audio classification
 https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89
 
