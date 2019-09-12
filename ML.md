@@ -32,28 +32,29 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 ### 📚 Python libraries used
 Along the ML Pipeline I use some Python libraries. Here are notes for each library. 
 
-| Library                                                       | Description           | MUST |
-|---------------------------------------------------------------|-----------------------|------|
-| 🔢 [**Numpy**](https://numpy.org)                             | Vectors and matrice   | ⭐  |
-| 🔢 [**Scipy**](https://docs.scipy.org/doc/scipy/reference)    | Science tools         |     |
-| 🔢 [**Statsmodels**](http://www.statsmodels.org)              | Statistical models    |     |
-| 🐼 [**Pandas**](https://pandas.pydata.org)                    | Data manipulation     | ⭐ |
-| 📊 [**Matplotlib**](https://matplotlib.org)                   | Data visualization    | ⭐ |
-| 📊 [**Seaborn**](https://seaborn.pydata.org)                  | Data visualization    |    |
-| 📊 [**Plotly**](https://plot.ly/python)                       | Data visualization    |    |
-| 📊 [**Bokeh**](https://bokeh.pydata.org)                      | Data visualization    |    |
+| Library                                                       | Description            | MUST |
+|---------------------------------------------------------------|------------------------|------|
+| 🔢 [**Numpy**](https://numpy.org)                             | Vectors and matrice    | ⭐ |
+| 🔢 [**Scipy**](https://docs.scipy.org/doc/scipy/reference)    | Science tools          |    |
+| 🔢 [**Statsmodels**](http://www.statsmodels.org)              | Statistical models     |    |
+| 🐼 [**Pandas**](https://pandas.pydata.org)                    | Data manipulation      | ⭐ |
+| 📊 [**Matplotlib**](https://matplotlib.org)                   | Data visualization     | ⭐ |
+| 📊 [**Seaborn**](https://seaborn.pydata.org)                  | Data visualization     |    |
+| 📊 [**Plotly**](https://plot.ly/python)                       | Data visualization     |    |
+| 📊 [**Bokeh**](https://bokeh.pydata.org)                      | Data visualization     |    |
 | 💡 [**Scikit learn**](https://scikit-learn.org)               | Machine Learning (ML)  | ⭐ |
-| 🔦 [**Pytorch**](https://pytorch.org)                         | Deep Learning (DL)    |   |
-| 🌳 [**XGBoost**](https://github.com/dmlc/xgboost)             | ML: Gradient Boosting  |   |
+| 🔦 [**Pytorch**](https://pytorch.org)                         | Deep Learning (DL)     |    |
+| 🌳 [**XGBoost**](https://github.com/dmlc/xgboost)             | ML: Gradient Boosting  |    |
 | 🌳 [**LightGBM**](https://github.com/Microsoft/LightGBM)      | ML: Gradient Boosting  |    |
 | 🌳 [**CatBoost**](https://github.com/catboost/catboost)       | ML: Gradient Boosting  |    |
-| ❓ [**ELI5**](https://eli5.readthedocs.io)                    | ML: Explainability      |   |
+| 📊 [**Yellowbrick**](https://github.com/catboost/catboost)    | ML: Visualization      |    |
+| ❓ [**ELI5**](https://eli5.readthedocs.io)                    | ML: Explainability     |    |
 | 💧 [**H2O**](https://www.h2o.ai/products/h2o/)                | Auto Machine learning  | ⭐ |
 | 🍵 [**TPOT**](https://github.com/EpistasisLab/tpot)           | Auto Machine learning  |    |
 | 💡 [**Auto Sklearn**](https://github.com/automl/auto-sklearn) | Auto Machine learning  |    |
 | 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)        | Auto Machine learning  |    |
 | 🕷️ [**Beautiful Soup**](https://www.crummy.com/software/BeautifulSoup)| Web Scraping (simple)   |  |
-| 🕷️ [**Scrapy**](https://scrapy.org/)                          | Web Scraping (complete) |  |
+| 🕷️ [**Scrapy**](https://scrapy.org/)                          | Web Scraping (complete)|    |
 
 Put this on top of your notebook
 ```python
@@ -67,8 +68,13 @@ import matplotlib.pyplot as plt
 import seaborn           as sns
 
 # ML libraries
-import sklearn as skl
-import xgboost as xgb
+import sklearn     as skl
+import xgboost     as xgb
+import lightgbm    as lgb
+import catboost    as cgb
+import h2o.automl  as ml_auto
+import yellowbrick as ml_vis
+import eli5        as ml_exp
 ```
 
 ----------------------------------------------------------------
