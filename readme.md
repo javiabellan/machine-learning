@@ -12,3 +12,4 @@
 
 Here are my personal AI chaetsheets. I wrote them for keep track my knowledge, but you can use it as a guide for learning aswell!
 
+#### [AI Python packages](https://skymind.ai/wiki/python-ai)
