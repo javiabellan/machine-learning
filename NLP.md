@@ -8,16 +8,21 @@
 - [DistilBERT model by huggingface](https://medium.com/huggingface/distilbert-8cf3380435b5)
 - [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
 - [BERT, RoBERTa, DistilBERT, XLNet. Which one to use?](https://towardsdatascience.com/bert-roberta-distilbert-xlnet-which-one-to-use-3d5ab82ba5f8)
+- Sebastian Ruder talking about Transfer Learning
+  - [Video](https://www.youtube.com/watch?v=hNPwRPg9BrQ&t=1486s)
+  - [Blog](https://www.kdnuggets.com/2019/09/state-transfer-learning-nlp.html)
+- [Putting Cutting-Edge Modern NLP into Practice](https://t.co/SiaZryiO6O?amp=1) → [twit thread](https://twitter.com/joelgrus/status/1171783769495179264)
+
 
 ## NLP Applications
 
-
 | Application                           | Description                                                               | Type |
 |---------------------------------------|---------------------------------------------------------------------------|------|
-| 🏷️ **Part-of-speech tagging (POS)**   | Identify if each word is a noun, verb, adjective, etc.                      | 🔤 |
+| 🏷️ **Part-of-speech tagging (POS)**   | Identify if each word is a noun, verb, adjective, etc. (aka Parsing)      | 🔤 |
 | 📍 **Named entity recognition (NER)** | Identify names, organizations, locations, medical codes, time, etc.         | 🔤 |
+| 👦🏻❓ **Coreference Resolution**       | Identify several ocuurences on the same person/objet like he, she         | 🔤 |
 | 🔍 **Text categorization**            | Identify topics present in a text (sports, politics, etc).                  | 🔤 |
-| ❓ **Question answering**             | Answer questions of a given text (SQuAD dataset).                           | 💭 |
+| ❓ **Question answering**             | Answer questions of a given text (aka Reading Comprehension) (SQuAD, DROP dataset)  | 💭 |
 | 👍🏼 👎🏼 **Sentiment analysis**          | Possitive or negative comment/review classification.                       | 💭 |
 | 🔮 **Language modeling**              | Predict the next word (or character) in a document.                        | 💭 |
 | 📗→📄 **Summarization**               | Crate a short version of a text.                                           | 💭 |
@@ -40,10 +45,13 @@
    - **Lemmatization**: Verbs to root form: `organizes`, `will organize` `organizing` → `organize` This is better.
    - **Stemming**: Nouns to root form: `democratic`, `democratization` → `democracy`. This is faster.
 2. **Extract features**
-   - Document features
+   - **Document features**
      - **Bag of Words (BoW)**: Counts how many times a word appears in a text. (It can be normalize by text lenght)
      - **TF-IDF**: Measures relevance for each word in a document, not frequency like BoW.
-   - **Word embeddings**: Pre-trained Word2Vec model.
+     - Sentence and document vectors. [paper2014](https://arxiv.org/abs/1405.4053), [paper2017](https://arxiv.org/abs/1705.02364)
+   - **Word features**
+     - **Word Vectors**: (Word2Vec) Unique representation for every word (independent of its context). [paper](https://arxiv.org/abs/1310.4546)
+     - **Contextualized Word Vectors** [paper2017](https://arxiv.org/abs/1708.00107), [ELMOpaper2018](https://arxiv.org/abs/1802.05365)
    - **N-gram**: Probability of N words together
 3. **Build model**
    - Linear algebra/matrix decomposition
