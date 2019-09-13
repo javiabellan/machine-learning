@@ -30,19 +30,44 @@
 - 💭: Natural Language Understanding (NLU)
 - 🗣️: Speech and sound (speak and listen)
 
-## Common NLP preprocessing
-- **Tokenization**: Split the text into sentences and the sentences into words. Lowercase the words and remove punctuation.
-- Words that have fewer than 3 characters are removed.
-- All **stopwords** are removed.
-- **Lemmatization**: words in third person are changed to first person and verbs in past and future tenses are changed into present.
-- **Stemming**: Words are reduced to their root form.
+## NLP pipeline
+
+1. **Preprocess**
+   - **Tokenization**: Split the text into sentences and the sentences into words.
+   - **Lowercasing**: Usually done in **Tokenization**
+   - **Punctuation removal**: Remove words like `.`, `,`, `:`. Usually done in **Tokenization**
+   - **Stopwords removal**: Remove words like `and`, `the`, `him`. The list of stopword is smaller (or empty) nowadays. 
+   - **Lemmatization**: Verbs to root form: `organizes`, `will organize` `organizing` → `organize` This is better.
+   - **Stemming**: Nouns to root form: `democratic`, `democratization` → `democracy`. This is faster.
+2. **Extract features**
+   - **Tf-idf**: sklearn.feature_extraction.text.TfidfVectorizer
+   - **N-gram**: Probability of N words together
+   - **Bag of Words (BoW)**: Count the number of occurrences of each word in a text.
+   - **Word embeddings**: Pre-trained Word2Vec model.
+3. **Build model**
+   - Linear algebra/matrix decomposition
+     - Latent Semantic Analysis (LSA) that uses Singular Value Decomposition (SVD).
+     - Non-negative Matrix Factorization (NMF)
+     - Latent Dirichlet Allocation (LDA)
+   - Neural nets
+     - Recurrent NNs (LSTM, GRU)
+     - Transformer (GPT, BERT, ...)
+   - Hidden Markov Models
+
+
+#### Others
+- **Regular expressions**: (Regex) Find patterns.
+- **Parse trees**: Syntax od a sentence
+
+
+
 
 ## NLP Python Packages
 
 
 | Package                                          | Description                                                               | Type |
 |:------------------------------------------------:|---------------------------------------------------------------------------|------|
-| <img src="img/logo/spacy.png" height="40">       | Parse trees, execelent tokenizer(8 languages)                             | 🔤 |
+| <img src="img/logo/spacy.png" height="40">       | Parse trees, execelent tokenizer (8 languages)                            | 🔤 |
 | <img src="img/logo/fastai.png" height="50">      | Fast.ai NLP: ULMFiT fine-tuning                                           | 🔤 |
 | <img src="img/logo/pytorch.png" height="30">     | TorchText (Pytorch subpackage)                                            | 🔤 |
 | <img src="img/logo/fasttext.png" height="50">    | Word vector representations and sentence classification (157 languages)   | 🔤 |
@@ -53,15 +78,17 @@
 | <h3>NLTK</h3>                                    | Very broad NLP library. Not SotA.                                         | 🔤 |
 | <img src="img/logo//gensim.jpg" height="30">     | Semantic analysis, topic modeling and similarity detection.               | 🔤 |
 | <h3>PyText</h3>                                  |                                                                           | 🔤 |
-
+| <h3>SentencePiece</h3>                           | Unsupervised text tokenizer by Google                                     | 🔤 |
 
 
 ## Topic modeling
 [Topic modeling with gensim](https://towardsdatascience.com/nlp-extracting-the-main-topics-from-your-dataset-using-lda-in-minutes-21486f5aa925)
 
+You have a collection of documents (texts)
+
 1. Preprocess text
-2. Convert to Bag of Words (BoW)
-3. Running LDA
+2. Convert to Bag of Words (BoW) each document.
+3. Running LDA (Latent Dirichlet Allocation)
 
 
 <h1><img height="50" src="img/logo/spacy.png"></h1>
