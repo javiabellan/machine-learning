@@ -40,19 +40,19 @@
 ## NLP Python Packages
 
 
-| Package                                      | Description                                                               | Type |
-|:--------------------------------------------:|---------------------------------------------------------------------------|------|
-| <img src="img/logo/spacy.png" height="40">   | Industrial-Strength NLP (8 languages)                                  | 🔤 |
-| <img src="img/logo/fastai.png" height="50">  | Fast.ai NLP: ULMFiT fine-tuning                                       | 🔤 |
-| <img src="img/logo/pytorch.png" height="30"> | TorchText (Pytorch subpackage)                                              | 🔤 |
-| <img src="img/logo/fasttext.png" height="50"> | >Word vector representations and sentence classification (157 languages)   | 🔤 |
-| <img src="img/logo/huggingface.png" height="50"> | pytorch-transformers: 8 pretrained Pytorch transformers                     | 🔤 |
-| <img  src="img/logo/spacy.png" height="30">+<img src="img/logo/huggingface.png" height="40"> | SpaCy + pytorch-transformers   | 🔤 |
-| fast-bert                                    | Super easy library for BERT based models                     | 🔤 |
-| <img src="img/logo/stanfordnlp.jpg" height="50"> | Pretrained models for 53 languages                                 | 🔤 |
-| <img src="img/logo/nltk.png" height="50">    | NLTK                                                                      | 🔤 |
-| <img src="img/logo//gensim.jpg" height="30"> | Semantic analysis, topic modeling and vector modeling.                      | 🔤 |
-| PyText                                       |                                                                      | 🔤 |
+| Package                                          | Description                                                               | Type |
+|:------------------------------------------------:|---------------------------------------------------------------------------|------|
+| <img src="img/logo/spacy.png" height="40">       | Parse trees, execelent tokenizer(8 languages)                             | 🔤 |
+| <img src="img/logo/fastai.png" height="50">      | Fast.ai NLP: ULMFiT fine-tuning                                           | 🔤 |
+| <img src="img/logo/pytorch.png" height="30">     | TorchText (Pytorch subpackage)                                            | 🔤 |
+| <img src="img/logo/fasttext.png" height="50">    | Word vector representations and sentence classification (157 languages)   | 🔤 |
+| <img src="img/logo/huggingface.png" height="50"> | pytorch-transformers: 8 pretrained Pytorch transformers                   | 🔤 |
+| <img  src="img/logo/spacy.png" height="30">+<img src="img/logo/huggingface.png" height="40"> | SpaCy + pytorch-transformers  | 🔤 |
+| <h3>fast-bert</h3>                               | Super easy library for BERT based models                                  | 🔤 |
+| <img src="img/logo/stanfordnlp.jpg" height="50"> | Pretrained models for 53 languages                                        | 🔤 |
+| <h3>NLTK</h3>                                    | Very broad NLP library. Not SotA.                                         | 🔤 |
+| <img src="img/logo//gensim.jpg" height="30">     | Semantic analysis, topic modeling and similarity detection.               | 🔤 |
+| <h3>PyText</h3>                                  |                                                                           | 🔤 |
 
 
 
