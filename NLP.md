@@ -39,95 +39,22 @@
 
 ## NLP Python Packages
 
-<table align="center">
-  <tr>
-    <td align="center">
-      <a href="https://spacy.io">
-        <img height="40" src="img/logo/spacy.png">
-      </a>
-    </td> 
-    <td>Industrial-Strength NLP (8 languages)</td> 
-  </tr>
-  
-  <tr>
-    <td align="center">
-      <a href="https://www.fast.ai/2019/07/08/fastai-nlp">
-        <img height="50" src="img/logo/fastai.png">
-      </a>
-    </td> 
-    <td>Fast.ai NLP: ULMFiT fine-tuning</td> 
-  </tr>
-  
-  <tr>
-    <td align="center">
-      <a href="https://torchtext.readthedocs.io">
-        <img height="30" src="img/logo/pytorch.png">
-      </a>
-    </td> 
-    <td>TorchText (Pytorch subpackage)</td> 
-  </tr>
 
-  <tr>
-     <td align="center">
-      <a href="https://fasttext.cc">
-        <img height="50" src="img/logo/fasttext.png">
-      </a>
-    </td> 
-    <td>Word vector representations and sentence classification (157 languages)</td> 
-  </tr>
-  
-  <tr>
-    <td align="center">
-      <a href="https://github.com/huggingface/pytorch-transformers">
-        <img height="50" src="img/logo/huggingface.png">
-      </a>
-    </td> 
-    <td>pytorch-transformers: 8 pretrained Pytorch transformers</td> 
-  </tr>
-  
-  <tr>
-    <td align="center"><a href="https://github.com/kaushaltrivedi/fast-bert">fast-bert</a> </td> 
-    <td>Super easy library for BERT based models</td> 
-  </tr>
-    
-  <tr>
-    <td align="center">
-      <a href="https://explosion.ai/blog/spacy-pytorch-transformers">
-        <img height="30" src="img/logo/spacy.png">+
-        <img height="40" src="img/logo/huggingface.png">
-      </a>
-    </td> 
-    <td>SpaCy + pytorch-transformers</td> 
-  </tr>
-  
-  <tr>
-    <td align="center">
-      <a href="https://stanfordnlp.github.io/stanfordnlp">
-        <img height="50" src="img/logo/stanfordnlp.jpg">
-      </a>
-    </td> 
-    <td>Pretrained models for 53 languages</td> 
-  </tr>
-  
-  <tr>
-    <td align="center">
-      <a href="https://www.nltk.org">
-        <img height="50" src="img/logo/nltk.png">
-      </a>
-    </td> 
-    <td>NLTK</td> 
-  </tr>
-  
-  <tr>
-    <td align="center">
-      <a href="https://radimrehurek.com/gensim">
-        <img height="30" src="img/logo/gensim.jpg">
-      </a>
-    </td> 
-    <td>Semantic analysis, topic modeling and vector modeling</td> 
-  </tr>
-  
-</table>
+| Package                                      | Description                                                               | Type |
+|:--------------------------------------------:|---------------------------------------------------------------------------|------|
+| <img src="img/logo/spacy.png" height="40">   | Industrial-Strength NLP (8 languages)                                  | 🔤 |
+| <img src="img/logo/fastai.png" height="50">  | Fast.ai NLP: ULMFiT fine-tuning                                       | 🔤 |
+| <img src="img/logo/pytorch.png" height="30"> | TorchText (Pytorch subpackage)                                              | 🔤 |
+| <img src="img/logo/fasttext.png" height="50"> | >Word vector representations and sentence classification (157 languages)   | 🔤 |
+| <img src="img/logo/huggingface.png" height="50"> | pytorch-transformers: 8 pretrained Pytorch transformers                     | 🔤 |
+| <img  src="img/logo/spacy.png" height="30">+<img src="img/logo/huggingface.png" height="40"> | SpaCy + pytorch-transformers   | 🔤 |
+| fast-bert                                    | Super easy library for BERT based models                     | 🔤 |
+| <img src="img/logo/stanfordnlp.jpg" height="50"> | Pretrained models for 53 languages                                 | 🔤 |
+| <img src="img/logo/nltk.png" height="50">    | NLTK                                                                      | 🔤 |
+| <img src="img/logo//gensim.jpg" height="30"> | Semantic analysis, topic modeling and vector modeling.                      | 🔤 |
+| PyText                                       |                                                                      | 🔤 |
+
+
 
 ## Topic modeling
 [Topic modeling with gensim](https://towardsdatascience.com/nlp-extracting-the-main-topics-from-your-dataset-using-lda-in-minutes-21486f5aa925)
@@ -300,7 +227,7 @@ coche[0].vector      # Show vector
   - Auto-Regressive methods for LM
   - Best both BERT + Transformer-XL
   - Parameters: 340 millions
-  - Paper: [​XLNet: Generalized Autoregressive Pretraining for Language Understanding](https://arxiv.org/abs/1906.08237)
+  - Paper: [XLNet: Generalized Autoregressive Pretraining for Language Understanding](https://arxiv.org/abs/1906.08237)
   - [code](https://github.com/zihangdai/xlnet/)
 - **RoBERTa** (Facebook, Jul. 2019)
   - Facebook's improvement over BERT
