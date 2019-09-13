@@ -40,10 +40,11 @@
    - **Lemmatization**: Verbs to root form: `organizes`, `will organize` `organizing` → `organize` This is better.
    - **Stemming**: Nouns to root form: `democratic`, `democratization` → `democracy`. This is faster.
 2. **Extract features**
-   - **Tf-idf**: sklearn.feature_extraction.text.TfidfVectorizer
-   - **N-gram**: Probability of N words together
-   - **Bag of Words (BoW)**: Count the number of occurrences of each word in a text.
+   - Document features
+     - **Bag of Words (BoW)**: Counts how many times a word appears in a text. (It can be normalize by text lenght)
+     - **TF-IDF**: Measures relevance for each word in a document, not frequency like BoW.
    - **Word embeddings**: Pre-trained Word2Vec model.
+   - **N-gram**: Probability of N words together
 3. **Build model**
    - Linear algebra/matrix decomposition
      - Latent Semantic Analysis (LSA) that uses Singular Value Decomposition (SVD).
