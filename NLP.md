@@ -56,7 +56,7 @@
        - **FastText**: By Facebook
      - **Contextualized Word Vectors**: Good for polysemic words (meaning depend of its context).
        - [**CoVE**](https://arxiv.org/abs/1708.00107): in 2017
-       - [**ELMO**](https://arxiv.org/abs/1802.05365): By allen Institute in 2018
+       - [**ELMO**](https://arxiv.org/abs/1802.05365): Done with with bidirectional LSTMs. By allen Institute in 2018
    - **N-gram**: Probability of N words together
 3. **Build model**
    - Linear algebra/matrix decomposition
