@@ -11,7 +11,9 @@
 - Sebastian Ruder talking about Transfer Learning
   - [Video](https://www.youtube.com/watch?v=hNPwRPg9BrQ&t=1486s)
   - [Blog](https://www.kdnuggets.com/2019/09/state-transfer-learning-nlp.html)
+  - [NLP transfer learning libraries](https://twitter.com/seb_ruder/status/1172607702884933633)
 - [Putting Cutting-Edge Modern NLP into Practice](https://t.co/SiaZryiO6O?amp=1) → [twit thread](https://twitter.com/joelgrus/status/1171783769495179264)
+- [7 NLP libraries](https://medium.com/microsoftazure/7-amazing-open-source-nlp-tools-to-try-with-notebooks-in-2019-c9eec058d9f1)
 
 
 ## NLP Applications
@@ -89,9 +91,6 @@
    - Linear `torch.nn.Linear`
 
 # NLP Python Packages
-
-- [NLP transfer learning libraries](https://twitter.com/seb_ruder/status/1172607702884933633)
-- [7 NLP libraries](https://medium.com/microsoftazure/7-amazing-open-source-nlp-tools-to-try-with-notebooks-in-2019-c9eec058d9f1)
 
 | Packages                                         | Description                                                               | Type |
 |:------------------------------------------------:|---------------------------------------------------------------------------|------|
