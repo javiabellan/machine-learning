@@ -46,6 +46,11 @@
    - **Stopwords removal**: Remove words like `and`, `the`, `him`. The list of stopword is smaller (or empty) nowadays. 
    - **Lemmatization**: Verbs to root form: `organizes`, `will organize` `organizing` → `organize` This is better.
    - **Stemming**: Nouns to root form: `democratic`, `democratization` → `democracy`. This is faster.
+   - [**Subword tokenization**](https://medium.com/@makcedward/how-subword-helps-on-your-nlp-model-83dd1b836f46)
+     - **[Byte Pair Encoding (BPE)](https://arxiv.org/abs/1508.07909)** (2016)
+     - **WordPiece**
+     - **[Unigram Language Model](https://arxiv.org/abs/1804.10959)**: (2018)
+     - [**SentencePiece**](https://arxiv.org/pdf/1808.06226.pdf): Used in transformers. (2018)
 2. **Extract features**
    - **Document features**
      - **Bag of Words (BoW)**: Counts how many times a word appears in a text. (It can be normalize by text lenght)
