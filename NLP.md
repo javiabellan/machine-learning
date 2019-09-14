@@ -90,9 +90,14 @@
 | <h3>fast-bert</h3>                               | Super easy library for BERT based models                                  | 🔤 |
 | <img src="img/logo/stanfordnlp.jpg" height="50"> | Pretrained models for 53 languages                                        | 🔤 |
 | <h3>NLTK</h3>                                    | Very broad NLP library. Not SotA.                                         | 🔤 |
-| <img src="img/logo//gensim.jpg" height="30">     | Semantic analysis, topic modeling and similarity detection.               | 🔤 |
+| <img src="img/logo/gensim.jpg" height="30">      | Semantic analysis, topic modeling and similarity detection.               | 🔤 |
 | <h3>PyText</h3>                                  |                                                                           | 🔤 |
 | <h3>SentencePiece</h3>                           | Unsupervised text tokenizer by Google                                     | 🔤 |
+| <img src="img/logo/allennlp.png" height="20">    | An open-source NLP research library, built on PyTorch.                    | 🔤 |
+| <img src="img/logo/farm.png" height="40">        | Fast & easy NLP transfer learning for the industry.                       | 🔤 |
+| <img src="img/logo/transfernlp.jpg" height="30"> | NLP library designed for reproducible experimentation management.         | 🔤 |
+| <img src="img/logo/flair.png" height="40">       | A very simple framework for state-of-the-art NLP.                         | 🔤 |
+| <img src="img/logo/nlparchitect.png" height="30">| SotA NLP deep learning topologies and techniques                          | 🔤 |
 
 
 ## Topic modeling
