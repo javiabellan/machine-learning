@@ -73,17 +73,32 @@
 - **Regular expressions**: (Regex) Find patterns.
 - **Parse trees**: Syntax od a sentence
 
+#### Common pipeline
 
+1. Tokenize  `text` → `word tokens`
+   - SpaCy tokenizer
+2. Word vectors `word tokens` → `word vectors`
+   - Learned with `torch.nn.Embedding`
+   - GloVe vectors
+   - Word pieces
+3. Combine the vectors `word vectors` → `single text vector`
+   - Bag of Embeddings
+   - Bidirectional LSTM
+   - BERT
+4. Classify `single text vector` → `class probabilities`
+   - Linear `torch.nn.Linear`
 
-
-## NLP Python Packages
+# NLP Python Packages
 
 - [NLP transfer learning libraries](https://twitter.com/seb_ruder/status/1172607702884933633)
 - [7 NLP libraries](https://medium.com/microsoftazure/7-amazing-open-source-nlp-tools-to-try-with-notebooks-in-2019-c9eec058d9f1)
 
-| Package                                          | Description                                                               | Type |
+| Packages                                         | Description                                                               | Type |
 |:------------------------------------------------:|---------------------------------------------------------------------------|------|
 | <img src="img/logo/spacy.png" height="40">       | Parse trees, execelent tokenizer (8 languages)                            | 🔤 |
+| <img src="img/logo/gensim.jpg" height="30">      | Semantic analysis, topic modeling and similarity detection.               | 🔤 |
+| <h3>NLTK</h3>                                    | Very broad NLP library. Not SotA.                                         | 🔤 |
+| <h3>SentencePiece</h3>                           | Unsupervised text tokenizer by Google                                     | 🔤 |
 | <img src="img/logo/fastai.png" height="50">      | Fast.ai NLP: ULMFiT fine-tuning                                           | 🔤 |
 | <img src="img/logo/pytorch.png" height="30">     | TorchText (Pytorch subpackage)                                            | 🔤 |
 | <img src="img/logo/fasttext.png" height="50">    | Word vector representations and sentence classification (157 languages)   | 🔤 |
@@ -91,10 +106,7 @@
 | <img  src="img/logo/spacy.png" height="30">+<img src="img/logo/huggingface.png" height="40"> | SpaCy + pytorch-transformers  | 🔤 |
 | <h3>fast-bert</h3>                               | Super easy library for BERT based models                                  | 🔤 |
 | <img src="img/logo/stanfordnlp.jpg" height="50"> | Pretrained models for 53 languages                                        | 🔤 |
-| <h3>NLTK</h3>                                    | Very broad NLP library. Not SotA.                                         | 🔤 |
-| <img src="img/logo/gensim.jpg" height="30">      | Semantic analysis, topic modeling and similarity detection.               | 🔤 |
 | <h3>PyText</h3>                                  |                                                                           | 🔤 |
-| <h3>SentencePiece</h3>                           | Unsupervised text tokenizer by Google                                     | 🔤 |
 | <img src="img/logo/allennlp.png" height="20">    | An open-source NLP research library, built on PyTorch.                    | 🔤 |
 | <img src="img/logo/farm.png" height="40">        | Fast & easy NLP transfer learning for the industry.                       | 🔤 |
 | <img src="img/logo/transfernlp.jpg" height="30"> | NLP library designed for reproducible experimentation management.         | 🔤 |
