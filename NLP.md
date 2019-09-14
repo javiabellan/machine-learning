@@ -50,8 +50,13 @@
      - **TF-IDF**: Measures relevance for each word in a document, not frequency like BoW.
      - Sentence and document vectors. [paper2014](https://arxiv.org/abs/1405.4053), [paper2017](https://arxiv.org/abs/1705.02364)
    - **Word features**
-     - **Word Vectors**: (Word2Vec) Unique representation for every word (independent of its context). [paper](https://arxiv.org/abs/1310.4546)
-     - **Contextualized Word Vectors** [paper2017](https://arxiv.org/abs/1708.00107), [ELMOpaper2018](https://arxiv.org/abs/1802.05365)
+     - **Word Vectors**: Unique representation for every word (independent of its context).
+       - [**Word2Vec**](https://arxiv.org/abs/1310.4546): By Google in 2013
+       - **GloVe**: By Standford
+       - **FastText**: By Facebook
+     - **Contextualized Word Vectors**: Good for polysemic words (meaning depend of its context).
+       - [**CoVE**](https://arxiv.org/abs/1708.00107): in 2017
+       - [**ELMO**](https://arxiv.org/abs/1802.05365): By allen Institute in 2018
    - **N-gram**: Probability of N words together
 3. **Build model**
    - Linear algebra/matrix decomposition
