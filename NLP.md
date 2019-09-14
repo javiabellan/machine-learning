@@ -78,6 +78,8 @@
 
 ## NLP Python Packages
 
+- [NLP transfer learning libraries](https://twitter.com/seb_ruder/status/1172607702884933633)
+- [7 NLP libraries](https://medium.com/microsoftazure/7-amazing-open-source-nlp-tools-to-try-with-notebooks-in-2019-c9eec058d9f1)
 
 | Package                                          | Description                                                               | Type |
 |:------------------------------------------------:|---------------------------------------------------------------------------|------|
@@ -97,8 +99,8 @@
 | <img src="img/logo/farm.png" height="40">        | Fast & easy NLP transfer learning for the industry.                       | 🔤 |
 | <img src="img/logo/transfernlp.jpg" height="30"> | NLP library designed for reproducible experimentation management.         | 🔤 |
 | <img src="img/logo/flair.png" height="40">       | A very simple framework for state-of-the-art NLP.                         | 🔤 |
-| <img src="img/logo/nlparchitect.png" height="30">| SotA NLP deep learning topologies and techniques                          | 🔤 |
-
+| <img src="img/logo/nlparchitect.png" height="30">| SotA NLP deep learning topologies and techniques.                         | 🔤 |
+| <img src="img/logo/finetune.png" height="30">    | Scikit-learn style model finetuning for NLP.                              | 🔤 |
 
 ## Topic modeling
 [Topic modeling with gensim](https://towardsdatascience.com/nlp-extracting-the-main-topics-from-your-dataset-using-lda-in-minutes-21486f5aa925)
