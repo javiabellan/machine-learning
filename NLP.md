@@ -88,7 +88,8 @@
    - Information about the position of each token. Done with positional Encoding:
      - Add a fixed value to each token based on its position (e.g. sinusoidal function).
 2. Transformer encoder
-   - Doubt: The input are **tokens** or **non-contextual word embeddings** ???
+   - Input: **unique word embeddings**
+   - Output: **contextual word embeddings**
 3. Transformer decoder
 
 
@@ -163,7 +164,7 @@ coche[0].vector      # Show vector
 
 
 ### Videos
-1. [What is NLP?](https://youtu.be/cce8ntxP_XI)
+1. [What is NLP?](https://youtu.be/cce8ntxP_XI) ✔
 2. [Topic Modeling with SVD & NMF](https://youtu.be/tG3pUwmGjsc)
 3. [Topic Modeling & SVD revisited](https://youtu.be/lRZ4aMaXPBI)
 4. [Sentiment Classification with Naive Bayes](https://youtu.be/hp2ipC5pW4I)
@@ -179,7 +180,7 @@ coche[0].vector      # Show vector
 14. [Text generation algorithms](https://youtu.be/3oEb_fFmPnY)
 15. [Implementing a GRU](https://youtu.be/Bl6WVj6wQaE)
 16. [Algorithmic Bias](https://youtu.be/pThqge9QDn8)
-17. [Introduction to the Transformer](https://youtu.be/AFkGPmU16QA)
+17. [Introduction to the Transformer](https://youtu.be/AFkGPmU16QA) ✔
 18. [The Transformer for language translation](https://youtu.be/KzfyftiH7R8)
 19. [What you need to know about Disinformation](https://youtu.be/vbva2RN-rbQ)
 
@@ -308,8 +309,10 @@ coche[0].vector      # Show vector
   - Fast.ai NLP course: [playlist](https://www.youtube.com/playlist?list=PLtmWHNX-gukKocXQOkQjuVxglSDYWsSh9)
   - [spaCy course](https://course.spacy.io)
 - **Transformers**
-  - [Transformers explanation](http://www.peterbloem.nl/blog/transformers)
-  - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer)
+  - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer) (June 2018)
+  - [The Illustrated BERT & ELMo](https://jalammar.github.io/illustrated-bert)        (December 2018)
+  - [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2)              (August 2019)
+  - [Best Transformers explanation](http://www.peterbloem.nl/blog/transformers)       (August 2019) ⭐
   - [BERT summary](https://www.lyrn.ai/2018/11/07/explained-bert-state-of-the-art-language-model-for-nlp)
   - [BERT, RoBERTa, DistilBERT, XLNet. Which one to use?](https://towardsdatascience.com/bert-roberta-distilbert-xlnet-which-one-to-use-3d5ab82ba5f8)
   - [DistilBERT model by huggingface](https://medium.com/huggingface/distilbert-8cf3380435b5)
