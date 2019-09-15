@@ -1,22 +1,26 @@
 <h1 align="center">Natural Language Processing</h1>
 
 #### Good reads
-- Fast.ai NLP course: [playlist](https://www.youtube.com/playlist?list=PLtmWHNX-gukKocXQOkQjuVxglSDYWsSh9)
-- [spaCy course](https://course.spacy.io)
-- [spaCy blog](https://explosion.ai/blog)
-- [Transformers explanation](http://www.peterbloem.nl/blog/transformers)
-- [DistilBERT model by huggingface](https://medium.com/huggingface/distilbert-8cf3380435b5)
-- [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
-- [BERT, RoBERTa, DistilBERT, XLNet. Which one to use?](https://towardsdatascience.com/bert-roberta-distilbert-xlnet-which-one-to-use-3d5ab82ba5f8)
-- Sebastian Ruder talking about Transfer Learning
+- **Courses**
+  - Fast.ai NLP course: [playlist](https://www.youtube.com/playlist?list=PLtmWHNX-gukKocXQOkQjuVxglSDYWsSh9)
+  - [spaCy course](https://course.spacy.io)
+- **Transformers**
+  - [Transformers explanation](http://www.peterbloem.nl/blog/transformers)
+  - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer)
+  - [BERT summary](https://www.lyrn.ai/2018/11/07/explained-bert-state-of-the-art-language-model-for-nlp)
+  - [BERT, RoBERTa, DistilBERT, XLNet. Which one to use?](https://towardsdatascience.com/bert-roberta-distilbert-xlnet-which-one-to-use-3d5ab82ba5f8)
+  - [DistilBERT model by huggingface](https://medium.com/huggingface/distilbert-8cf3380435b5)
+- Sebastian Ruder talking about **Transfer Learning**
   - [Video](https://www.youtube.com/watch?v=hNPwRPg9BrQ&t=1486s)
   - [Blog](https://www.kdnuggets.com/2019/09/state-transfer-learning-nlp.html)
   - [NLP transfer learning libraries](https://twitter.com/seb_ruder/status/1172607702884933633)
+- [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
 - [Putting Cutting-Edge Modern NLP into Practice](https://t.co/SiaZryiO6O?amp=1) → [twit thread](https://twitter.com/joelgrus/status/1171783769495179264)
 - [7 NLP libraries](https://medium.com/microsoftazure/7-amazing-open-source-nlp-tools-to-try-with-notebooks-in-2019-c9eec058d9f1)
+- [spaCy blog](https://explosion.ai/blog)
 
 
-## NLP Applications
+# NLP Applications
 
 | Application                           | Description                                                               | Type |
 |---------------------------------------|---------------------------------------------------------------------------|------|
@@ -37,7 +41,8 @@
 - 💭: Natural Language Understanding (NLU)
 - 🗣️: Speech and sound (speak and listen)
 
-## NLP pipeline
+
+# NLP pipeline
 
 1. **Preprocess**
    - **Tokenization**: Split the text into sentences and the sentences into words.
@@ -71,7 +76,7 @@
    - Linear algebra/matrix decomposition
      - Latent Semantic Analysis (LSA) that uses Singular Value Decomposition (SVD).
      - Non-negative Matrix Factorization (NMF)
-     - Latent Dirichlet Allocation (LDA)
+     - Latent Dirichlet Allocation (LDA): Good for BoW
    - **Neural nets**
      - **Recurrent NNs decoder** (LSTM, GRU)
      - **Transformer decoder** (GPT, BERT, ...) ⭐
@@ -81,6 +86,19 @@
 #### Others
 - **Regular expressions**: (Regex) Find patterns.
 - **Parse trees**: Syntax od a sentence
+
+
+
+# 🤖 Transformers
+
+1. Transformer tokenizer
+   - Create tokens (words and subwords). Methods:
+     - BPE
+   - Information about the position of each token. Done with positional Encoding:
+     - Add a fixed value to each token based on its position (e.g. sinusoidal function).
+2. Transformer encoder
+   - Doubt: The input are **tokens** or **non-contextual word embeddings** ???
+3. Transformer decoder
 
 
 # NLP Python Packages
@@ -106,14 +124,6 @@
 | <img src="img/logo/nlparchitect.png" height="30">| SotA NLP deep learning topologies and techniques.                         | 🔤 |
 | <img src="img/logo/finetune.png" height="30">    | Scikit-learn style model finetuning for NLP.                              | 🔤 |
 
-## Topic modeling
-[Topic modeling with gensim](https://towardsdatascience.com/nlp-extracting-the-main-topics-from-your-dataset-using-lda-in-minutes-21486f5aa925)
-
-You have a collection of documents (texts)
-
-1. Preprocess text
-2. Convert to Bag of Words (BoW) each document.
-3. Running LDA (Latent Dirichlet Allocation)
 
 
 <h1><img height="50" src="img/logo/spacy.png"></h1>
@@ -181,6 +191,7 @@ coche[0].vector      # Show vector
 17. [Introduction to the Transformer](https://youtu.be/AFkGPmU16QA)
 18. [The Transformer for language translation](https://youtu.be/KzfyftiH7R8)
 19. [What you need to know about Disinformation](https://youtu.be/vbva2RN-rbQ)
+
 
 # Deep learning models
 
@@ -263,6 +274,7 @@ coche[0].vector      # Show vector
   - Parameters: 665 millions
   - Paper: [Cross-lingual Language Model Pretraining](https://arxiv.org/abs/1901.07291)
   - [code](https://github.com/facebookresearch/XLM/)
+  - [blog](https://towardsdatascience.com/xlm-enhancing-bert-for-cross-lingual-language-model-5aeed9e6f14b)
 - **Transformer ELMo**: (AllenNLP, Jan. 2019)
   - Parameters: 465 millions
 - **GPT-2**: (OpenAI, Feb. 2019)
