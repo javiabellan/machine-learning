@@ -7,18 +7,18 @@
 
 | Application                           | Description                                                               | Type |
 |---------------------------------------|---------------------------------------------------------------------------|------|
-| 🏷️ **Part-of-speech tagging (POS)**   | Identify if each word is a noun, verb, adjective, etc. (aka Parsing)      | 🔤 |
-| 📍 **Named entity recognition (NER)** | Identify names, organizations, locations, medical codes, time, etc.         | 🔤 |
+| 🏷️ **Part-of-speech tagging (POS)**   | Identify if each word is a noun, verb, adjective, etc. (aka Parsing).     | 🔤 |
+| 📍 **Named entity recognition (NER)** | Identify names, organizations, locations, medical codes, time, etc.        | 🔤 |
 | 👦🏻❓ **Coreference Resolution**       | Identify several ocuurences on the same person/objet like he, she         | 🔤 |
-| 🔍 **Text categorization**            | Identify topics present in a text (sports, politics, etc).                  | 🔤 |
-| ❓ **Question answering**             | Answer questions of a given text (aka Reading Comprehension) (SQuAD, DROP dataset)  | 💭 |
+| 🔍 **Text categorization**            | Identify topics present in a text (sports, politics, etc).                | 🔤 |
+| ❓ **Question answering**             | Answer questions of a given text (SQuAD, DROP dataset).                    | 💭 |
 | 👍🏼 👎🏼 **Sentiment analysis**          | Possitive or negative comment/review classification.                       | 💭 |
 | 🔮 **Language modeling**              | Predict the next word (or character) in a document.                        | 💭 |
 | 📗→📄 **Summarization**               | Crate a short version of a text.                                           | 💭 |
 | 🈯→🆗 **Translation**                 | Translate into a different language.                                       | 💭 |
 | 🆓→🆒 **Dialogue bot**                | Interact in a conversation.                                                | 💭 |
-| 💁🏻→🔠 **Speech recognition**          | Speech to text. See [AUDIO](/AUDIO.md) cheatsheet                          | 🗣️ |
-| 🔠→💁🏻 **Speech generation**           | Text to speech. See [AUDIO](/AUDIO.md) cheatsheet                          | 🗣️ |
+| 💁🏻→🔠 **Speech recognition**          | Speech to text. See [AUDIO](/AUDIO.md) cheatsheet.                         | 🗣️ |
+| 🔠→💁🏻 **Speech generation**           | Text to speech. See [AUDIO](/AUDIO.md) cheatsheet.                         | 🗣️ |
 
 - 🔤: Natural Language Processing (NLP)
 - 💭: Natural Language Understanding (NLU)
