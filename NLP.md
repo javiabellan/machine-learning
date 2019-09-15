@@ -1,23 +1,6 @@
 <h1 align="center">Natural Language Processing</h1>
 
-#### Good reads
-- **Courses**
-  - Fast.ai NLP course: [playlist](https://www.youtube.com/playlist?list=PLtmWHNX-gukKocXQOkQjuVxglSDYWsSh9)
-  - [spaCy course](https://course.spacy.io)
-- **Transformers**
-  - [Transformers explanation](http://www.peterbloem.nl/blog/transformers)
-  - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer)
-  - [BERT summary](https://www.lyrn.ai/2018/11/07/explained-bert-state-of-the-art-language-model-for-nlp)
-  - [BERT, RoBERTa, DistilBERT, XLNet. Which one to use?](https://towardsdatascience.com/bert-roberta-distilbert-xlnet-which-one-to-use-3d5ab82ba5f8)
-  - [DistilBERT model by huggingface](https://medium.com/huggingface/distilbert-8cf3380435b5)
-- Sebastian Ruder talking about **Transfer Learning**
-  - [Video](https://www.youtube.com/watch?v=hNPwRPg9BrQ&t=1486s)
-  - [Blog](https://www.kdnuggets.com/2019/09/state-transfer-learning-nlp.html)
-  - [NLP transfer learning libraries](https://twitter.com/seb_ruder/status/1172607702884933633)
-- [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
-- [Putting Cutting-Edge Modern NLP into Practice](https://t.co/SiaZryiO6O?amp=1) → [twit thread](https://twitter.com/joelgrus/status/1171783769495179264)
-- [7 NLP libraries](https://medium.com/microsoftazure/7-amazing-open-source-nlp-tools-to-try-with-notebooks-in-2019-c9eec058d9f1)
-- [spaCy blog](https://explosion.ai/blog)
+
 
 
 # NLP Applications
@@ -87,6 +70,14 @@
 - **Regular expressions**: (Regex) Find patterns.
 - **Parse trees**: Syntax od a sentence
 
+
+# Transfer learnining in NLP
+
+| Step  | Task                               | Data                                  | Who do this?           |
+|:-----:|------------------------------------|---------------------------------------|------------------------|
+| **1** | **Language Model Pretraining**     | 📚 Lot of text corpus (eg. Wikipedia) | 🏭 Google or Facebook |
+| **2** | **Language Model Finetunning**     | 📗 Only you domain text corpus        | 💻 You                |
+| **3** | **Your task (clasification, etc)** | 📗🏷️ You labeled domain text          | 💻 You                |
 
 
 # 🤖 Transformers
@@ -309,3 +300,24 @@ coche[0].vector      # Show vector
   - A small model (DistilBERT) is trained with the output of a larger model (BERT)
   - Comparable results to BERT using less parameters
   - Parameters: 66 millions
+  
+  
+  
+# References
+- **Courses**
+  - Fast.ai NLP course: [playlist](https://www.youtube.com/playlist?list=PLtmWHNX-gukKocXQOkQjuVxglSDYWsSh9)
+  - [spaCy course](https://course.spacy.io)
+- **Transformers**
+  - [Transformers explanation](http://www.peterbloem.nl/blog/transformers)
+  - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer)
+  - [BERT summary](https://www.lyrn.ai/2018/11/07/explained-bert-state-of-the-art-language-model-for-nlp)
+  - [BERT, RoBERTa, DistilBERT, XLNet. Which one to use?](https://towardsdatascience.com/bert-roberta-distilbert-xlnet-which-one-to-use-3d5ab82ba5f8)
+  - [DistilBERT model by huggingface](https://medium.com/huggingface/distilbert-8cf3380435b5)
+- Sebastian Ruder talking about **Transfer Learning**
+  - [Video](https://www.youtube.com/watch?v=hNPwRPg9BrQ&t=1486s)
+  - [Blog](https://www.kdnuggets.com/2019/09/state-transfer-learning-nlp.html)
+  - [NLP transfer learning libraries](https://twitter.com/seb_ruder/status/1172607702884933633)
+- [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
+- [Putting Cutting-Edge Modern NLP into Practice](https://t.co/SiaZryiO6O?amp=1) → [twit thread](https://twitter.com/joelgrus/status/1171783769495179264)
+- [7 NLP libraries](https://medium.com/microsoftazure/7-amazing-open-source-nlp-tools-to-try-with-notebooks-in-2019-c9eec058d9f1)
+- [spaCy blog](https://explosion.ai/blog)
