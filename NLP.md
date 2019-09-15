@@ -43,18 +43,19 @@
    - **Tokenization**: Split the text into sentences and the sentences into words.
    - **Lowercasing**: Usually done in **Tokenization**
    - **Punctuation removal**: Remove words like `.`, `,`, `:`. Usually done in **Tokenization**
-   - **Stopwords removal**: Remove words like `and`, `the`, `him`. The list of stopword is smaller (or empty) nowadays. 
+   - **Stopwords removal**: Remove words like `and`, `the`, `him`. Done in the past. 
    - **Lemmatization**: Verbs to root form: `organizes`, `will organize` `organizing` → `organize` This is better.
    - **Stemming**: Nouns to root form: `democratic`, `democratization` → `democracy`. This is faster.
-   - [**Subword tokenization**](https://medium.com/@makcedward/how-subword-helps-on-your-nlp-model-83dd1b836f46)
-     - **[Byte Pair Encoding (BPE)](https://arxiv.org/abs/1508.07909)** (2016)
+   - [**Subword tokenization**](https://medium.com/@makcedward/how-subword-helps-on-your-nlp-model-83dd1b836f46) Used in transformers. ⭐
+     - **[Byte Pair Encoding (BPE)](https://arxiv.org/abs/1508.07909)**: (2016)
      - **WordPiece**
      - **[Unigram Language Model](https://arxiv.org/abs/1804.10959)**: (2018)
-     - [**SentencePiece**](https://arxiv.org/pdf/1808.06226.pdf): Used in transformers. (2018)
+     - [**SentencePiece**](https://arxiv.org/pdf/1808.06226.pdf): (2018)
 2. **Extract features**
    - **Document features**
      - **Bag of Words (BoW)**: Counts how many times a word appears in a text. (It can be normalize by text lenght)
      - **TF-IDF**: Measures relevance for each word in a document, not frequency like BoW.
+     - **N-gram**: Probability of N words together.
      - Sentence and document vectors. [paper2014](https://arxiv.org/abs/1405.4053), [paper2017](https://arxiv.org/abs/1705.02364)
    - **Word features**
      - **Word Vectors**: Unique representation for every word (independent of its context).
@@ -64,36 +65,23 @@
      - **Contextualized Word Vectors**: Good for polysemic words (meaning depend of its context).
        - [**CoVE**](https://arxiv.org/abs/1708.00107): in 2017
        - [**ELMO**](https://arxiv.org/abs/1802.05365): Done with with bidirectional LSTMs. By allen Institute in 2018
-   - **N-gram**: Probability of N words together
+       - **Transformer encoder**:  Done with with self-attention. ⭐
 3. **Build model**
+   - **Bag of Embeddings**
    - Linear algebra/matrix decomposition
      - Latent Semantic Analysis (LSA) that uses Singular Value Decomposition (SVD).
      - Non-negative Matrix Factorization (NMF)
      - Latent Dirichlet Allocation (LDA)
-   - Neural nets
-     - Recurrent NNs (LSTM, GRU)
-     - Transformer (GPT, BERT, ...)
-   - Hidden Markov Models
+   - **Neural nets**
+     - **Recurrent NNs decoder** (LSTM, GRU)
+     - **Transformer decoder** (GPT, BERT, ...) ⭐
+   - **Hidden Markov Models**
 
 
 #### Others
 - **Regular expressions**: (Regex) Find patterns.
 - **Parse trees**: Syntax od a sentence
 
-#### Common pipeline
-
-1. Tokenize  `text` → `word tokens`
-   - SpaCy tokenizer
-2. Word vectors `word tokens` → `word vectors`
-   - Learned with `torch.nn.Embedding`
-   - GloVe vectors
-   - Word pieces
-3. Combine the vectors `word vectors` → `single text vector`
-   - Bag of Embeddings
-   - Bidirectional LSTM
-   - BERT
-4. Classify `single text vector` → `class probabilities`
-   - Linear `torch.nn.Linear`
 
 # NLP Python Packages
 
