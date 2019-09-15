@@ -35,9 +35,9 @@
    - **Lemmatization**: Verbs to root form: `organizes`, `will organize` `organizing` → `organize` This is better.
    - **Stemming**: Nouns to root form: `democratic`, `democratization` → `democracy`. This is faster.
    - [**Subword tokenization**](https://medium.com/@makcedward/how-subword-helps-on-your-nlp-model-83dd1b836f46) Used in transformers. ⭐
-     - **[Byte Pair Encoding (BPE)](https://arxiv.org/abs/1508.07909)**: (2016)
-     - **WordPiece**
-     - **[Unigram Language Model](https://arxiv.org/abs/1804.10959)**: (2018)
+     - **WordPiece**: Used in BERT
+     - [**Byte Pair Encoding (BPE)**](https://arxiv.org/abs/1508.07909): Used in GPT-2 (2016)
+     - [**Unigram Language Model**](https://arxiv.org/abs/1804.10959): (2018)
      - [**SentencePiece**](https://arxiv.org/pdf/1808.06226.pdf): (2018)
 2. **Extract features**
    - **Document features**
