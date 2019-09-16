@@ -1,5 +1,7 @@
 <h1 align="center">Natural Language Processing</h1>
 
+TODO: Read [MASS](https://www.microsoft.com/en-us/research/blog/introducing-mass-a-pre-training-method-that-outperforms-bert-and-gpt-in-sequence-to-sequence-language-generation-tasks)
+
 |       |                                                   |                  |
 |-------|---------------------------------------------------|------------------|
 | 📱    | [**Applications**](#-applications)               |  |
