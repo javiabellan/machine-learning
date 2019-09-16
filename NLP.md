@@ -1,6 +1,8 @@
 <h1 align="center">Natural Language Processing</h1>
 
-TODO: Read [MASS](https://www.microsoft.com/en-us/research/blog/introducing-mass-a-pre-training-method-that-outperforms-bert-and-gpt-in-sequence-to-sequence-language-generation-tasks)
+#### TODO: 
+- Read [MASS](https://www.microsoft.com/en-us/research/blog/introducing-mass-a-pre-training-method-that-outperforms-bert-and-gpt-in-sequence-to-sequence-language-generation-tasks) (transfer learning in translation for transformers?)
+- Read [CNNs better than attention](https://arxiv.org/abs/1901.10430)
 
 |       |                                                   |                  |
 |-------|---------------------------------------------------|------------------|
@@ -83,6 +85,32 @@ TODO: Read [MASS](https://www.microsoft.com/en-us/research/blog/introducing-mass
 - **Parse trees**: Syntax od a sentence
 
 
+### Seq2seq
+- Recurent nets
+  - GRU
+  - LSTM
+- Tricks
+  - Teacher forcing: Feed to the decoder the correct previous word, insted of the predicted previous word (at the beggining of training)
+  - Attention: Learns weights to perform a weighted average of the words embeddings.
+
+
+# 🤖 Transformers
+
+1. Transformer tokenizer
+   - Create tokens (words and subwords). Methods:
+     - BPE
+   - Information about the position of each token. Done with positional Encoding:
+     - Add a fixed value to each token based on its position (e.g. sinusoidal function).
+2. Transformer encoder
+   - Input: **unique word embeddings**
+   - Output: **contextual word embeddings**
+   - Blocks:
+     - Positional encodings
+     - Attention
+     - Feedfowared layers
+     - Label smothing
+3. Transformer decoder
+
 
 # 📏 Scores
 
@@ -102,19 +130,6 @@ TODO: Read [MASS](https://www.microsoft.com/en-us/research/blog/introducing-mass
 | **1** | **Language Model Pretraining**     | 📚 Lot of text corpus (eg. Wikipedia) | 🏭 Google or Facebook |
 | **2** | **Language Model Finetunning**     | 📗 Only you domain text corpus        | 💻 You                |
 | **3** | **Your task (clasification, etc)** | 📗🏷️ You labeled domain text          | 💻 You                |
-
-
-# 🤖 Transformers
-
-1. Transformer tokenizer
-   - Create tokens (words and subwords). Methods:
-     - BPE
-   - Information about the position of each token. Done with positional Encoding:
-     - Add a fixed value to each token based on its position (e.g. sinusoidal function).
-2. Transformer encoder
-   - Input: **unique word embeddings**
-   - Output: **contextual word embeddings**
-3. Transformer decoder
 
 
 # 📦 Python Packages
