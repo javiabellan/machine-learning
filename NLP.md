@@ -2,13 +2,13 @@
 
 |       |                                                   |                  |
 |-------|---------------------------------------------------|------------------|
-| 📱    | [**Applications**](#-Applications-)               |  |
-| 📋    | [**Pipeline**](#-Pipeline-)                       |  |
-| 📏    | [**Scores**](#-Scores-)                           |  |
-| 👨🏻‍🏫 | [**Transfer Learning**](#-Transfer-Learning-)     |  |
-| 🤖    | [**Transformers theory**](#-Transformers-)        |  |
+| 📱    | [**Applications**](#-applications-)               |  |
+| 📋    | [**Pipeline**](#-pipeline-)                       |  |
+| 📏    | [**Scores**](#-scores-)                           |  |
+| 👨🏻‍🏫 | [**Transfer Learning**](#-transfer-learning-)     |  |
+| 🤖    | [**Transformers theory**](#-transformers-)        |  |
 | 🔮    | [**DL Models**](#-deep-learning-models-)          |  |
-| 📦    | [**Python Packages**](#-Python-packages-)         |  |
+| 📦    | [**Python Packages**](#-python-packages-)         |  |
  
 
 ---
