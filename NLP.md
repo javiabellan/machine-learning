@@ -105,10 +105,10 @@
    - Input: **unique word embeddings**
    - Output: **contextual word embeddings**
    - Blocks:
-     - Positional encodings
+     - Positional encodings: Since models contents no recurrent or convolutions. This is information about tokens order.
      - Attention
      - Feedfowared layers
-     - Label smothing
+     - Label smothing: Ground truth -> 90% the correct word, and the rest 10% divided on the other words.
 3. Transformer decoder
 
 
@@ -361,5 +361,5 @@ coche[0].vector      # Show vector
 15. [Implementing a GRU](https://youtu.be/Bl6WVj6wQaE)
 16. [Algorithmic Bias](https://youtu.be/pThqge9QDn8)
 17. [Introduction to the Transformer](https://youtu.be/AFkGPmU16QA) ✔
-18. [The Transformer for language translation](https://youtu.be/KzfyftiH7R8)
+18. [The Transformer for language translation](https://youtu.be/KzfyftiH7R8) ✔
 19. [What you need to know about Disinformation](https://youtu.be/vbva2RN-rbQ)
