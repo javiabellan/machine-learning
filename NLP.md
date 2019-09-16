@@ -1,9 +1,19 @@
 <h1 align="center">Natural Language Processing</h1>
 
+|       |                                                   |                  |
+|-------|---------------------------------------------------|------------------|
+| 📱    | [**Applications**](#-Applications-)               |  |
+| 📋    | [**Pipeline**](#-Pipeline-)                       |  |
+| 📏    | [**Scores**](#-Scores-)                           |  |
+| 👨🏻‍🏫 | [**Transfer Learning**](#-Transfer-Learning-)     |  |
+| 🤖    | [**Transformers theory**](#-Transformers-)        |  |
+| 🔮    | [**DL Models**](#-deep-learning-models-)          |  |
+| 📦    | [**Python Packages**](#-Python-packages-)         |  |
+ 
 
+---
 
-
-# NLP Applications
+# 📱 Applications
 
 | Application                           | Description                                                               | Type |
 |---------------------------------------|---------------------------------------------------------------------------|------|
@@ -25,7 +35,7 @@
 - 🗣️: Speech and sound (speak and listen)
 
 
-# NLP pipeline
+# 📋 Pipeline
 
 1. **Preprocess**
    - **Tokenization**: Split the text into sentences and the sentences into words.
@@ -71,7 +81,19 @@
 - **Parse trees**: Syntax od a sentence
 
 
-# Transfer learnining in NLP
+
+# 📏 Scores
+
+| Score    | For what?       | Description                                               | Interpretation         |
+|:--------:|:---------------:|-----------------------------------------------------------|------------------------|
+| **GLUE** | **NLU**         | An avergae of different scores                             |                        |
+| **BLEU** | **Translation** | Compare generated with reference sentences (N-gram)        | The higher the better. |
+
+> #### BLEU limitation
+> "He ate the apple" & "He ate the potato" has the same BLEU score.
+
+
+# 👨🏻‍🏫 Transfer Learning
 
 | Step  | Task                               | Data                                  | Who do this?           |
 |:-----:|------------------------------------|---------------------------------------|------------------------|
@@ -93,7 +115,7 @@
 3. Transformer decoder
 
 
-# NLP Python Packages
+# 📦 Python Packages
 
 | Packages                                         | Description                                                               | Type |
 |:------------------------------------------------:|---------------------------------------------------------------------------|------|
@@ -160,32 +182,8 @@ coche[0].vector      # Show vector
 ```
 
 
-<h1><img height="50" src="img/logo/fastai.png"></h1>
 
-
-### Videos
-1. [What is NLP?](https://youtu.be/cce8ntxP_XI) ✔
-2. [Topic Modeling with SVD & NMF](https://youtu.be/tG3pUwmGjsc)
-3. [Topic Modeling & SVD revisited](https://youtu.be/lRZ4aMaXPBI)
-4. [Sentiment Classification with Naive Bayes](https://youtu.be/hp2ipC5pW4I)
-5. [Sentiment Classification with Naive Bayes & Logistic Regression, contd.](https://youtu.be/dt7sArnLo1g)
-6. [Derivation of Naive Bayes & Numerical Stability](https://youtu.be/z8-Tbrg1-rE)
-7. [Revisiting Naive Bayes, and Regex](https://youtu.be/Q1zLqfnEXdw)
-8. [Intro to Language Modeling](https://youtu.be/PNNHaQUQqW8)
-9. [Transfer learning](https://youtu.be/5gCQvuznKn0)
-10. [ULMFit for non-English Languages](https://youtu.be/MDX_x6rKXAs)
-11. [Understanding RNNs](https://youtu.be/l1rlFh0PmZw)
-12. [Seq2Seq Translation](https://youtu.be/IfsjMg4fLWQ)
-13. [Word embeddings quantify 100 years of gender & ethnic stereotypes](https://youtu.be/boxV8Od4jqQ)
-14. [Text generation algorithms](https://youtu.be/3oEb_fFmPnY)
-15. [Implementing a GRU](https://youtu.be/Bl6WVj6wQaE)
-16. [Algorithmic Bias](https://youtu.be/pThqge9QDn8)
-17. [Introduction to the Transformer](https://youtu.be/AFkGPmU16QA) ✔
-18. [The Transformer for language translation](https://youtu.be/KzfyftiH7R8)
-19. [What you need to know about Disinformation](https://youtu.be/vbva2RN-rbQ)
-
-
-# Deep learning models
+# 🔮 Deep learning models
 
 🤗 Means availability (pretrained PyTorch implementation) on [pytorch-transformers](https://github.com/huggingface/pytorch-transformers) package developed by huggingface.
 
@@ -305,6 +303,11 @@ coche[0].vector      # Show vector
   
   
 # References
+
+- **Modern NLP**
+  - [NLP Overview](https://nlpoverview.com) ⭐
+  - [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
+  - [Modern NLP into Practice](https://t.co/SiaZryiO6O?amp=1) → [twit thread](https://twitter.com/joelgrus/status/1171783769495179264)
 - **Courses**
   - Fast.ai NLP course: [playlist](https://www.youtube.com/playlist?list=PLtmWHNX-gukKocXQOkQjuVxglSDYWsSh9)
   - [spaCy course](https://course.spacy.io)
@@ -320,7 +323,26 @@ coche[0].vector      # Show vector
   - [Video](https://www.youtube.com/watch?v=hNPwRPg9BrQ&t=1486s)
   - [Blog](https://www.kdnuggets.com/2019/09/state-transfer-learning-nlp.html)
   - [NLP transfer learning libraries](https://twitter.com/seb_ruder/status/1172607702884933633)
-- [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
-- [Putting Cutting-Edge Modern NLP into Practice](https://t.co/SiaZryiO6O?amp=1) → [twit thread](https://twitter.com/joelgrus/status/1171783769495179264)
 - [7 NLP libraries](https://medium.com/microsoftazure/7-amazing-open-source-nlp-tools-to-try-with-notebooks-in-2019-c9eec058d9f1)
 - [spaCy blog](https://explosion.ai/blog)
+
+#### Fast.ai NLP Videos
+1. [What is NLP?](https://youtu.be/cce8ntxP_XI) ✔
+2. [Topic Modeling with SVD & NMF](https://youtu.be/tG3pUwmGjsc)
+3. [Topic Modeling & SVD revisited](https://youtu.be/lRZ4aMaXPBI)
+4. [Sentiment Classification with Naive Bayes](https://youtu.be/hp2ipC5pW4I)
+5. [Sentiment Classification with Naive Bayes & Logistic Regression, contd.](https://youtu.be/dt7sArnLo1g)
+6. [Derivation of Naive Bayes & Numerical Stability](https://youtu.be/z8-Tbrg1-rE)
+7. [Revisiting Naive Bayes, and Regex](https://youtu.be/Q1zLqfnEXdw)
+8. [Intro to Language Modeling](https://youtu.be/PNNHaQUQqW8)
+9. [Transfer learning](https://youtu.be/5gCQvuznKn0)
+10. [ULMFit for non-English Languages](https://youtu.be/MDX_x6rKXAs)
+11. [Understanding RNNs](https://youtu.be/l1rlFh0PmZw)
+12. [Seq2Seq Translation](https://youtu.be/IfsjMg4fLWQ)
+13. [Word embeddings quantify 100 years of gender & ethnic stereotypes](https://youtu.be/boxV8Od4jqQ)
+14. [Text generation algorithms](https://youtu.be/3oEb_fFmPnY)
+15. [Implementing a GRU](https://youtu.be/Bl6WVj6wQaE)
+16. [Algorithmic Bias](https://youtu.be/pThqge9QDn8)
+17. [Introduction to the Transformer](https://youtu.be/AFkGPmU16QA) ✔
+18. [The Transformer for language translation](https://youtu.be/KzfyftiH7R8)
+19. [What you need to know about Disinformation](https://youtu.be/vbva2RN-rbQ)
