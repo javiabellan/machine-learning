@@ -7,6 +7,7 @@
     <td><h1>👀 <a href="/CV.md">Vision</a></h1></td>
     <td><h1>📜 <a href="/NLP.md">NLP</a></h1></td>
     <td><h1>🔊 <a href="/AUDIO.md">Audio</a></h1></td>
+    <td><h1>🌐 <a href="/WEB.md">Web</a></h1></td>
   </tr>
 </table>
 
