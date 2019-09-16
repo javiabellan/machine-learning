@@ -1,9 +1,5 @@
 <h1 align="center">Natural Language Processing</h1>
 
-#### TODO: 
-- Read [MASS](https://www.microsoft.com/en-us/research/blog/introducing-mass-a-pre-training-method-that-outperforms-bert-and-gpt-in-sequence-to-sequence-language-generation-tasks) (transfer learning in translation for transformers?)
-- Read [CNNs better than attention](https://arxiv.org/abs/1901.10430)
-
 |       |                                                   |                  |
 |-------|---------------------------------------------------|------------------|
 | 📱    | [**Applications**](#-applications)               |  |
@@ -321,6 +317,9 @@ coche[0].vector      # Show vector
   
 # References
 
+- **TO-DO read**: 
+  - Read [MASS](https://www.microsoft.com/en-us/research/blog/introducing-mass-a-pre-training-method-that-outperforms-bert-and-gpt-in-sequence-to-sequence-language-generation-tasks) (transfer learning in translation for transformers?)
+  - Read [CNNs better than attention](https://arxiv.org/abs/1901.10430)
 - **Modern NLP**
   - [NLP Overview](https://nlpoverview.com) ⭐
   - [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
@@ -331,7 +330,7 @@ coche[0].vector      # Show vector
 - **Transformers**
   - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer) (June 2018)
   - [The Illustrated BERT & ELMo](https://jalammar.github.io/illustrated-bert)        (December 2018)
-  - [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2)              (August 2019)
+  - [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2)              (August 2019) ⭐
   - [Best Transformers explanation](http://www.peterbloem.nl/blog/transformers)       (August 2019) ⭐
   - [BERT summary](https://www.lyrn.ai/2018/11/07/explained-bert-state-of-the-art-language-model-for-nlp)
   - [BERT, RoBERTa, DistilBERT, XLNet. Which one to use?](https://towardsdatascience.com/bert-roberta-distilbert-xlnet-which-one-to-use-3d5ab82ba5f8)
