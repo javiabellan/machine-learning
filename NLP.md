@@ -23,12 +23,14 @@
 | 🔍 **Text categorization**            | Identify topics present in a text (sports, politics, etc).                | 🔤 |
 | ❓ **Question answering**             | Answer questions of a given text (SQuAD, DROP dataset).                    | 💭 |
 | 👍🏼 👎🏼 **Sentiment analysis**          | Possitive or negative comment/review classification.                       | 💭 |
-| 🔮 **Language modeling**              | Predict the next word (or character) in a document.                        | 💭 |
-| 📗→📄 **Summarization**               | Crate a short version of a text.                                           | 💭 |
-| 🈯→🆗 **Translation**                 | Translate into a different language.                                       | 💭 |
-| 🆓→🆒 **Dialogue bot**                | Interact in a conversation.                                                | 💭 |
-| 💁🏻→🔠 **Speech recognition**          | Speech to text. See [AUDIO](/AUDIO.md) cheatsheet.                         | 🗣️ |
-| 🔠→💁🏻 **Speech generation**           | Text to speech. See [AUDIO](/AUDIO.md) cheatsheet.                         | 🗣️ |
+| 🔮 **Language Modeling (LM)**          | Predict the next word. Unupervised.                                       | 💭 |
+| 🔮 **Masked Language Modeling (MLM)**  | Predict the omitted words. Unupervised.                                   | 💭 |
+| 🔮 **Next Sentence Prediction (NSP)**  |                                                                          | 💭 |
+| 📗→📄 **Summarization**                | Crate a short version of a text.                                          | 💭 |
+| 🈯→🆗 **Translation**                 | Translate into a different language.                                      | 💭 |
+| 🆓→🆒 **Dialogue bot**                | Interact in a conversation.                                               | 💭 |
+| 💁🏻→🔠 **Speech recognition**          | Speech to text. See [AUDIO](/AUDIO.md) cheatsheet.                        | 🗣️ |
+| 🔠→💁🏻 **Speech generation**           | Text to speech. See [AUDIO](/AUDIO.md) cheatsheet.                        | 🗣️ |
 
 - 🔤: Natural Language Processing (NLP)
 - 💭: Natural Language Understanding (NLU)
@@ -200,23 +202,23 @@ coche[0].vector      # Show vector
 
 🤗 Means availability (pretrained PyTorch implementation) on [pytorch-transformers](https://github.com/huggingface/pytorch-transformers) package developed by huggingface.
 
-| Model              | Creator         | Date      | Parameters   | Breif description         | 🤗 |
-|--------------------|:---------------:|-----------|:------------:|---------------------------|----|
-| **1st Transformer**| Google          | Jun. 2017 |              | Attention Is All You Need |    |
-| **ULMFiT**         | Fast.ai         | Jan. 2018 |              | Regular LSTM              |    |
-| **ELMo**           | AllenNLP        | Feb. 2018 | 94M          | Bidirectional LSTM        |    |
-| **GPT**            | OpenAI          | Jun. 2018 | 110M         | Transformer on normal LM  | ✔ |
-| **BERT**           | Google          | Oct. 2018 | 110M or 340M | Transformer on masked LM  | ✔ |
-| **Transformer-XL** | Google/CMU      | Jan. 2019 | 128M or 151M |                           | ✔ |
-| **XLM/mBERT**      | Facebook        | Jan. 2019 | 665M         | Multilingual LM           | ✔ |
-| **Transf. ELMo**   | AllenNLP        | Jan. 2019 | 465M         |                           |    |
-| **GPT-2**          | OpenAI          | Feb. 2019 | 1500M        | Good text generation      | ✔ |
-| **ERNIE**          | Baidu research  | Apr. 2019 |              |                           |    |
-| **XLNet**:         | Google/CMU      | Jun. 2019 | 110M or 340M | BERT + Transformer-XL     | ✔ |
-| **RoBERTa**        | Facebook        | Jul. 2019 | 125M or 355M | Optimized BERT            | ✔ |
-| **MegatronLM**     | Nvidia          | Aug. 2019 | 8300M        | Too big                   |    |
-| **DistilBERT**     | Hugging Face    | Aug. 2019 | 66M          | Compressed BERT           | ✔ |
-| **[MiniBERT](https://arxiv.org/abs/1909.00100)**  | Google   | Aug. 2019 |  | Compressed BERT  |  |
+| Model              | Creator         | Date      | Parameters   | Breif description         | Data  | 🤗 |
+|--------------------|:---------------:|-----------|:------------:|---------------------------|-------|-----|
+| **1st Transformer**| Google          | Jun. 2017 |              | Attention Is All You Need |       |     |
+| **ULMFiT**         | Fast.ai         | Jan. 2018 |              | Regular LSTM              |       |     |
+| **ELMo**           | AllenNLP        | Feb. 2018 | 94M          | Bidirectional LSTM        |       |     |
+| **GPT**            | OpenAI          | Jun. 2018 | 110M         | Transformer on LM         |       | ✔ |
+| **BERT**           | Google          | Oct. 2018 | 110M or 340M | Transformer on MLM (& NSP)| 16GB  | ✔ |
+| **Transformer-XL** | Google/CMU      | Jan. 2019 | 128M or 151M |                           |       | ✔ |
+| **XLM/mBERT**      | Facebook        | Jan. 2019 | 665M         | Multilingual LM           |       | ✔ |
+| **Transf. ELMo**   | AllenNLP        | Jan. 2019 | 465M         |                           |       |   |
+| **GPT-2**          | OpenAI          | Feb. 2019 | 1500M        | Good text generation      |       | ✔ |
+| **ERNIE**          | Baidu research  | Apr. 2019 |              |                           |       |    |
+| **XLNet**:         | Google/CMU      | Jun. 2019 | 110M or 340M | BERT + Transformer-XL     | 130GB | ✔ |
+| **RoBERTa**        | Facebook        | Jul. 2019 | 125M or 355M | BERT without NSP          | 160GB | ✔ |
+| **MegatronLM**     | Nvidia          | Aug. 2019 | 8300M        | Too big                   |       |   |
+| **DistilBERT**     | Hugging Face    | Aug. 2019 | 66M          | Compressed BERT           | 16GB  | ✔ |
+| **[MiniBERT](https://arxiv.org/abs/1909.00100)**  | Google   | Aug. 2019 |  | Compressed BERT  |     |  |
 
   
 - **Attention**: (Aug 2015)
@@ -333,7 +335,7 @@ coche[0].vector      # Show vector
   - [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2)              (August 2019) ⭐
   - [Best Transformers explanation](http://www.peterbloem.nl/blog/transformers)       (August 2019) ⭐
   - [BERT summary](https://www.lyrn.ai/2018/11/07/explained-bert-state-of-the-art-language-model-for-nlp)
-  - [BERT, RoBERTa, DistilBERT, XLNet. Which one to use?](https://towardsdatascience.com/bert-roberta-distilbert-xlnet-which-one-to-use-3d5ab82ba5f8)
+  - [BERT, RoBERTa, DistilBERT, XLNet. Which one to use?](https://www.kdnuggets.com/2019/09/bert-roberta-distilbert-xlnet-one-use.html)
   - [DistilBERT model by huggingface](https://medium.com/huggingface/distilbert-8cf3380435b5)
 - Sebastian Ruder talking about **Transfer Learning**
   - [Video](https://www.youtube.com/watch?v=hNPwRPg9BrQ&t=1486s)
