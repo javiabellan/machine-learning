@@ -323,7 +323,7 @@ coche[0].vector      # Show vector
   - Read [MASS](https://www.microsoft.com/en-us/research/blog/introducing-mass-a-pre-training-method-that-outperforms-bert-and-gpt-in-sequence-to-sequence-language-generation-tasks) (transfer learning in translation for transformers?)
   - Read [CNNs better than attention](https://arxiv.org/abs/1901.10430)
 - **Modern NLP**
-  - [NLP Overview](https://nlpoverview.com) ⭐
+  - [NLP Overview](https://nlpoverview.com)
   - [NLP infographic](https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/)
   - [Modern NLP into Practice](https://t.co/SiaZryiO6O?amp=1) → [twit thread](https://twitter.com/joelgrus/status/1171783769495179264)
 - **Courses**
@@ -337,9 +337,12 @@ coche[0].vector      # Show vector
   - [BERT summary](https://www.lyrn.ai/2018/11/07/explained-bert-state-of-the-art-language-model-for-nlp)
   - [BERT, RoBERTa, DistilBERT, XLNet. Which one to use?](https://www.kdnuggets.com/2019/09/bert-roberta-distilbert-xlnet-one-use.html)
   - [DistilBERT model by huggingface](https://medium.com/huggingface/distilbert-8cf3380435b5)
-- Sebastian Ruder talking about **Transfer Learning**
+- **Transfer Learning** in NLP by Sebastian Ruder
+  - [Blog](http://ruder.io/state-of-transfer-learning-in-nlp)
+  - [Slides](http://tiny.cc/NAACLTransfer) ⭐
+  - [Notebook](http://tiny.cc/NAACLTransferColab) (Google Colab) ⭐
+  - [Code](http://tiny.cc/NAACLTransferCode) (Github)
   - [Video](https://www.youtube.com/watch?v=hNPwRPg9BrQ&t=1486s)
-  - [Blog](https://www.kdnuggets.com/2019/09/state-transfer-learning-nlp.html)
   - [NLP transfer learning libraries](https://twitter.com/seb_ruder/status/1172607702884933633)
 - [7 NLP libraries](https://medium.com/microsoftazure/7-amazing-open-source-nlp-tools-to-try-with-notebooks-in-2019-c9eec058d9f1)
 - [spaCy blog](https://explosion.ai/blog)
