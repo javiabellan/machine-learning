@@ -94,6 +94,10 @@
 
 # 🤖 Transformers
 
+- Lowest layers: morphology
+- Middle layers: syntax
+- Highest layers: Task-specific semantics
+
 1. Transformer tokenizer
    - Create tokens (words and subwords). Methods:
      - BPE
