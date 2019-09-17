@@ -121,11 +121,11 @@
 
 # 👨🏻‍🏫 Transfer Learning
 
-| Step  | Task                               | Data                                  | Who do this?           |
-|:-----:|------------------------------------|---------------------------------------|------------------------|
-| **1** | **Language Model Pretraining**     | 📚 Lot of text corpus (eg. Wikipedia) | 🏭 Google or Facebook |
-| **2** | **Language Model Finetunning**     | 📗 Only you domain text corpus        | 💻 You                |
-| **3** | **Your task (clasification, etc)** | 📗🏷️ You labeled domain text          | 💻 You                |
+| Step  | Task                                          | Data                                  | Who do this?           |
+|:-----:|-----------------------------------------------|---------------------------------------|------------------------|
+| **1** | **[Masked] Language Model Pretraining**       | 📚 Lot of text corpus (eg. Wikipedia) | 🏭 Google or Facebook |
+| **2** | **[Masked] Language Model Finetunning**       | 📗 Only you domain text corpus        | 💻 You                |
+| **3** | **Your supervised task (clasification, etc)** | 📗🏷️ You labeled domain text          | 💻 You                |
 
 
 # 📦 Python Packages
