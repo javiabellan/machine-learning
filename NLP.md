@@ -344,7 +344,8 @@ coche[0].vector      # Show vector
 - **Transfer Learning** in NLP by Sebastian Ruder
   - [Blog](http://ruder.io/state-of-transfer-learning-in-nlp)
   - [Slides](http://tiny.cc/NAACLTransfer) ⭐
-  - [Notebook](http://tiny.cc/NAACLTransferColab) (Google Colab) ⭐
+  - [Notebook: from scratch pytorch](http://tiny.cc/NAACLTransferColab) ⭐⭐
+  - [Notebook2: pytorch-transformers + Fast.ai](https://github.com/DavidykZhao/Pytorch_transformers_Fastai/blob/master/Pytorch_transformers_Fastai.ipynb) ⭐⭐
   - [Code](http://tiny.cc/NAACLTransferCode) (Github)
   - [Video](https://www.youtube.com/watch?v=hNPwRPg9BrQ&t=1486s)
   - [NLP transfer learning libraries](https://twitter.com/seb_ruder/status/1172607702884933633)
