@@ -6,3 +6,16 @@
 
 
 <h1 align="center">🌝 Frontend</h1>
+
+- [Vue](https://vuejs.org)
+- [Vue CLI](https://cli.vuejs.org)
+- [Vuetify](https://vuetifyjs.com)
+- [YT tutorial](https://www.youtube.com/watch?v=Wy9q22isx3U)
+
+### Create app
+```
+vue create myapp
+cd myapp
+npm run serve
+```
+
