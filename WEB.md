@@ -16,7 +16,7 @@
 ### Create Material React app (with material design)
 
 ```
-npm init react-app myapp       # Create React app
+npx create-react-app myapp     # Create React app
 cd myapp                       # Get inside
 npm install @material-ui/core  # Install material design
 npm start                      # Start app
