@@ -218,10 +218,10 @@ coche[0].vector      # Show vector
 | **Transf. ELMo**   | AllenNLP        | Jan. 2019 |                           |       |   |
 | **GPT-2**          | OpenAI          | Feb. 2019 | Good text generation      |       | ✔ |
 | **ERNIE**          | Baidu research  | Apr. 2019 |                           |       |    |
-| **XLNet**:         | Google/CMU      | Jun. 2019 | BERT + Transformer-XL     | 130GB | ✔ |
-| **RoBERTa**        | Facebook        | Jul. 2019 | BERT without NSP          | 160GB | ✔ |
-| **MegatronLM**     | Nvidia          | Aug. 2019 | Too big                   |       |   |
-| **DistilBERT**     | Hugging Face    | Aug. 2019 | Compressed BERT           | 16GB  | ✔ |
+| **XLNet**:         | Google/CMU      | Jun. 2019 | BERT + Transformer-XL               | 130GB | ✔ |
+| **RoBERTa**        | Facebook        | Jul. 2019 | BERT without NSP                    | 160GB | ✔ |
+| **MegatronLM**     | Nvidia          | Aug. 2019 | Big models with parallel training   |       |   |
+| **DistilBERT**     | Hugging Face    | Aug. 2019 | Compressed BERT                     | 16GB  | ✔ |
 | **[MiniBERT](https://arxiv.org/abs/1909.00100)**  | Google   | Aug. 2019  | Compressed BERT  |     |  |
 
 
