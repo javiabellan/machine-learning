@@ -206,23 +206,23 @@ coche[0].vector      # Show vector
 
 🤗 Means availability (pretrained PyTorch implementation) on [pytorch-transformers](https://github.com/huggingface/pytorch-transformers) package developed by huggingface.
 
-| Model              | Creator         | Date      | Parameters   | Breif description         | Data  | 🤗 |
-|:------------------:|:---------------:|:---------:|:------------:|---------------------------|-------|:---:|
-| **1st Transformer**| Google          | Jun. 2017 |              | Attention Is All You Need |       |     |
-| **ULMFiT**         | Fast.ai         | Jan. 2018 |              | Regular LSTM              |       |     |
-| **ELMo**           | AllenNLP        | Feb. 2018 | 94M          | Bidirectional LSTM        |       |     |
-| **GPT**            | OpenAI          | Jun. 2018 | 110M         | Transformer on LM         |       | ✔ |
-| **BERT**           | Google          | Oct. 2018 | 110M or 340M | Transformer on MLM (& NSP)| 16GB  | ✔ |
-| **Transformer-XL** | Google/CMU      | Jan. 2019 | 128M or 151M |                           |       | ✔ |
-| **XLM/mBERT**      | Facebook        | Jan. 2019 | 665M         | Multilingual LM           |       | ✔ |
-| **Transf. ELMo**   | AllenNLP        | Jan. 2019 | 465M         |                           |       |   |
-| **GPT-2**          | OpenAI          | Feb. 2019 | 1500M        | Good text generation      |       | ✔ |
-| **ERNIE**          | Baidu research  | Apr. 2019 |              |                           |       |    |
-| **XLNet**:         | Google/CMU      | Jun. 2019 | 110M or 340M | BERT + Transformer-XL     | 130GB | ✔ |
-| **RoBERTa**        | Facebook        | Jul. 2019 | 125M or 355M | BERT without NSP          | 160GB | ✔ |
-| **MegatronLM**     | Nvidia          | Aug. 2019 | 8300M        | Too big                   |       |   |
-| **DistilBERT**     | Hugging Face    | Aug. 2019 | 66M          | Compressed BERT           | 16GB  | ✔ |
-| **[MiniBERT](https://arxiv.org/abs/1909.00100)**  | Google   | Aug. 2019 |  | Compressed BERT  |     |  |
+| Model              | Creator         | Date      | Breif description         | Data  | 🤗 |
+|:------------------:|:---------------:|:---------:|---------------------------|-------|:---:|
+| **1st Transformer**| Google          | Jun. 2017 | Attention Is All You Need |       |     |
+| **ULMFiT**         | Fast.ai         | Jan. 2018 | Regular LSTM              |       |     |
+| **ELMo**           | AllenNLP        | Feb. 2018 | Bidirectional LSTM        |       |     |
+| **GPT**            | OpenAI          | Jun. 2018 | Transformer on LM         |       | ✔ |
+| **BERT**           | Google          | Oct. 2018 | Transformer on MLM (& NSP)| 16GB  | ✔ |
+| **Transformer-XL** | Google/CMU      | Jan. 2019 |                           |       | ✔ |
+| **XLM/mBERT**      | Facebook        | Jan. 2019 | Multilingual LM           |       | ✔ |
+| **Transf. ELMo**   | AllenNLP        | Jan. 2019 |                           |       |   |
+| **GPT-2**          | OpenAI          | Feb. 2019 | Good text generation      |       | ✔ |
+| **ERNIE**          | Baidu research  | Apr. 2019 |                           |       |    |
+| **XLNet**:         | Google/CMU      | Jun. 2019 | BERT + Transformer-XL     | 130GB | ✔ |
+| **RoBERTa**        | Facebook        | Jul. 2019 | BERT without NSP          | 160GB | ✔ |
+| **MegatronLM**     | Nvidia          | Aug. 2019 | Too big                   |       |   |
+| **DistilBERT**     | Hugging Face    | Aug. 2019 | Compressed BERT           | 16GB  | ✔ |
+| **[MiniBERT](https://arxiv.org/abs/1909.00100)**  | Google   | Aug. 2019  | Compressed BERT  |     |  |
 
 
 https://huggingface.co/pytorch-transformers/pretrained_models.html
