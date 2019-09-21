@@ -227,23 +227,23 @@ coche[0].vector      # Show vector
 
 https://huggingface.co/pytorch-transformers/pretrained_models.html
 
-| Model              | Creator         | Date      | 3L  | 6L  | 12L | 18L | 24L | 36L | 48L | 🤗 |
-|--------------------|:---------------:|-----------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:--:|
-| **1st Transformer**| Google          | Jun. 2017 |     |     |     |     |     |     |     |    |
-| **ULMFiT**         | Fast.ai         | Jan. 2018 |     |     |     |     |     |     |     |    |
-| **ELMo**           | AllenNLP        | Feb. 2018 |     |     |     |     |     |     |     |    |
-| **GPT**            | OpenAI          | Jun. 2018 |     |     | 110M|     |     |     |     | ✔ |
-| **BERT**           | Google          | Oct. 2018 |     |     | 110M|     | 340M|     |     | ✔ |
-| **Transformer-XL** | Google/CMU      | Jan. 2019 |     |     |     | 257M|     |     |     | ✔ |
-| **XLM/mBERT**      | Facebook        | Jan. 2019 |     | Yes | Yes |     |     |     |     | ✔ |
-| **Transf. ELMo**   | AllenNLP        | Jan. 2019 |     |     |     |     |     |     |     |    |
-| **GPT-2**          | OpenAI          | Feb. 2019 |     |     | 117M|     | 345M| 762M|1542M| ✔ |
-| **ERNIE**          | Baidu research  | Apr. 2019 |     | Yes |     |     |     |     |     |    |
-| **XLNet**:         | Google/CMU      | Jun. 2019 |     |     | 110M|     | 340M|     |     | ✔ |
-| **RoBERTa**        | Facebook        | Jul. 2019 |     |     | 125M|     | 355M|     |     | ✔ |
-| **MegatronLM**     | Nvidia          | Aug. 2019 |     |     |     |     |     |     |     |    |
-| **DistilBERT**     | Hugging Face    | Aug. 2019 |     | 66M |     |     |     |     |     | ✔ |
-| **MiniBERT**       | Google          | Aug. 2019 | Yes |     |     |     |     |     |     |    |
+| Model              | Creator         | Date      | 3L  | 6L  | 12L | 18L | 24L | 36L | 48L |
+|--------------------|:---------------:|-----------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **1st Transformer**| Google          | Jun. 2017 |     |     |     |     |     |     |     |
+| **ULMFiT**         | Fast.ai         | Jan. 2018 |     |     |     |     |     |     |     |
+| **ELMo**           | AllenNLP        | Feb. 2018 |     |     |     |     |     |     |     |
+| **GPT**            | OpenAI          | Jun. 2018 |     |     | 110M|     |     |     |     |
+| **BERT**           | Google          | Oct. 2018 |     |     | 110M|     | 340M|     |     |
+| **Transformer-XL** | Google/CMU      | Jan. 2019 |     |     |     | 257M|     |     |     |
+| **XLM/mBERT**      | Facebook        | Jan. 2019 |     | Yes | Yes |     |     |     |     |
+| **Transf. ELMo**   | AllenNLP        | Jan. 2019 |     |     |     |     |     |     |     |
+| **GPT-2**          | OpenAI          | Feb. 2019 |     |     | 117M|     | 345M| 762M|1542M|
+| **ERNIE**          | Baidu research  | Apr. 2019 |     | Yes |     |     |     |     |     |
+| **XLNet**:         | Google/CMU      | Jun. 2019 |     |     | 110M|     | 340M|     |     |
+| **RoBERTa**        | Facebook        | Jul. 2019 |     |     | 125M|     | 355M|     |     |
+| **MegatronLM**     | Nvidia          | Aug. 2019 |     |     |     |     |     |     |     |
+| **DistilBERT**     | Hugging Face    | Aug. 2019 |     | 66M |     |     |     |     |     |
+| **MiniBERT**       | Google          | Aug. 2019 | Yes |     |     |     |     |     |     |
 
   
 - **Attention**: (Aug 2015)
