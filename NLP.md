@@ -208,7 +208,7 @@ coche[0].vector      # Show vector
 
 | Model              | Creator         | Date      | Breif description                                        | Data  | 🤗 |
 |:------------------:|:---------------:|:---------:|----------------------------------------------------------|-------|:---:|
-| **1st Transformer**| Google          | Jun. 2017 | Encoder & decoder transformer arch. with attention |       |     |
+| **1st Transformer**| Google          | Jun. 2017 | Encoder & decoder transformer with attention |       |     |
 | **ULMFiT**         | Fast.ai         | Jan. 2018 | Regular LSTM              |       |     |
 | **ELMo**           | AllenNLP        | Feb. 2018 | Bidirectional LSTM        |       |     |
 | **GPT**            | OpenAI          | Jun. 2018 | Transformer on LM         |       | ✔ |
