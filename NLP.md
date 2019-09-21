@@ -206,9 +206,9 @@ coche[0].vector      # Show vector
 
 🤗 Means availability (pretrained PyTorch implementation) on [pytorch-transformers](https://github.com/huggingface/pytorch-transformers) package developed by huggingface.
 
-| Model              | Creator         | Date      | Breif description         | Data  | 🤗 |
-|:------------------:|:---------------:|:---------:|---------------------------|-------|:---:|
-| **1st Transformer**| Google          | Jun. 2017 | Attention Is All You Need |       |     |
+| Model              | Creator         | Date      | Breif description                                        | Data  | 🤗 |
+|:------------------:|:---------------:|:---------:|----------------------------------------------------------|-------|:---:|
+| **1st Transformer**| Google          | Jun. 2017 | Encoder & decoder transformer. Attention Is All You Need |       |     |
 | **ULMFiT**         | Fast.ai         | Jan. 2018 | Regular LSTM              |       |     |
 | **ELMo**           | AllenNLP        | Feb. 2018 | Bidirectional LSTM        |       |     |
 | **GPT**            | OpenAI          | Jun. 2018 | Transformer on LM         |       | ✔ |
