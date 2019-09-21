@@ -94,32 +94,47 @@
 
 # 🤖 Transformers
 
+### Transformer input
+
+1. **Tokenizer**: Create subword tokens. Methods: BPE...
+2. **Embedding**: Create vectors for each token. Sum of:
+   - **Token Embedding**
+   - **Positional Encoding**: Information about tokens order (e.g. sinusoidal function).
+3. Dropout
+
+### Transformer blocks (6, 12, 24,...)
+
+1. Normalization
+2. **Multi-head attention** layer (with a **left-to-right attention mask**)
+   - Each attention head uses self attention to process each token input conditioned on the other input tokens.
+   - Left-to-right attention mask ensures that only attends to the positions that precede it to the left.
+3. Normalization
+4. **Feed forward** layers:
+   1. Linear H→4H
+   2. GeLU activation func
+   3. Linear 4H→H
+
+### Transformer output
+
+1. Normalization
+2. Output embedding
+3. Softmax
+4. Label smothing: Ground truth -> 90% the correct word, and the rest 10% divided on the other words.
+
+
 - Lowest layers: morphology
 - Middle layers: syntax
 - Highest layers: Task-specific semantics
 
-1. Transformer tokenizer
-   - Create tokens (words and subwords). Methods:
-     - BPE
-   - Information about the position of each token. Done with positional Encoding:
-     - Add a fixed value to each token based on its position (e.g. sinusoidal function).
-2. Transformer encoder
-   - Input: **unique word embeddings**
-   - Output: **contextual word embeddings**
-   - Blocks:
-     - Positional encodings: Since models contents no recurrent or convolutions. This is information about tokens order.
-     - Attention
-     - Feedfowared layers
-     - Label smothing: Ground truth -> 90% the correct word, and the rest 10% divided on the other words.
-3. Transformer decoder
 
 
 # 📏 Scores
 
-| Score    | For what?       | Description                                               | Interpretation         |
-|:--------:|:---------------:|-----------------------------------------------------------|------------------------|
-| **GLUE** | **NLU**         | An avergae of different scores                             |                        |
-| **BLEU** | **Translation** | Compare generated with reference sentences (N-gram)        | The higher the better. |
+| Score          | For what?       | Description                                               | Interpretation         |
+|:--------------:|:---------------:|-----------------------------------------------------------|------------------------|
+| **Perplexity** | **LM**          |                                                           | The lower the better.  |
+| **GLUE**       | **NLU**         | An avergae of different scores                            |                        |
+| **BLEU**       | **Translation** | Compare generated with reference sentences (N-gram)       | The higher the better. |
 
 > #### BLEU limitation
 > "He ate the apple" & "He ate the potato" has the same BLEU score.
