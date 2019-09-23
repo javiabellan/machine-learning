@@ -20,6 +20,7 @@ npx create-react-app myapp     # Create React app
 cd myapp                       # Get inside
 npm install @material-ui/core  # Install material design
 npm install @material-ui/icons # Install material design icons
+npm install @material-ui/lab   # Install material extra features
 npm start                      # Start app
 ```
 
