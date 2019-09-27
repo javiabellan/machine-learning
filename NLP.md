@@ -238,7 +238,7 @@ coche[0].vector      # Show vector
 | **MegatronLM**     | Nvidia          | Aug. 2019 | Big models with parallel training   |       |   |
 | **DistilBERT**     | Hugging Face    | Aug. 2019 | Compressed BERT                     | 16GB  | ✔ |
 | **[MiniBERT](https://arxiv.org/abs/1909.00100)**  | Google   | Aug. 2019  | Compressed BERT  |     |  |
-
+| **[ALBERT](https://openreview.net/pdf?id=H1eA7AEtvS)** | Google   | Sep. 2019  |  Parameter reduction on BERT  |     |  |
 
 https://huggingface.co/pytorch-transformers/pretrained_models.html
 
@@ -259,7 +259,6 @@ https://huggingface.co/pytorch-transformers/pretrained_models.html
 | **MegatronLM**     |     |     |     |      |      | 355M |      |       | 2500M | 8300M |
 | **DistilBERT**     |     |     | 66M |      |      |      |      |       |       |       |
 | **MiniBERT**       |     | Yes |     |      |      |      |      |       |       |       |
-
   
 - **Attention**: (Aug 2015)
   - Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector.
