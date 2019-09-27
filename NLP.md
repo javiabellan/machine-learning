@@ -217,7 +217,7 @@ coche[0].vector      # Show vector
 
 
 
-# 🔮 Deep learning models
+# 🔮 Deep learning models [ALL MODELS](https://github.com/thunlp/PLMpapers)
 
 🤗 Means availability (pretrained PyTorch implementation) on [pytorch-transformers](https://github.com/huggingface/pytorch-transformers) package developed by huggingface.
 
