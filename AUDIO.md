@@ -1,5 +1,7 @@
 <h1 align="center">Audio</h1>
 
+> ### Todo: Read [this fastai thread](https://forums.fast.ai/t/deep-learning-with-audio-thread/38123)
+
 ## Audio recognition 🎤
 - [Audio classification with fast.ai](https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89) (CNN)
 - Speech recognition
