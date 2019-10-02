@@ -30,6 +30,8 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 
 
 ### 📚 Python libraries used
+> #### See more Python AI packages [here](https://skymind.ai/wiki/python-ai)
+
 Along the ML Pipeline I use some Python libraries. Here are notes for each library. 
 
 | Library                                                       | Description            | MUST |
