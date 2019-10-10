@@ -55,6 +55,7 @@ Put this on top of your notebook
 
 # Data libraries
 import numpy             as np
+import datatable         as dt
 import pandas            as pd
 import pandas_profiling  as pd_eda
 import missingno         as msno
