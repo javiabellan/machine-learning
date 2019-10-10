@@ -75,6 +75,7 @@ import eli5        as ml_exp
 
 <h1 align="center">Part 1: The data</h1>
 
+> - [Dataframe databases comparison](https://h2oai.github.io/db-benchmark/)
 > - Read https://www.kdnuggets.com/2019/08/4-tips-advanced-feature-engineering-preprocessing.html
 > - read https://blog.featurelabs.com/encode-smarter
 > - read https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
