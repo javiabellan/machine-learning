@@ -32,31 +32,23 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 ### 📚 Python libraries used
 > #### See more Python AI packages [here](https://skymind.ai/wiki/python-ai)
 
-Along the ML Pipeline I use some Python libraries. Here are notes for each library. 
+| 🐼 **Database** |  📊 **Visualization** | 💡 **Machine Learning** | 🌳 **Gradient Boosting** | 🔦 **Deep Learning** |
+|:----------------|:----------------------|:-------------------------|:-------------------------|:---------------------|
+| Pandas          | Matplotlib       ⭐   | Scikit learn    ⭐       | XGBoost                  | Pytorch = PT         |
+| Datatable   ⭐  | Seaborn               | H2O                      | LightGBM ⭐              | Tensorflow = TF      |
+| CuDF            | Plotly                | CuML                     | CatBoost                 | Fast.ai (PT)   ⭐    |
+| Dask            | Bokeh                 | Dask-ML                  |                          | Catalyst (PT)        |
+|                 |                       |                          |                          | Ignite (PT)          |
+|                 |                       |                          |                          | Keras (TF)           |
 
-| Library                                                       | Description            | MUST |
-|---------------------------------------------------------------|------------------------|------|
-| 🔢 [**Numpy**](https://numpy.org)                             | Vectors and matrice    | ⭐ |
-| 🔢 [**Scipy**](https://docs.scipy.org/doc/scipy/reference)    | Science tools          |    |
-| 🔢 [**Statsmodels**](http://www.statsmodels.org)              | Statistical models     |    |
-| 🐼 [**Pandas**](https://pandas.pydata.org)                    | Data manipulation      | ⭐ |
-| 📊 [**Matplotlib**](https://matplotlib.org)                   | Data visualization     | ⭐ |
-| 📊 [**Seaborn**](https://seaborn.pydata.org)                  | Data visualization     |    |
-| 📊 [**Plotly**](https://plot.ly/python)                       | Data visualization     |    |
-| 📊 [**Bokeh**](https://bokeh.pydata.org)                      | Data visualization     |    |
-| 💡 [**Scikit learn**](https://scikit-learn.org)               | Machine Learning (ML)  | ⭐ |
-| 🔦 [**Pytorch**](https://pytorch.org)                         | Deep Learning (DL)     |    |
-| 🌳 [**XGBoost**](https://github.com/dmlc/xgboost)             | ML: Gradient Boosting  |    |
-| 🌳 [**LightGBM**](https://github.com/Microsoft/LightGBM)      | ML: Gradient Boosting  |    |
-| 🌳 [**CatBoost**](https://github.com/catboost/catboost)       | ML: Gradient Boosting  |    |
-| 📊 [**Yellowbrick**](https://github.com/catboost/catboost)    | ML: Visualization      |    |
-| ❓ [**ELI5**](https://eli5.readthedocs.io)                    | ML: Explainability     |    |
-| 💧 [**H2O**](https://www.h2o.ai/products/h2o/)                | Auto Machine learning  | ⭐ |
-| 🍵 [**TPOT**](https://github.com/EpistasisLab/tpot)           | Auto Machine learning  |    |
-| 💡 [**Auto Sklearn**](https://github.com/automl/auto-sklearn) | Auto Machine learning  |    |
-| 📦 [**MLBox**](https://github.com/AxeldeRomblay/MLBox)        | Auto Machine learning  |    |
-| 🕷️ [**Beautiful Soup**](https://www.crummy.com/software/BeautifulSoup)| Web Scraping (simple)   |  |
-| 🕷️ [**Scrapy**](https://scrapy.org/)                          | Web Scraping (complete)|    |
+Others:
+
+| 🕷️ **Web Scraping** | 🔢 **Numeric** | 🍹 **Auto ML** | ❓ **ML visual** |
+|---------------------|----------------|-----------------|------------------|
+| Beautiful Soup      | Numpy          | H2O ⭐          | ELI5             |
+| Scrapy              | Scipy          | Auto Sklearn    | Yellowbrick      |
+|                     | Statsmodels    | TPOT            | Tensorboard (DL) |
+|                     |                | MLBox           |                  |
 
 Put this on top of your notebook
 ```python
