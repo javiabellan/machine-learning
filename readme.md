@@ -29,27 +29,6 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 | 🍹 | [**Auto Machine learning**](#-auto-machine-learning-)          | Automatic machine learning pipeline        |
 
 
-### 📚 Python libraries used
-> #### See more Python AI packages [here](https://skymind.ai/wiki/python-ai)
-
-| 🐼 **Database** |  📊 **Visualization** | 💡 **Machine Learning** | 🌳 **Gradient Boosting** | 🔦 **Deep Learning** |
-|:----------------|:----------------------|:-------------------------|:-------------------------|:---------------------|
-| Pandas          | Matplotlib       ⭐   | Scikit learn    ⭐       | XGBoost                  | Pytorch = PT         |
-| Datatable   ⭐  | Seaborn               | H2O                      | LightGBM ⭐              | Tensorflow = TF      |
-| CuDF            | Plotly                | CuML                     | CatBoost                 | Fast.ai (PT)   ⭐    |
-| Dask            | Bokeh                 | Dask-ML                  |                          | Catalyst (PT)        |
-|                 |                       |                          |                          | Ignite (PT)          |
-|                 |                       |                          |                          | Keras (TF)           |
-
-Others:
-
-| 🕷️ **Web Scraping** | 🔢 **Numeric** | 🍹 **Auto ML** | ❓ **ML visual** |
-|---------------------|----------------|-----------------|------------------|
-| Beautiful Soup      | Numpy          | H2O ⭐          | ELI5             |
-| Scrapy              | Scipy          | Auto Sklearn    | Yellowbrick      |
-|                     | Statsmodels    | TPOT            | Tensorboard (DL) |
-|                     |                | MLBox           |                  |
-
 Put this on top of your notebook
 ```python
 
