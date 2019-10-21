@@ -2,6 +2,7 @@
 
 Here are my personal Machine Learning notes. I've written this cheatsheet for keep track my knowledge, but you can use it as a guide for learning ML aswell! [**This are the resources**](#free-resources) I've learned from and I reccomend.
 
+> ### TODO: [Gaussian Process](https://yugeten.github.io/posts/2019/09/GP/)
 Typical ML workflow is a pipeline that can be summarized as follows:
 
 #### Part 1: The data
