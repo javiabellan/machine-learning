@@ -1,5 +1,11 @@
 > ### TODO: 
-> - [**Data Visualization**](https://medium.com/@alark/we-need-more-interactive-data-visualization-tools-for-the-web-in-python-ad80ec3f440e)
+> - [**Data Visualization**](https://medium.com/@alark/we-need-more-interactive-data-visualization-tools-for-the-web-in-python-ad80ec3f440e) (Winner: Altair)
+>   - [Slides](https://speakerdeck.com/jakevdp/altair-tutorial-intro-pycon-2018)
+>   - [Post](https://vallandingham.me/altair_intro.html)
+>   - [Notebooks](https://github.com/altair-viz/altair-tutorial/blob/master/notebooks/Index.ipynb)
+>   - [Video](https://www.youtube.com/watch?v=ms29ZPUKxbU)
+>   - [Documentation](https://altair-viz.github.io/)
+>   - [Vega-embed](https://github.com/vega/vega-embed) (for frontend)
 > - [**Gaussian Process**](https://yugeten.github.io/posts/2019/09/GP/)
 
 <h1 align="center">Machine learning</h1>
