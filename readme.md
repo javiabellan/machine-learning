@@ -7,6 +7,7 @@
 >   - [Documentation](https://altair-viz.github.io/)
 >   - [Vega-embed](https://github.com/vega/vega-embed) (for frontend)
 > - [**Gaussian Process**](https://yugeten.github.io/posts/2019/09/GP/)
+> - [**Bayes**](https://www.analyticsvidhya.com/blog/2019/06/introduction-powerful-bayes-theorem-data-science)
 
 <h1 align="center">Machine learning</h1>
 
