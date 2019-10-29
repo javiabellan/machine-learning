@@ -8,7 +8,7 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 |----|---------------------------------------------------------------|------------------|
 | 📈 | [**Exploratory Data Analysis (EDA)**](#-EDA-)                |                  |
 | 🗑  | [**Drop irrelevant information**](#-Drop-info-)             | Remove duplicated rows, constant columns... |
-| 🤷 | [**Missing values**](#-missing-values-)                      | Deal with no data on some features   |
+| ❓ | [**Missing values**](#-missing-values-)                      | Deal with no data on some features   |
 | 🔎 | [**Outlier detection**](#-outlier-detection-)                |                  |
 | ➕ | [**Feature engineering**](#-feature-engineering-)            | Create and transform new features |
 | ➖ | [**Feature selection**](#-feature-selection-)                | Drop usless features and ranking important ones |
@@ -24,7 +24,7 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 | 🔮 | **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
 | 🎯 |  [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
 | 📏 |  **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
-| ❓ | [**Explainability**](#-explainability-)                         | Interpret the model.                       |
+| 📋 | [**Explainability**](#-explainability-)                         | Interpret the model.                       |
 | 🍹 | [**Auto Machine learning**](#-auto-machine-learning-)          | Automatic machine learning pipeline        |
 
 
@@ -55,20 +55,14 @@ import eli5        as ml_exp
   
 # 📊 EDA [🔝](#machine-learning)
 
-#### The Tidy philosophy
-In most machine learning algorithms, every instance is represented by a row in the training dataset, where every column show a different feature of the instance. This kind of data called “Tidy”.
 
-#### Obtain the data
-
-> TODO:
-> - Deal commas and points
-> - Detect cats and nums (proportion rows and categories)
+### Obtain the data
 
 ```python
 df = pd.read_csv("data.csv")
 ```
 
-#### Show and describe the data
+### Show and describe the data
 
 ```python
 df.head()           # Show the first 5 rows
@@ -77,7 +71,7 @@ df.dtypes           # Show features types
 df.info()           # Show features types and missings
 df.describe()       # Describe numeric features: count, mean, std, min, 25%, 50%, 75%, max
 df.describe(include=['object', 'bool']) # Describe categoric features: count, unique, top, freq
-df.profile_report() # Complete description with histograms, missings, correlations, etc (Pandas Profiling package)
+df.profile_report() # Histograms, missings, correlations, etc (Pandas Profiling package)
 ```
 
 
@@ -94,32 +88,32 @@ for col in df.columns:
         df = df.drop(col, axis=1)
 ```
 
-# 🤷 Missing values [🔝](#machine-learning)
-  
-Options:
+# ❓ Missing values [🔝](#machine-learning)
 
-- **Missings removal**
-  - **entire rows containing missing values**
-  - **entire columns containing missing values**
-- **Fill missings (imputation)**
-  - **By looking that column (Univariate feature imputation)** (`SimpleImputer`)
-    - **`strategy='mean'`**: Good for numeric
-    - **`strategy='median'`**: Good for numeric
-    - **`strategy='most_frequent'`**: Good for categoric
-    - **`strategy='constant'`**: Good for categoric
-  - **By looking other columns and train a predictor (the missing feature will be the target) (Bivariate feature imputation)**  (`IterativeImputer`) ⭐
-
-Tips:
-
-> - **Tip 1: Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
-> - **Tip 2**: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
-
-## Plot missings
+### Ploting missings
 
 ```python
 sns.heatmap(df.isnull(), cbar=False);  # Option 1: With Seaborn
 msno.matrix(df);                       # Option 2: With missingno
 ```
+
+### Dealing with missings
+
+- Missings removal
+  - **Remove rows** with missings
+  - **Remove columns** with missings
+- Missings imputation
+  - **Univariate feature imputation**: By looking only that column (`SimpleImputer`)
+    - `strategy='mean'`: Good for numeric
+    - `strategy='median'`: Good for numeric
+    - `strategy='most_frequent'`: Good for categoric
+    - `strategy='constant'`: Good for categoric
+  - **Bivariate feature imputation**: By looking other columns and train a predictor (`IterativeImputer`) ⭐
+
+Tips:
+
+> - **Tip 1: Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
+> - **Tip 2**: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
 
 ## Missings removal
 
@@ -976,7 +970,7 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
 ![img](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/_images/diagnosing_regression.png)
 
 
-# ❓ Explainability [🔝](#machine-learning)
+# 📋 Explainability [🔝](#machine-learning)
 - [h2o blog](https://www.h2o.ai/blog/how-to-explain-a-model-with-h2o-driverless-ai)
 - [h2o doc](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
 - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
