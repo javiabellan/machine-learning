@@ -101,7 +101,10 @@ msno.matrix(df);                       # Option 2: With missingno
 
 - Missings removal
   - **Remove rows** with missings
+    - `df = df.loc[df.isnull().mean(axis=1) < 0.6]`
   - **Remove columns** with missings
+    - If has 1 missing:                `df = df[df.columns[df.isnull().any()]`
+    - If has 70% (o more) of missings: `df = df[df.columns[df.isnull().mean() < 0.7]]`
 - Missings imputation
   - **Univariate feature imputation**: By looking only that column (`SimpleImputer`)
     - `strategy='mean'`: Good for numeric
@@ -115,26 +118,6 @@ Tips:
 > - **Tip 1: Imputation + missing indicator**:  Note that if you are using a data imputation technique, you can add an additional binary feature as a missing indicator. **GOOD PRACTICE**
 > - **Tip 2**: Before you start working on the learning problem, you cannot tell which data imputation technique will work the best. Try several techniques, build several models and select the one that works the best.
 
-## Missings removal
-
-```python
-### Remove rows with at least 1 missing
-# If your dataset is big enough so you can sacrifice some training examples.
-
-threshold = 0.7
-
-# Dropping rows with missing value rate higher than threshold
-data = data.loc[data.isnull().mean(axis=1) < threshold]
-
-### Remove columns with missing values
-#If the feature has many misings values.
-# Dropping columns with missing values
-data = data[data.columns[data.isnull().any()]
-
-# Dropping columns with missing value rate higher than threshold (70%)
-data = data[data.columns[data.isnull().mean() < 0.7]]
-```
-
 
 ## Univariate feature imputation
 
@@ -144,9 +127,6 @@ data = data.fillna(0)             # Filling all missing values with 0
 data = data.fillna(data.median()) # Filling missing values with medians of the columns
 
 ######################################################################## Sklearn SimpleImputer
-from sklearn.impute import SimpleImputer
-
-# Imputation
 from sklearn.impute import SimpleImputer
 
 imputer = SimpleImputer(strategy='mean', missing_values=np.nan,  add_indicator=False)
