@@ -106,7 +106,7 @@ msno.matrix(df);                       # Option 2: With missingno
     - If has 1 missing:                `df = df[df.columns[df.isnull().any()]`
     - If has 70% (o more) of missings: `df = df[df.columns[df.isnull().mean() < 0.7]]`
 - Missings imputation
-  - **Univariate feature imputation**: By looking only that column (`SimpleImputer`)
+  - **Univariate feature imputation**: By looking only the missing column (`SimpleImputer`)
     - `strategy='mean'`: Good for numeric
     - `strategy='median'`: Good for numeric
     - `strategy='most_frequent'`: Good for categoric
