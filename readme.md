@@ -6,21 +6,35 @@
 >   - [Video](https://www.youtube.com/watch?v=ms29ZPUKxbU)
 >   - [Documentation](https://altair-viz.github.io/)
 >   - [Vega-embed](https://github.com/vega/vega-embed) (for frontend)
-> - [**Gaussian Process**](https://yugeten.github.io/posts/2019/09/GP/)
-> - [**Bayes**](https://www.analyticsvidhya.com/blog/2019/06/introduction-powerful-bayes-theorem-data-science)
-
+> - **Bayesian statistics**:
+>   - [introduction to bayes the theorem](https://www.analyticsvidhya.com/blog/2019/06/introduction-powerful-bayes-theorem-data-science)
+>   - [video: Bayesian Statistics](https://youtu.be/Oo-OrePF2dc)
+>   - [video: Bayesian Statistics with PyMC3](https://youtu.be/Bv92hl-z4yM)
+>   - Packages:
+>     - Stan: Bayesian modeling
+>     - PyMC3: Probabilistic programming
+>     - ArviZ, Help us interpret and visualize posterior distributions of PyMC3
+> - **Gaussian Process**
+>   - [GP, not quite for dummies](https://yugeten.github.io/posts/2019/09/GP)
+>   - [Distill: visual exploration](https://distill.pub/2019/visual-exploration-gaussian-processes)
+> - Gaussian mixture
+> - [Dataframe databases comparison](https://h2oai.github.io/db-benchmark/)
+> - **Feature engineering**
+>   - [4 Tips for Advanced Feature Engineering and Preprocessing](https://www.kdnuggets.com/2019/08/4-tips-advanced-feature-engineering-preprocessing.html)
+>   - [Encode categorical smarter](https://blog.featurelabs.com/encode-smarter)
+>   - [Feature engineering for ML](https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114)
 <h1 align="center">Machine learning</h1>
 
 Here are my personal Machine Learning notes. I've written this cheatsheet for keep track my knowledge, but you can use it as a guide for learning ML aswell! [**This are the resources**](#free-resources) I've learned from and I reccomend.
 
 Typical ML workflow is a pipeline that can be summarized as follows:
 
-#### Part 1: The data
+<h3 align="center">Part 1: The data</h3>
 
 |    |                                                               |                  |
 |----|---------------------------------------------------------------|------------------|
 | 📈 | [**Exploratory Data Analysis (EDA)**](#-EDA-)                |                  |
-| 🗑  | [**Drop irrelevant information**](#-Drop-info-)              |  |
+| 🗑  | [**Drop irrelevant information**](#-Drop-info-)             | Remove duplicated rows, constant columns... |
 | 🤷 | [**Missing values**](#-missing-values-)                      | Deal with no data on some features   |
 | 🔎 | [**Outlier detection**](#-outlier-detection-)                |                  |
 | ➕ | [**Feature engineering**](#-feature-engineering-)            | Create and transform new features |
@@ -29,7 +43,8 @@ Typical ML workflow is a pipeline that can be summarized as follows:
 | 📊 | [**Resampling Imbalanced Data**](#-imbalanced-data-)         | Deal with ...  |
 | ✂ | [**Split data**](#-split-data-)                               | Define train and validation sets |
 
-#### Part 2: The model
+
+<h3 align="center">Part 2: The model</h3>
 
 |   |                                                                   |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
@@ -64,47 +79,6 @@ import eli5        as ml_exp
 
 ----------------------------------------------------------------
 
-<h1 align="center">Part 1: The data</h1>
-
-> - [Dataframe databases comparison](https://h2oai.github.io/db-benchmark/)
-> - Read https://www.kdnuggets.com/2019/08/4-tips-advanced-feature-engineering-preprocessing.html
-> - read https://blog.featurelabs.com/encode-smarter
-> - read https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
-
-#### Index
-- 🗑 Drop irrelevant information
-  - Remove duplicated rows
-  - Remove constant columns
-- 🤷 Handling Missing Values
-  - Remove rows with missing values
-  - Remove columns with missing values
-  - Fill missing (imputation)
-    - Iterative Imputer
-  - Fill missing + missing indicator
-- 🔎 Outlier Detection
-  - Standard Deviation
-  - Percentiles
-  - Isolation Forest: sklearn.ensemble.IsolationForest
-- ➕ Creating new features (feature engeniring)
-  - scaling normalization: standarize minmax
-  - logarithim, exponentials
-  - polynomial
-  - Combine features
-  - Cluster some feature
-  - Fix Mislabeled rows?
-  - Deep Feature Synthesis (DFS)
-- ➖ Remove some features (feature selection)
-- 🌀 Compress the features (dimensionality reduction)
-- 📊 Resampling Imbalanced Data
-  - **Subsample majority class**. But you can lose important data.
-  - **Oversample minority class**. But you can overfit.
-    - SMOTE
-    - ADASYN
-    - SMOTENC
-  - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
-- ✂️ Split data for training
-  - Simple split
-  - Cross validation
   
 # 📊 EDA [🔝](#machine-learning)
 
@@ -148,7 +122,7 @@ for col in df.columns:
 ```
 
 # 🤷 Missing values [🔝](#machine-learning)
-
+  
 Options:
 
 - **Missings removal**
@@ -248,7 +222,7 @@ The great thing about this method is that it allows you to use an estimator of y
 
 
 # 🔎 Outlier Detection [🔝](#machine-learning)
-
+  
 - Standard Deviation
 - Percentiles
 - Isolation Forest: sklearn.ensemble.IsolationForest
@@ -282,6 +256,14 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 # ➕ Feature engineering [🔝](#machine-learning)
 
 The problem of transforming raw data into a dataset is called feature engineering. For most practical problems, feature engineering is a labor-intensive process that demands from the data analyst a lot of creativity and, preferably, domain knowledge.
+
+- scaling normalization: standarize minmax
+- logarithim, exponentials
+- polynomial
+- Combine features
+- Cluster some feature
+- Fix Mislabeled rows?
+- Deep Feature Synthesis (DFS)
 
 | Name                       | Description              | Options                                                       |
 |----------------------------|--------------------------|---------------------------------------------------------------|
@@ -572,8 +554,10 @@ Instead, you can use SMOTENC which takes into account the nature of categorical 
 
 # ✂ Split data [🔝](#machine-learning)
 
-Check: https://scikit-learn.org/stable/modules/cross_validation.html
+- Simple split
+- Cross validation
 
+### Simple split
 Split data into x, y for training and testing
 ```python
 from sklearn.model_selection import train_test_split
@@ -581,7 +565,8 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y)
 ```
 
-## Cross validation
+### Cross validation
+Check: https://scikit-learn.org/stable/modules/cross_validation.html
 
 
 
