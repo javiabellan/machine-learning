@@ -894,6 +894,7 @@ Its goal is to find a mixture of multi-dimensional Gaussian probability distribu
 - [Sklearn](https://scikit-learn.org):             GS, RS
 - [Optunity](https://optunity.readthedocs.io):     GS, RS, NM, PSO and TPE
 - [Hyperopt](https://hyperopt.github.io/hyperopt): RS, TPE
+- [Optuna](https://optuna.org)                     BO-GP
 - GPyOpt:                                          BO-GP
 - [BayesianOptimization](https://github.com/fmfn/BayesianOptimization): BO-GP
 - [skopt](https://scikit-optimize.github.io): (Scikit-Optimize)
