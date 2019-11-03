@@ -6,9 +6,8 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 
 |    |                                                               |                  |
 |----|---------------------------------------------------------------|------------------|
-| 📈 | [**Exploratory Data Analysis (EDA)**](#-EDA-)                |                  |
-| 🗑  | [**Drop irrelevant information**](#-Drop-info-)             | Remove duplicated rows, constant columns... |
-| ❓ | [**Missing values**](#-missing-values-)                      | Deal with no data on some features   |
+| 📈 | [**EDA**](#-EDA-)                                           | Exploratory Data Analysis |
+| ❓ | [**Missing values**](#-missing-values-)                      | Deal with empty data  |
 | 🔎 | [**Outlier detection**](#-outlier-detection-)                |                  |
 | ➕ | [**Feature engineering**](#-feature-engineering-)            | Create and transform new features |
 | ➖ | [**Feature selection**](#-feature-selection-)                | Drop usless features and ranking important ones |
@@ -30,8 +29,8 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 
 Put this on top of your notebook
 ```python
-
 # Data libraries
+import gc
 import numpy             as np
 import datatable         as dt
 import pandas            as pd
@@ -48,6 +47,7 @@ import catboost    as cgb
 import h2o.automl  as ml_auto
 import yellowbrick as ml_vis
 import eli5        as ml_exp
+from tqdm import tqdm_notebook as tqdm
 ```
 
 ----------------------------------------------------------------
@@ -67,6 +67,7 @@ df = pd.read_csv("data.csv")
 ```python
 df.head()           # Show the first 5 rows
 df.tail()           # Show the last 5 rows
+df.sample(N)        # Show N random rows
 df.dtypes           # Show features types
 df.info()           # Show features types and missings
 df.describe()       # Describe numeric features: count, mean, std, min, 25%, 50%, 75%, max
@@ -74,27 +75,46 @@ df.describe(include=['object', 'bool']) # Describe categoric features: count, un
 df.profile_report() # Histograms, missings, correlations, etc (Pandas Profiling package)
 ```
 
-
-# 🗑 Drop irrelevant information [🔝](#machine-learning)
-
+### Optimize numeric variable types
 ```python
-## Remove duplicated rows
-df.drop_duplicates(inplace=True)
+def reduce_mem_usage(df, verbose=True):
+    start_mem = df.memory_usage().sum() / 1024**2
+    numerics = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
 
-## Remove constant columns
-for col in df.columns:
-    if df[col].unique().size==1:
-        print("Dropping column: {0}".format(col))
-        df = df.drop(col, axis=1)
+    for col in df.columns:
+        col_type = df[col].dtypes
+        if col_type in numerics:
+            c_min = df[col].min()
+            c_max = df[col].max()
+            if str(col_type)[:3] == 'int':
+                if      np.iinfo(np.int8).min<c_min and c_max<np.iinfo(np.int8).max:    df[col] = df[col].astype(np.int8)
+                elif   np.iinfo(np.int16).min<c_min and c_max<np.iinfo(np.int16).max:   df[col] = df[col].astype(np.int16)
+                elif   np.iinfo(np.int32).min<c_min and c_max<np.iinfo(np.int32).max:   df[col] = df[col].astype(np.int32)
+                elif   np.iinfo(np.int64).min<c_min and c_max<np.iinfo(np.int64).max:   df[col] = df[col].astype(np.int64)  
+            else:
+                if   np.finfo(np.float16).min<c_min and c_max<np.finfo(np.float16).max: df[col] = df[col].astype(np.float16)
+                elif np.finfo(np.float32).min<c_min and c_max<np.finfo(np.float32).max: df[col] = df[col].astype(np.float32)
+                elif np.finfo(np.float64).min<c_min and c_max<np.finfo(np.float64).max: df[col] = df[col].astype(np.float64)
+
+    end_mem = df.memory_usage().sum() / 1024**2
+    if verbose: print('Mem. usage decreased to {:5.2f} Mb ({:.1f}% reduction)'.format(end_mem, 100*(start_mem-end_mem)/start_mem))
+    return df
 ```
+
 
 # ❓ Missing values [🔝](#machine-learning)
 
 ### Ploting missings
 
 ```python
-sns.heatmap(df.isnull(), cbar=False);  # Option 1: With Seaborn
-msno.matrix(df);                       # Option 2: With missingno
+# Option 1: Pandas
+def check_missing(df):
+    total = df.isnull().sum().sort_values(ascending=False)
+    percent = (df.isnull().sum()/df.isnull().count()*100).sort_values(ascending=False)
+    return pd.concat([total, percent], axis=1, keys=['Total', 'Percent missing'])
+
+sns.heatmap(df.isnull(), cbar=False);  # Option 2: With Seaborn
+msno.matrix(df);                       # Option 3: With missingno
 ```
 
 ### Dealing with missings
@@ -236,7 +256,7 @@ time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns
 
 ## Feature transformation and creation
 
-#### Handling Numerical Features
+### Numerical Features
 - Numerical (continuous) Features
   - Scaling:        Normalization: Numerical to range=[0, 1]
   - Scaling:        Standardization: Numerical to (mean= 0, std=1)
@@ -248,7 +268,7 @@ time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns
   - Round
 - Numerical (discrete) Features
 
-#### Handling Categorical Features
+### Categorical Features
 
 
 - Ordinal Categorical Features [generat1, generat2, generat3]
@@ -259,15 +279,20 @@ time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns
 - Multi-Categorical Features
   - N-Hot Encoding
   
-#### Handling Date Features
-- Transform string to date: data['date']          = pd.to_datetime(data.date, format="%d-%m-%Y")
-- Extract year:             data['year']          = data['date'].dt.year
-- Extract month:            data['month']         = data['date'].dt.month
-- Extract weekday name:     data['day_name']      = data['date'].dt.day_name()
-- Extract passed years:     data['passed_years']  = date.today().year - data['date'].dt.year
+### Handling Date Features
+```python
+def featEng_date(df, varName):
+    df['year']         = df[varName].dt.year.astype(np.int16)
+    df['month']        = df[varName].dt.month.astype(np.int8)
+    df['week']         = df[varName].dt.weekofyear.astype(np.int8)
+    df['day_of_year']  = df[varName].dt.dayofyear.astype(np.int16)
+    df['day_of_month'] = df[varName].dt.day.astype(np.int8)
+    df['day_of_week']  = df[varName].dt.dayofweek.astype(np.int8)
+    df['hour']         = df[varName].dt.hour.astype(np.int8)
+    df['minute']       = df[varName].dt.minute.astype(np.int8)
+```
 
-
-#### Handling Text Features (NLP)
+### Text Features (NLP)
 - Split (name & surname)
 - Bag of words
 - tfidf
