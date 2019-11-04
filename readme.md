@@ -38,6 +38,7 @@ import pandas_profiling  as pd_eda
 import missingno         as msno
 import matplotlib.pyplot as plt
 import seaborn           as sns
+import altair            as alt
 
 # ML libraries
 import sklearn     as skl
