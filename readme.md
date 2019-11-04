@@ -119,18 +119,17 @@ msno.matrix(df);                       # Option 3: With missingno
 
 ### Dealing with missings
 
-- Missings removal
-  - **Remove rows** with missings
+- **Remove**
+  - **Rows** with missings
     - `df = df.loc[df.isnull().mean(axis=1) < 0.6]`
-  - **Remove columns** with missings
+  - **Columns** with missings
     - If has 1 missing:                `df = df[df.columns[df.isnull().any()]`
     - If has 70% (o more) of missings: `df = df[df.columns[df.isnull().mean() < 0.7]]`
-- Missings imputation
+- **Imputation**:
   - **Univariate feature imputation**: By looking only the missing column (`SimpleImputer`)
-    - `strategy='mean'`: Good for numeric
-    - `strategy='median'`: Good for numeric
-    - `strategy='most_frequent'`: Good for categoric
-    - `strategy='constant'`: Good for categoric
+    - **Numeric**: `mean` or `median`
+    - **Categoric**: `most_frequent` or `constant`
+    - But when **Time Series**: `interpolation`
   - **Bivariate feature imputation**: By looking other columns and train a predictor (`IterativeImputer`) ⭐
 
 Tips:
