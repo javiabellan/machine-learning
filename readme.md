@@ -777,17 +777,21 @@ loss function: max (0, 1 − yi (wxi − b)).
 #### Dealing with non-linearity?: Kernel functions
 Multiple kernel functions exist, the most widely used of which is the RBF kernel.
 
-## Ensembles
+# 💣 Ensembles
 > Read [this post in medium](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)
 
 - **Heterogeneous ensembles** 💪💪💪
+  - Read [KAGGLE ENSEMBLING GUIDE](https://mlwave.com/kaggle-ensembling-guide)
+  - Read [OOF Stacking vs Blending](https://www.quora.com/What-are-examples-of-blending-and-stacking-in-Machine-Learning)
+  - Read [DESlib](https://github.com/scikit-learn-contrib/DESlib), a scikit-learn based library for ensembles.
   - **Average**
   - **Weighted Average**
-  - **Voting**
-  - **Stacking**: (aka Super Learning) Meta model(s) that take as input all the models outputs ⭐⭐⭐ The best
-    - Ensamble of DL models -> **OOF Stacking** with catboost & xgboost and then average of them.
+  - **Voting**: Majority vote
+  - **Meta model(s)**: (aka Stacking or Super Learning) ⭐ The best
+    - Usaully done with several DL models and the metamodels are catboost & xgboost and then average both.
+    - **OOF Stacking**: The out-of-fold is used to train the next layer. ⭐⭐ (Andrés approach)
+    - **Blending**: Holdout validation (part of the train is used in the first layer, part in the second …)
   - **Ensemble selection** (Caruana): Greedy method to add o remove models of your ensemble.
-  - **Blending** Stacked Generalization
 - **Homogeneous ensembles (often decission trees)** 🌳🌳🌳
   - **Bagging** (Bootstrapped Aggregation): Models by subsampling the data.
     - **Random Forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
