@@ -1038,7 +1038,14 @@ Methods:
 
 # 🔒 Security [🔝](#machine-learning)
 
-[Secure Machine Learning Ideas](https://github.com/jphall663/secure_ML_ideas)
+> Reference: [Secure Machine Learning Ideas](https://github.com/jphall663/secure_ML_ideas)
+
+- Backdoors and Watermarks
+- Surrogate Model Inversion Attacks
+- Data poisoning
+
+![watermark](img/security/watermark.png)
+
 
 ---
 
