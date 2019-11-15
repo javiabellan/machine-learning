@@ -1040,9 +1040,13 @@ Methods:
 
 > Reference: [Secure Machine Learning Ideas](https://github.com/jphall663/secure_ML_ideas)
 
-- Backdoors and Watermarks
-- Surrogate Model Inversion Attacks
-- Data poisoning
+
+1. Data poisoning attacks
+2. Backdoors and Watermark attacks
+3. Surrogate Model Inversion attacks
+4. Membership inference by surrogate model
+5. Adversarial example attacks
+6. Impersonation
 
 ![watermark](img/security/watermark.png)
 
