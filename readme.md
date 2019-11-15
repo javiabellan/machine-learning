@@ -18,13 +18,14 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 
 <h3 align="center">Part 2: The model</h3>
 
-|   |                                                                   |                                            |
+|   |                                                                    |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
 | 🔮 | **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-), [**Ensemble**](#-ensembles-) | Select an appropriate model. |
 | 🎯 |  [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
 | 📏 |  **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
-| 📋 | [**Explainability**](#-explainability-)                         | Interpret the model.                       |
-| 🍹 | [**Auto Machine learning**](#-auto-machine-learning-)          | Automatic machine learning pipeline        |
+| 💭 | [**Interpretability (MLI)**](#-interpretability-)            | Explain your model (trust, tranparency, no bias...) |
+| 🔒 | [**Security**](#-security-)                                  | Secure your model and avoid hacking (attacks)       |
+| 🍹 | [**Auto Machine learning**](#-auto-machine-learning-)        | Automatic machine learning pipeline        |
 
 
 Put this on top of your notebook
@@ -988,19 +989,26 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
 ![img](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/_images/diagnosing_regression.png)
 
 
-# 📋 Explainability [🔝](#machine-learning)
+# 💭 Interpretability [🔝](#machine-learning)
 - [h2o blog](https://www.h2o.ai/blog/how-to-explain-a-model-with-h2o-driverless-ai)
 - [h2o doc](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
 - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
 
+Good for:
+- Detect social bias
+- Model debugging
+- Regulation
+- Trust, transparency, in ML
 
-### Part 1: Interpletable models
-- Decision tress
-- GLMs
+Methods:
 
-### Part 2: Black-box models Interpletability
-- LIME
-- Surrogate model
+- Part 1: Interpletable models
+  - Decision tress
+  - GLMs
+- Part 2: Black-box models interpletability
+  - LIME
+  - Shapley values
+  - Surrogate model
 
 | Technique                                                |
 |----------------------------------------------------------|
@@ -1025,8 +1033,14 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
 ![img](https://www.h2o.ai/wp-content/uploads/2019/02/8.-Local-Surrogate-Tree-Decision-Path.png)
 ![img](https://www.h2o.ai/wp-content/uploads/2019/02/9.-Original-Feature-Individual-Conditional-Exception-ICE.png)
 ![img](https://www.h2o.ai/wp-content/uploads/2019/02/10.-Local-Original-Feature-Importance.png)
+
 ---
 
+# 🔒 Security [🔝](#machine-learning)
+
+[Secure Machine Learning Ideas](https://github.com/jphall663/secure_ML_ideas)
+
+---
 
 # 🍹 Auto Machine learning [🔝](#machine-learning)
 > - [**MLBox**](https://github.com/AxeldeRomblay/MLBox)
