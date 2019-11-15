@@ -20,7 +20,7 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 
 |   |                                                                   |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
-| 🔮 | **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-) | Select an appropriate model. |
+| 🔮 | **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-), [**Ensamble**](#-ensamble) | Select an appropriate model. |
 | 🎯 |  [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
 | 📏 |  **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
 | 📋 | [**Explainability**](#-explainability-)                         | Interpret the model.                       |
@@ -777,12 +777,13 @@ loss function: max (0, 1 − yi (wxi − b)).
 #### Dealing with non-linearity?: Kernel functions
 Multiple kernel functions exist, the most widely used of which is the RBF kernel.
 
-## Ensamble models
-Stronger models.
+## Ensambles
+> Read [this post in medium](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)
 
 - **Voting**
 - **Weighted Average**
-- **Stacking**
+- **Stacking**: Meta model that takes as input all the models ⭐⭐⭐ The best
+  - Ensamble of DL models -> **OOF Stacking** with catboost & xgboost and then average of them.
 - **Blending** Stacked Generalization
 - **Bagging** (Bootstrapped Aggregation): Models by subsampling the data.
   - **Bagging meta-estimator**
