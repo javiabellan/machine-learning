@@ -786,14 +786,18 @@ Multiple kernel functions exist, the most widely used of which is the RBF kernel
   - Read [KAGGLE ENSEMBLING GUIDE](https://mlwave.com/kaggle-ensembling-guide)
   - Read [OOF Stacking vs Blending](https://www.quora.com/What-are-examples-of-blending-and-stacking-in-Machine-Learning)
   - Read [DESlib](https://github.com/scikit-learn-contrib/DESlib), a scikit-learn based library for ensembles.
-  - **Average**
-  - **Weighted Average**
-  - **Voting**: Majority vote
+  - **Majority vote** (classification)
+    - **Weighted Majority vote**
+  - **Average (mean)** (classification & regression)
+    - **Arithmetic mean**
+    - **Geometric mean**
+    - **Weighted average**
+    - **Rank average**
   - **Meta model(s)**: (aka Stacking or Super Learning) ⭐ The best
     - Usaully done with several DL models and the metamodels are catboost & xgboost and then average both.
-    - **OOF Stacking**: The out-of-fold is used to train the next layer. ⭐⭐ (Andrés approach)
+    - **OOF Stacking**: The out-of-fold models predictions is used to generate the new data. ⭐⭐ (Andrés approach)
     - **Blending**: Holdout validation (part of the train is used in the first layer, part in the second …)
-  - **Ensemble selection** (Caruana): Greedy method to add o remove models of your ensemble.
+  - **Ensemble model selection** (Caruana): Greedy method to add o remove models of your ensemble.
 - **Homogeneous ensembles (decission trees)** 🌳🌳🌳
   - **Bagging** (Bootstrapped Aggregation): Models by subsampling the data.
     - **Random Forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
