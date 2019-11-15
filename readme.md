@@ -20,7 +20,7 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 
 |   |                                                                   |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
-| 🔮 | **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-), [**Ensamble**](#-ensamble) | Select an appropriate model. |
+| 🔮 | **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-), [**Ensemble**](#-ensembles) | Select an appropriate model. |
 | 🎯 |  [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
 | 📏 |  **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
 | 📋 | [**Explainability**](#-explainability-)                         | Interpret the model.                       |
@@ -777,25 +777,29 @@ loss function: max (0, 1 − yi (wxi − b)).
 #### Dealing with non-linearity?: Kernel functions
 Multiple kernel functions exist, the most widely used of which is the RBF kernel.
 
-## Ensambles
+## Ensembles
 > Read [this post in medium](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)
 
-- **Voting**
-- **Weighted Average**
-- **Stacking**: Meta model that takes as input all the models ⭐⭐⭐ The best
-  - Ensamble of DL models -> **OOF Stacking** with catboost & xgboost and then average of them.
-- **Blending** Stacked Generalization
-- **Bagging** (Bootstrapped Aggregation): Models by subsampling the data.
-  - **Bagging meta-estimator**
-  - **Random Forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
-  - **Extra Trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
-- **Boosting**
-  - **Adaboost**
-  - **Gradient Boosting (GBM)**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
-    - [**XGBoost**](https://github.com/dmlc/xgboost)
-    - [**LightGBM**](https://github.com/Microsoft/LightGBM)
-    - [**CatBoost**](https://github.com/catboost/catboost)
-    - **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
+- **Heterogeneous ensembles** 💪💪💪
+  - **Average**
+  - **Weighted Average**
+  - **Voting**
+  - **Stacking**: (aka Super Learning) Meta model(s) that take as input all the models outputs ⭐⭐⭐ The best
+    - Ensamble of DL models -> **OOF Stacking** with catboost & xgboost and then average of them.
+  - **Ensemble selection** (Caruana): Greedy method to add o remove models of your ensemble.
+  - **Blending** Stacked Generalization
+- **Homogeneous ensembles (often decission trees)** 🌳🌳🌳
+  - **Bagging** (Bootstrapped Aggregation): Models by subsampling the data.
+    - **Random Forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
+    - **Extra Trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
+    - **Bagging meta-estimator**
+  - **Boosting**
+    - **Adaboost**: Adaptative boosting
+    - **Gradient Boosting (GBM)**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
+      - [**XGBoost**](https://github.com/dmlc/xgboost)
+      - [**LightGBM**](https://github.com/Microsoft/LightGBM)
+      - [**CatBoost**](https://github.com/catboost/catboost)
+      - **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
 
 
 #### Random Forest
