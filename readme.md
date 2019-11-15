@@ -792,7 +792,7 @@ Multiple kernel functions exist, the most widely used of which is the RBF kernel
     - **OOF Stacking**: The out-of-fold is used to train the next layer. ⭐⭐ (Andrés approach)
     - **Blending**: Holdout validation (part of the train is used in the first layer, part in the second …)
   - **Ensemble selection** (Caruana): Greedy method to add o remove models of your ensemble.
-- **Homogeneous ensembles (often decission trees)** 🌳🌳🌳
+- **Homogeneous ensembles (decission trees)** 🌳🌳🌳
   - **Bagging** (Bootstrapped Aggregation): Models by subsampling the data.
     - **Random Forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
     - **Extra Trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
