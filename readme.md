@@ -1318,6 +1318,7 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
   - [**Fast.ai ML course**](http://course18.fast.ai/ml): Course by Jeremy Howard, a DL teacher. (Level: easy)
   - [**SaturdaysAI ML**](https://github.com/SaturdaysAI/Itinerario_MachineLearning)
 - Blogs
+  - [**FastML**](http://fastml.com)
   - [**ML overview**](https://vas3k.com/blog/machine_learning/): (Level: easy)
   - [**Maël Fabien blog**](https://maelfabien.github.io/blog/): (Level: medium)
 - Libraries documentation
