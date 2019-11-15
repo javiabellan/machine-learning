@@ -886,6 +886,8 @@ Its goal is to find a mixture of multi-dimensional Gaussian probability distribu
 | **PSO**    | **Particle Swarm optimization**                        | Evolutionary | ⭐      |
 | **NM**     | **Nelder-Mead Algorithm**                              | ?            | ⭐⭐   |
 | **TPE**    | **Tree of Parzen Estimators**                          | ?            | ⭐⭐⭐ |
+| **HB**     | **HyperBand**                                          | ?            | ⭐⭐⭐ |
+| **BOHB**   | **Bayesian Optimization and HyperBand**                | ?            | ⭐⭐⭐ |
 |            | **Simulated Annealing**                                | ?            |         |
 | **GD**     | **Gradient Descent**                                   | Sequential   |         |
 | **CMA-ES** | **Covariance Matrix Adaptation Evolutionary Etrategy** | Evolutionary |         |
