@@ -20,7 +20,7 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 
 |   |                                                                   |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
-| 🔮 | **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-), [**Ensemble**](#-ensembles) | Select an appropriate model. |
+| 🔮 | **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-), [**Ensemble**](#-ensembles-) | Select an appropriate model. |
 | 🎯 |  [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
 | 📏 |  **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
 | 📋 | [**Explainability**](#-explainability-)                         | Interpret the model.                       |
@@ -590,6 +590,7 @@ Target does not follow a Gaussian distribution. Wrap the lineal reg. with a func
 - Discrete count: **Poisson regression**
 - Time to the occurrence of an event:
 - Very skewed outcome with a few very high values (household income).
+- Mixed Effects/Hierarchical GLM
 
 The features interact:
 - Adding interactions manually
@@ -777,7 +778,7 @@ loss function: max (0, 1 − yi (wxi − b)).
 #### Dealing with non-linearity?: Kernel functions
 Multiple kernel functions exist, the most widely used of which is the RBF kernel.
 
-# 💣 Ensembles
+# 💣 Ensembles [🔝](#machine-learning)
 > Read [this post in medium](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)
 
 - **Heterogeneous ensembles** 💪💪💪
@@ -991,6 +992,15 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
 - [h2o blog](https://www.h2o.ai/blog/how-to-explain-a-model-with-h2o-driverless-ai)
 - [h2o doc](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
 - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
+
+
+### Part 1: Interpletable models
+- Decision tress
+- GLMs
+
+### Part 2: Black-box models Interpletability
+- LIME
+- Surrogate model
 
 | Technique                                                |
 |----------------------------------------------------------|
