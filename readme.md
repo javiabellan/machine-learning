@@ -1,4 +1,4 @@
-<h1 align="center">Machine learning</h1>
+<h1 align="center">Machine Learning</h1>
 
 Here are my personal Machine Learning notes. [**This are the resources**](#free-resources) I've learned from.
 
