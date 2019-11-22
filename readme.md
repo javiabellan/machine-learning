@@ -1347,13 +1347,15 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
 
 # Free resources
 
+### [BEST COURSE](https://mlcourse.ai)
+### [2nd BEST COURSE](https://ml-course.github.io/ML-course)
+  
 - Competitions
   - [**Kaggle competitions**](https://www.kaggle.com/competitions): Participating in competitions is a great way to test your knowledge.
   - [**Kaggle kernels**](https://www.kaggle.com/kernels): For each competition you have kernels (code notebooks) to code and learn.
   - [**Kaggle discussion**](https://www.kaggle.com/discussion): For each competition you have discussions (forums) to read and learn.
 - Courses
   - [**Kaggle course**](https://www.kaggle.com/learn): Practical micro-courses provided by Kaggle. (Level: easy)
-  - [**ODS ML course**](https://mlcourse.ai): Course by OpenDataScience, a russian Kaggle comunity. (Level: medium)
   - [**Fast.ai ML course**](http://course18.fast.ai/ml): Course by Jeremy Howard, a DL teacher. (Level: easy)
   - [**SaturdaysAI ML**](https://github.com/SaturdaysAI/Itinerario_MachineLearning)
 - Blogs
