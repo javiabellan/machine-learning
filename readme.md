@@ -21,7 +21,7 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 |   |                                                                    |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
 | 🔮 | **Models**: [**Prediction**](#-prediction-models-), [**Clustering**](#-clustering-models-), [**Ensemble**](#-ensembles-) | Select an appropriate model. |
-| 🎯 |  [**Hyperparams optimization**](#-hyperparameters-optimization-) | Optimize model hyperparameters.            |
+| 🎯 |  [**Hyperparameter optimization (HPO)**](#-hyperparameters-optimization-) | Optimize model hyperparameters.      |
 | 📏 |  **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
 | 💭 | [**Interpretability (MLI)**](#-interpretability-)            | Explain your model (trust, tranparency, no bias...) |
 | 🔒 | [**Security**](#-security-)                                  | Secure your model and avoid hacking (attacks)       |
