@@ -890,23 +890,62 @@ Its goal is to find a mixture of multi-dimensional Gaussian probability distribu
 
 # 🎯 Hyperparameters optimization [🔝](#machine-learning)
 
-> TO-DO: Read A Comparative Study of Black-box Optimization Algorithms for Tuning of Hyper-parameters in Deep Neural Networks.
-> https://scikit-learn.org/stable/modules/grid_search.html
+> ### Reference
+> - [slides](https://ml-course.github.io/ML-course/slides_pdf/AutoML%20-%20ODSC%20Tutorial.pdf)
+> - [video](https://www.youtube.com/watch?v=0eBR8a4MQ30)
 
 | Method    | Name                                                    | Type         | Stars   |
 |------------|--------------------------------------------------------|--------------|---------|
 | **GS**     | **Grid Search**                                        | Parallel     |         |
 | **RS**     | **Random Search**                                      | Parallel     |         |
-| **BO-GP**  | **Bayesian Optimization with Gaussian Processes**      | Sequential   | ⭐      |
-| **PSO**    | **Particle Swarm optimization**                        | Evolutionary | ⭐      |
+| **BO-GP**  | **Bayesian Optimization with Gaussian Processes**      | Sequential BO| ⭐      |
 | **NM**     | **Nelder-Mead Algorithm**                              | ?            | ⭐⭐   |
 | **TPE**    | **Tree of Parzen Estimators**                          | ?            | ⭐⭐⭐ |
 | **HB**     | **HyperBand**                                          | ?            | ⭐⭐⭐ |
 | **BOHB**   | **Bayesian Optimization and HyperBand**                | ?            | ⭐⭐⭐ |
 |            | **Simulated Annealing**                                | ?            |         |
 | **GD**     | **Gradient Descent**                                   | Sequential   |         |
+| **PSO**    | **Particle Swarm optimization**                        | Evolutionary | ⭐      |
 | **CMA-ES** | **Covariance Matrix Adaptation Evolutionary Etrategy** | Evolutionary |         |
 
+
+
+### Hyperparameters Optimization For Theoreticals
+
+- **Grid Search**: Brute-force
+- **Random Search**: 
+- **Bayesian Optimization**: Which surrogate?
+  - BO with **Gaussian Processes**
+  - BO with **Bayesian Linear Regression**
+  - BO with **Bayesian Neural Networks**
+  - BO with **Random Forests**
+  - BO with **Boosting + quantile regression**
+- **Tree of Parzen Estimators**
+- **Population-based**:
+  - **Genetic programming** (TPOT)
+  - **Particle Swarm optimization** (PSO)
+  - **Covarianc matrix Adaptation evolution** (CMA-ES)
+- **Hyperparameter Gradient Descent**
+- **Probabilistic Extrapolation of Learning Curves**: in order to do early stopping
+- **Multi-fidelity optimization**: Make training faster (Ssbsets of the data, fewer epochs) to evaluate faster.
+  - **Successive halving**: Many models with tiny data fraction. Then pick up best and increase data. Similar to PSO
+  - **HyperBand**: Imporvement of Successive halving.
+  - **BOHB**: Combine Bayesian Optimization and Hyperband.
+
+  
+### Hyperparameters Optimization For Practitioners
+
+- If you have access to multiple fidelities (make training faster and representative by some tricks):
+  - **BOHP**:
+    - Combines the advantages of TPE and HyperBand
+    - Python package: `hpbandster` or `auto-sklearn`
+- If you dont have access to multiple fidelities:
+  - Low-dim continuous params: **BO-GP** (e.g. Spearmint)
+  - High-dim, categorical, conditional: **SMAC** or **TPE**
+  - Puerly continuous, budget >10x dimensionality: **CMA-ES**
+
+  
+  
 ### Packages
 - [Sklearn](https://scikit-learn.org):             GS, RS
 - [Optunity](https://optunity.readthedocs.io):     GS, RS, NM, PSO and TPE
