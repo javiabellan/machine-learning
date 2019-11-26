@@ -891,8 +891,11 @@ Its goal is to find a mixture of multi-dimensional Gaussian probability distribu
 # 🎯 Hyperparameters optimization [🔝](#machine-learning)
 
 > ### Reference
-> - [slides](https://ml-course.github.io/ML-course/slides_pdf/AutoML%20-%20ODSC%20Tutorial.pdf)
-> - [video](https://www.youtube.com/watch?v=0eBR8a4MQ30)
+> - NIPS talk
+>   - [slides](https://ml-course.github.io/ML-course/slides_pdf/AutoML%20-%20ODSC%20Tutorial.pdf)
+>   - [video](https://www.youtube.com/watch?v=0eBR8a4MQ30)
+> - [ICML talk](https://slideslive.com/38917532/greybox-bayesian-optimization-for-automl)
+> - [Paper: Practical Multi-fidelity BO for Hyperparameter Tuning](https://arxiv.org/abs/1903.04703)
 
 | Method    | Name                                                    | Type         | Stars   |
 |------------|--------------------------------------------------------|--------------|---------|
@@ -927,7 +930,10 @@ Its goal is to find a mixture of multi-dimensional Gaussian probability distribu
   - **Covarianc matrix Adaptation evolution** (CMA-ES)
 - **Hyperparameter Gradient Descent**
 - **Probabilistic Extrapolation of Learning Curves**: in order to do early stopping
-- **Multi-fidelity optimization**: Make training faster (Ssbsets of the data, fewer epochs) to evaluate faster.
+- **Multi-fidelity optimization**:
+  - What is it?:
+    - Make training faster to evaluate sooner. (Subset of the data, fewer iterations or epochs)
+    - Avoid unnecesary bad trainings (Early stopping)
   - **Successive halving**: Many models with tiny data fraction. Then pick up best and increase data. Similar to PSO
   - **HyperBand**: Imporvement of Successive halving.
   - **BOHB**: Combine Bayesian Optimization and Hyperband.
