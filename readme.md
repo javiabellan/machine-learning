@@ -1378,28 +1378,32 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
 
 <img align="center" width="500" src="https://www.kaggle.com/static/images/education/homepage-illustration.png">
 
-> ### TODO: 
-> - [**Data Visualization**](https://medium.com/@alark/we-need-more-interactive-data-visualization-tools-for-the-web-in-python-ad80ec3f440e) (Winner: Altair)
->   - [Slides](https://speakerdeck.com/jakevdp/altair-tutorial-intro-pycon-2018)
->   - [Post](https://vallandingham.me/altair_intro.html)
->   - [Notebooks](https://github.com/altair-viz/altair-tutorial/blob/master/notebooks/Index.ipynb)
->   - [Video](https://www.youtube.com/watch?v=ms29ZPUKxbU)
->   - [Documentation](https://altair-viz.github.io/)
->   - [Vega-embed](https://github.com/vega/vega-embed) (for frontend)
-> - **Bayesian statistics**:
->   - [introduction to bayes the theorem](https://www.analyticsvidhya.com/blog/2019/06/introduction-powerful-bayes-theorem-data-science)
->   - [video: Bayesian Statistics](https://youtu.be/Oo-OrePF2dc)
->   - [video: Bayesian Statistics with PyMC3](https://youtu.be/Bv92hl-z4yM)
->   - Packages:
->     - Stan: Bayesian modeling
->     - PyMC3: Probabilistic programming
->     - ArviZ, Help us interpret and visualize posterior distributions of PyMC3
-> - **Gaussian Process**
->   - [GP, not quite for dummies](https://yugeten.github.io/posts/2019/09/GP)
->   - [Distill: visual exploration](https://distill.pub/2019/visual-exploration-gaussian-processes)
-> - Gaussian mixture
-> - [Dataframe databases comparison](https://h2oai.github.io/db-benchmark/)
-> - **Feature engineering**
->   - [4 Tips for Advanced Feature Engineering and Preprocessing](https://www.kdnuggets.com/2019/08/4-tips-advanced-feature-engineering-preprocessing.html)
->   - [Encode categorical smarter](https://blog.featurelabs.com/encode-smarter)
->   - [Feature engineering for ML](https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114)
+## TODO: 
+- [**Data Visualization**](https://medium.com/@alark/we-need-more-interactive-data-visualization-tools-for-the-web-in-python-ad80ec3f440e) (Winner: Altair)
+  - [Slides](https://speakerdeck.com/jakevdp/altair-tutorial-intro-pycon-2018)
+  - [Post](https://vallandingham.me/altair_intro.html)
+  - [Notebooks](https://github.com/altair-viz/altair-tutorial/blob/master/notebooks/Index.ipynb)
+  - [Video](https://www.youtube.com/watch?v=ms29ZPUKxbU)
+  - [Documentation](https://altair-viz.github.io/)
+  - [Vega-embed](https://github.com/vega/vega-embed) (for frontend)
+- **Bayesian statistics**:
+  - [introduction to bayes the theorem](https://www.analyticsvidhya.com/blog/2019/06/introduction-powerful-bayes-theorem-data-science)
+  - [video: Bayesian Statistics](https://youtu.be/Oo-OrePF2dc)
+  - [video: Bayesian Statistics with PyMC3](https://youtu.be/Bv92hl-z4yM)
+  - Packages:
+    - Stan: Bayesian modeling
+    - PyMC3: Probabilistic programming
+    - ArviZ, Help us interpret and visualize posterior distributions of PyMC3
+- **Gaussian Process**
+  - [GP, not quite for dummies](https://yugeten.github.io/posts/2019/09/GP)
+  - [Distill: visual exploration](https://distill.pub/2019/visual-exploration-gaussian-processes)
+- Gaussian mixture
+- [Dataframe databases comparison](https://h2oai.github.io/db-benchmark/)
+- **Feature engineering**
+  - [4 Tips for Advanced Feature Engineering and Preprocessing](https://www.kdnuggets.com/2019/08/4-tips-advanced-feature-engineering-preprocessing.html)
+  - [Encode categorical smarter](https://blog.featurelabs.com/encode-smarter)
+  - [Feature engineering for ML](https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114)
+- **Vowpal Wabbit**:
+  - [mlcourse.ai video (Lecture 8. Part 2)](https://www.youtube.com/watch?v=gyCjancgR9U)
+  - [Vowpal Wabbit tutorial for the Uninitiated](https://www.zinkov.com/posts/2013-08-13-vowpal-tutorial)
+  - [Don’t be tricked by the Hashing Trick](https://booking.ai/dont-be-tricked-by-the-hashing-trick-192a6aae3087)
