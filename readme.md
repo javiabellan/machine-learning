@@ -12,8 +12,8 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 | ➕ | [**Feature engineering**](#-feature-engineering-)            | Create and transform new features |
 | ➖ | [**Feature selection**](#-feature-selection-)                | Drop usless features and ranking important ones |
 | 🌀 | [**Dimensionality reduction**](#-dimensionality-reduction-)  | Compress the features into 2 or 3 dimensions |
-| 📊 | [**Resampling Imbalanced Data**](#-imbalanced-data-)         | Deal with ...  |
-| ✂ | [**Split data**](#-split-data-)                               | Define train and validation sets |
+| ✂ | [**Split data**](#-split-data-)                              | Define train and validation sets |
+| 📊 | [**Imbalanced Data**](#-imbalanced-data-)                   | Oversample minority class only in train set  |
 
 
 <h3 align="center">Part 2: The model</h3>
@@ -483,15 +483,41 @@ Linear Discriminant Analysis can only learn linear boundaries, while Quadratic D
 a classification model based on a mixture of linear regression models, which uses optimal scoring to transform the response variable so that the data are in a better form for linear separation, and multiple adaptive regression splines to generate the discriminant surface.
 
 
-# 📊 Resampling Imbalanced Data [🔝](#machine-learning)
-Deal with **imbalanced datasets**: Check [scikit-learn approach](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-with-stratification-based-on-class-labels) and [imbalanced-learn package](http://imbalanced-learn.org) 
-  - **Subsample majority class**. But you can lose important data.
-  - **Oversample minority class**. But you can overfit.
-    - SMOTE
-    - ADASYN
-    - SMOTENC
-  - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
+
+
+# ✂ Split data [🔝](#machine-learning)
+
+- Simple split
+- Cross validation
+
+### Simple split
+Split data into x, y for training and testing
+```python
+from sklearn.model_selection import train_test_split
+## make a train test split
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+```
+
+### Cross validation
+Check: https://scikit-learn.org/stable/modules/cross_validation.html
+
+
+
+# 📊 Imbalanced Data [🔝](#machine-learning)
+
+> - [Imbalanced classification posts](https://machinelearningmastery.com/category/imbalanced-classification)
+> - [Twit](https://twitter.com/JFPuget/status/1219265604407959554)
+> - [Scikit-learn approach](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-with-stratification-based-on-class-labels)
+> - [Imbalanced-learn package](http://imbalanced-learn.org) 
+
+- **Subsample majority class**. But you can lose important data.
+- **Oversample minority class**. But you can overfit.
+  - SMOTE
+  - ADASYN
+  - SMOTENC
+- **Weighted loss function** `CrossEntropyLoss(weight=[…])`
   
+
 ### SMOTE
  
 Synthetic Minority Oversampling Technique (SMOTE) is an oversampling technique used to increase the samples in a minority class. It generates new samples by looking at the feature space of the target and detecting nearest neighbors. Then, it simply selects similar samples and changes a column at a time randomly within the feature space of the neighboring samples.
@@ -521,29 +547,12 @@ I chose to use a dictionary to specify the extent to which I wanted to oversampl
 
 Instead, you can use SMOTENC which takes into account the nature of categorical variables. This version is also available in the imbalanced-learnpackage.
 
-**Additional tip 2**: Make sure to oversample after creating the train/test split so that you only oversample the train data. You typically do not want to test your model on synthetic data.
+**Additional tip 2**: Make sure to **oversample after creating the train/test split** so that you **only oversample the train data**. You typically do not want to test your model on synthetic data.
 
 
+### How to oversample with crossvalidation
 
-# ✂ Split data [🔝](#machine-learning)
-
-- Simple split
-- Cross validation
-
-### Simple split
-Split data into x, y for training and testing
-```python
-from sklearn.model_selection import train_test_split
-## make a train test split
-X_train, X_test, y_train, y_test = train_test_split(X, y)
-```
-
-### Cross validation
-Check: https://scikit-learn.org/stable/modules/cross_validation.html
-
-
-
-
+---
 
 # 🔮 Prediction models [🔝](#machine-learning)
 > [TODO read](https://towardsdatascience.com/ml-algorithms-one-sd-%CF%83-74bcb28fafb6)
