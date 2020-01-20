@@ -550,7 +550,20 @@ Instead, you can use SMOTENC which takes into account the nature of categorical 
 **Additional tip 2**: Make sure to **oversample after creating the train/test split** so that you **only oversample the train data**. You typically do not want to test your model on synthetic data.
 
 
-### How to oversample with crossvalidation
+### How to oversample with (stratified) cross validation
+
+
+```python
+from sklearn.model_selection import StratifiedKFold
+from imblearn.over_sampling import SMOTE
+
+cv = StratifiedKFold(n_splits=5)
+for train_idx, test_idx, in cv.split(X, y):
+    X_train, y_train = X[train_idx], y[train_idx]
+    X_test, y_test = X[test_idx], y[test_idx]
+    X_train, y_train = SMOTE().fit_sample(X_train, y_train)
+    ...
+```
 
 ---
 
