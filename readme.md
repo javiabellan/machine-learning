@@ -510,13 +510,16 @@ Check: https://scikit-learn.org/stable/modules/cross_validation.html
 > - [Scikit-learn approach](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-with-stratification-based-on-class-labels)
 > - [Imbalanced-learn package](http://imbalanced-learn.org) 
 
-- **Subsample majority class**. But you can lose important data.
-- **Oversample minority class**. But you can overfit.
-  - SMOTE
-  - ADASYN
-  - SMOTENC
-- **Weighted loss function** `CrossEntropyLoss(weight=[…])`
-  
+- Solution **`FIX IT ON PREDICTIONS`**
+  - Output probabilities, and tune rounding threshold. Using 0.5 with imbalanced data is just wrong in general.
+- Solution **`FIX IT ON MODEL`**: Overweight the minirity classes (supportd by most SoTA models)
+  - Neural nets: **Weighted loss function** `CrossEntropyLoss(weight=[…])`
+- Solution **`FIX IT ON DATA`** (Resample on train data)
+  - **Subsample majority class**. But you can lose important data.
+  - **Oversample minority class**. But you can overfit.
+    - SMOTE
+    - ADASYN
+    - SMOTENC: SMOTE for also categorial vars.  
 
 ### SMOTE
  
