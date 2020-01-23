@@ -506,6 +506,7 @@ Check: https://scikit-learn.org/stable/modules/cross_validation.html
 # 📊 Imbalanced Data [🔝](#machine-learning)
 
 > - [The 5 Most Useful Techniques to Handle Imbalanced Datasets](https://www.kdnuggets.com/2020/01/5-most-useful-techniques-handle-imbalanced-datasets.html)
+> - [Kaggle kerel: Resampling strategies](https://www.kaggle.com/rafjaa/resampling-strategies-for-imbalanced-datasets)
 > - [Imbalanced classification posts](https://machinelearningmastery.com/category/imbalanced-classification)
 > - [Twit](https://twitter.com/JFPuget/status/1219265604407959554)
 > - [Scikit-learn approach](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-with-stratification-based-on-class-labels)
@@ -533,8 +534,14 @@ Check: https://scikit-learn.org/stable/modules/cross_validation.html
 
 ![](img/resampling.png)
 
+### Tomek Links
+
+![](img/tomek.png)
+
 ### SMOTE
- 
+
+![](img/smote.png)
+
 Synthetic Minority Oversampling Technique (SMOTE) is an oversampling technique used to increase the samples in a minority class. It generates new samples by looking at the feature space of the target and detecting nearest neighbors. Then, it simply selects similar samples and changes a column at a time randomly within the feature space of the neighboring samples.
 
 The module to implement SMOTE can be found within the imbalanced-learn package. You can simply import the package and apply a fit_transform:
