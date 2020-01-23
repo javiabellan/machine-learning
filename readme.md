@@ -514,10 +514,16 @@ Check: https://scikit-learn.org/stable/modules/cross_validation.html
 
 - Solution **`FIX IT ON DATA`** (Resample on train data)
   - **Subsample majority class**. But you can lose important data.
+    - **Random**: `from imblearn.under_sampling import RandomUnderSampler`
+    - **Cluster Centroids**: `from imblearn.under_sampling import ClusterCentroids`
+    - **Tomek links**: `from imblearn.under_sampling import TomekLinks`
   - **Oversample minority class**. But you can overfit.
-    - SMOTE
+    - **Random**: `from imblearn.over_sampling import RandomOverSampler`
+    - **SMOTE** `from imblearn.over_sampling import SMOTE`
     - ADASYN
-    - SMOTENC: SMOTE for also categorial vars.  
+    - SMOTENC: SMOTE for also categorial vars.
+  - **Combine both**
+    - **Tomek links & SMOTE**: `from imblearn.combine import SMOTETomek`
 - Solution **`FIX IT ON MODEL`**: Overweight the minirity classes (supportd by most SoTA models)
   - Neural nets: **Weighted loss function** `CrossEntropyLoss(weight=[…])`
 - Solution **`FIX IT ON PREDICTIONS`**
@@ -525,6 +531,7 @@ Check: https://scikit-learn.org/stable/modules/cross_validation.html
   
 ### `FIX IT ON DATA`: Resample train data
 
+![](img/resampling.png)
 
 ### SMOTE
  
