@@ -247,7 +247,7 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
         <li><b>Binary</b> features</li>
         <li><b>Nominal</b> features<ul>
           <li>Low cardinality: One-Hot Enc.</li>
-          <li>High cardinality: Vector Enc.</li></ul>
+          <li>High cardinality: Embedding vec.</li></ul>
         </li>
         <li><b>Ordinal</b> features: Label Enc.</li>
       </ul>
