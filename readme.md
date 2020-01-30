@@ -223,16 +223,6 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 
 # ➕ Feature engineering [🔝](#machine-learning)
 
-### Check and correct data types
-
-1. See data types: `df.info()`
-2. Change data types:
-3. Group:
-   - `numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns`
-   - `categoric_feats = df.select_dtypes(include=[object]).columns`
-   - `time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns`
-   
-
 <table>
   <tr>
     <th>Numerical features</th>
@@ -244,22 +234,22 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
     <td>
       <ul>
         <li>Scaling</li>
-        <li>normalization</li>
-        <li>standarization</li>
+        <li>Normalization</li>
+        <li>Standarization</li>
         <li>Logarithim</li>
         <li>Logarithim</li>
-        <li>exponentials</li>
-        <li>polynomial</li>
+        <li>Exponentials</li>
+        <li>Polynomial</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Binary features</li>
-        <li>Nominal features<ul>
+        <li><b>Binary</b> features</li>
+        <li><b>Nominal</b> features<ul>
           <li>Low cardinality</li>
           <li>High cardinality</li></ul>
         </li>
-        <li>Ordinal features<ul>
+        <li><b>Ordinal</b> features<ul>
           <li>Low cardinality</li>
           <li>High cardinality</li></ul>
         </li>
@@ -267,21 +257,39 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
     </td>
     <td>
       <ul>
-        <li> cyclical features</li>
+        <li>Year</li>
+        <li>Month</li>
+        <li>Week</li>
+        <li>Day of yeay</li>
+        <li>Day of month</li>
+        <li>Day of week</li>
+        <li>Is weekend</li>
+        <li>Is vacation</li>
+        <li>Hour</li>
+        <li>Minute</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Day of the week</li>
+        <li>Split (name & surname)</li>
+        <li>Bag of words</li>
+        <li>Tf-idf</li>
+        <li>n-grams</li>
+        <li>word2vec</li>
+        <li>Topic extraction</li>
       </ul>
     </td>
   </tr>
 </table>
 
-> ## Automated feature engineering
-> - [Featuretools](https://www.featuretools.com/): Automatic feature engineering. (by featurelabs)
->   - [Deep Feature Synthesis (DFS)](https://docs.featuretools.com/en/stable/automated_feature_engineering/afe.html)
+### Check and correct data types
 
+1. See data types: `df.info()`
+2. Change data types:
+3. Group:
+   - `numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns`
+   - `categoric_feats = df.select_dtypes(include=[object]).columns`
+   - `time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns`
 
 
 ### Numerical Features
@@ -326,6 +334,10 @@ def featEng_date(df, varName):
 - n-grams
 - word2vec
 - topic extraction
+
+> ## Automated feature engineering
+> - [Featuretools](https://www.featuretools.com/): Automatic feature engineering. (by featurelabs)
+>   - [Deep Feature Synthesis (DFS)](https://docs.featuretools.com/en/stable/automated_feature_engineering/afe.html)
 
 
 ### Feature engineering packages
