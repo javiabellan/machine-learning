@@ -223,17 +223,15 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 
 # ➕ Feature engineering [🔝](#machine-learning)
 
-- **Check and correct data types**
-- **Numerical** feratures
-  - Scaling, normalization, standarize, minmax...
-  - Logarithim, exponentials, polynomial...
-- **Caterorical** features
-  - Binary features
-  - Nominal features (low and high cardinality)
-  - Ordinal features  (low and high cardinality)
-- **Date** features
-  - Potentially cyclical features
-- **NLP** features
+### Check and correct data types
+
+1. See data types: `df.info()`
+2. Change data types:
+3. Group:
+   - `numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns`
+   - `categoric_feats = df.select_dtypes(include=[object]).columns`
+   - `time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns`
+   
 
 <table>
   <tr>
@@ -245,30 +243,36 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
   <tr>
     <td>
       <ul>
-        <li>Scaling<li>
-        <li>normalization<li>
-        <li>standarization<li>
-        <li>Logarithim<li>
-        <li>Logarithim<li>
-        <li>exponentials<li>
-        <li>polynomial<li>
+        <li>Scaling</li>
+        <li>normalization</li>
+        <li>standarization</li>
+        <li>Logarithim</li>
+        <li>Logarithim</li>
+        <li>exponentials</li>
+        <li>polynomial</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Binary features<li>
-        <li>Nominal features (low and high cardinality)<li>
-        <li>Ordinal features  (low and high cardinality)<li>
+        <li>Binary features</li>
+        <li>Nominal features<ul>
+          <li>Low cardinality</li>
+          <li>High cardinality</li></ul>
+        </li>
+        <li>Ordinal features<ul>
+          <li>Low cardinality</li>
+          <li>High cardinality</li></ul>
+        </li>
       </ul>
     </td>
     <td>
       <ul>
-        <li> cyclical features<li>
+        <li> cyclical features</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Day of the week<li>
+        <li>Day of the week</li>
       </ul>
     </td>
   </tr>
@@ -278,15 +282,6 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 > - [Featuretools](https://www.featuretools.com/): Automatic feature engineering. (by featurelabs)
 >   - [Deep Feature Synthesis (DFS)](https://docs.featuretools.com/en/stable/automated_feature_engineering/afe.html)
 
-
-### Check and correct data types
-
-1. See data types: `df.info()`
-2. Change data types:
-3. Group:
-   - `numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns`
-   - `categoric_feats = df.select_dtypes(include=[object]).columns`
-   - `time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns`
 
 
 ### Numerical Features
