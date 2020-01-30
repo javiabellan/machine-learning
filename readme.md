@@ -223,39 +223,71 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 
 # ➕ Feature engineering [🔝](#machine-learning)
 
-The problem of transforming raw data into a dataset is called feature engineering. For most practical problems, feature engineering is a labor-intensive process that demands from the data analyst a lot of creativity and, preferably, domain knowledge.
+- **Check and correct data types**
+- **Numerical** feratures
+  - Scaling, normalization, standarize, minmax...
+  - Logarithim, exponentials, polynomial...
+- **Caterorical** features
+  - Binary features
+  - Nominal features (low and high cardinality)
+  - Ordinal features  (low and high cardinality)
+- **Date** features
+  - Potentially cyclical features
+- **NLP** features
 
-- scaling normalization: standarize minmax
-- logarithim, exponentials
-- polynomial
-- Combine features
-- Cluster some feature
-- Fix Mislabeled rows?
-- Deep Feature Synthesis (DFS)
+<table>
+  <tr>
+    <th>Numerical features</th>
+    <th>Categorical features</th>
+    <th>Date features</th>
+    <th>NLP features</th>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li>Scaling<li>
+        <li>normalization<li>
+        <li>standarization<li>
+        <li>Logarithim<li>
+        <li>Logarithim<li>
+        <li>exponentials<li>
+        <li>polynomial<li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Binary features<li>
+        <li>Nominal features (low and high cardinality)<li>
+        <li>Ordinal features  (low and high cardinality)<li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li> cyclical features<li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Day of the week<li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-| Name                       | Description              | Options                                                       |
-|----------------------------|--------------------------|---------------------------------------------------------------|
-| **Feature transformation** | Modidy existing features | Scaling, normalize, standarize, logarithim, ...               |
-| **Feature creation**       | Add useful features      | Modify to new, Combine features, Cluster some feature, ...    |
-| **Feature selection**      | Remove useless features  | See feat importance, correlations, Dimensionality reduction,  |
+> ## Automated feature engineering
+> - [Featuretools](https://www.featuretools.com/): Automatic feature engineering. (by featurelabs)
+>   - [Deep Feature Synthesis (DFS)](https://docs.featuretools.com/en/stable/automated_feature_engineering/afe.html)
 
-```Python
-numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns
-categoric_feats = df.select_dtypes(include=[object]).columns
-time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns
-```
 
-#### Feature engineering packages
-- [Featuretools](https://www.featuretools.com/): Automatic feature engineering. (by featurelabs)
-- [Boruta-py](https://github.com/scikit-learn-contrib/boruta_py): all-relevant feature selection method (by scikit-learn contribution)
-- [Categorical-encoding](https://github.com/scikit-learn-contrib/categorical-encoding): Categorical variables encoding (by scikit-learn contribution)
-- [Tsfresh](https://tsfresh.readthedocs.io): Automatic calculates time series features
-- [Trane](https://github.com/HDI-Project/Trane): For temporal datasets
-- [FeatureHub](https://github.com/HDI-Project/FeatureHub): 
+### Check and correct data types
 
- TO DO: What is Latent feature discovery ??? 
+1. See data types: `df.info()`
+2. Change data types:
+3. Group:
+   - `numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns`
+   - `categoric_feats = df.select_dtypes(include=[object]).columns`
+   - `time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns`
 
-## Feature transformation and creation
 
 ### Numerical Features
 - Numerical (continuous) Features
@@ -270,7 +302,6 @@ time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns
 - Numerical (discrete) Features
 
 ### Categorical Features
-
 
 - Ordinal Categorical Features [generat1, generat2, generat3]
   - LabelEncoder: from sklearn.preprocessing import LabelEncoder
@@ -300,6 +331,18 @@ def featEng_date(df, varName):
 - n-grams
 - word2vec
 - topic extraction
+
+
+### Feature engineering packages
+- [Featuretools](https://www.featuretools.com/): Automatic feature engineering. (by featurelabs)
+- [Boruta-py](https://github.com/scikit-learn-contrib/boruta_py): all-relevant feature selection method (by scikit-learn contribution)
+- [Categorical-encoding](https://github.com/scikit-learn-contrib/categorical-encoding): Categorical variables encoding (by scikit-learn contribution)
+- [Tsfresh](https://tsfresh.readthedocs.io): Automatic calculates time series features
+- [Trane](https://github.com/HDI-Project/Trane): For temporal datasets
+- [FeatureHub](https://github.com/HDI-Project/FeatureHub): 
+
+ TO DO: What is Latent feature discovery ??? 
+
 
 ---
  
@@ -363,10 +406,12 @@ X_train_1 = scaler.transform(X_train)
 X_test_1 = scaler.transform(X_test)
 ```
 
-# ➖ Feature selection [🔝](#machine-learning)
-Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
 
-Reduce number of attributes.
+# ➖ Feature selection [🔝](#machine-learning)
+> Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
+
+Reduce number of attributes. See **feat importance**, **correlations**...
+
 - Mutual information
 - LASSO
 - [**Feature selection**](https://scikit-learn.org/stable/modules/feature_selection.html)
