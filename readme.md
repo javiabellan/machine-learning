@@ -306,8 +306,10 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 - Ordinal Categorical Features [generat1, generat2, generat3]
   - LabelEncoder: from sklearn.preprocessing import LabelEncoder
 - Nominal Categorical Features [Spain, France, Italy]
-  - One-Hot Encoding (dummy encoding)
-  - Cluster (spain->europe)
+  - Low cardinality: One-Hot Encoding (dummy encoding)
+  - High cardinality:
+    - Embedding vector. Check [this](https://www.kaggle.com/c/cat-in-the-dat-ii/discussion/124217)
+    - Cluster (spain->europe)
 - Multi-Categorical Features
   - N-Hot Encoding
   
