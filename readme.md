@@ -225,10 +225,10 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 
 <table>
   <tr>
-    <th>Numerical features</th>
-    <th>Categorical features</th>
-    <th>Date features</th>
-    <th>NLP features</th>
+    <th><a href="#numerical-features">Numerical features</a></th>
+    <th><a href="#categorical-features">Categorical features</th>
+    <th><a href="#date-features">Date features</th>
+    <th><a href="#nlp-features">NLP features</th>
   </tr>
   <tr>
     <td>
@@ -282,17 +282,17 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
   </tr>
 </table>
 
-### Check and correct data types
+> ### ❗️Check and correct data types❗️
+>
+> 1. See data types: `df.info()`
+> 2. Change data types:
+> 3. Group:
+>    - `numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns`
+>    - `categoric_feats = df.select_dtypes(include=[object]).columns`
+>    - `time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns`
 
-1. See data types: `df.info()`
-2. Change data types:
-3. Group:
-   - `numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns`
-   - `categoric_feats = df.select_dtypes(include=[object]).columns`
-   - `time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns`
 
-
-### Numerical Features
+## Numerical Features
 - Numerical (continuous) Features
   - Scaling:        Normalization: Numerical to range=[0, 1]
   - Scaling:        Standardization: Numerical to (mean= 0, std=1)
@@ -304,7 +304,7 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
   - Round
 - Numerical (discrete) Features
 
-### Categorical Features
+## Categorical Features
 
 - Ordinal Categorical Features [generat1, generat2, generat3]
   - LabelEncoder: from sklearn.preprocessing import LabelEncoder
@@ -314,7 +314,7 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 - Multi-Categorical Features
   - N-Hot Encoding
   
-### Handling Date Features
+## Date Features
 ```python
 def featEng_date(df, varName):
     df['year']         = df[varName].dt.year.astype(np.int16)
@@ -327,7 +327,7 @@ def featEng_date(df, varName):
     df['minute']       = df[varName].dt.minute.astype(np.int8)
 ```
 
-### Text Features (NLP)
+## NLP Features
 - Split (name & surname)
 - Bag of words
 - tfidf
