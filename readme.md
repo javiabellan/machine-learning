@@ -246,13 +246,10 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
       <ul>
         <li><b>Binary</b> features</li>
         <li><b>Nominal</b> features<ul>
-          <li>Low cardinality</li>
-          <li>High cardinality</li></ul>
+          <li>Low cardinality: One-Hot Encode</li>
+          <li>High cardinality: Vector Encode</li></ul>
         </li>
-        <li><b>Ordinal</b> features<ul>
-          <li>Low cardinality</li>
-          <li>High cardinality</li></ul>
-        </li>
+        <li><b>Ordinal</b> features: Label Encode</li>
       </ul>
     </td>
     <td>
