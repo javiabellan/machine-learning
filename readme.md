@@ -244,9 +244,9 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
     </td>
     <td>
       <ul>
-        <li><b>Binary</b> features</li>
+        <li><b>Binary</b> features: 0,1</li>
         <li><b>Nominal</b> features<ul>
-          <li>Low cardinality: One-Hot Enc.</li>
+          <li>Low cardinality: One-Hot</li>
           <li>High cardinality: Embedding</li></ul>
         </li>
         <li><b>Ordinal</b> features: Label Enc.</li>
@@ -313,6 +313,14 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 - Multi-Categorical Features
   - N-Hot Encoding
   
+```python
+high_cardinality = [c for c in nominal_vars if len(X[c].unique()) > 16]
+low_cardinality  = [c for c in nominal_vars if len(X[c].unique()) <= 16]
+
+num_uniques = int(df[var].nunique())
+embed_dim   = int(min(num_uniques // 2, 50)
+```
+
 ## Date Features
 ```python
 def featEng_date(df, varName):
