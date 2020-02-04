@@ -422,7 +422,8 @@ X_test_1 = scaler.transform(X_test)
 
 
 # ➖ Feature selection [🔝](#machine-learning)
-> Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
+> - Read [this post on machinelearningmastery](https://machinelearningmastery.com/feature-selection-with-real-and-categorical-data/)
+> - Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
 
 Reduce number of attributes. See **feat importance**, **correlations**...
 
