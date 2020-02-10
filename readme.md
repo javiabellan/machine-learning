@@ -897,7 +897,8 @@ Multiple kernel functions exist, the most widely used of which is the RBF kernel
     - **Geometric mean**
     - **Weighted average**
     - **Rank average**
-  - **Meta model(s)**: (aka Stacking or Super Learning) ⭐ The best
+  - **Stacking**: (aka Meta model or Super Learning) ⭐ The best
+    - [READ THIS](https://mlfromscratch.com/model-stacking-explained)
     - Usaully done with several DL models and the metamodels are catboost & xgboost and then average both.
     - **OOF Stacking**: The out-of-fold models predictions is used to generate the new data. ⭐⭐ (Andrés approach)
     - **Blending**: Holdout validation (part of the train is used in the first layer, part in the second …)
