@@ -893,8 +893,8 @@ Multiple kernel functions exist, the most widely used of which is the RBF kernel
   - **Majority vote** (classification)
     - **Weighted Majority vote**
   - **Average (mean)** (classification & regression)
-    - **Arithmetic mean**
-    - **Geometric mean**
+    - **Arithmetic mean** (aka mean):
+    - **Geometric mean** (aka gmean): Most robust to outliers than mean. ⭐ The best [read this](https://medium.com/@JLMC/understanding-three-simple-statistics-for-data-visualizations-2619dbb3677a)
     - **Weighted average**
     - **Rank average**
   - **Stacking**: (aka Meta model or Super Learning) ⭐ The best
