@@ -883,38 +883,45 @@ loss function: max (0, 1 − yi (wxi − b)).
 #### Dealing with non-linearity?: Kernel functions
 Multiple kernel functions exist, the most widely used of which is the RBF kernel.
 
-# 💣 Ensembles [🔝](#machine-learning)
-> Read [this post in medium](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)
 
-- **Heterogeneous ensembles** 💪💪💪
-  - Read [KAGGLE ENSEMBLING GUIDE](https://mlwave.com/kaggle-ensembling-guide)
-  - Read [OOF Stacking vs Blending](https://www.quora.com/What-are-examples-of-blending-and-stacking-in-Machine-Learning)
-  - Read [DESlib](https://github.com/scikit-learn-contrib/DESlib), a scikit-learn based library for ensembles.
-  - **Majority vote** (classification)
-    - **Weighted Majority vote**
-  - **Average (mean)** (classification & regression)
-    - **Arithmetic mean** (aka mean):
-    - **Geometric mean** (aka gmean): Most robust to outliers than mean. ⭐ The best [read this](https://medium.com/@JLMC/understanding-three-simple-statistics-for-data-visualizations-2619dbb3677a)
-    - **Weighted average**
-    - **Rank average**
-  - **Stacking**: (aka Meta model or Super Learning) ⭐ The best
-    - [READ THIS](https://mlfromscratch.com/model-stacking-explained)
-    - Usaully done with several DL models and the metamodels are catboost & xgboost and then average both.
-    - **OOF Stacking**: The out-of-fold models predictions is used to generate the new data. ⭐⭐ (Andrés approach)
-    - **Blending**: Holdout validation (part of the train is used in the first layer, part in the second …)
-  - **Ensemble model selection** (Caruana): Greedy method to add o remove models of your ensemble.
-- **Homogeneous ensembles (decission trees)** 🌳🌳🌳
-  - **Bagging** (Bootstrapped Aggregation): Models by subsampling the data.
-    - **Random Forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
-    - **Extra Trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
-    - **Bagging meta-estimator**
-  - **Boosting**
-    - **Adaboost**: Adaptative boosting
-    - **Gradient Boosting (GBM)**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
-      - [**XGBoost**](https://github.com/dmlc/xgboost)
-      - [**LightGBM**](https://github.com/Microsoft/LightGBM)
-      - [**CatBoost**](https://github.com/catboost/catboost)
-      - **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
+
+# 👪 Ensembles [🔝](#machine-learning)
+> - Read [this post in medium](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)
+> - Read [KAGGLE ENSEMBLING GUIDE](https://mlwave.com/kaggle-ensembling-guide)
+> - Read [OOF Stacking vs Blending](https://www.quora.com/What-are-examples-of-blending-and-stacking-in-Machine-Learning)
+> - Read [DESlib](https://github.com/scikit-learn-contrib/DESlib), a scikit-learn based library for ensembles.
+
+### Simple ensembles 
+- **Mode** or **Majority vote**: Only for classification
+- **Arithmetic mean** (aka mean or average):
+- **Geometric mean** (aka gmean): Most robust to outliers than mean. ⭐ The best [read this](https://medium.com/@JLMC/understanding-three-simple-statistics-for-data-visualizations-2619dbb3677a)
+- **Harmonic mean**:
+- **Quadratic mean**
+- **Weighted versions**
+- **Rank versions**
+
+![](img/gmean.png)
+
+### Stacking 💪💪💪
+aka Meta model or Super Learning)  ⭐ The best
+- [READ THIS](https://mlfromscratch.com/model-stacking-explained)
+- Usaully done with several DL models and the metamodels are catboost & xgboost and then average both.
+- **OOF Stacking**: The out-of-fold models predictions is used to generate the new data. ⭐⭐ (Andrés approach)
+- **Blending**: Holdout validation (part of the train is used in the first layer, part in the second …)
+- **Ensemble model selection** (Caruana): Greedy method to add o remove models of your ensemble.
+  
+### Homogeneous ensembles (decission trees) 🌳🌳🌳
+- **Bagging** (Bootstrapped Aggregation): Models by subsampling the data.
+  - **Random Forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
+  - **Extra Trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
+  - **Bagging meta-estimator**
+- **Boosting**
+  - **Adaboost**: Adaptative boosting
+  - **Gradient Boosting (GBM)**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
+    - [**XGBoost**](https://github.com/dmlc/xgboost)
+    - [**LightGBM**](https://github.com/Microsoft/LightGBM)
+    - [**CatBoost**](https://github.com/catboost/catboost)
+    - **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
 
 
 #### Random Forest
