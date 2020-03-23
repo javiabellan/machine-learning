@@ -41,11 +41,15 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 
 |   |                                                                    |                                              |
 |---|--------------------------------------------------------------------|----------------------------------------------|
-| ⏫ | [**Model Deployment (API REST)**](#-api-rest-)                   | Deploy model as consumable software service. |
+| ⏫ | [**Model Deployment (API REST)**](#-model-deployment-)           | Deploy model as consumable software service. |
 | 📋 | [**Model Monitoring (Logging)**](#-Monitoring-)                  | Log and detect errors.                        |
 | ♻️ | [**Model Maintenance (Retraining)**](#-maintenance-)             | Retrain model on more recent data.            |
 | 🔒 | [**Security**](#-security-)                                      | Secure your model and avoid hacking (attacks) |
 
+
+----------------------------------------------------------------
+
+<h1 align="center">Part 1: Exploratory Data Analysis 👁️</h1>
 
 Put this on top of your notebook
 ```python
@@ -54,27 +58,36 @@ import gc
 import numpy             as np
 import datatable         as dt
 import pandas            as pd
+import seaborn           as sb
 import pandas_profiling  as pd_eda
 import missingno         as msno
 import matplotlib.pyplot as plt
-import seaborn           as sns
 import altair            as alt
-
-# ML libraries
-import sklearn     as skl
-import xgboost     as xgb
-import lightgbm    as lgb
-import catboost    as cgb
-import h2o.automl  as ml_auto
-import yellowbrick as ml_vis
-import eli5        as ml_exp
 from tqdm import tqdm_notebook as tqdm
 ```
 
-----------------------------------------------------------------
+# 🐼 Pandas [🔝](#machine-learning)
+> - [**59 tricks in Pandas**](https://www.dataschool.io/python-pandas-tips-and-tricks/)
+> - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
 
-  
-# 📊 EDA [🔝](#machine-learning)
+- Import pandas library `import pandas as pd`
+- Read a CSV file into a pandas dataframe `df = pd.read_csv("file.csv")`
+- Get dataframe info:
+  - Show firt/last rows `df.head()` `df.tail()`
+  - Get shape: `df.shape`. Get columns: `df.columns.tolist()`.
+  - Print some info (like missings and types): `df.info()`
+  - Has missings? `df.isnull().any().any()`
+  - Describe numerical atributes `df.describe()`
+  - Describe categorical atributes `df.describe(include=['object', 'bool'])`
+- Do some data exploration
+  - Get some column (return a series) `df["column"]`
+  - Get some columns (return a df) `df[["column1", "column1"]]`
+  - Apply function to column `.mean()` `.std()` `.median()` `.max()` `.min()` `.count()`
+  - Count unique values `.value_counts()`
+- Filter dataframe rows
+  - One condition `df[df["column"]==1]`
+  - Multiple conditions `df[(df["column1"]==1) & (df["column2"]=='No')]`
+- Save it in a CSV [`df.to_csv("sub.csv", index=False)`](http://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-store-in-csv)
 
 
 ### Obtain the data
@@ -763,6 +776,22 @@ for train_idx, test_idx, in cv.split(X, y):
 
 ---
 
+
+Put this on top of your notebook
+```python
+# Data libraries
+import numpy       as np
+import pandas      as pd
+import sklearn     as skl
+import xgboost     as xgb
+import lightgbm    as lgb
+import catboost    as cgb
+import h2o.automl  as ml_auto
+import yellowbrick as ml_vis
+import eli5        as ml_exp
+from tqdm import tqdm_notebook as tqdm
+```
+
 # 🔮 Prediction models [🔝](#machine-learning)
 > [TODO read](https://towardsdatascience.com/ml-algorithms-one-sd-%CF%83-74bcb28fafb6)
 
@@ -1314,10 +1343,22 @@ Methods:
 
 ---
 
+
+
+
+<h1 align="center">Part 4: Put it in production ☁️</h1>
+
+> - https://towardsdatascience.com/@bgweber
+> - https://github.com/bgweber/DS_Production
+
+# ⏫ Model Deployment [🔝](#machine-learning)
+
+
+
+
 # 🔒 Security [🔝](#machine-learning)
 
 > Reference: [Secure Machine Learning Ideas](https://github.com/jphall663/secure_ML_ideas)
-
 
 1. Data poisoning attacks
 2. Backdoors and Watermark attacks
@@ -1348,6 +1389,9 @@ Methods:
 ### Neural Architecture Search (NAS)
 - **DARTS**: Differentiable Architecture Search [*paper*](https://arxiv.org/abs/1806.09055), [DARTS in PyTorch](https://github.com/quark0/darts)
 ----------------------------------------------------------------
+
+
+
 
 
 # 🌍 Real world applications [🔝](#machine-learning)
@@ -1386,28 +1430,6 @@ Methods:
   - Snowflake
   
   
-# 🐼 Pandas [🔝](#machine-learning)
-> - [**59 tricks in Pandas**](https://www.dataschool.io/python-pandas-tips-and-tricks/)
-> - [**Kaggle learn Pandas**](https://www.kaggle.com/learn/pandas)
-
-- Import pandas library `import pandas as pd`
-- Read a CSV file into a pandas dataframe `df = pd.read_csv("file.csv")`
-- Get dataframe info:
-  - Show firt/last rows `df.head()` `df.tail()`
-  - Get shape: `df.shape`. Get columns: `df.columns.tolist()`.
-  - Print some info (like missings and types): `df.info()`
-  - Has missings? `df.isnull().any().any()`
-  - Describe numerical atributes `df.describe()`
-  - Describe categorical atributes `df.describe(include=['object', 'bool'])`
-- Do some data exploration
-  - Get some column (return a series) `df["column"]`
-  - Get some columns (return a df) `df[["column1", "column1"]]`
-  - Apply function to column `.mean()` `.std()` `.median()` `.max()` `.min()` `.count()`
-  - Count unique values `.value_counts()`
-- Filter dataframe rows
-  - One condition `df[df["column"]==1]`
-  - Multiple conditions `df[(df["column1"]==1) & (df["column2"]=='No')]`
-- Save it in a CSV [`df.to_csv("sub.csv", index=False)`](http://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-store-in-csv)
 
 
 
