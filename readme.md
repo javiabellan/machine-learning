@@ -10,7 +10,7 @@
 
 
 <table>
-<tr><th width="20%" rowspan="7"><h3>👁️ Part 1:</h3><h2><a href="/1.%20Software">Exploratory Data Analysis</a></h2></th><td>
+<tr><th width="25%" rowspan="7"><h3>👁️ Part 1:</h3><h2><a href="/1.%20Software">Exploratory<br>Data Analysis</a></h2></th><td>
         🐼</td><td width="30%"><a href="#-pandas-"> <b>Pandas</b></a></td>             <td>The library for manage data.     </td></tr>
 <tr><td>☝🏻</td><td><a href="#-univariate-analysis-"><b>Univariate analysis</b></a></td> <td>Plot each variable independently.</td></tr>
 <tr><td>✌🏻</td><td><a href="#-univariate-analysis-"><b>Bivariate analysis</b></a></td>  <td>Plot variable pairs.             </td></tr>
@@ -20,16 +20,17 @@
 <tr><td>🌀</td><td><a href="#-dimensionality-reduction-"><b> Dimensionality reduction</b></a></td>  <td>Compress the features into 2 or 3 dimensions.</td></tr>
 </table>   
 
+<br>
 
-<h3 align="center">Part 2: Prepare the data 🛠</h3>
+<table>
+<tr><th width="25%" rowspan="5"><h3>🛠 Part 2:</h3><h2><a href="#-prepare-the-data">Prepare<br>the data</a></h2></th><td>
+        ❓</td><td width="30%"><a href="#-fix-missings-"> <b>Fix missing values</b></a></td> <td>Deal with empty data.      </td></tr>
+<tr><td>➕</td><td><a href="#-feature-engineering-">     <b>Feature engineering</b></a></td><td>Create new features.       </td></tr>
+<tr><td>➖</td><td><a href="#-feature-selection-">       <b>Feature selection</b></a></td>  <td>Drop usless features.      </td></tr>
+<tr><td>✂</td><td><a href="#-split-data-">              <b>Split data</b></a></td>   <td>Define train and validation sets.</td></tr>
+<tr><td>📊</td><td><a href="#-imbalanced-data-">         <b>Imbalanced Data</b></a></td>    <td>Detect rare data.           </td></tr>
+</table>   
 
-|    |                                                               |                  |
-|----|---------------------------------------------------------------|------------------|
-| ❓ | [**Fix missing values**](#-missing-values-)                   | Deal with empty data  |
-| ➕ | [**Feature engineering**](#-feature-engineering-)            | Create new features |
-| ➖ | [**Feature selection**](#-feature-selection-)                | Drop usless features and ranking important ones |
-| ✂ | [**Split data**](#-split-data-)                               | Define train and validation sets |
-| 📊 | [**Imbalanced Data**](#-imbalanced-data-)                    | Oversample minority class only in train set  |
 
 
 <h3 align="center">Part 3: Build the model ✨</h3>
