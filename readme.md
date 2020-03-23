@@ -901,7 +901,7 @@ Multiple kernel functions exist, the most widely used of which is the RBF kernel
 - **Weighted versions**
 - **Rank versions**
 
-![](img/gmean.png)
+![](img/geo-mean.png)
 
 ### Stacking 💪💪💪
 aka Meta model or Super Learning)  ⭐ The best
