@@ -34,8 +34,17 @@ Here are my personal Machine Learning notes. [**This are the resources**](#free-
 | 👪 |  [**Ensemble**](#-ensembles-) | Use several models. |
 | 📏 |  **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
 | 💭 | [**Interpretability (MLI)**](#-interpretability-)            | Explain your model (trust, tranparency, no bias...) |
-| 🔒 | [**Security**](#-security-)                                  | Secure your model and avoid hacking (attacks)       |
 | 🍹 | [**Auto Machine learning**](#-auto-machine-learning-)        | Automatic machine learning pipeline        |
+
+
+<h3 align="center">Part 4: Put it in production ☁️</h3>
+
+|   |                                                                    |                                              |
+|---|--------------------------------------------------------------------|----------------------------------------------|
+| ⏫ | [**Model Deployment (API REST)**](#-api-rest-)                   | Deploy model as consumable software service. |
+| 📋 | [**Model Monitoring (Logging)**](#-Monitoring-)                  | Log and detect errors.                        |
+| ♻️ | [**Model Maintenance (Retraining)**](#-maintenance-)             | Retrain model on more recent data.            |
+| 🔒 | [**Security**](#-security-)                                      | Secure your model and avoid hacking (attacks) |
 
 
 Put this on top of your notebook
