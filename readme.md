@@ -1,17 +1,24 @@
 <h1 align="center">Machine Learning</h1>
+<p align="center">My awesome personal Machine Learning notes.</p>
+<p align="center"><a href="https://github.com/sindresorhus/awesome">
+  <img alt="Awesome" src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg">
+</a></p>
 
-Here are my personal Machine Learning notes. [**This are the resources**](#free-resources) I've learned from.
 
-<h3 align="center">Part 1: Exploratory Data Analysis 👁️</h3>
 
-|    |                                                               |                  |
-|----|---------------------------------------------------------------|------------------|
-| ☝🏻 | [**Univarite EDA**](#-EDA-)                                   | Plot each variable independently |
-| ✌🏻 | [**Bivariate EDA**](#-EDA-)                                   | Plat variable pairs |
-| ❓ | [**Missings**](#-missing-values-)                             | Locate empty data  |
-| 🔎 | [**Outliers**](#-outlier-detection-)                         | Detect rare data                             |
-| 👯‍| [**Correlation**](#-correlationn-)                           | Find similar variables                       |
-| 🌀 | [**Dimensionality reduction**](#-dimensionality-reduction-)  | Compress the features into 2 or 3 dimensions |
+
+
+
+<table>
+<tr><th width="20%" rowspan="7"><h3>👁️ Part 1:</h3><h2><a href="/1.%20Software">Exploratory Data Analysis</a></h2></th><td>
+        🐼</td><td width="30%"><a href="#-pandas-"> <b>Pandas</b></a></td>             <td>The library for manage data.     </td></tr>
+<tr><td>☝🏻</td><td><a href="#-univariate-analysis-"><b>Univariate analysis</b></a></td> <td>Plot each variable independently.</td></tr>
+<tr><td>✌🏻</td><td><a href="#-univariate-analysis-"><b>Bivariate analysis</b></a></td>  <td>Plot variable pairs.             </td></tr>
+<tr><td>❓</td><td><a href="#-missings-">         <b>Missings</b></a></td>              <td> Locate empty data.              </td></tr>
+<tr><td>🔎</td><td><a href="#-outliers-">        <b>Outliers</b></a></td>              <td>Detect rare data.                </td></tr>
+<tr><td>👯‍</td><td><a href="#-correlationn-">   <b>Correlation</b></a></td>           <td>Find similar variables.          </td></tr>
+<tr><td>🌀</td><td><a href="#-dimensionality-reduction-"><b> Dimensionality reduction</b></a></td>  <td>Compress the features into 2 or 3 dimensions.</td></tr>
+</table>   
 
 
 <h3 align="center">Part 2: Prepare the data 🛠</h3>
