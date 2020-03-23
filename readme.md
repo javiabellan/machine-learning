@@ -369,6 +369,9 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 
 # ➕ Feature engineering [🔝](#machine-learning)
 
+
+## Numerical Features
+
 ```python
 df["{} + {}"].format(var1, var2) = df[var1] + df[var2]
 df["{} - {}"].format(var1, var2) = df[var1] - df[var2]
@@ -380,8 +383,6 @@ df["root({})"].format(var1)   = np.root(df[var1])
 df["square({})"].format(var1) = np.square(df[var1])
 ```
 
-
-## Numerical Features
 - Numerical (continuous) Features
   - Scaling:        Normalization: Numerical to range=[0, 1]
   - Scaling:        Standardization: Numerical to (mean= 0, std=1)
@@ -392,6 +393,29 @@ df["square({})"].format(var1) = np.square(df[var1])
   - binarize: convert any number differnt form 0 to 1: good for sparse data
   - Round
 - Numerical (discrete) Features
+
+
+## Date Features
+
+#### Simple
+```python
+def featEng_date(df, varName):
+    df['year']         = df[varName].dt.year.astype(np.int16)
+    df['month']        = df[varName].dt.month.astype(np.int8)
+    df['week']         = df[varName].dt.weekofyear.astype(np.int8)
+    df['day_of_year']  = df[varName].dt.dayofyear.astype(np.int16)
+    df['day_of_month'] = df[varName].dt.day.astype(np.int8)
+    df['day_of_week']  = df[varName].dt.dayofweek.astype(np.int8)
+    df['hour']         = df[varName].dt.hour.astype(np.int8)
+    df['minute']       = df[varName].dt.minute.astype(np.int8)
+```
+
+#### Advanced: Agregregates
+```python
+periods   = ["15T", "1H", "3H"]
+agregates = ["count", "mean", "std", "min", "max", "sum", "median"]
+```
+
 
 ## Categorical Features
 
@@ -413,18 +437,7 @@ num_uniques = int(df[var].nunique())
 embed_dim   = int(min(num_uniques // 2, 50)
 ```
 
-## Date Features
-```python
-def featEng_date(df, varName):
-    df['year']         = df[varName].dt.year.astype(np.int16)
-    df['month']        = df[varName].dt.month.astype(np.int8)
-    df['week']         = df[varName].dt.weekofyear.astype(np.int8)
-    df['day_of_year']  = df[varName].dt.dayofyear.astype(np.int16)
-    df['day_of_month'] = df[varName].dt.day.astype(np.int8)
-    df['day_of_week']  = df[varName].dt.dayofweek.astype(np.int8)
-    df['hour']         = df[varName].dt.hour.astype(np.int8)
-    df['minute']       = df[varName].dt.minute.astype(np.int8)
-```
+
 
 ## NLP Features
 - Split (name & surname)
