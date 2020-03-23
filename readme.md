@@ -892,7 +892,7 @@ Multiple kernel functions exist, the most widely used of which is the RBF kernel
 > - Read [OOF Stacking vs Blending](https://www.quora.com/What-are-examples-of-blending-and-stacking-in-Machine-Learning)
 > - Read [DESlib](https://github.com/scikit-learn-contrib/DESlib), a scikit-learn based library for ensembles.
 
-### Simple ensembles 
+### Simple ensembles (averaging)
 - **Mode** or **Majority vote**: Only for classification
 - **Arithmetic mean** (aka mean or average):
 - **Geometric mean** (aka gmean): Most robust to outliers than mean. ⭐ The best [read this](https://medium.com/@JLMC/understanding-three-simple-statistics-for-data-visualizations-2619dbb3677a)
@@ -903,13 +903,15 @@ Multiple kernel functions exist, the most widely used of which is the RBF kernel
 
 ![](img/geo-mean.png)
 
-### Stacking 💪💪💪
+### Stacking (meta model) 💪💪💪
 aka Meta model or Super Learning)  ⭐ The best
 - [READ THIS](https://mlfromscratch.com/model-stacking-explained)
 - Usaully done with several DL models and the metamodels are catboost & xgboost and then average both.
-- **OOF Stacking**: The out-of-fold models predictions is used to generate the new data. ⭐⭐ (Andrés approach)
-- **Blending**: Holdout validation (part of the train is used in the first layer, part in the second …)
-- **Ensemble model selection** (Caruana): Greedy method to add o remove models of your ensemble.
+- There is 3 types of stacking
+  - **Holdout stacking**: (aka Blending) Holdout validation
+  - **OOF Stacking**: The out-of-fold models predictions is used to generate the new data. ⭐⭐ (Andrés approach)
+
+> - **Ensemble model selection** (Caruana): Greedy method to add o remove models of your ensemble.
   
 ### Homogeneous ensembles (decission trees) 🌳🌳🌳
 - **Bagging** (Bootstrapped Aggregation): Models by subsampling the data.
