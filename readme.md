@@ -2,21 +2,30 @@
 
 Here are my personal Machine Learning notes. [**This are the resources**](#free-resources) I've learned from.
 
-<h3 align="center">Part 1: The data</h3>
+<h3 align="center">Part 1: Exploratory Data Analysis 👁️</h3>
 
 |    |                                                               |                  |
 |----|---------------------------------------------------------------|------------------|
-| 📈 | [**EDA**](#-EDA-)                                           | Exploratory Data Analysis |
-| ❓ | [**Missing values**](#-missing-values-)                      | Deal with empty data  |
-| 🔎 | [**Outlier detection**](#-outlier-detection-)                |                  |
-| ➕ | [**Feature engineering**](#-feature-engineering-)            | Create and transform new features |
-| ➖ | [**Feature selection**](#-feature-selection-)                | Drop usless features and ranking important ones |
+| ☝🏻 | [**Univarite EDA**](#-EDA-)                                   | Plot each variable independently |
+| ✌🏻 | [**Bivariate EDA**](#-EDA-)                                   | Plat variable pairs |
+| ❓ | [**Missings**](#-missing-values-)                             | Locate empty data  |
+| 🔎 | [**Outliers**](#-outlier-detection-)                         | Detect rare data                             |
+| 👯‍| [**Correlation**](#-correlationn-)                           | Find similar variables                       |
 | 🌀 | [**Dimensionality reduction**](#-dimensionality-reduction-)  | Compress the features into 2 or 3 dimensions |
-| ✂ | [**Split data**](#-split-data-)                              | Define train and validation sets |
-| 📊 | [**Imbalanced Data**](#-imbalanced-data-)                   | Oversample minority class only in train set  |
 
 
-<h3 align="center">Part 2: The model</h3>
+<h3 align="center">Part 2: Prepare the data 🛠</h3>
+
+|    |                                                               |                  |
+|----|---------------------------------------------------------------|------------------|
+| ❓ | [**Fix missing values**](#-missing-values-)                   | Deal with empty data  |
+| ➕ | [**Feature engineering**](#-feature-engineering-)            | Create new features |
+| ➖ | [**Feature selection**](#-feature-selection-)                | Drop usless features and ranking important ones |
+| ✂ | [**Split data**](#-split-data-)                               | Define train and validation sets |
+| 📊 | [**Imbalanced Data**](#-imbalanced-data-)                    | Oversample minority class only in train set  |
+
+
+<h3 align="center">Part 3: Build the model ✨</h3>
 
 |   |                                                                    |                                            |
 |---|--------------------------------------------------------------------|--------------------------------------------|
