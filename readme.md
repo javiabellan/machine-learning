@@ -231,10 +231,18 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 ```
 
 
-# ➕ Feature engineering [🔝](#machine-learning)
+# 🛠 Feature preprocessing [🔝](#machine-learning)
 
 > # [Categorical feats encoding in Trees](https://medium.com/data-design/visiting-categorical-features-and-encoding-in-decision-trees-53400fa65931)
 
+> ### ❗️Check and correct data types❗️
+>
+> 1. See data types: `df.info()`
+> 2. Change data types:
+> 3. Group:
+>    - `numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns`
+>    - `categoric_feats = df.select_dtypes(include=[object]).columns`
+>    - `time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns`
 
 <table>
   <tr>
@@ -301,6 +309,8 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
   </tr>
 </table>
 
+
+
 <table>
   <tr>
     <th><a href="#numerical-features">Numerical features</a></th>
@@ -357,14 +367,18 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
   </tr>
 </table>
 
-> ### ❗️Check and correct data types❗️
->
-> 1. See data types: `df.info()`
-> 2. Change data types:
-> 3. Group:
->    - `numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns`
->    - `categoric_feats = df.select_dtypes(include=[object]).columns`
->    - `time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns`
+# ➕ Feature engineering [🔝](#machine-learning)
+
+```python
+df["{} + {}"].format(var1, var2) = df[var1] + df[var2]
+df["{} - {}"].format(var1, var2) = df[var1] - df[var2]
+df["{} * {}"].format(var1, var2) = df[var1] * df[var2]
+df["{} / {}"].format(var1, var2) = df[var1] / df[var2]
+
+df["log({})"].format(var1)    = np.log(df[var1])
+df["root({})"].format(var1)   = np.root(df[var1])
+df["square({})"].format(var1) = np.square(df[var1])
+```
 
 
 ## Numerical Features
