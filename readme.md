@@ -224,6 +224,74 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 
 # ➕ Feature engineering [🔝](#machine-learning)
 
+> # [Categorical feats encoding in Trees](https://medium.com/data-design/visiting-categorical-features-and-encoding-in-decision-trees-53400fa65931)
+
+
+<table>
+  <tr>
+    <tD></tD>
+    <tD>
+      <h4>Tree based models</h4>
+      <ul>
+        <li>Decission tree</li>
+        <li>Random Forest</li>
+        <li>Extra trees</li>
+        <li>Adaboost</li>
+        <li>Gradient Boosting</li>
+        <li>XGBoost</li>
+        <li>LightGBM</li>
+        <li>CatBoost</li>
+      </ul>
+    </tD>
+    <td>
+      <h4>No-tree based models</h4>
+      <ul>
+        <li>Linear Models</li>
+        <li>Neural Networks</li>
+        <li>K-Nearest Neighbors</li>
+        <li>Suport Vector Machines</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <th>Categorical<br>Ordinal</th>
+    <td>
+      <ul>
+        <li>Ordinal encoding (less than 1000) ⭐</li>
+        <li>Binary encoding (more than 1000)</li>
+        <li>Frequency encoding</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>One hot encoding ⭐</li>
+        <li>Embedding</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <th>Numerical</th>
+    <td>
+      <ul>
+        <li>Nothing ⭐</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>StandarScaler ⭐</li>
+        <li>MinMaxScaler</li>
+        <li>Skewed?
+          <ul>
+            <li>np.log(1+x)</li>
+            <li>np.sqrt(x+2/3)</li>
+            <li>Box-Cox transform</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 <table>
   <tr>
     <th><a href="#numerical-features">Numerical features</a></th>
@@ -893,10 +961,11 @@ Multiple kernel functions exist, the most widely used of which is the RBF kernel
 > - Read [DESlib](https://github.com/scikit-learn-contrib/DESlib), a scikit-learn based library for ensembles.
 
 ### Simple ensembles (averaging)
-- **Mode** or **Majority vote**: Only for classification
+Put model predictions together (columns), and for each sample (row) compute:
+- **Mode** (aka majority vote): The most frequent value. Only for classification
 - **Arithmetic mean** (aka mean or average):
 - **Geometric mean** (aka gmean): Most robust to outliers than mean. ⭐ The best [read this](https://medium.com/@JLMC/understanding-three-simple-statistics-for-data-visualizations-2619dbb3677a)
-- **Harmonic mean**:
+- **Harmonic mean** (aka hmean):
 - **Quadratic mean**
 - **Weighted versions**
 - **Rank versions**
