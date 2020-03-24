@@ -21,7 +21,7 @@
 <tr><td>🌀</td><td><a href="#-dimensionality-reduction-"><b> Dimensionality reduction</b></a></td>  <td>See into 2 or 3 dimensions.</td></tr>
 </table>   
 
-<h3 align="center">Part 2: <a href="#-prepare-the-data">Prepare the data</a> 🛠</h3>
+<h3 align="center">Part 2: <a href="#prepare-the-data">Prepare the data</a> 🛠</h3>
   
 <table>
 <tr><td>🗃️</td><td><a href="#%EF%B8%8F-combine-tables-"><b>Combine tables</b></a></td>      <td>Merge tables by  forenig key.  </td>
@@ -64,9 +64,8 @@
 
 ![](https://cdn.dribbble.com/users/879147/screenshots/7036616/image.png)
 
-Put this on top of your notebook
 ```python
-# Data libraries
+# Put this on top of your notebook
 import gc
 import numpy             as np
 import datatable         as dt
@@ -269,8 +268,18 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 
 
 
+----------------------------------------------------------------
+
 <h3 align="center">Part 2</h3>
 <h1 align="center">Prepare the data</h1>
+
+```python
+# Put this on top of your notebook
+import pandas            as pd
+import featuretools      as ft
+import category_encoders as ce
+from sklearn.compose import ColumnTransformer
+```
 
 
 # 🗃️ Combine tables [🔝](#machine-learning)
