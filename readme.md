@@ -266,6 +266,62 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 ```
 
 
+
+
+
+<h3 align="center">Part 2</h3>
+<h1 align="center">Prepare the data</h1>
+
+
+# 🗃️ Combine tables [🔝](#machine-learning)
+
+![](img/logos/featuretools.png)
+
+Imagine you have **several tables**:
+
+```python
+import featuretools as ft
+
+tables = ft.demo.load_mock_customer()
+
+customers_df    = tables["customers"]
+sessions_df     = tables["sessions"]
+transactions_df = tables["transactions"]
+products_df     = tables["products"]
+```
+
+Therefore, you have **relations** between tables:
+
+```python
+entities = {
+    "customers":    (customers_df,    "customer_id"),
+    "sessions":     (sessions_df,     "session_id",     "session_start"),
+    "transactions": (transactions_df, "transaction_id", "transaction_time"),
+    "products":     (products_df,     "product_id")
+}
+
+relationships = [
+#   (primary_entity, primary_key, foreing_entity, foreing_key)
+    ("products", "product_id", "transactions", "product_id"),
+    ("sessions", "session_id", "transactions", "session_id"),
+    ("customers", "customer_id", "sessions", "customer_id")
+]
+```
+
+Then you can create an **entity set**:
+
+```python
+es = ft.EntitySet("customer_data", entities, relationships)
+es.plot()
+```
+![](img/featuretools.svg)
+
+Finally you can create the **final dataset on the target entity** (sessions for example), for doing Machine Learning:
+
+```python
+df, vars = ft.dfs(entities=entities, relationships=relationships, target_entity="sessions")
+```
+
 # 🛠 Feature preprocessing [🔝](#machine-learning)
 
 > # [Categorical feats encoding in Trees](https://medium.com/data-design/visiting-categorical-features-and-encoding-in-decision-trees-53400fa65931)
