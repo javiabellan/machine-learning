@@ -8,7 +8,7 @@
 
 
 
-<h3 align="center">Part 1: <a href="#exploratory-data-analysis-">Exploratory Data Analysis</a> 👁️</h3>
+<h3 align="center">Part 1: <a href="#exploratory-data-analysis">Exploratory Data Analysis</a> 👁️</h3>
 
 <table>
 <tr><td>🐼</td><td><a href="#-pandas-">            <b>Pandas</b></a></td>              <td>The library for manage data.     </td>
@@ -59,7 +59,7 @@
 ----------------------------------------------------------------
 
 <h3 align="center">Part 1</h3>
-<h1 align="center">Exploratory Data Analysis 👁️</h1>
+<h1 align="center">Exploratory Data Analysis</h1>
 
 ![](https://cdn.dribbble.com/users/879147/screenshots/7036616/image.png)
 
