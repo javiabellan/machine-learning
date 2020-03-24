@@ -540,13 +540,7 @@ embed_dim   = int(min(num_uniques // 2, 50)
 - word2vec
 - topic extraction
 
-> ## Automated feature engineering
-> - [Featuretools](https://www.featuretools.com/): Automatic feature engineering. (by featurelabs)
->   - [Deep Feature Synthesis (DFS)](https://docs.featuretools.com/en/stable/automated_feature_engineering/afe.html)
-
-
 ### Feature engineering packages
-- [Featuretools](https://www.featuretools.com/): Automatic feature engineering. (by featurelabs)
 - [Boruta-py](https://github.com/scikit-learn-contrib/boruta_py): all-relevant feature selection method (by scikit-learn contribution)
 - [Categorical-encoding](https://github.com/scikit-learn-contrib/categorical-encoding): Categorical variables encoding (by scikit-learn contribution)
 - [Tsfresh](https://tsfresh.readthedocs.io): Automatic calculates time series features
