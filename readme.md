@@ -163,7 +163,340 @@ sns.heatmap(df.isnull(), cbar=False);  # Option 2: With Seaborn
 msno.matrix(df);                       # Option 3: With missingno
 ```
 
-### Dealing with missings
+# 🔎 Outlier Detection [🔝](#machine-learning)
+  
+- Standard Deviation
+- Percentiles
+- Isolation Forest: sklearn.ensemble.IsolationForest
+
+> ## Handling Outliers
+> - Remove
+> - Change to max limit
+
+#### Standard Deviation
+
+```python
+#Dropping the outlier rows with standard deviation
+factor = 3
+upper_lim = data['column'].mean () + data['column'].std () * factor
+lower_lim = data['column'].mean () - data['column'].std () * factor
+
+data = data[(data['column'] < upper_lim) & (data['column'] > lower_lim)]
+```
+
+#### Isolation Forest
+
+```python
+from sklearn.ensemble import IsolationForest
+
+clf = IsolationForest(contamination=0.01, behaviour='new')
+outliers = clf.fit_predict(df_x)
+sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
+```
+
+
+
+
+
+----------------------------------------------------------------
+
+<h3 align="center">Part 2</h3>
+<h1 align="center">Prepare the data</h1>
+
+```python
+# Put this on top of your notebook
+import pandas            as pd
+import featuretools      as ft
+import category_encoders as ce
+from sklearn.compose import ColumnTransformer
+```
+
+
+
+# 🗃️ Combine tables [🔝](#machine-learning)
+
+<img align="right" width="200" src="img/logo/featuretools.png">
+
+If you have **several tables** or **1 table with many rows per entity** (user, product,...), you have to do deep feature synthesis with the **featuretools** library.
+However, if you only have a regular table with single row per entity, then featuretools won’t be necessary.
+
+Imagine you have **several tables**:
+
+```python
+tables = ft.demo.load_mock_customer()
+
+customers_df    = tables["customers"]
+sessions_df     = tables["sessions"]
+transactions_df = tables["transactions"]
+products_df     = tables["products"]
+```
+
+Therefore, you have **relations** between tables:
+
+```python
+entities = {
+    "customers":    (customers_df,    "customer_id"),
+    "sessions":     (sessions_df,     "session_id",     "session_start"),
+    "transactions": (transactions_df, "transaction_id", "transaction_time"),
+    "products":     (products_df,     "product_id")
+}
+
+relationships = [
+#   (primary_entity, primary_key, foreing_entity, foreing_key)
+    ("products", "product_id", "transactions", "product_id"),
+    ("sessions", "session_id", "transactions", "session_id"),
+    ("customers", "customer_id", "sessions", "customer_id")
+]
+```
+
+Then you can create an **entity set**:
+
+```python
+es = ft.EntitySet("customer_data", entities, relationships)
+es.plot()
+```
+![](img/featuretools.svg)
+
+Finally you can create the **final dataset on the target entity** (sessions for example), for doing Machine Learning:
+
+```python
+df, vars = ft.dfs(entities=entities, relationships=relationships, target_entity="sessions")
+```
+
+
+
+
+
+
+
+
+
+# ➕ Feature Engineering [🔝](#machine-learning)
+
+
+## Numerical Features
+
+```python
+df["{} + {}"].format(var1, var2) = df[var1] + df[var2]
+df["{} - {}"].format(var1, var2) = df[var1] - df[var2]
+df["{} * {}"].format(var1, var2) = df[var1] * df[var2]
+df["{} / {}"].format(var1, var2) = df[var1] / df[var2] # Precio del metro cuadrodo si tenemos metros y precio de la casa
+
+df["log({})"].format(var1)    = np.log(df[var1])       # Good for skewed (not normal distribution) data
+df["log2({})"].format(var1)   = 1+np.log(df[var1])       # Good for skewed (not normal distribution) data
+df["root({})"].format(var1)   = np.root(df[var1])
+df["root2({})"].format(var1)  = np.root(df[var1]+2/3)
+df["square({})"].format(var1) = np.square(df[var1])
+df["BoxCox({})"].format(var1) = # Box-Cox transform
+#Binning:        Fixed-Width   (ej. age intervals) Good for uniform distributions
+#Binning:        Adaptive (quantile based):     Good for skewed (not normal distribution) data
+```
+
+## Categorical Features
+
+```python
+df["latitud"]   = df["ciudad"].getLat()
+df["longitud"]  = df["ciudad"].getLon()
+df["poblacion"] = df["ciudad"].getPob()
+df["pais"]      = df["ciudad"].getCou()  # Cluster (Paris->France)
+```
+
+## Date Features
+
+```python
+# Simple
+def featEng_date(df, varName):
+    df['year']         = df[varName].dt.year.astype(np.int16)
+    df['month']        = df[varName].dt.month.astype(np.int8)
+    df['week']         = df[varName].dt.weekofyear.astype(np.int8)
+    df['day_of_year']  = df[varName].dt.dayofyear.astype(np.int16)
+    df['day_of_month'] = df[varName].dt.day.astype(np.int8)
+    df['day_of_week']  = df[varName].dt.dayofweek.astype(np.int8)
+    df['hour']         = df[varName].dt.hour.astype(np.int8)
+    df['minute']       = df[varName].dt.minute.astype(np.int8)
+    df['is_weekend']   = # To do
+    df['is_vavation']  = # To do
+
+# Advanced: Agregregates
+periods   = ["15T", "1H", "3H"]
+agregates = ["count", "mean", "std", "min", "max", "sum", "median"]
+```
+
+> - [Tsfresh](https://tsfresh.readthedocs.io): Automatic calculates time series features
+> - [Trane](https://github.com/HDI-Project/Trane)
+
+
+
+
+
+
+
+# ➖ Feature Selection [🔝](#machine-learning)
+
+> [Boruta-py](https://github.com/scikit-learn-contrib/boruta_py): all-relevant feature selection method (by scikit-learn contribution)
+> - Read [this post on machinelearningmastery](https://machinelearningmastery.com/feature-selection-with-real-and-categorical-data/)
+> - Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
+
+Reduce number of attributes. See **feat importance**, **correlations**...
+
+- Mutual information
+- LASSO
+- [**Feature selection**](https://scikit-learn.org/stable/modules/feature_selection.html)
+- Wrapper: Su usa un classificador
+  - MultiObjectiveEvolutionarySearch: Mejor para muchas generaciones. 10000 Evals
+  - PSO: Particule Search optimization: Mejor para pocas generaciones.
+  - RFE: Recursive feature elimination
+  - SelectKBest
+  - Variance Threshold
+- Filters:
+  - InfoGAIN: Cantidad de informacion
+  - Correlation Featue Selection
+  
+#### Recursive Feature Elimination (RFE)   
+At each iteration, select one feature to remove until there are n feature left*
+
+```python
+from sklearn.feature_selection import RFE
+```
+
+#### SelectKBest
+The SelectKBest class just scores the features using a function and then removes all but the k highest scoring features.
+
+```python
+from sklearn.feature_selection import SelectKBest
+```
+
+#### Variance Threshold
+Drop all features that dont meet a variance threshold
+
+```python
+from sklearn.feature_selection import VarianceThreshold
+```
+
+
+
+
+
+
+# 🛠 Encoding [🔝](#machine-learning)
+
+
+[Categorical feats encoding in Trees](https://medium.com/data-design/visiting-categorical-features-and-encoding-in-decision-trees-53400fa65931)
+
+<table>
+
+  <tr>
+    <tD></tD>
+    <tD>
+      <h4>Tree based models</h4>
+      <ul>
+        <li>Decission tree</li>
+        <li>Random Forest</li>
+        <li>Extra trees</li>
+        <li>Adaboost</li>
+        <li>Gradient Boosting</li>
+        <li>XGBoost</li>
+        <li>LightGBM</li>
+        <li>CatBoost</li>
+      </ul>
+    </tD>
+    <td>
+      <h4>No-tree based models</h4>
+      <ul>
+        <li>Linear Models</li>
+        <li>Neural Networks</li>
+        <li>K-Nearest Neighbors</li>
+        <li>Suport Vector Machines</li>
+      </ul>
+    </td>
+  </tr>
+
+
+  <tr>
+    <th>Binary</th>
+    <td>
+      <ul>
+        <li>Binary encoding (1 column)</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>One hot encoding (2 columns)</li>
+      </ul>
+    </td>
+  </tr>
+
+  <tr>
+    <th>Categorical<br>Ordinal</th>
+    <td>
+      <ul>
+        <li>Ordinal encoding (less than 1000) ⭐</li>
+        <li>Binary encoding (more than 1000)</li>
+        <li>Frequency encoding</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>One hot encoding (low card) ⭐</li>
+        <li>Embedding (high card)</li>
+      </ul>
+    </td>
+  </tr>
+
+
+  <tr>
+    <th>Numerical</th>
+    <td>
+      <ul>
+        <li>Nothing ⭐</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>StandarScaler ⭐</li>
+        <li>MinMaxScaler</li>
+        <li>RobustScaler</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+## TODO: Add NLP Features
+- Split (name & surname)
+- Bag of words
+- tfidf
+- n-grams
+- word2vec
+- topic extraction
+
+
+## Automatic detect types (dangerous)
+
+```python
+# See data types: df.info()
+numeric_vars      = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns
+categorical_vars  = df.select_dtypes(include=[object]).columns
+time_vars         = df.select_dtypes(include=['datetime64','timedelta64']).columns
+
+high_cardinality = [c for c in categorical_vars if len(X[c].unique()) > 16]
+low_cardinality  = [c for c in categorical_vars if len(X[c].unique()) <= 16]
+
+num_uniques = int(df[var].nunique())
+embed_dim   = int(min(num_uniques // 2, 50)
+```
+
+
+
+## packages
+- [Categorical-encoding](https://github.com/scikit-learn-contrib/categorical-encoding): Categorical variables encoding (by scikit-learn contribution)
+- [FeatureHub](https://github.com/HDI-Project/FeatureHub): 
+- TO DO: What is Latent feature discovery ??? 
+ 
+
+
+
+## Dealing with missings
 
 - **Remove**
   - **Rows** with missings
@@ -233,344 +566,13 @@ The great thing about this method is that it allows you to use an estimator of y
 - **Additional tip 2**: The Iterative Imputer allows for different estimators to be used. After some testing, I found out that you can even use Catboost as an estimator! Unfortunately, LightGBM and XGBoost do not work since their random state names differ.
 
 
-# 🔎 Outlier Detection [🔝](#machine-learning)
-  
-- Standard Deviation
-- Percentiles
-- Isolation Forest: sklearn.ensemble.IsolationForest
-
-> ## Handling Outliers
-> - Remove
-> - Change to max limit
-
-#### Standard Deviation
-
-```python
-#Dropping the outlier rows with standard deviation
-factor = 3
-upper_lim = data['column'].mean () + data['column'].std () * factor
-lower_lim = data['column'].mean () - data['column'].std () * factor
-
-data = data[(data['column'] < upper_lim) & (data['column'] > lower_lim)]
-```
-
-#### Isolation Forest
-
-```python
-from sklearn.ensemble import IsolationForest
-
-clf = IsolationForest(contamination=0.01, behaviour='new')
-outliers = clf.fit_predict(df_x)
-sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
-```
 
 
 
 
-
-----------------------------------------------------------------
-
-<h3 align="center">Part 2</h3>
-<h1 align="center">Prepare the data</h1>
-
-```python
-# Put this on top of your notebook
-import pandas            as pd
-import featuretools      as ft
-import category_encoders as ce
-from sklearn.compose import ColumnTransformer
-```
-
-
-# 🗃️ Combine tables [🔝](#machine-learning)
-
-<img align="right" width="200" src="img/logo/featuretools.png">
-
-If you have **several tables** or **1 table with many rows per entity** (user, product,...), you have to do deep feature synthesis with the **featuretools** library. However, if you only have a regular table with single row per entity, then featuretools won’t be necessary.
-
-Imagine you have **several tables**:
-
-```python
-tables = ft.demo.load_mock_customer()
-
-customers_df    = tables["customers"]
-sessions_df     = tables["sessions"]
-transactions_df = tables["transactions"]
-products_df     = tables["products"]
-```
-
-Therefore, you have **relations** between tables:
-
-```python
-entities = {
-    "customers":    (customers_df,    "customer_id"),
-    "sessions":     (sessions_df,     "session_id",     "session_start"),
-    "transactions": (transactions_df, "transaction_id", "transaction_time"),
-    "products":     (products_df,     "product_id")
-}
-
-relationships = [
-#   (primary_entity, primary_key, foreing_entity, foreing_key)
-    ("products", "product_id", "transactions", "product_id"),
-    ("sessions", "session_id", "transactions", "session_id"),
-    ("customers", "customer_id", "sessions", "customer_id")
-]
-```
-
-Then you can create an **entity set**:
-
-```python
-es = ft.EntitySet("customer_data", entities, relationships)
-es.plot()
-```
-![](img/featuretools.svg)
-
-Finally you can create the **final dataset on the target entity** (sessions for example), for doing Machine Learning:
-
-```python
-df, vars = ft.dfs(entities=entities, relationships=relationships, target_entity="sessions")
-```
-
-# 🛠 Feature preprocessing [🔝](#machine-learning)
-
-> # [Categorical feats encoding in Trees](https://medium.com/data-design/visiting-categorical-features-and-encoding-in-decision-trees-53400fa65931)
-
-> ### ❗️Check and correct data types❗️
->
-> 1. See data types: `df.info()`
-> 2. Change data types:
-> 3. Group:
->    - `numeric_feats   = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns`
->    - `categoric_feats = df.select_dtypes(include=[object]).columns`
->    - `time_feats      = df.select_dtypes(include=['datetime64','timedelta64']).columns`
-
-<table>
-  <tr>
-    <tD></tD>
-    <tD>
-      <h4>Tree based models</h4>
-      <ul>
-        <li>Decission tree</li>
-        <li>Random Forest</li>
-        <li>Extra trees</li>
-        <li>Adaboost</li>
-        <li>Gradient Boosting</li>
-        <li>XGBoost</li>
-        <li>LightGBM</li>
-        <li>CatBoost</li>
-      </ul>
-    </tD>
-    <td>
-      <h4>No-tree based models</h4>
-      <ul>
-        <li>Linear Models</li>
-        <li>Neural Networks</li>
-        <li>K-Nearest Neighbors</li>
-        <li>Suport Vector Machines</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <th>Categorical<br>Ordinal</th>
-    <td>
-      <ul>
-        <li>Ordinal encoding (less than 1000) ⭐</li>
-        <li>Binary encoding (more than 1000)</li>
-        <li>Frequency encoding</li>
-      </ul>
-    </td>
-    <td>
-      <ul>
-        <li>One hot encoding ⭐</li>
-        <li>Embedding</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <th>Numerical</th>
-    <td>
-      <ul>
-        <li>Nothing ⭐</li>
-      </ul>
-    </td>
-    <td>
-      <ul>
-        <li>StandarScaler ⭐</li>
-        <li>MinMaxScaler</li>
-        <li>Skewed?
-          <ul>
-            <li>np.log(1+x)</li>
-            <li>np.sqrt(x+2/3)</li>
-            <li>Box-Cox transform</li>
-          </ul>
-        </li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-
-
-<table>
-  <tr>
-    <th><a href="#numerical-features">Numerical features</a></th>
-    <th><a href="#categorical-features">Categorical features</th>
-    <th><a href="#date-features">Date features</th>
-    <th><a href="#nlp-features">NLP features</th>
-  </tr>
-  <tr>
-    <td>
-      <ul>
-        <li>Scaling</li>
-        <li>Normalization</li>
-        <li>Standarization</li>
-        <li>Logarithim</li>
-        <li>Logarithim</li>
-        <li>Exponentials</li>
-        <li>Polynomial</li>
-      </ul>
-    </td>
-    <td>
-      <ul>
-        <li><b>Binary</b> features: 0,1</li>
-        <li><b>Nominal</b> features<ul>
-          <li>Low cardinality: One-Hot</li>
-          <li>High cardinality: Embedding</li></ul>
-        </li>
-        <li><b>Ordinal</b> features: Label Enc.</li>
-      </ul>
-    </td>
-    <td>
-      <ul>
-        <li>Year</li>
-        <li>Month</li>
-        <li>Week</li>
-        <li>Day of yeay</li>
-        <li>Day of month</li>
-        <li>Day of week</li>
-        <li>Is weekend</li>
-        <li>Is vacation</li>
-        <li>Hour</li>
-        <li>Minute</li>
-      </ul>
-    </td>
-    <td>
-      <ul>
-        <li>Split (name & surname)</li>
-        <li>Bag of words</li>
-        <li>Tf-idf</li>
-        <li>n-grams</li>
-        <li>word2vec</li>
-        <li>Topic extraction</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-# ➕ Feature engineering [🔝](#machine-learning)
-
-
-## Numerical Features
-
-```python
-df["{} + {}"].format(var1, var2) = df[var1] + df[var2]
-df["{} - {}"].format(var1, var2) = df[var1] - df[var2]
-df["{} * {}"].format(var1, var2) = df[var1] * df[var2]
-df["{} / {}"].format(var1, var2) = df[var1] / df[var2]
-
-df["log({})"].format(var1)    = np.log(df[var1])
-df["root({})"].format(var1)   = np.root(df[var1])
-df["square({})"].format(var1) = np.square(df[var1])
-```
-
-- Numerical (continuous) Features
-  - Scaling:        Normalization: Numerical to range=[0, 1]
-  - Scaling:        Standardization: Numerical to (mean= 0, std=1)
-  - Math Transform: Log:           Good for skewed (not normal distribution) data
-  - Math Transform: Square 
-  - Binning:        Fixed-Width   (ej. age intervals) Good for uniform distributions
-  - Binning:        Adaptive (quantile based):     Good for skewed (not normal distribution) data
-  - binarize: convert any number differnt form 0 to 1: good for sparse data
-  - Round
-- Numerical (discrete) Features
-
-
-## Date Features
-
-#### Simple
-```python
-def featEng_date(df, varName):
-    df['year']         = df[varName].dt.year.astype(np.int16)
-    df['month']        = df[varName].dt.month.astype(np.int8)
-    df['week']         = df[varName].dt.weekofyear.astype(np.int8)
-    df['day_of_year']  = df[varName].dt.dayofyear.astype(np.int16)
-    df['day_of_month'] = df[varName].dt.day.astype(np.int8)
-    df['day_of_week']  = df[varName].dt.dayofweek.astype(np.int8)
-    df['hour']         = df[varName].dt.hour.astype(np.int8)
-    df['minute']       = df[varName].dt.minute.astype(np.int8)
-```
-
-#### Advanced: Agregregates
-```python
-periods   = ["15T", "1H", "3H"]
-agregates = ["count", "mean", "std", "min", "max", "sum", "median"]
-```
-
-
-## Categorical Features
-
-- Ordinal Categorical Features [generat1, generat2, generat3]
-  - LabelEncoder: from sklearn.preprocessing import LabelEncoder
-- Nominal Categorical Features [Spain, France, Italy]
-  - Low cardinality: One-Hot Encoding (dummy encoding)
-  - High cardinality:
-    - Embedding vector. Check [this](https://www.kaggle.com/c/cat-in-the-dat-ii/discussion/124217)
-    - Cluster (spain->europe)
-- Multi-Categorical Features
-  - N-Hot Encoding
-  
-```python
-high_cardinality = [c for c in nominal_vars if len(X[c].unique()) > 16]
-low_cardinality  = [c for c in nominal_vars if len(X[c].unique()) <= 16]
-
-num_uniques = int(df[var].nunique())
-embed_dim   = int(min(num_uniques // 2, 50)
-```
-
-
-
-## NLP Features
-- Split (name & surname)
-- Bag of words
-- tfidf
-- n-grams
-- word2vec
-- topic extraction
-
-### Feature engineering packages
-- [Boruta-py](https://github.com/scikit-learn-contrib/boruta_py): all-relevant feature selection method (by scikit-learn contribution)
-- [Categorical-encoding](https://github.com/scikit-learn-contrib/categorical-encoding): Categorical variables encoding (by scikit-learn contribution)
-- [Tsfresh](https://tsfresh.readthedocs.io): Automatic calculates time series features
-- [Trane](https://github.com/HDI-Project/Trane): For temporal datasets
-- [FeatureHub](https://github.com/HDI-Project/FeatureHub): 
-
- TO DO: What is Latent feature discovery ??? 
-
-
----
- 
- 
-### One-Hot Encoding (Dummies)
+### One-Hot Encoding
 Some learning algorithms only work with numerical feature vectors. When some feature in your dataset is categorical, like “colors” or “days of the week,” you can transform such a categorical feature into several binary ones.
 
-```Python
-## Dummies in pandas
-df = pd.DataFrame({'country': ['usa', 'canada', 'australia','japan','germany']})
-pd.get_dummies(df,prefix=['country'])
-
-## Get Dummies, drop one
-df = pd.get_dummies(df, drop_first=True)
-```
 
 ```python
 ## One Hot Encoding takes a single categorical feature and converts it
@@ -588,8 +590,9 @@ print(lb.transform((1,4)))
 print(lb.classes_)
 ```
 
-### Binning
-An opposite situation, occurring less frequently in practice, is when you have a numerical feature but you want to convert it into a categorical one. Binning (also called bucketing) is the process of converting a continuous feature into multiple binary features called bins or buckets, typically based on value range. For example, instead of representing age as a single real-valued feature, the analyst could chop ranges of age into discrete bins: all ages between 0 and 5 years-old could be put into one bin, 6 to 10 years-old could be in the second bin, 11 to 15 years-old could be in the third bin, and so on.
+
+  - Scaling:        Normalization: Numerical to range=[0, 1]
+  - Scaling:        Standardization: Numerical to (mean= 0, std=1)
 
 ### Normalization
 Normalization is the process of converting an actual range of values which a numerical
@@ -620,45 +623,7 @@ X_test_1 = scaler.transform(X_test)
 ```
 
 
-# ➖ Feature selection [🔝](#machine-learning)
-> - Read [this post on machinelearningmastery](https://machinelearningmastery.com/feature-selection-with-real-and-categorical-data/)
-> - Read [sklearn chapter](https://scikit-learn.org/stable/modules/feature_selection.html)
 
-Reduce number of attributes. See **feat importance**, **correlations**...
-
-- Mutual information
-- LASSO
-- [**Feature selection**](https://scikit-learn.org/stable/modules/feature_selection.html)
-- Wrapper: Su usa un classificador
-  - MultiObjectiveEvolutionarySearch: Mejor para muchas generaciones. 10000 Evals
-  - PSO: Particule Search optimization: Mejor para pocas generaciones.
-  - RFE: Recursive feature elimination
-  - SelectKBest
-  - Variance Threshold
-- Filters:
-  - InfoGAIN: Cantidad de informacion
-  - Correlation Featue Selection
-  
-#### Recursive Feature Elimination (RFE)   
-At each iteration, select one feature to remove until there are n feature left*
-
-```python
-from sklearn.feature_selection import RFE
-```
-
-#### SelectKBest
-The SelectKBest class just scores the features using a function and then removes all but the k highest scoring features.
-
-```python
-from sklearn.feature_selection import SelectKBest
-```
-
-#### Variance Threshold
-Drop all features that dont meet a variance threshold
-
-```python
-from sklearn.feature_selection import VarianceThreshold
-```
 
 # 🌀 Dimensionality reduction [🔝](#machine-learning)
 > - https://www.analyticsvidhya.com/blog/2018/08/dimensionality-reduction-techniques-python/
