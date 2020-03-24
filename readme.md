@@ -275,7 +275,9 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 
 # 🗃️ Combine tables [🔝](#machine-learning)
 
-<img width="300" src="img/logo/featuretools.jpg">
+If you have **several tables** or **1 table with many rows per entity** (user, product,...), you have to do deep feature synthesis with the **featuretools** library. However, if you only have a regular table with single row per entity, then deep feature synthesis won’t be necessary.
+
+<img width="300" src="img/logo/featuretools.png">
 
 Imagine you have **several tables**:
 
