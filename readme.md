@@ -291,8 +291,6 @@ If you have **several tables** or **1 table with many rows per entity** (user, p
 Imagine you have **several tables**:
 
 ```python
-import featuretools as ft
-
 tables = ft.demo.load_mock_customer()
 
 customers_df    = tables["customers"]
