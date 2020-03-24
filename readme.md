@@ -275,7 +275,7 @@ sns.scatterplot(df_x.var1, df_x.var2, outliers, palette='Set1', legend=False)
 
 # 🗃️ Combine tables [🔝](#machine-learning)
 
-![](img/logo/featuretools.png)
+<img width="300" src="img/logo/featuretools.jpg">
 
 Imagine you have **several tables**:
 
