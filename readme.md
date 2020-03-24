@@ -22,14 +22,15 @@
 </table>   
 
 <h3 align="center">Part 2: <a href="#-prepare-the-data">Prepare the data</a> 🛠</h3>
-
+  
 <table>
-<tr><td>❓</td><td><a href="#-fix-missings-"> <b>Fix missing values</b></a></td> <td>Deal with empty data.      </td>
-    <td rowspan="5"><img width="300" src="https://cdn.dribbble.com/users/879147/screenshots/5246825/design.jpg"></td></tr>
-<tr><td>➕</td><td><a href="#-feature-engineering-">     <b>Feature engineering</b></a></td><td>Create new features.       </td></tr>
-<tr><td>➖</td><td><a href="#-feature-selection-">       <b>Feature selection</b></a></td>  <td>Drop usless features.      </td></tr>
-<tr><td>✂</td><td><a href="#-split-data-">              <b>Split data</b></a></td>   <td>Define train and validation sets.</td></tr>
-<tr><td>📊</td><td><a href="#-imbalanced-data-">         <b>Imbalanced Data</b></a></td>    <td>Detect rare data.           </td></tr>
+<tr><td>🗃️</td><td><a href="#-feature-engineering-"><b>Combine tables</b></a></td>      <td>Merge tables by  forenig key.  </td>
+    <td rowspan="6"><img width="300" src="https://cdn.dribbble.com/users/879147/screenshots/5246825/design.jpg">        </td></tr>
+<tr><td>➕</td><td><a href="#-feature-engineering-"><b>Feature engineering</b></a></td> <td>Create new features.       </td></tr>
+<tr><td>➖</td><td><a href="#-feature-selection-">  <b>Feature selection</b></a></td>   <td>Drop usless features.      </td></tr>
+<tr><td>❓</td><td><a href="#-preprocessing-">      <b>Preprocessing</b></a></td>  <td>Encode variables & deal with missings.</td></tr>
+<tr><td>✂</td><td><a href="#-split-data-">        <b>Split data</b></a></td>      <td>Define train and validation sets.   </td></tr>
+<tr><td>📊</td><td><a href="#-imbalanced-data-">  <b>Imbalanced Data</b></a></td>  <td>Detect rare data.                   </td></tr>
 </table>   
 
 
