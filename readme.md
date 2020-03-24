@@ -8,23 +8,24 @@
 
 
 
+<h3 align="center">Part 1: Exploratory Data Analysis 👁️</h3>
 
 <table>
-<tr><th width="25%" rowspan="7"><h3>👁️ Part 1:</h3><h2><a href="/1.%20Software">Exploratory<br>Data Analysis</a></h2></th><td>
-        🐼</td><td width="30%"><a href="#-pandas-"> <b>Pandas</b></a></td>             <td>The library for manage data.     </td></tr>
+<tr><td>🐼</td><td><a href="#-pandas-">            <b>Pandas</b></a></td>              <td>The library for manage data.     </td>
+    <td rowspan="7"><img width="300" src="https://cdn.dribbble.com/users/879147/screenshots/5254729/innovation.jpg"></td></tr>
 <tr><td>☝🏻</td><td><a href="#-univariate-analysis-"><b>Univariate analysis</b></a></td> <td>Plot each variable independently.</td></tr>
 <tr><td>✌🏻</td><td><a href="#-univariate-analysis-"><b>Bivariate analysis</b></a></td>  <td>Plot variable pairs.             </td></tr>
-<tr><td>❓</td><td><a href="#-missings-">         <b>Missings</b></a></td>              <td> Locate empty data.              </td></tr>
-<tr><td>🔎</td><td><a href="#-outliers-">        <b>Outliers</b></a></td>              <td>Detect rare data.                </td></tr>
-<tr><td>👯‍</td><td><a href="#-correlationn-">   <b>Correlation</b></a></td>           <td>Find similar variables.          </td></tr>
-<tr><td>🌀</td><td><a href="#-dimensionality-reduction-"><b> Dimensionality reduction</b></a></td>  <td>Compress the features into 2 or 3 dimensions.</td></tr>
+<tr><td>❓</td><td><a href="#-missings-">           <b>Missings</b></a></td>            <td> Locate empty data.              </td></tr>
+<tr><td>🔎</td><td><a href="#-outliers-">          <b>Outliers</b></a></td>            <td>Detect rare data.                </td></tr>
+<tr><td>👯‍</td><td><a href="#-correlationn-">     <b>Correlation</b></a></td>         <td>Find similar variables.          </td></tr>
+<tr><td>🌀</td><td><a href="#-dimensionality-reduction-"><b> Dimensionality reduction</b></a></td>  <td>See into 2 or 3 dimensions.</td></tr>
 </table>   
 
-<br>
+<h3 align="center">Part 2: <a href="#-prepare-the-data">Prepare the data</a> 🛠</h3>
 
 <table>
-<tr><th width="25%" rowspan="5"><h3>🛠 Part 2:</h3><h2><a href="#-prepare-the-data">Prepare<br>the data</a></h2></th><td>
-        ❓</td><td width="30%"><a href="#-fix-missings-"> <b>Fix missing values</b></a></td> <td>Deal with empty data.      </td></tr>
+<tr><td>❓</td><td><a href="#-fix-missings-"> <b>Fix missing values</b></a></td> <td>Deal with empty data.      </td>
+    <td rowspan="5"><img width="300" src="https://cdn.dribbble.com/users/879147/screenshots/5246825/design.jpg"></td></tr>
 <tr><td>➕</td><td><a href="#-feature-engineering-">     <b>Feature engineering</b></a></td><td>Create new features.       </td></tr>
 <tr><td>➖</td><td><a href="#-feature-selection-">       <b>Feature selection</b></a></td>  <td>Drop usless features.      </td></tr>
 <tr><td>✂</td><td><a href="#-split-data-">              <b>Split data</b></a></td>   <td>Define train and validation sets.</td></tr>
@@ -41,7 +42,7 @@
 | 🎯 |  [**Hyperparameter optimization (HPO)**](#-hyperparameters-optimization-) | Optimize model hyperparameters.      |
 | 👪 |  [**Ensemble**](#-ensembles-) | Use several models. |
 | 📏 |  **Metrics**: [**Classification**](#-Classification-metrics-), [**Regression**](#-Regression-metrics-) | Measure the model performance.  |
-| 💭 | [**Interpretability (MLI)**](#-interpretability-)            | Explain your model (trust, tranparency, no bias...) |
+| 💭 | [**Interpretability (MLI)**](#-interpretability-)            | Explain your model decisions |
 | 🍹 | [**Auto Machine learning**](#-auto-machine-learning-)        | Automatic machine learning pipeline        |
 
 
@@ -58,6 +59,8 @@
 ----------------------------------------------------------------
 
 <h1 align="center">Part 1: Exploratory Data Analysis 👁️</h1>
+
+![](https://cdn.dribbble.com/users/879147/screenshots/7036616/image.png)
 
 Put this on top of your notebook
 ```python
