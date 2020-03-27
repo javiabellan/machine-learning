@@ -15,8 +15,7 @@
 | **Messaging**     | Apache Kafka         | PubSub                  | Kinesis                 |
 | **Storage**       | Your hard drive      | Cloud Storage (GCS)     | S3 + Athena             |
 
-
-# Saving models
+## Saving & Laod models → [MLFlow](https://mlflow.org/)
 
 - Skealearn
   - Pickle: Errors when your training environment (python 3.7) is different from your production environment (3.6)
@@ -45,11 +44,57 @@ loaded.evaluate(x, y, verbose = 0))
 ```
 
 
-# Deploy
+## Deploy model to an API → [Flask](https://flask.palletsprojects.com/)
 
 - Flask models as web API,
 - Gunicorn: A WSGI Server for putting API in production
 - Heroku: Hosting, free but limited.
+
+```python
+import pandas as pd
+import mlflow.sklearn
+import flask
+
+model_path = "models/logit_games_v1"
+model  = mlflow.sklearn.load_model(model_path)
+
+app = flask.Flask(__name__)
+
+@app.route("/", methods=["GET","POST"])
+def predict():
+    data = {"success": False}
+    params = flask.request.args
+
+    if "G1" in params.keys(): 
+        new_row = { "G1": params.get("G1"), "G2": params.get("G2"), 
+                    "G3": params.get("G3"), "G4": params.get("G4"), 
+                    "G5": params.get("G5"), "G6": params.get("G6"), 
+                    "G7": params.get("G7"), "G8": params.get("G8"), 
+                    "G9": params.get("G9"), "G10": params.get("G10") }
+
+        new_x = pd.DataFrame.from_dict(new_row, orient = "index").transpose()                
+        data["response"] = str(model.predict_proba(new_x)[0][1])
+        data["success"] = True
+
+    return flask.jsonify(data)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
+```
+### Test API
+
+```python
+import requests
+
+new_row = { "G1": 0, "G2": 0, "G3": 0, "G4": 0, "G5": 0,
+            "G6": 0, "G7": 0, "G8": 0, "G9": 0, "G10": 1 }
+
+result = requests.get("http://52.90.199.190:5000/", params=new_row)
+print(result.json()['response'])
+```
+
+
+##
 - intractive Front End
   - Dash (similar to Shiny)
 
