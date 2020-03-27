@@ -17,17 +17,10 @@
 
 ## Saving & Laod models → [MLFlow](https://mlflow.org/)
 
-- Skealearn
-  - Pickle: Errors when your training environment (python 3.7) is different from your production environment (3.6)
-  - MLflow: Best
-
-
-```python
-import pickle
-pickle.dump(model, open("logit.pkl", 'wb'))
-model = pickle.load(open("logit.pkl", 'rb'))
-model.predict_proba(x)
-```
+- **Pickle**: Errors when your training environment (python 3.7) is different from your production environment (3.6)
+- **MLflow**: Best
+  
+<p align="center"><img width="200" src="img/mlflow.png"></p>
 
 ```python
 import mlflow.sklearn
@@ -45,6 +38,8 @@ loaded.evaluate(x, y, verbose = 0))
 
 
 ## Deploy model to an API → [Flask](https://flask.palletsprojects.com/)
+
+<p align="center"><img width="200" src="img/flask.png"></p>
 
 - Flask models as web API,
 - Gunicorn: A WSGI Server for putting API in production
