@@ -94,7 +94,25 @@ print(result.json()['response'])
 ```
 
 
-##
+## Maintenance (retraining)
+Fitting and serving your machine learning (ML) model is one thing, but what about keeping it in shape over time?
+
+Read
+- [Incremental training](https://medium.com/vantageai/keeping-your-ml-model-in-shape-with-kafka-airflow-and-mlflow-143d20024ba6)
+- [Designing an end-to-end Machine Learning Framework](https://medium.com/@awaiskaleem/designing-an-end-to-end-machine-learning-framework-using-databricks-mlflow-apache-airflow-and-aws-f5257806faf3)
+
+
+
+### Scheduling jobs
+- Cron & crontab
+  - Linux utility for scheduling
+  - Disavantage:  it runs on a single machine. (machines con go down)
+- Apache Airflow
+  - Is an open source Workflow tool from apache
+
+
+
+## Create a web application
 - intractive Front End
   - Dash (similar to Shiny)
 
