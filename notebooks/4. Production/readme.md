@@ -5,20 +5,15 @@
 >  it also includes DevOps and lifecycle management of live systems.
 > </em></p>
 
-|                            | GCP               | AWS         | Apache   |  Others               |
-|----------------------------|-------------------|------------ |----------|-----------------------|
-| Model as API Endpoint      |                   |             |          | Flask, Gunicorn       |
-| Jupyter notebook           | Colaboratory      | SageMaker   |          | Kaggle notebooks      |
-| Virtual machine (instance) |                   | EC2         |          |                       |
-| Scale instances            | Cloud Functions   | AWS Lambda  |          |                       |
-| Containers                 |                   |             |          | Docker, Kubernetes    |
-| DDBBs (data warehouse)     | BigQuery          | Redshift    |          | Snowflake, Delta Lake |
-| DDBBs (data lakes)         | BigQuery          | S3 + Athena |          |                       |
-| Batch processing           | Dataflow          |             | Beam     | PySpark               |
-| Streaming processing       | PubSub            | Kinesis     | Kafka    |                       |
-| Automated workflows        |                   |             | Airflow  |                       |
-| Machine Learning           |                   |             | MLlib    | Sklearn, H20          |
-| Deep Learning              | Keras, Tensorflow |             | MXnet    | Pytorch, Fast.ai      |
+|                   | Server (Hosted)      | Google GCP (Serverless) | Amazon AWS (Serverless) |
+|-------------------|----------------------|-------------------------|-------------------------|
+| **Concept**       | Manual control       | Abstraction of server   | Abstraction of server   |
+| **Hardware**      | Single machine (EC2) | Scalable environment    | Scalable environment    |
+| **Usage**         | SSH to the machine   | UI and command line     | UI                      |
+| **API Endpoints** | Flask + Guicorn      | Flask + Cloud Functions | Flask + AWS Lambda      |
+| **Container**     | Docker               | Kubernetes              | Elastic Container Server (ECS) |
+| **Messaging**     | Apache Kafka         | PubSub                  | Kinesis                 |
+| **Storage**       | Your hard drive      | Cloud Storage (GCS)     | S3 + Athena             |
 
 
 # Saving models
