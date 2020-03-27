@@ -15,7 +15,7 @@
 | **Messaging**     | Apache Kafka         | PubSub                  | Kinesis                 |
 | **Storage**       | Your hard drive      | Cloud Storage (GCS)     | S3 + Athena             |
 
-## Saving & Laod models → [MLFlow](https://mlflow.org/)
+# Saving & Laod models → [MLFlow](https://mlflow.org/)
 
 - **Pickle**: Errors when your training environment (python 3.7) is different from your production environment (3.6)
 - **MLflow**: Best
@@ -37,7 +37,7 @@ loaded.evaluate(x, y, verbose = 0))
 ```
 
 
-## Deploy model to an API → [Flask](https://flask.palletsprojects.com/)
+# Deploy model to an API → [Flask](https://flask.palletsprojects.com/)
 
 <p align="center"><img width="200" src="img/flask.png"></p>
 
@@ -89,7 +89,7 @@ print(result.json()['response'])
 ```
 
 
-## Maintenance (model drift → retraining)
+# Maintenance (model drift → retraining)
 
 Fitting and serving your machine learning (ML) model is one thing, but what about keeping it in shape over time?
 
