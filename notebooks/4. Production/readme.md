@@ -94,23 +94,42 @@ print(result.json()['response'])
 ```
 
 
-## Maintenance (retraining)
+## Maintenance (model drift → retraining)
+
 Fitting and serving your machine learning (ML) model is one thing, but what about keeping it in shape over time?
 
-Read
-- [Incremental training](https://medium.com/vantageai/keeping-your-ml-model-in-shape-with-kafka-airflow-and-mlflow-143d20024ba6)
-- [Designing an end-to-end Machine Learning Framework](https://medium.com/@awaiskaleem/designing-an-end-to-end-machine-learning-framework-using-databricks-mlflow-apache-airflow-and-aws-f5257806faf3)
+![](img/model_drift.jpg)
 
 
 
-### Scheduling jobs
+
+> ### Importante: Existen 2 tipos de datos
+>
+> |            | Predicciones de futuro | Prediccion de otra cosa |
+> |------------|------------------------|-------------------------|
+> | Etiquetado | Los datos son **autoetiquetados**, conforme avanza el tiempo dispondremos de más datos etiquetados. | Los datos son **etiquetados a mano**, normalemente por un experto. Disponemos de más datos si se etiquetan más. |
+> | Ejemplos   | Predicción de bitcoin, prediccion de comportamiento de cliente,... | Detecctor de caras |
+> | Reentrenar modelo | Podrá ser **automatico** periodicamente, o cuando el nuevo error de validcion empeore | No tenemos la certeza si nuestro modelo está empeorando. |
+
+### Opción A: Reentrenar periodicamente → Scheduling jobs
 - Cron & crontab
   - Linux utility for scheduling
   - Disavantage:  it runs on a single machine. (machines con go down)
 - Apache Airflow
   - Is an open source Workflow tool from apache
 
+  
+  
+### Opción B: Reentrenar solo cuando el nuevo error de validación emepore
 
+
+### Referencias
+- [Productionizing Machine Learning: From Deployment to Drift Detection](https://databricks.com/blog/2019/09/18/productionizing-machine-learning-from-deployment-to-drift-detection.html)
+- [Incremental training](https://medium.com/vantageai/keeping-your-ml-model-in-shape-with-kafka-airflow-and-mlflow-143d20024ba6)
+- [Designing an end-to-end Machine Learning Framework](https://medium.com/@awaiskaleem/designing-an-end-to-end-machine-learning-framework-using-databricks-mlflow-apache-airflow-and-aws-f5257806faf3)
+
+
+---
 
 ## Create a web application
 - intractive Front End
