@@ -107,6 +107,9 @@ Fitting and serving your machine learning (ML) model is one thing, but what abou
 > | Reentrenar modelo | Podrá ser **automatico** periodicamente, o cuando el nuevo error de validcion empeore | No tenemos la certeza si nuestro modelo está empeorando. |
 
 ### Opción A: Reentrenar periodicamente → Scheduling jobs
+
+<p align="center"><img width="200" src="img/airflow.png"></p>
+
 - Cron & crontab
   - Linux utility for scheduling
   - Disavantage:  it runs on a single machine. (machines con go down)
