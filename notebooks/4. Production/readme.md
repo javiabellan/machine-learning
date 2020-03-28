@@ -103,7 +103,7 @@ Fitting and serving your machine learning (ML) model is one thing, but what abou
 > |            | Predicciones de futuro | Prediccion de otra cosa |
 > |------------|------------------------|-------------------------|
 > | Etiquetado | Los datos son **autoetiquetados**, conforme avanza el tiempo dispondremos de más datos etiquetados. | Los datos son **etiquetados a mano**, normalemente por un experto. Disponemos de más datos si se etiquetan más. |
-> | Ejemplos   | Predicción de:<ul><li>bitcoin</li><li>comportamiento de cliente</li><li>coronavirus</li></ul> | Detecctor de caras |
+> | Ejemplos   | Predicción de:<ul><li>bitcoin</li><li>comportamiento de cliente</li><li>Datos meteorológicos</li><li>coronavirus</li></ul> | Detecctor de caras |
 > | Reentrenar modelo | El modelo podra reentrenarse:<ul><li>Periodicamente a intervalos fijos.</li><li>Cuando el nuevo error de validación empeore.</li></ul> | No tenemos la certeza si nuestro modelo está empeorando. |
 
 ### Opción A: Reentrenar periodicamente → Scheduling jobs
