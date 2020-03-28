@@ -88,6 +88,15 @@ result = requests.get("http://52.90.199.190:5000/", params=new_row)
 print(result.json()['response'])
 ```
 
+### Deploy to server
+En este punto que ya tenemos la API hecha, tenemos 4 opciones para ponerla en producción en un servidor.
+- Montar nuestro propio servidor con [**Gunicorn**](https://gunicorn.org/): `gunicorn --bind 0.0.0.0 echo:app`
+- Usar un servidor externo gratuito como [**Heroku**](https://www.heroku.com)
+- Usar [**Google Cloud Functions**](https://cloud.google.com/functions/docs/first-python?hl=es-419) 
+- Usar [**Amazon AWS Lambda**](https://aws.amazon.com/es/lambda/) 
+
+
+---
 
 # Maintenance (model drift → retraining)
 
@@ -95,16 +104,13 @@ Fitting and serving your machine learning (ML) model is one thing, but what abou
 
 ![](img/model_drift.jpg)
 
-
-
-
 > ### Importante: Existen 2 tipos de datos
 >
 > |            | Predicciones de futuro | Prediccion de otra cosa |
 > |------------|------------------------|-------------------------|
 > | Etiquetado | Los datos son **autoetiquetados**, conforme avanza el tiempo dispondremos de más datos etiquetados. | Los datos son **etiquetados a mano**, normalemente por un experto. Disponemos de más datos si se etiquetan más. |
 > | Ejemplos   | Predicción de:<ul><li>bitcoin</li><li>comportamiento de cliente</li><li>Datos meteorológicos</li><li>coronavirus</li></ul> | Detecctor de caras |
-> | Reentrenar modelo | El modelo podra reentrenarse:<ul><li>Periodicamente a intervalos fijos.</li><li>Cuando el nuevo error de validación empeore.</li></ul> | No tenemos la certeza si nuestro modelo está empeorando. |
+> | Reentrenar modelo | El modelo podra reentrenarse:<ul><li>Periodicamente a intervalos fijos.</li><li>Cuando el nuevo error de validación empeore.</li></ul> | No tenemos la certeza si nuestro modelo está empeorando. Hay que etiquetar datos nuevos. |
 
 ### Opción A: Reentrenar periodicamente → Scheduling jobs
 
