@@ -137,3 +137,7 @@ Fitting and serving your machine learning (ML) model is one thing, but what abou
 # Data warehoses
 
 This approach has worked well in the past, but it creates issues when building large-scale data science pipelines. Moving data in and out of a relational database can be a bottleneck for these types of workflows. One of the solutions to this bottleneck is to use vendor solutions that separate storage from compute, such as Snowflake or Delta Lake.
+
+# Reference
+- https://mlinproduction.com/
+- https://towardsdatascience.com/@bgweber
