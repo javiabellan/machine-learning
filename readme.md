@@ -942,7 +942,7 @@ Similar to forward stepwise regression. At each step, it finds the predictor mos
 | Non-binary branches   | No    | No    |       | Yes            |
 | Handle classification | Yes   | Yes   |       | Yes            |
 | Handle regressioon    | No    | Yes   |       |                |
-| Split method          | Chi-square | GINI index | Information Gain | Gain Ratio |
+| Split method (class)  | Chi-square | GINI index | Information Gain | Gain Ratio |
 | In Sklearn            | No    | Yes   | No    | No             |
 | In Chefboost          | Yes   | Yes   | Yes   | Yes (C4.5)     |
 | Video theory          | [video](https://youtu.be/cu0ZdZNCbKo) | [video](https://youtu.be/NtQpKgkkdsQ) | [video](https://youtu.be/NF9Z3oECvaA) | [video](https://youtu.be/344jy4Stusg) |
