@@ -936,7 +936,7 @@ Similar to forward stepwise regression. At each step, it finds the predictor mos
 |                       | CHAID | CART  | ID3   | C4.5  and C5.0 |
 |-----------------------|-------|-------|-------|----------------|
 | Year                  | 1980  | 1984  | 1986  | 1993           |
-| Handle numeric        | Yes   | Yes   | No    | Yes            |
+| Handle numeric (<,>)  | Yes   | Yes   | No    | Yes            |
 | Handle categorical    | Yes   | No    | Yes   | Yes            |
 | Handle missings       |       |       |       | Yes            |
 | Non-binary branches   | No    | No    |       | Yes            |
