@@ -931,16 +931,28 @@ Ccombines some characteristics from both lasso and ridge. Lasso will eliminate m
 #### Least-Angle Regression (LARS)
 Similar to forward stepwise regression. At each step, it finds the predictor most correlated with the response. When multiple predictors having equal correlation exist, instead of continuing along the same predictor, it proceeds in a direction equiangular between the predictors.
 
-## Decision Tree
-- No need to normalize data.
-- Algorithms:
-  - **ID3**: Iterative Dichotomiser 3
-  - **C4.5**: a newer version of ID3 (in weka is called J48)
-  - **C5.0**
-  - **CART**: Classification And Regression Trees.
-  - **CHAID**: Chi-squared Automatic Interaction Detection
-  - **Decision Stump**
-  - **M5**
+# Decision Tree
+  
+|                       | CHAID | CART  | ID3   | C4.5  and C5.0 |
+|-----------------------|-------|-------|-------|----------------|
+| Year                  | 1980  | 1984  | 1986  | 1993           |
+| Handle numeric        | Yes   | Yes   | No    | Yes            |
+| Handle categorical    | Yes   | No    | Yes   | Yes            |
+| Handle missings       |       |       |       | Yes            |
+| Non-binary branches   | No    | No    |       | Yes            |
+| Handle classification | Yes   | Yes   |       | Yes            |
+| Handle regressioon    | No    | Yes   |       |                |
+| Split method          | Chi-square | GINI index | Information Gain | Gain Ratio |
+| In Sklearn            | No    | Yes   | No    | No             |
+| In Chefboost          | Yes   | Yes   | Yes   | Yes (C4.5)     |
+| Video theory          | [video](https://youtu.be/cu0ZdZNCbKo) | [video](https://youtu.be/NtQpKgkkdsQ) | [video](https://youtu.be/NF9Z3oECvaA) | [video](https://youtu.be/344jy4Stusg) |
+| Video code (Chefboost) | [video](https://youtu.be/dcnFuS4QILg) | [video](https://youtu.be/CSApBetgukM) | [video](https://youtu.be/Z93qE5eb6eg) | [video](https://youtu.be/kjhQHmtDaAA) |
+
+> #### Curiosidades
+> - In decissiopn trees, there is **no need to normalize** data.
+> - C4.5 en Weka se llama J48
+> - C5.0 está patentado, por eso no se ve en las librerias.
+
 
 #### Iterative Dichotomiser 3 (ID3)
 builds a tree top-down. It starts at the root and choose an attribute that will be tested at each node. Each attribute is evaluated through some statistical means in order to detect which attribute splits the dataset the best. The best attribute becomes the root, with its attribute values branching out. Then the process continues with the rest of the attributes. Once an attribute is selected, it is not possible to backtrack.
@@ -954,8 +966,9 @@ CART is used as an acronym for the term decision tree. In general, implementing 
 ### Chi-squared Automatic Interaction Detection (CHAID)
 an algorithm used for discovering relationships between a categorical response variable and other categorical predictor variables. It creates all possible cross tabulations for each categorical predictor until the best outcome is achieved and no further splitting can be performed. CHAID builds a predictive model, or tree, to help determine how variables best merge to explain the outcome in the given dependent variable. In CHAID analysis, nominal, ordinal, and continuous data can be used, where continuous predictors are split into categories with approximately equal number of observations. It is useful when looking for patterns in datasets with lots of categorical variables and is a convenient way of summarizing the data as the relationships can be easily visualized.
 
-#### Decision Stump
-a ML model that is consisted of a one-level decision tree; a tree with one internal node (the root) which is connected to the terminal nodes (its leaves). This model makes a prediction based on the value of just a single input feature.
+## Tree of linear models
+- Quilan (M5)
+- Wang (M5P)
 
 #### M5
 M5 combines a conventional decision tree with the possibility of linear regression functions at the nodes. Besides accuracy, it can take tasks with very high dimension — up to hundreds of attributes. M5 model tree is a decision tree learner for regression task, meaning that it is used to predict values of numerical response variable Y. While M5 tree employs the same approach with CART tree in choosing mean squared error as impurity function, it does not assign a constant to the leaf node but instead it fit a multivariate linear regression model.
