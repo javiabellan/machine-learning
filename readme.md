@@ -966,7 +966,8 @@ CART is used as an acronym for the term decision tree. In general, implementing 
 ### Chi-squared Automatic Interaction Detection (CHAID)
 an algorithm used for discovering relationships between a categorical response variable and other categorical predictor variables. It creates all possible cross tabulations for each categorical predictor until the best outcome is achieved and no further splitting can be performed. CHAID builds a predictive model, or tree, to help determine how variables best merge to explain the outcome in the given dependent variable. In CHAID analysis, nominal, ordinal, and continuous data can be used, where continuous predictors are split into categories with approximately equal number of observations. It is useful when looking for patterns in datasets with lots of categorical variables and is a convenient way of summarizing the data as the relationships can be easily visualized.
 
-## Tree of linear models
+## Tree of models
+https://github.com/scikit-learn/scikit-learn/pull/13732
 - Quilan (M5)
 - Wang (M5P)
 
