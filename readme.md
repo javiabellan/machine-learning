@@ -393,11 +393,13 @@ from sklearn.feature_selection import VarianceThreshold
         <li>Decission tree</li>
         <li>Random Forest</li>
         <li>Extra trees</li>
+        <li>Regularized Greedy Forest</li>
         <li>Adaboost</li>
         <li>Gradient Boosting</li>
         <li>XGBoost</li>
         <li>LightGBM</li>
         <li>CatBoost</li>
+        <li>NGBoost</li>
       </ul>
     </tD>
     <td>
@@ -462,6 +464,76 @@ from sklearn.feature_selection import VarianceThreshold
 </table>
 
 
+```python
+from sklearn.compose       import make_column_transformer
+from sklearn.impute        import SimpleImputer
+from sklearn.pipeline      import make_pipeline
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OrdinalEncoder
+from sklearn.preprocessing import StandardScaler
+
+
+################ Automatic detect types (dangerous)
+
+# See data types: df.info()
+num_cols  = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns # X.columns[X.dtypes == 'float64']
+cat_cols  = df.select_dtypes(include=[object]).columns              # X.columns[X.dtypes == 'O']
+time_cols = df.select_dtypes(include=['datetime64','timedelta64']).columns
+
+# high_cardinality = [c for c in cat_cols if len(X[c].unique()) > 16]
+# low_cardinality  = [c for c in cat_cols if len(X[c].unique()) <= 16]
+
+# num_uniques = int(df[var].nunique())
+# embed_dim   = int(min(num_uniques // 2, 50)
+
+categories = [
+    X[column].unique() for column in X[cat_cols]]
+
+for cat in categories:
+    cat[cat == None] = 'missing'  # noqa
+
+
+################ Tree-based models preprocessing
+cat_proc_tree = make_pipeline(
+    SimpleImputer(missing_values=None, strategy='constant', fill_value='missing'),
+    OrdinalEncoder(categories=categories))
+
+num_proc_tree = make_pipeline(
+    SimpleImputer(strategy='mean'))
+
+prepro_tree = make_column_transformer(
+    (cat_proc_tree, cat_cols),
+    (num_proc_tree, num_cols),
+    remainder='passthrough')
+    
+################ Multiplicative-based models preprocessing
+cat_proc_mult = make_pipeline(
+    SimpleImputer(missing_values=None, strategy='constant', fill_value='missing'),
+    OneHotEncoder(categories=categories)
+)
+
+num_proc_mult = make_pipeline(
+    SimpleImputer(strategy='mean'),
+    StandardScaler()
+)
+
+prepro_mult = make_column_transformer(
+    (cat_proc_mult, cat_cols),
+    (num_proc_mult, num_cols),
+    remainder='passthrough')
+
+################ Some model examples
+lasso = make_pipeline(prepro_mult, LassoCV())
+rf    = make_pipeline(prepro_tree, RandomForestRegressor(random_state=SEED))
+gbm   = make_pipeline(prepro_tree, HistGradientBoostingRegressor(random_state=SEED))
+
+models = [('Random Forest', rf),
+          ('Lasso', lasso),
+          ('Gradient Boosting', gbm)]
+```
+              
+              
+
 ## TODO: Add NLP Features
 - Split (name & surname)
 - Bag of words
@@ -469,22 +541,6 @@ from sklearn.feature_selection import VarianceThreshold
 - n-grams
 - word2vec
 - topic extraction
-
-
-## Automatic detect types (dangerous)
-
-```python
-# See data types: df.info()
-numeric_vars      = df.select_dtypes(exclude=[object,'datetime64','timedelta64']).columns
-categorical_vars  = df.select_dtypes(include=[object]).columns
-time_vars         = df.select_dtypes(include=['datetime64','timedelta64']).columns
-
-high_cardinality = [c for c in categorical_vars if len(X[c].unique()) > 16]
-low_cardinality  = [c for c in categorical_vars if len(X[c].unique()) <= 16]
-
-num_uniques = int(df[var].nunique())
-embed_dim   = int(min(num_uniques // 2, 50)
-```
 
 
 
@@ -850,17 +906,51 @@ Simple models. Good for starting point (baseline), understand the data, and crea
 | Naive Bayes         | No     | Yes      | No          | class      |    |
 | K-Nearest Neighbors | No     | No       | No          | class,regr |    |
 
-### 🔮📦 Black Box Models
-Better models
 
-| Model                   |   |
-|-------------------------|---|
-| Support Vector Machine  |   |
-| Random forest           | ⭐ |
-| Extra trees             |   |
-| Adaboost                |   |
-| Gradient boosting (GBM) | ⭐⭐⭐ |
-| Neural Network          | ⭐⭐   |
+# Trees based models
+
+|          | Model                     | Import                                                                             |
+|----------|---------------------------|------------------------------------------------------------------------------------|
+| **DT**   | Decision Tree             | from sklearn.tree     import DecisionTreeClassifier,     DecisionTreeRegressor     |
+| **RF**   | Random Forest             | from sklearn.ensemble import RandomForestClassifier,     RandomForestRegressor     |
+| **RF**   | Random Forest (RAPIDS)    | from cuml.ensemble    import RandomForestClassifier,     RandomForestRegressor     |
+| **ET**   | Extra (Randomized) Trees  | from sklearn.ensemble import ExtraTreesClassifier,       ExtraTreesRegressor       |
+| **AB**   | AdaBoost                  | from sklearn.ensemble import AdaBoostClassifier,         AdaBoostRegressor         |
+| **GB**   | Gradient Boosting         | from sklearn.ensemble import GradientBoostingClassifier, GradientBoostingRegressor |
+| **XGB**  | XGBoost                   | from xgboost          import XGBClassifier,              XGBRegressor              |
+| **LGBM** | LightGBM                  | from lightgbm         import LGBMClassifier,             LGBMRegressor             |
+| **CB**   | CatBoost                  | from catboost         import CatBoostClassifier,         CatBoostRegressor         |
+| **NGB**  | NGBoost                   | from ngboost          import NGBClassifier,              NGBRegressor              |
+| **RGF**  | Regularized Greedy Forest | from rgf.sklearn      import RGFClassifier,              RGFRegressor              |
+|          |                           | from rgf.sklearn      import FastRGFClassifier,          FastRGFRegressor          |
+
+```python
+XGBoost:
+{
+    "learning_rate": [0.01, 0.1, 0.5],
+    "n_estimators": [100, 250, 500],
+    "max_depth": [3, 5, 7],
+    "min_child_weight": [1, 3, 5],
+    "colsample_bytree": [0.5, 0.7, 1],
+}
+
+LightGBM:
+{
+    "learning_rate": [0.01, 0.1, 0.5],
+    "n_estimators": [100, 250, 500],
+    "max_depth": [3, 5, 7],
+    "min_child_weight": [1, 3, 5],
+    "colsample_bytree": [0.5, 0.7, 1],
+}
+
+RGF:
+{
+    "learning_rate": [0.01, 0.1, 0.5],
+    "max_leaf": [1000, 2500, 5000],
+    "algorithm": ["RGF", "RGF_Opt", "RGF_Sib"],
+    "l2": [1.0, 0.1, 0.01],
+}
+```
 
 
 ---
