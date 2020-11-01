@@ -1756,6 +1756,7 @@ Libraries: [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.p
   - [**Kaggle course**](https://www.kaggle.com/learn): Practical micro-courses provided by Kaggle. (Level: easy)
   - [**Fast.ai ML course**](http://course18.fast.ai/ml): Course by Jeremy Howard, a DL teacher. (Level: easy)
   - [**SaturdaysAI ML**](https://github.com/SaturdaysAI/Itinerario_MachineLearning)
+  - coursera-dl --download-quizzes --download-notebooks --subtitle-language "es,en" --video-resolution 720p -ca 'PONER_COOKIES_CAUTH' competitive-data-science
 - Blogs
   - [**FastML**](http://fastml.com)
   - [**ML overview**](https://vas3k.com/blog/machine_learning/): (Level: easy)
