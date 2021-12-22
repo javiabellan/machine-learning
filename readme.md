@@ -1441,6 +1441,7 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
 - [h2o blog](https://www.h2o.ai/blog/how-to-explain-a-model-with-h2o-driverless-ai)
 - [h2o doc](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/interpreting.html)
 - [**THE BOOK**](https://christophm.github.io/interpretable-ml-book)
+- [**explainerdashboard**](https://github.com/oegedijk/explainerdashboard): A dashboard web app that explains the workings of a (scikit-learn compatible) ML model.
 
 Good for:
 - Detect social bias
